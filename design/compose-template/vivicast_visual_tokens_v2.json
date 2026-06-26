@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "visualPriority": [
+    "new-rendered-high-fidelity-mockups",
+    "visual-implementation-spec-v2",
+    "compose-designsystem-template",
+    "repo-design-tokens-secondary-only"
+  ],
+  "colors": {
+    "background": "#050914",
+    "backgroundDeep": "#020617",
+    "backgroundElevated": "#07111F",
+    "surface": "#0B1628",
+    "surfaceHigh": "#101D33",
+    "surfaceFocus": "#102B46",
+    "surfacePressed": "#15395C",
+    "border": "#22334A",
+    "borderSoft": "#17263A",
+    "textPrimary": "#F8FAFC",
+    "textSecondary": "#CBD5E1",
+    "textTertiary": "#94A3B8",
+    "textDisabled": "#64748B",
+    "accent": "#00C8FF",
+    "accentStrong": "#38D5FF",
+    "focusRing": "#00D4FF",
+    "focusGlow": "#00BFFF66",
+    "progress": "#159BFF",
+    "live": "#FF2D3A",
+    "favorite": "#FACC15",
+    "success": "#22C55E",
+    "warning": "#F59E0B",
+    "error": "#EF4444",
+    "catchUp": "#0EA5E9"
+  },
+  "typographySp": {
+    "displayLarge": 40,
+    "displayMedium": 34,
+    "titleLarge": 28,
+    "titleMedium": 24,
+    "titleSmall": 20,
+    "bodyLarge": 20,
+    "bodyMedium": 18,
+    "bodySmall": 16,
+    "labelLarge": 18,
+    "labelMedium": 16,
+    "labelSmall": 14
+  },
+  "spacingDp": {
+    "screenHorizontal": 48,
+    "screenVertical": 32,
+    "panelPadding": 24,
+    "cardPadding": 16,
+    "settingsRowHorizontal": 24,
+    "settingsRowVertical": 16,
+    "gridGap": 24,
+    "rowGap": 8,
+    "sectionGap": 32,
+    "columnGap": 24
+  },
+  "radiusDp": {
+    "small": 8,
+    "medium": 12,
+    "large": 16,
+    "panel": 24,
+    "dialog": 24,
+    "pill": 999
+  },
+  "focus": {
+    "ringWidthDp": 2,
+    "glowElevationDp": 18,
+    "scaleSmall": 1.02,
+    "scaleCard": 1.06,
+    "scaleButton": 1.03,
+    "animationMs": 120
+  }
+}
