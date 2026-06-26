@@ -62,13 +62,14 @@ Short priority rule:
 
 1. PRD files define product scope, behavior, settings, data requirements, and acceptance criteria.
 2. ADRs define architecture decisions.
-3. Design System, Screens, Wireframes, Interaction, Components, and UI Direction Decisions define UI, focus, navigation, and visual direction.
+3. Design System, Screens, Wireframes, Interaction, Components, UI Direction Decisions, current High-Fidelity Renderings, and Compose Designsystem Template define UI, focus, navigation, visual direction, and technical designsystem guidance.
 4. `prd/PRD-v1/13-test-strategy.md` defines tests, fixtures, performance budgets, and DoD evidence.
 5. Codex files define working rules for Codex.
 6. This masterplan defines implementation order and package boundaries.
 7. Diagrams are non-normative onboarding aids.
-8. Rendered PNGs are visual style references, but not normative sources for navigation, labels, or UI text.
-9. Archived files are historical work evidence and not active implementation sources.
+8. Current rendered PNGs under `design/mockups/high-fidelity/rendered/` are visual target references, but not normative sources for navigation, labels, or UI text.
+9. `design/design-system/compose-template/` is a technical designsystem template reference, not app code and not final app module structure.
+10. Archived files are historical work evidence and not active implementation sources.
 
 This masterplan must not override PRD, ADR, Design, Test Strategy, Codex Rules, or Governance.
 
@@ -355,19 +356,22 @@ Create the visual and navigation foundation.
 ### Sources
 
 - `design/design-system/`
+- `design/design-system/compose-template/`
 - `design/interaction/nav.md`
 - `design/interaction/focus.md`
 - `design/screens/`
 - `design/wireframes/`
 - `design/components/`
 - `design/mockups/high-fidelity/02-ui-direction-decisions.md`
+- `design/mockups/high-fidelity/rendered/`
 
 ### Acceptance
 
 - main navigation contains `Home | Live-TV | Filme | Serien | Suche | Einstellungen`
 - D-Pad, OK, and Back work in the shell
 - focus is visible and stable
-- rendered PNGs are used only as visual style references
+- current rendered PNGs are used as visual target references, but not as sources for labels, navigation, or product logic
+- Compose template values are centralized in the app designsystem and not hard-coded per screen
 
 ## Package 3: Persistence, Data Model, and Security Foundation
 

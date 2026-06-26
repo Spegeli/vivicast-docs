@@ -1,46 +1,28 @@
 # Vivicast Design System
 
-Status: verbindliche Design-Referenz v3
+Status: verbindliche Design-Referenz v4
 
-Dieses Verzeichnis definiert das visuelle und interaktive Design-System für Vivicast.
+Dieses Verzeichnis definiert das visuelle und interaktive Design-System fuer Vivicast.
 
-Vivicast ist eine Android-TV-IPTV-App. Das Design-System ist daher nicht Mobile-first, sondern konsequent TV-first: große Betrachtungsdistanz, D-Pad-Bedienung, klarer Fokuszustand, wenige Ebenen, schnelle Orientierung und performante Darstellung großer Listen.
+Vivicast ist eine Android-TV-IPTV-App. Das Design-System ist daher nicht Mobile-first, sondern konsequent TV-first: grosse Betrachtungsdistanz, D-Pad-Bedienung, klarer Fokuszustand, wenige Ebenen, schnelle Orientierung und performante Darstellung grosser Listen.
 
 ## Verbindliche Grundlagen
 
-Primäre Quellen im Repository:
+Primaere Quellen im Repository:
 
 ```text
-prd/PRD-v1/00-prd-boundaries.md
-prd/PRD-v1/01-product-overview.md
-prd/PRD-v1/02-live-tv-requirements.md
-prd/PRD-v1/03-movies-series-requirements.md
-prd/PRD-v1/04-search-settings-player-requirements.md
-prd/PRD-v1/05-iptv-epg-favorites.md
-prd/PRD-v1/06-data-model.md
-prd/PRD-v1/07-background-jobs-performance.md
-prd/PRD-v1/08-android-tv-security.md
-prd/PRD-v1/09-implementation-and-dod.md
-prd/PRD-v1/10-backup-import-requirements.md
-prd/PRD-v1/11-about-app-requirements.md
-prd/PRD-v1/12-parser-source-contracts.md
-prd/PRD-v1/13-test-strategy.md
-architecture/decisions/*.md
+prd/PRD-v1/
+architecture/decisions/
+design/screens/
+design/wireframes/
+design/interaction/
+design/components/
 DOCS-GOVERNANCE.md
 ```
 
 Diese Liste dient nur als Einstieg. Die kanonische Quellenverantwortung und Konfliktregel steht in `DOCS-GOVERNANCE.md`.
 
 Das Design-System ist verbindlich fuer visuelle Grundlagen, wiederverwendbare Komponenten, Fokusdarstellung und Screen-Patterns. Bei Produkt-, Daten-, Sicherheits- oder Architekturfragen gilt `DOCS-GOVERNANCE.md`.
-
-Externe Orientierung:
-
-```text
-Android TV UI Design Guidelines
-Android TV Navigation Guidelines
-Jetpack Compose for TV / Focus Navigation
-Material Design for TV Components
-```
 
 ## Dokumente
 
@@ -52,24 +34,56 @@ design/design-system/
   03-components.md
   04-focus-navigation.md
   05-screen-patterns.md
+  compose-template/
+    README.md
+    VIVICAST-VISUAL-IMPLEMENTATION-SPEC-v2.md
+    vivicast_visual_tokens_v2.json
+    VivicastColors.kt
+    VivicastFocus.kt
+    VivicastShapes.kt
+    VivicastSpacing.kt
+    VivicastTheme.kt
+    VivicastTypography.kt
 ```
+
+## Compose Template
+
+`compose-template/` enthaelt eine technische Designsystem-Umsetzungsvorlage fuer spaetere Jetpack-Compose-for-TV-Implementierung.
+
+Diese Dateien sind:
+
+```text
+Designsystem-Vorlagen
+Token-Referenzen
+Compose-Startpunkte
+```
+
+Sie sind nicht:
+
+```text
+App-Code im Docs-Repository
+finale App-Repo-Modulstruktur
+verbindliche Library-Versionen
+```
+
+Codex darf diese Dateien spaeter als Startreferenz fuer ein App-Repository-Designsystem nutzen, muss die echte Umsetzung aber im App-Repository `Spegeli/vivicast` erstellen.
 
 ## Design-Ziele
 
 1. Inhalte schneller erreichbar machen als Einstellungen.
 2. Aktiver Fokus muss jederzeit eindeutig sichtbar sein.
-3. Jede Aktion muss mit D-Pad, OK und Zurück erreichbar sein.
+3. Jede Aktion muss mit D-Pad, OK und Zurueck erreichbar sein.
 4. Keine Touch-only-Interaktionen.
-5. Große Sender-, Film-, Serien- und EPG-Mengen dürfen die UI nicht überladen.
-6. Provider-Isolation muss auch visuell verständlich bleiben.
-7. Fehlende Logos, Poster, EPG- und Metadaten müssen sauber degradiert werden.
-8. Benutzerdefinierte Optik darf das Grundlayout nicht zerstören.
+5. Grosse Sender-, Film-, Serien- und EPG-Mengen duerfen die UI nicht ueberladen.
+6. Provider-Isolation muss auch visuell verstaendlich bleiben.
+7. Fehlende Logos, Poster, EPG- und Metadaten muessen sauber degradiert werden.
+8. Benutzerdefinierte Optik darf das Grundlayout nicht zerstoeren.
 
 ## Visuelle Richtung
 
-Vivicast nutzt ein dunkles, ruhiges TV-Interface mit klaren Flächen, kräftigem Fokusrahmen und reduzierten Animationen.
+Vivicast nutzt ein dunkles, ruhiges Premium-TV-Interface mit klaren Flaechen, starkem cyanfarbenem Fokusrahmen, subtilem Glow und reduzierten Animationen.
 
-Der visuelle Stil soll hochwertig wirken, aber nicht verspielt. IPTV-Bibliotheken enthalten oft uneinheitliche Logos, Poster und Metadaten. Das UI muss diese Unordnung abfangen und darf nicht selbst unruhig werden.
+Die aktuellen High-Fidelity-Renderings unter `design/mockups/high-fidelity/rendered/` sind die visuelle Hauptreferenz fuer die Zielwirkung.
 
 ## Nicht-normativer Umsetzungshinweis
 
@@ -83,8 +97,6 @@ Dieser Hinweis ist keine PRD- oder Design-Anforderung. Verbindlich sind hier nur
 
 ## Abgrenzung
 
-Dieses Design-System enthält keine finalen Wireframes und keine Mockups.
-
 Wireframes liegen separat unter:
 
 ```text
@@ -96,3 +108,5 @@ Mockups liegen separat unter:
 ```text
 design/mockups/
 ```
+
+Die Compose-Template-Dateien liegen bewusst im Design-System, weil sie Designwerte in eine spaetere technische Umsetzung uebersetzen.

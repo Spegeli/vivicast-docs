@@ -1,6 +1,6 @@
 # Vivicast Docs Governance
 
-Status: verbindlich v7
+Status: verbindlich v8
 
 Diese Datei ist die kanonische Quelle fuer Dokumentrollen, Quellenverantwortung und Konfliktregeln im Vivicast-Docs-Repository.
 
@@ -63,6 +63,8 @@ Archivierte Arbeitsnachweise dokumentieren abgeschlossene Pruef- und Remediation
 | UI-Komponenten | `design/components/` | normativ fuer Komponentenverwendung |
 | visuelles Designsystem | `design/design-system/` | normativ fuer visuelle Grundlagen |
 | UI Direction Decisions | `design/mockups/high-fidelity/02-ui-direction-decisions.md` | normativ fuer visuelle Richtung, soweit sie PRD und ADRs nicht widerspricht |
+| High-Fidelity Renderings | `design/mockups/high-fidelity/rendered/` | visuelle Zielreferenz fuer Optik, keine Quelle fuer Labels, Navigation oder Produktlogik |
+| Compose Designsystem Template | `design/design-system/compose-template/` | technische Designsystem-Umsetzungsreferenz, kein App-Code |
 | Codex-Arbeitsregeln | `codex/` | Arbeitsregel, keine Produktquelle |
 | Codex-Umsetzungsplaene | `codex/plans/` | aktive Codex-Planungsquelle fuer Reihenfolge und Paketlogik, keine Produktquelle |
 | archivierte Arbeitsnachweise | `archive/` | historisch, keine aktive Arbeitsquelle |
@@ -116,6 +118,15 @@ Dazu gehoeren:
 - visuelle Dichte
 
 Design-Dateien duerfen fachliche Anforderungen nur referenzieren, nicht neu definieren.
+
+
+## High-Fidelity- und Compose-Template-Regeln
+
+Aktuelle High-Fidelity-Renderings unter `design/mockups/high-fidelity/rendered/` konkretisieren die Zieloptik.
+
+Sie duerfen nicht als Quelle fuer Produktumfang, sichtbare Labels, Navigation, Fokuspfade, Datenmodell, Sicherheit, Backup/Restore, PIN oder Playback verwendet werden, wenn aktive Markdown-Quellen dazu Vorgaben enthalten.
+
+`design/design-system/compose-template/` enthaelt technische Designsystem-Vorlagen fuer spaetere App-Umsetzung. Diese Dateien sind kein App-Code im Docs-Repository und definieren keine finale App-Repo-Modulstruktur.
 
 ## Architektur-Regeln
 
@@ -198,9 +209,10 @@ Wenn sich Dateien widersprechen, gilt:
 4. Screen Specs und Wireframes fuer Layout
 5. Interaction Specs fuer Bedienung und Fokus
 6. Component Specs fuer wiederverwendbare UI-Bausteine
-7. UI Direction Decisions fuer konkrete visuelle Richtung, soweit sie PRD, ADRs, Screen Specs und Interaction Specs nicht widersprechen
-8. Codex-Dateien und Codex-Umsetzungsplaene nur als Arbeits-, Referenz- und Planungsregeln
-9. archivierte Arbeitsnachweise nie als aktive Quelle
+7. UI Direction Decisions und aktuelle High-Fidelity-Renderings fuer konkrete visuelle Richtung, soweit sie PRD, ADRs, Screen Specs, Wireframes, Interaction Specs und Components nicht widersprechen
+8. Compose Designsystem Template als technische Designsystem-Umsetzungsreferenz, aber nicht als App-Code oder Produktquelle
+9. Codex-Dateien und Codex-Umsetzungsplaene nur als Arbeits-, Referenz- und Planungsregeln
+10. archivierte Arbeitsnachweise nie als aktive Quelle
 
 ## Pflegeprozess
 

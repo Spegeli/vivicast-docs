@@ -1,6 +1,6 @@
 # 02 – UI Direction Decisions
 
-Status: beschlossen v7
+Status: beschlossen v8
 
 Rolle: visuelle Richtungsentscheidung. Diese Datei konkretisiert die visuelle Richtung, ist aber keine Produktanforderung und keine Umsetzungsreihenfolge.
 
@@ -9,6 +9,31 @@ Rolle: visuelle Richtungsentscheidung. Diese Datei konkretisiert die visuelle Ri
 Diese Datei ist die aktive Markdown-Quelle fuer die High-Fidelity-UI-Richtung.
 
 Aktuell bestaetigte Owner-Entscheidungen aus frueheren Archiv-Artefakten sind hier integriert. Archivdateien duerfen nicht ohne erneute Pruefung gegen aktuelle PRD-, ADR-, Design-, Codex- und Governance-Quellen reaktiviert werden.
+
+
+## Aktuelle Zielreferenz v2
+
+Die aktuellen neu gerenderten High-Fidelity-Mockups unter `design/mockups/high-fidelity/rendered/` sind die aktive visuelle Hauptreferenz fuer die Zieloptik.
+
+Die technische Designsystem-Ableitung liegt unter:
+
+```text
+design/design-system/compose-template/
+```
+
+Dort enthaltene Markdown-, JSON- und Kotlin-Dateien sind keine App-Code-Dateien im Docs-Repository. Sie sind technische Designsystem-Vorlagen fuer die spaetere Compose-Umsetzung im App-Repository.
+
+Prioritaet fuer visuelle Umsetzung:
+
+```text
+1. Aktuelle High-Fidelity-Renderings unter design/mockups/high-fidelity/rendered/
+2. Diese UI Direction Decisions
+3. design/design-system/compose-template/
+4. Bestehende Design-System-Tokens als sekundäre technische Orientierung
+```
+
+Gerenderte PNGs bleiben nicht normativ fuer Navigation, Labels, UI-Texte, Produktlogik, Datenmodell, Sicherheit, Backup/Restore, PIN oder Playback. Dafuer gelten PRD, ADRs, Screens, Wireframes, Interaction Specs und Components gemaess `DOCS-GOVERNANCE.md`.
+
 
 ## Grundentscheidung
 

@@ -1,16 +1,22 @@
 # 01 – High-Fidelity Visual Target
 
-Status: Entwurf v1
+Status: verbindliche visuelle Zielreferenz v2
 
 ## Ziel
 
-Dieses Dokument definiert die gewünschte hochwertige UI-Richtung für Vivicast.
+Dieses Dokument definiert die hochwertige UI-Richtung fuer Vivicast auf Basis der aktuellen High-Fidelity-Renderings.
 
-Die bisherigen PNGs unter `design/mockups/low-fidelity/rendered/` sind nur Low-Fidelity Layout Previews. Sie zeigen Struktur, aber nicht die finale Zieloptik.
+Die aktiven Bilder liegen unter:
+
+```text
+design/mockups/high-fidelity/rendered/
+```
+
+Low-Fidelity-Mockups sind keine aktive Referenz mehr.
 
 ## Zielwirkung
 
-Vivicast soll wirken wie eine moderne Premium-App für Android TV:
+Vivicast soll wirken wie eine moderne Premium-App fuer Android TV:
 
 ```text
 hochwertig
@@ -19,27 +25,30 @@ klar
 schnell
 TV-tauglich
 inhaltzentriert
+technisch sauber
 ```
 
-Nicht gewünscht:
+Nicht gewuenscht:
 
 ```text
 Admin-Oberflaeche
 technische Tabellenansicht
 Web-App-Optik
+Mobile-App-Optik
 billiger Listenbrowser
-Debug-Oberfläche
+Debug-Oberflaeche
 ```
 
 ## Visuelle Richtung
 
 ```text
-dunkler atmosphärischer Hintergrund
-weiche Panels
+dunkler atmosphaerischer Hintergrund
+weiche dunkle Panels
 subtile Tiefe
-klare große Typografie
-hochwertige Fokuszustände
-ruhige Animationen
+klare grosse Typografie
+cyanfarbener Fokus mit Ring und Glow
+hochwertige Poster- und Channel-Cards
+ruhige Action-Pills
 starke Lesbarkeit aus TV-Entfernung
 ```
 
@@ -48,24 +57,33 @@ starke Lesbarkeit aus TV-Entfernung
 Fokus muss sofort sichtbar sein durch:
 
 ```text
-hellen Fokusrahmen
+cyanfarbenen Fokusrahmen
 weichen Glow
 leichte Skalierung
-angehobene Fläche
+angehobene Flaeche
 klaren Kontrast
 ```
 
-Fokus darf nicht nur über eine kleine Farbänderung dargestellt werden.
+Fokus darf nicht nur ueber eine kleine Farbaenderung dargestellt werden.
 
 ## Screen-Ziele
+
+Home:
+
+```text
+Hero-Bereich
+Fortsetzen-Row
+zuletzt gesehene Live-TV-Sender
+ruhige Premium-TV-Startseite
+```
 
 Live-TV:
 
 ```text
 moderner dreispaltiger TV-Browser
-Provider links
+Provider/Kategorien links
 Sender als hochwertige Cards
-EPG/Vorschau rechts
+Preview/Details rechts
 kein Tabellenlook
 ```
 
@@ -73,28 +91,28 @@ Player:
 
 ```text
 filmisches Vollbild
-reduziertes Overlay
-große Controls
-klare Progressbar
+reduziertes Bottom Overlay
+Timeline als zentrales Bedienelement
+Stream-Badges
 keine permanente UI
 ```
 
 Filme und Serien:
 
 ```text
-Hero-Bereich mit Atmosphäre
+Hero-Bereich mit Atmosphaere
 hochwertige Poster-Cards
-klare Kategorie-Chips
-Detailseiten mit starker Primäraktion
+klare Provider-/Kategorie-Trennung
+Detailseiten mit starker Primaeraktion
 ```
 
 Suche:
 
 ```text
-großes Suchfeld
-klare Ergebnisgruppen
-hochwertiger Voice-Button
-hilfreicher leerer Zustand
+grosses Suchfeld
+dauerhaft sichtbarer Suchverlauf
+Ergebnisgruppen Kanäle, Filme, Serien und EPG
+hochwertiger Fokuszustand
 ```
 
 Einstellungen:
@@ -104,17 +122,28 @@ Master-Detail Layout
 ruhige Optionskarten
 klare Werte rechts
 kritische Aktionen klar getrennt
+TV-taugliche Dialoge
 ```
 
 ## Qualitätskriterien
 
-High-Fidelity Mockups sind nur brauchbar, wenn:
+High-Fidelity-Mockups sind nur brauchbar, wenn:
 
 ```text
-sie deutlich hochwertiger wirken als die Low-Fidelity PNGs
+sie wie eine hochwertige Android-TV-App wirken
 Fokus sofort sichtbar ist
 TV-Lesbarkeit erhalten bleibt
 Android-TV-Navigation nachvollziehbar bleibt
 Provider-Isolation nicht verletzt wird
-Design später in Jetpack Compose for TV realistisch umsetzbar ist
+Design spaeter in Jetpack Compose for TV realistisch umsetzbar ist
 ```
+
+## Technische Umsetzungshilfe
+
+Die technische Ableitung der aktuellen Zieloptik liegt unter:
+
+```text
+design/design-system/compose-template/
+```
+
+Diese Dateien konkretisieren Farben, Typografie, Spacing, Shapes und Fokuswerte fuer eine spaetere Compose-Umsetzung.

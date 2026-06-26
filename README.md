@@ -21,12 +21,12 @@ Der Ordner `codex/` in diesem Repository enthaelt nur Codex-Referenzmaterial fue
 
 - PRD v1: abgeschlossen
 - ADRs: vorhanden und QA-abgeglichen
-- Design-System: verbindliche Design-Referenz und driftbereinigt
+- Design-System: verbindliche Design-Referenz, Compose-Template vorhanden und driftbereinigt
 - Wireframes: vorhanden und aktualisiert
 - Screen Specs: vorhanden
 - Component Specs: vorhanden
-- Low-Fidelity Mockups: vorhanden
-- High-Fidelity Mockups: vorhanden
+- Low-Fidelity Mockups: entfernt, keine aktive Referenz mehr
+- High-Fidelity Mockups: aktuelle visuelle Zielreferenz vorhanden
 - UI Direction Decisions: beschlossen
 - Interaction Specs: vorhanden
 - Codex-Referenzunterlagen: vorhanden
@@ -75,11 +75,13 @@ Codex soll fuer App-Umsetzung weiterhin mit `codex/README.md` starten.
 - `architecture/decisions/`
 - `architecture/diagrams/`
 - `design/design-system/`
+- `design/design-system/compose-template/`
 - `design/screens/`
 - `design/wireframes/`
 - `design/interaction/`
 - `design/components/`
 - `design/mockups/`
+- `design/mockups/high-fidelity/rendered/`
 - `codex/README.md`
 - `codex/coding-rules.md`
 - `codex/tv-compose-reference-guide.md`
@@ -91,6 +93,8 @@ Codex soll fuer App-Umsetzung weiterhin mit `codex/README.md` starten.
 - `prd/PRD-v1/13-test-strategy.md`
 - `design/wireframes/08-about-app.md`
 - `design/components/about-app.md`
+- `design/mockups/high-fidelity/rendered/`
+- `design/design-system/compose-template/VIVICAST-VISUAL-IMPLEMENTATION-SPEC-v2.md`
 - `architecture/diagrams/README.md`
 
 ## Codex Einstieg
@@ -115,6 +119,8 @@ Kurzfassung:
 - ADRs definieren Architekturentscheidungen.
 - Design-Dateien definieren Screen-Struktur, Layout, Interaktion, Komponenten und visuelle Grundlagen.
 - UI Direction Decisions konkretisieren die visuelle Richtung, soweit sie PRD und ADRs nicht widersprechen.
+- Aktuelle High-Fidelity-Renderings konkretisieren die Zieloptik, sind aber keine Quelle fuer Labels, Navigation oder Produktlogik.
+- `design/design-system/compose-template/` enthaelt Compose-Designsystem-Vorlagen fuer spaetere App-Umsetzung; sie sind kein App-Code.
 - Codex-Dateien enthalten Arbeitsregeln und Umsetzungshinweise, aber keinen festen Umsetzungsplan.
 
 ## Grundsaetze

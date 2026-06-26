@@ -1,12 +1,17 @@
 # Vivicast Mockups
 
-Status: Low-Fidelity und High-Fidelity vorhanden v4
+Status: High-Fidelity Zielreferenz v5
 
-Dieses Verzeichnis beschreibt die Mockups für Vivicast.
+Dieses Verzeichnis beschreibt die aktiven Mockups fuer Vivicast.
 
-Die PNGs unter `design/mockups/low-fidelity/rendered/` sind Low-Fidelity Layout Previews. Sie gelten nicht als finale Zieloptik.
+Die aktive visuelle Zielrichtung liegt unter:
 
-Die PNGs unter `design/mockups/high-fidelity/rendered/` zeigen die hochwertige Zielrichtung.
+```text
+design/mockups/high-fidelity/
+design/mockups/high-fidelity/rendered/
+```
+
+Low-Fidelity-Mockups sind nicht mehr Teil der aktiven Dokumentationsstruktur.
 
 Gerenderte PNGs sind visuelle Stilreferenzen. Sie sind keine normative Quelle fuer Navigation, Labels oder UI-Texte. Falls sichtbare Navigation oder Labels in PNGs von aktuellen PRD-, Design- oder Wireframe-Markdown-Quellen abweichen, gelten die Markdown-Quellen.
 
@@ -26,53 +31,56 @@ design/mockups/
   03-player-mockup-spec.md
   04-vod-mockup-spec.md
   05-settings-search-mockup-spec.md
-  low-fidelity/
-    README.md
-    rendered/
-      01-live-tv-browser.png
-      02-player-overlay.png
-      03-vod-overview.png
-      04-search.png
-      05-settings.png
   high-fidelity/
     README.md
     01-visual-target.md
     02-ui-direction-decisions.md
     rendered/
-      01-live-tv-browser.png
-      02-player-overlay.png
-      03-vod-overview.png
-      04-search.png
-      05-settings.png
+      README.md
+      01_home.png
+      02_live_tv_browser_category_mode.png
+      03_movies_overview.png
+      04_series_detail.png
+      05_search.png
+      06_player_overlay_live_tv.png
+      07_settings_general.png
+      08_settings_playlists.png
+      09_settings_epg.png
+      10_settings_appearance.png
+      11_settings_playback.png
+      12_settings_parental_controls_pin_dialog.png
+      13_settings_backup_export_dialog.png
 ```
 
 ## Einordnung
 
-Low-Fidelity:
-
-```text
-Struktur
-Fokuspositionen
-Screen-Dichte
-```
-
-High-Fidelity:
+High-Fidelity-Mockups:
 
 ```text
 Zieloptik
-visuelle Qualität
+visuelle Qualitaet
 Premium-TV-Look
+Fokuswirkung
+Dichte und Flaechenwirkung
 Compose-UI-Vorlage
 ```
 
 ## Mockup-Abdeckung
 
 ```text
-1. Live-TV Browser
-2. Player Overlay
-3. Filme/Serien VOD
-4. Suche
-5. Einstellungen
+1. Home
+2. Live-TV Browser Kategorie-Modus
+3. Filme Uebersicht
+4. Serien Detailseite
+5. Suche
+6. Player Overlay Live-TV
+7. Einstellungen Allgemein
+8. Einstellungen Wiedergabelisten
+9. Einstellungen EPG
+10. Einstellungen Optik
+11. Einstellungen Wiedergabe
+12. Einstellungen Kindersicherung / PIN
+13. Einstellungen Backup Export
 ```
 
 ## Formatentscheidung
@@ -80,3 +88,13 @@ Compose-UI-Vorlage
 PNG wird in diesem Repository als Arbeitsformat fuer gerenderte Mockup-Previews genutzt.
 
 SVG wird aktuell nicht benoetigt.
+
+## Verwandte Designsystem-Umsetzung
+
+Die technische Designsystem-Umsetzungsreferenz fuer Compose liegt unter:
+
+```text
+design/design-system/compose-template/
+```
+
+Diese Dateien sind keine App-Code-Dateien im Docs-Repository. Sie dienen Codex spaeter als Vorlage fuer ein App-Repository-Designsystem.

@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-06-26
+
+### 📝 Documentation
+
+- Removed the active Low-Fidelity mockup structure from current documentation references.
+- Replaced the active High-Fidelity rendered mockup set with the current named renderings under `design/mockups/high-fidelity/rendered/`.
+- Added `design/design-system/compose-template/` as a technical Compose designsystem template reference.
+- Updated visual source priority so the current High-Fidelity renderings are the primary visual target reference.
+- Clarified that rendered PNGs are not sources for labels, navigation, product logic, security, backup/restore, PIN or playback behavior.
+- Clarified that Compose template Kotlin files in the docs repository are implementation templates, not app code and not final app module structure.
+
+
 ## 2026-06-24
 
 ### 📝 Documentation
