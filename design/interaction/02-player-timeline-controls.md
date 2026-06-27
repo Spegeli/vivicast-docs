@@ -6,7 +6,7 @@ Status: verbindlich v5
 
 Der Player nutzt die Timeline als zentrales Bedienelement.
 
-Separate Pause-, Zurueckspulen- und Vorspulen-Buttons werden nicht als Hauptbuttons angezeigt.
+Separate Pause-, Zurückspulen- und Vorspulen-Buttons werden nicht als Hauptbuttons angezeigt.
 
 ## Grundaufbau
 
@@ -46,7 +46,7 @@ Wenn Timeline fokussiert ist:
 OK = Play/Pause
 Links/Rechts = Seek oder Timeshift-Bewegung
 Lang Links/Rechts = schneller Seek
-Zurueck verlaesst Timeline-Fokus oder schliesst Overlay
+Zurück verlaesst Timeline-Fokus oder schliesst Overlay
 ```
 
 ## Live-TV ohne Timeshift
@@ -112,7 +112,7 @@ Nicht als Hauptbuttons anzeigen:
 
 ```text
 Pause
-Zurueckspulen
+Zurückspulen
 Vorspulen
 ```
 
@@ -132,9 +132,9 @@ Die Position darf Untertitel und wichtige Video-Inhalte nicht dauerhaft verdecke
 
 ```text
 OK oeffnet Overlay, wenn es geschlossen ist
-Fokus liegt nach Oeffnen auf Timeline
-Zurueck schliesst Overlay, wenn es sichtbar ist
-erneut Zurueck verlaesst Player
+Fokus liegt nach Öffnen auf Timeline
+Zurück schliesst Overlay, wenn es sichtbar ist
+erneut Zurück verlaesst Player
 Overlay blendet nach 5 Sekunden Inaktivitaet aus
-Fokus wird beim erneuten Oeffnen wiederhergestellt
+Fokus wird beim erneuten Öffnen wiederhergestellt
 ```

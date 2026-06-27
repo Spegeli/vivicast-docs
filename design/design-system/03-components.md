@@ -110,8 +110,8 @@ Einstellungen
 ```text
 dauerhaft sichtbar auf Hauptscreens
 nicht sichtbar im Player
-Zurueck aus Hauptscreen-Content -> Top Navigation
-doppelte Zurueck-Bestaetigung aus Top Navigation -> App beenden
+Zurück aus Hauptscreen-Content -> Top Navigation
+doppelte Zurück-Bestätigung aus Top Navigation -> App beenden
 ```
 
 ## Fokus
@@ -229,7 +229,7 @@ Focused:
 
 ```text
 Hintergrund vc_surface_focus
-Fokusrahmen 3 dp
+Fokusrahmen 2 dp
 Sendername stärker
 EPG/Vorschau-Spalte aktualisiert sich
 ```
@@ -736,7 +736,7 @@ CH+/CH-  -> Live-TV Senderwechsel
 
 - Vollbildmodus zeigt standardmäßig keine UI.
 - Timeline ist das primaere fokussierbare Bedienelement.
-- Pause, Vorspulen und Zurueckspulen werden nicht als separate Hauptbuttons angeboten.
+- Pause, Vorspulen und Zurückspulen werden nicht als separate Hauptbuttons angeboten.
 - `Audio`, `Untertitel`, `Bildformat` und `Mehr` sind sekundaere Action Chips.
 - Overlay verdeckt nicht dauerhaft zentrale Bildinformationen.
 - Textbereiche erhalten dunklen Scrim.
@@ -750,13 +750,13 @@ CH+/CH-  -> Live-TV Senderwechsel
 
 ## Zweck
 
-Naechste Serienepisode manuell oder nach Countdown starten.
+Nächste Serienepisode manuell oder nach Countdown starten.
 
 ## Zustaende
 
 ```text
-Auto-Next Aus -> nach Episodenende: `Naechste Folge abspielen`
-Auto-Next Ein -> vor Episodenende: `Naechste Folge in X`
+Auto-Next Aus -> nach Episodenende: `Nächste Folge abspielen`
+Auto-Next Ein -> vor Episodenende: `Nächste Folge in X`
 ```
 
 ## Verhalten
@@ -764,8 +764,8 @@ Auto-Next Ein -> vor Episodenende: `Naechste Folge in X`
 - Hauptbutton ist initial fokussiert.
 - OK auf dem Hauptbutton startet die naechste Episode sofort.
 - Nur der aktivierte Countdown startet beim Ablauf automatisch.
-- Der Button `Zurueck` wird in beiden Zustaenden zeitgleich neben dem Hauptbutton angezeigt.
-- OK auf `Zurueck` oder die Zurueck-Taste beendet den Ablauf und fuehrt zur Serien-Detailseite mit dem zuvor gewaehlten Staffel-/Episodenkontext zurueck.
+- Der Button `Zurück` wird in beiden Zustaenden zeitgleich neben dem Hauptbutton angezeigt.
+- OK auf `Zurück` oder die Zurück-Taste beendet den Ablauf und fuehrt zur Serien-Detailseite mit dem zuvor gewaehlten Staffel-/Episodenkontext zurueck.
 - Das Panel besitzt keinen Button `Abbrechen`.
 - X wird sekundenweise aktualisiert, ohne Fokus oder Layout zu verschieben.
 - Das Panel bleibt sichtbar und nutzt nicht den normalen Overlay-Auto-Hide.

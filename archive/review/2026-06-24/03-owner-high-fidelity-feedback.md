@@ -12,7 +12,7 @@ Referenzen:
 
 ```text
 design/mockups/high-fidelity/rendered/
-design/review/02-high-fidelity-mockup-review.md
+archive/review/2026-06-24/02-high-fidelity-mockup-review.md
 ```
 
 ---

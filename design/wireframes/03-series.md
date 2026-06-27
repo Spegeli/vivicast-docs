@@ -6,7 +6,7 @@ Status: verbindlich v6
 
 Der Serienbereich nutzt denselben Grundaufbau wie Filme und fuehrt von der Serie zur Detailseite mit Staffeln und Episoden.
 
-## Uebersicht
+## Übersicht
 
 ```text
 +--------------------------------------------------------------------------------+
@@ -37,7 +37,7 @@ Globale Kategorien wie Favoriten und Fortsetzen sind sichtbar, aber nicht der in
 
 ```text
 Favoriten
-Fortsetzen, falls nicht abgeschlossener Fortschritt oder eine naechste Episode existiert
+Fortsetzen, falls nicht abgeschlossener Fortschritt oder eine nächste Episode existiert
 Provider A
 - Provider-Kategorien
 Provider B
@@ -46,11 +46,11 @@ Provider B
 
 Gleichnamige Kategorien verschiedener Provider werden nicht zusammengefuehrt.
 
-## Fokuswege Uebersicht
+## Fokuswege Übersicht
 
 ```text
 LEFT aus Grid       -> Kategorien
-RIGHT im Grid       -> naechste Serie
+RIGHT im Grid       -> nächste Serie
 UP/DOWN im Grid     -> Reihe wechseln
 OK auf Serie        -> Serien-Detailseite
 BACK Detailseite    -> Grid
@@ -85,17 +85,17 @@ BACK Kategorien     -> Top Navigation
 ```text
 OK auf Episode       -> direkt starten oder fortsetzen
 RIGHT aus Episode    -> sichtbare Markierungsaktion der fokussierten Episode
-OK auf Markierung    -> Als gesehen / Als ungesehen ausfuehren
+OK auf Markierung    -> Als gesehen / Als ungesehen ausführen
 LEFT aus Markierung  -> Episode
 keine separate Episode-Detailseite
 ```
 
-Nur die fokussierte Episode zeigt die Markierungsaktion. Ab 95 Prozent oder beim tatsaechlichen Medienende gilt die Episode als gesehen. `Als ungesehen markieren` loescht ihren gespeicherten Fortschritt. Es gibt keine entsprechende Aktion fuer komplette Staffeln oder Serien.
+Nur die fokussierte Episode zeigt die Markierungsaktion. Ab 95 Prozent oder beim tatsaechlichen Medienende gilt die Episode als gesehen. `Als ungesehen markieren` loescht ihren gespeicherten Fortschritt. Es gibt keine entsprechende Aktion für komplette Staffeln oder Serien.
 
-## Automatische naechste Folge
+## Automatische nächste Folge
 
 ```text
-Automatisch naechste Folge: Aus (Standard) / Ein
+Automatisch nächste Folge: Aus (Standard) / Ein
 Countdown: 5 / 10 / 15 / 30 Sekunden (Standard 10)
 Countdown ist bei Aus sichtbar, aber deaktiviert.
 ```
@@ -105,7 +105,7 @@ Auto-Next Aus, erst nach dem Episodenende:
 ```text
 +---------------------------------------------+
 | <Serientitel> <Staffel/Folge>                |
-| (*)[Naechste Folge abspielen] [Zurueck]      |
+| (*)[Nächste Folge abspielen] [Zurück]      |
 +---------------------------------------------+
 ```
 
@@ -114,15 +114,15 @@ Auto-Next Ein, Beispiel 10 Sekunden vor dem Episodenende:
 ```text
 +---------------------------------------------+
 | <Serientitel> <Staffel/Folge>                |
-| (*)[Naechste Folge in 10] [Zurueck]          |
+| (*)[Nächste Folge in 10] [Zurück]          |
 +---------------------------------------------+
 ```
 
-Der Countdown aktualisiert den Hauptbutton sekundenweise. OK startet sofort; ohne Eingabe startet die naechste Episode beim Ablauf am Episodenende. `Zurueck` wird in beiden Zustaenden zeitgleich neben dem Hauptbutton angezeigt. OK auf `Zurueck` oder die Zurueck-Taste verwirft den Ablauf und fuehrt mit erhaltenem Staffel-/Episodenkontext zur Serien-Detailseite. Einen Button `Abbrechen` gibt es nicht.
+Der Countdown aktualisiert den Hauptbutton sekundenweise. OK startet sofort; ohne Eingabe startet die nächste Episode beim Ablauf am Episodenende. `Zurück` wird in beiden Zustaenden zeitgleich neben dem Hauptbutton angezeigt. OK auf `Zurück` oder die Zurück-Taste verwirft den Ablauf und fuehrt mit erhaltenem Staffel-/Episodenkontext zur Serien-Detailseite. Einen Button `Abbrechen` gibt es nicht.
 
 Nach der letzten Episode der Serie erscheint kein Panel.
 
-Die 95-Prozent-Abschluss-Schwelle veraendert nur den Gesehen-/Fortsetzen-Status. Sie zeigt das Panel nicht an und startet keine Folge.
+Die 95-Prozent-Abschluss-Schwelle verändert nur den Gesehen-/Fortsetzen-Status. Sie zeigt das Panel nicht an und startet keine Folge.
 
 ## Zustaende
 

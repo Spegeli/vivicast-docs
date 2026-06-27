@@ -65,7 +65,7 @@ Enthaelt technische Arbeitsregeln, die aus PRD, Architekturentscheidungen und An
 
 ### `codex/tv-compose-reference-guide.md`
 
-Enthaelt Hinweise zu Compose for TV, Android-TV-Designreferenzen, `androidx.tv.material3`, JetStreamCompose und TV Material Catalog.
+Enthaelt Hinweise zu Compose for TV, technischen Android-TV-/Compose-Referenzen, `androidx.tv.material3`, JetStreamCompose und TV Material Catalog. Diese Referenzen sind keine Vivicast-Designquelle.
 
 ### `codex/plans/IMPLEMENTATION-MASTERPLAN-v1.md`
 
@@ -101,12 +101,15 @@ Codex muss fuer jedes groessere Paket einen eigenen technischen Detailplan im Ap
 | Player und Progress | `prd/PRD-v1/02-live-tv-requirements.md`, `prd/PRD-v1/03-movies-series-requirements.md`, `prd/PRD-v1/04-search-settings-player-requirements.md`, `architecture/decisions/ADR-006-timeshift-strategy.md`, `architecture/decisions/ADR-013-player-playback-progress.md`, `design/screens/03-player.md` |
 | Android-TV-Systemintegration | `prd/PRD-v1/08-android-tv-security.md`, `architecture/decisions/ADR-008-android-tv-integration.md`, `design/interaction/nav.md`, `design/screens/06-search.md` |
 | Tests und DoD | `prd/PRD-v1/09-implementation-and-dod.md`, `prd/PRD-v1/13-test-strategy.md` |
-| Visuelle Zielrichtung | `design/mockups/high-fidelity/02-ui-direction-decisions.md`, `design/mockups/high-fidelity/rendered/`, `design/design-system/compose-template/VIVICAST-VISUAL-IMPLEMENTATION-SPEC-v2.md` |
-| Compose Designsystem Vorlage | `design/design-system/compose-template/*.kt`, `design/design-system/compose-template/vivicast_visual_tokens_v2.json` |
+| Visuelle Zielwirkung | `design/mockups/high-fidelity/02-ui-direction-decisions.md`, `design/mockups/high-fidelity/rendered/` |
+| Technische Designsystem-Tokens / Compose-Vorlage | `design/design-system/compose-template/VIVICAST-VISUAL-IMPLEMENTATION-SPEC-v2.md`, `design/design-system/compose-template/*.kt`, `design/design-system/compose-template/vivicast_visual_tokens_v2.json` |
+| Technische TV-/Compose-Referenzen | `codex/tv-compose-reference-guide.md` |
 
 Mockup-Markdownquellen bleiben aktiv. Aktuelle gerenderte PNGs unter `design/mockups/high-fidelity/rendered/` sind visuelle Zielreferenzen, aber keine normative Quelle fuer Navigation, Labels oder UI-Texte.
 
-Die Dateien unter `design/design-system/compose-template/` sind Designsystem-Vorlagen fuer spaetere Compose-Umsetzung. Sie sind kein App-Code und definieren keine finale App-Repo-Modulstruktur.
+Die Dateien unter `design/design-system/compose-template/` sind Designsystem-Vorlagen für spätere Compose-Umsetzung. Sie sind kein App-Code und definieren keine finale App-Repo-Modulstruktur.
+
+JetStreamCompose, TvMaterialCatalog und android/tv-samples sind technische Referenzen für Compose-for-TV-Mechanik, Fokusverhalten und TV-Best-Practices. Sie sind keine visuelle Zielquelle und dürfen Vivicast-Renderings, Design-Tokens, Screen Specs oder Wireframes nicht überschreiben.
 
 ## Architekturdiagramme
 

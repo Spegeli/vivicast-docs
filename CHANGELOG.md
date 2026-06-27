@@ -1,8 +1,38 @@
 # Changelog
 
+## 2026-06-27 - Audit-Bereinigung
+
+- Live-TV No-EPG-Fokusfallback festgelegt.
+- CH+ / CH- Verhalten zwischen Browser und Player vereinheitlicht.
+- Player-Overlay-Aktionen auf Audio, Untertitel, Bildformat und Mehr begrenzt.
+- Favoriten-Labels vereinheitlicht.
+- Retry-/Reconnect- und Paging-Vertraege ergaenzt.
+- High-Fidelity-Renderings an Markdown-Quellen angeglichen.
+
+
 ## 2026-06-26
 
 ### 📝 Documentation
+
+- Continued tightening visible German UI labels in active design and PRD examples.
+- Aligned focus tokens between `design/design-system/02-design-tokens.md` and the Compose template.
+- Reworked `design/mockups/01-visual-direction.md` from old v1 token-like spec to v2 visual overview.
+- Clarified visual source roles: renderings define target effect, Compose template defines technical token/start values.
+- Removed hard product/UI rules from the Compose visual spec and pointed back to PRD/design/interaction sources.
+- Marked Kotlin Compose template files as templates and removed final app package declarations.
+- Added `Speicher & Verlauf` to Settings DoD group list.
+- Replaced `App-Info` summary wording with `Über die App` where it described the final Settings group.
+- Cleaned active visible UI examples to use German umlauts for labels such as `Öffnen`, `Zurück`, `Löschen`, `Nächste`.
+- Clarified local security-state persistence in Android-TV security requirements.
+- Clarified README wording around Codex Masterplan versus non-existent blind app-code phase prompts.
+
+- Promoted `Speicher & Verlauf` to an explicit Settings group for media-cache and history maintenance.
+- Aligned VOD documentation on the current left provider/category column plus right hero/grid layout.
+- Aligned design tokens with the current Compose template and removed obsolete 75 percent transparency.
+- Clarified that exact token values live in `design/design-system/compose-template/`.
+- Corrected Codex Masterplan search groups to `Kanäle`, `Filme`, `Serien`, `EPG`.
+- Corrected Codex Masterplan backup wording to restore-replace only, with no merge or copy-import mode.
+- Reduced active mockup specifications to visual intent and removed duplicate token authority where applicable.
 
 - Removed the active Low-Fidelity mockup structure from current documentation references.
 - Replaced the active High-Fidelity rendered mockup set with the current named renderings under `design/mockups/high-fidelity/rendered/`.

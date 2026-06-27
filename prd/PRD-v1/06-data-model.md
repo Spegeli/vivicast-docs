@@ -33,7 +33,7 @@ Geschuetzter Secret Store
 
 ## Room
 
-Room ist verantwortlich fuer strukturierte lokale App-Daten und grosse Datenmengen.
+Room ist verantwortlich für strukturierte lokale App-Daten und grosse Datenmengen.
 
 Room speichert:
 
@@ -56,9 +56,13 @@ Room speichert:
 
 Room speichert keine geheimen Zugangswerte.
 
+Listen-DAOs fuer Sender, Filme und Serien müssen paging- oder limit/offset-faehige Abfragen bereitstellen. Vollständige Provider-Bibliotheken dürfen nicht als UI-State materialisiert werden.
+
+EPG-DAO-Abfragen fuer Tagesansichten müssen sender-, quellen-, zeitfenster- und mappingbezogen eingegrenzt werden. Vollstaendige EPG-Quellen dürfen nicht fuer eine einzelne UI-Ansicht materialisiert werden.
+
 ## DataStore
 
-DataStore ist verantwortlich fuer kleine App-Einstellungen.
+DataStore ist verantwortlich für kleine App-Einstellungen.
 
 DataStore speichert:
 
@@ -68,17 +72,17 @@ DataStore speichert:
 - Diagnose-Einstellungen
 - Backup-Einstellungen
 - lokale Kindersicherung-Schutzflags ohne PIN-Klartext
-- einfache UI-Praeferenzen
+- einfache UI-Präferenzen
 
 DataStore speichert keine grossen Listen, keine IPTV-Bibliotheken und keine geheimen Zugangswerte.
 
 ## Android Keystore
 
-Android Keystore ist verantwortlich fuer nicht exportierbare kryptografische Schluessel.
+Android Keystore ist verantwortlich für nicht exportierbare kryptografische Schluessel.
 
 ## Geschuetzter Secret Store
 
-Der geschuetzte Secret Store ist verantwortlich fuer geheime oder private Werte. Er liegt im privaten App-Speicher und wird mit einem Android-Keystore-gebundenen Schluessel verschluesselt.
+Der geschuetzte Secret Store ist verantwortlich für geheime oder private Werte. Er liegt im privaten App-Speicher und wird mit einem Android-Keystore-gebundenen Schluessel verschlüsselt.
 
 Dazu gehoeren:
 
@@ -94,9 +98,9 @@ Dazu gehoeren:
 
 Neue geschuetzte Speicherung wird nicht auf `EncryptedSharedPreferences` oder Jetpack `security-crypto` aufgebaut.
 
-Normale nicht-geheime Server- oder Quellenadressen duerfen als Konfiguration gespeichert werden, wenn sie fuer die Funktion notwendig sind.
+Normale nicht-geheime Server- oder Quellenadressen dürfen als Konfiguration gespeichert werden, wenn sie für die Funktion notwendig sind.
 
-Private Quellenadressen mit eingebetteten Zugangswerten muessen wie geheime Werte behandelt werden.
+Private Quellenadressen mit eingebetteten Zugangswerten müssen wie geheime Werte behandelt werden.
 
 ---
 
@@ -117,9 +121,9 @@ Sicherheitswirksam lokal
 
 `Geheim` sind Xtream-Benutzername und Zugangswert, SMB-Zugangsdaten, Cloud-Token, private M3U-/EPG-/Stream-URLs mit Tokens oder eingebetteten Zugangswerten, HTTP-Header, Cookies, Backup-Passphrase und PIN-Pruefwerte.
 
-`Sicherheitswirksam lokal` sind PIN-Pruefwerte, PIN-Fehlversuchs- und Sperrstatus, aktive PIN-Freigaben und Kindersicherung-Schutzflags. Diese Werte sind kein Restore-Ziel und werden nie aus Backups uebernommen.
+`Sicherheitswirksam lokal` sind PIN-Pruefwerte, PIN-Fehlversuchs- und Sperrstatus, aktive PIN-Freigaben und Kindersicherung-Schutzflags. Diese Werte sind kein Restore-Ziel und werden nie aus Backups übernommen.
 
-Wenn Keystore-Schluessel oder Secret Store verloren, beschaedigt oder nicht entschluesselbar sind, bleiben Provider und EPG-Quellen als normale Konfiguration erhalten. Quellen mit benoetigten Geheimnissen werden als `Zugangsdaten erforderlich` markiert. PIN und Kindersicherung werden deaktiviert und muessen bei Bedarf neu eingerichtet werden.
+Wenn Keystore-Schluessel oder Secret Store verloren, beschädigt oder nicht entschluesselbar sind, bleiben Provider und EPG-Quellen als normale Konfiguration erhalten. Quellen mit benoetigten Geheimnissen werden als `Zugangsdaten erforderlich` markiert. PIN und Kindersicherung werden deaktiviert und müssen bei Bedarf neu eingerichtet werden.
 
 ---
 
@@ -159,7 +163,7 @@ M3U
 XTREAM_CODES
 ```
 
-Der Typ kann nach dem Speichern nicht geaendert werden.
+Der Typ kann nach dem Speichern nicht geändert werden.
 
 ## Sicherheit
 
@@ -169,9 +173,9 @@ Nicht in Room speichern:
 - Xtream-Codes-Zugangswert
 - private M3U-URLs mit eingebetteten Zugangswerten
 
-Diese Werte werden ueber `sourceConfigKey` referenziert und verschluesselt gespeichert.
+Diese Werte werden über `sourceConfigKey` referenziert und verschlüsselt gespeichert.
 
-Normale nicht-geheime Serveradresse oder Quellenadresse darf als Konfigurationswert gespeichert werden, wenn sie keinen eingebetteten Zugangswert enthaelt.
+Normale nicht-geheime Serveradresse oder Quellenadresse darf als Konfigurationswert gespeichert werden, wenn sie keinen eingebetteten Zugangswert enthält.
 
 ---
 
@@ -187,9 +191,9 @@ remoteId
 
 `id` ist die lokale Room-ID. Sie ist nur innerhalb der aktuellen lokalen Datenbank stabil und darf nicht als Backup-, Restore- oder Provider-Identitaet verwendet werden.
 
-`stableKey` ist die fachlich stabile App-ID pro Provider und Entity. Sie wird fuer Refresh, Restore, Backup-Referenzen, Favoriten, Verlauf und Wiedergabefortschritt verwendet.
+`stableKey` ist die fachlich stabile App-ID pro Provider und Entity. Sie wird für Refresh, Restore, Backup-Referenzen, Favoriten, Verlauf und Wiedergabefortschritt verwendet.
 
-`remoteId` ist eine vom Provider gelieferte ID, sofern vorhanden. Sie darf fuer `stableKey` verwendet werden, ist aber nicht alleiniger App-Schluessel.
+`remoteId` ist eine vom Provider gelieferte ID, sofern vorhanden. Sie darf für `stableKey` verwendet werden, ist aber nicht alleiniger App-Schluessel.
 
 Provider erhalten einen unveraenderlichen `providerStableKey`. In `ProviderEntity` wird dieser Wert im Feld `stableKey` gespeichert. Dieser Schluessel wird im Backup exportiert und beim Restore erhalten. Provider werden auch mit gleichem Namen oder gleicher Quelle nicht automatisch zusammengefuehrt.
 
@@ -216,29 +220,29 @@ M3U besitzt keine verlaessliche Pflicht-ID. Vivicast erzeugt deterministische, n
 - Kanalnummer, sofern vorhanden
 - geheimnisfrei gehashte Stream-Identitaet
 
-Zugangswerte, Tokens, private URLs und andere geheime Klartextdaten duerfen nicht Bestandteil eines sichtbaren oder exportierten Stable Keys sein.
+Zugangswerte, Tokens, private URLs und andere geheime Klartextdaten dürfen nicht Bestandteil eines sichtbaren oder exportierten Stable Keys sein.
 
 ## Pending-Referenzen nach Restore
 
-Standard-Backups enthalten keine vollstaendige IPTV-Bibliothek. Favoriten, Live-TV-Verlauf und Wiedergabefortschritt duerfen nach Restore zunaechst als pending Referenzen vorliegen.
+Standard-Backups enthalten keine vollstaendige IPTV-Bibliothek. Favoriten, Live-TV-Verlauf und Wiedergabefortschritt dürfen nach Restore zunaechst als pending Referenzen vorliegen.
 
-Pending Referenzen werden nach einem erfolgreichen Provider-Refresh ueber `providerStableKey + mediaType + mediaStableKey` mit lokalen Entities verbunden.
+Pending Referenzen werden nach einem erfolgreichen Provider-Refresh über `providerStableKey + mediaType + mediaStableKey` mit lokalen Entities verbunden.
 
-Wenn ein Provider wegen fehlender Zugangsdaten, Netzwerkfehlern, ungueltiger Quelle, Abbruch oder nicht autoritativem Teilbereich nicht aktualisiert werden kann, bleiben pending Referenzen erhalten.
+Wenn ein Provider wegen fehlender Zugangsdaten, Netzwerkfehlern, ungültiger Quelle, Abbruch oder nicht autoritativem Teilbereich nicht aktualisiert werden kann, bleiben pending Referenzen erhalten.
 
-Wenn ein erfolgreicher autoritativer Refresh den referenzierten Inhalt nicht mehr enthaelt, werden die zugehoerigen Favoriten, Verlaeufe oder Fortschrittsdaten gemaess Entfernte-Inhalte-Regel geloescht.
+Wenn ein erfolgreicher autoritativer Refresh den referenzierten Inhalt nicht mehr enthält, werden die zugehoerigen Favoriten, Verlaeufe oder Fortschrittsdaten gemaess Entfernte-Inhalte-Regel geloescht.
 
 ## Import-/Refresh-Staging
 
 Import- und Refresh-Staging-Daten sind technische Zwischendaten vor dem produktiven Commit.
 
-Sie duerfen als temporaere Dateien, In-Memory-Strukturen oder dedizierte Staging-Tabellen umgesetzt werden.
+Sie dürfen als temporaere Dateien, In-Memory-Strukturen oder dedizierte Staging-Tabellen umgesetzt werden.
 
-Staging-Daten duerfen nicht als produktive App-Daten angezeigt, gesichert oder fuer Nutzerreferenzen verwendet werden.
+Staging-Daten dürfen nicht als produktive App-Daten angezeigt, gesichert oder für Nutzerreferenzen verwendet werden.
 
-Staging verwendet fachlich stabile Schluessel fuer Diff und Zuordnung. Lokale Room-IDs duerfen erst beim produktiven Commit erstellt oder aktualisiert werden.
+Staging verwendet fachlich stabile Schluessel für Diff und Zuordnung. Lokale Room-IDs dürfen erst beim produktiven Commit erstellt oder aktualisiert werden.
 
-Verwaiste Staging-Daten muessen ueber einen Laufkontext wie `refreshRunId` oder eine gleichwertige technische Zuordnung bereinigt werden koennen.
+Verwaiste Staging-Daten müssen über einen Laufkontext wie `refreshRunId` oder eine gleichwertige technische Zuordnung bereinigt werden können.
 
 ---
 
@@ -271,7 +275,7 @@ SERIES
 
 ## Ausblenden und Sortieren
 
-Benutzer koennen Kategorien ausblenden und sortieren.
+Benutzer können Kategorien ausblenden und sortieren.
 
 Diese Werte sind providergebunden.
 
@@ -401,7 +405,7 @@ createdAt
 updatedAt
 ```
 
-Auch bei unvollstaendigen Providerdaten werden Staffeln erzeugt, wenn Episoden sinnvoll gruppiert werden koennen.
+Auch bei unvollstaendigen Providerdaten werden Staffeln erzeugt, wenn Episoden sinnvoll gruppiert werden können.
 
 ---
 
@@ -464,11 +468,11 @@ updatedAt
 
 ## Sicherheit
 
-`sourceUrl` darf nur verwendet werden, wenn die URL keine eingebetteten Zugangswerte enthaelt.
+`sourceUrl` darf nur verwendet werden, wenn die URL keine eingebetteten Zugangswerte enthält.
 
-Private EPG-URLs mit eingebetteten Zugangswerten werden ueber `sourceConfigKey` verschluesselt referenziert.
+Private EPG-URLs mit eingebetteten Zugangswerten werden über `sourceConfigKey` verschlüsselt referenziert.
 
-`stableKey` identifiziert die EPG-Quelle fuer Backup, Restore und Provider-Zuordnungen. Er darf keine geheimen URL-Bestandteile, Tokens oder Zugangswerte enthalten.
+`stableKey` identifiziert die EPG-Quelle für Backup, Restore und Provider-Zuordnungen. Er darf keine geheimen URL-Bestandteile, Tokens oder Zugangswerte enthalten.
 
 ---
 
@@ -509,11 +513,11 @@ priority
 createdAt
 ```
 
-## Prioritaeten
+## Prioritäten
 
 Ein Provider kann mehrere EPG-Quellen haben.
 
-Niedrigere Prioritaetszahl gewinnt bei konkurrierenden EPG-Daten.
+Niedrigere Prioritätszahl gewinnt bei konkurrierenden EPG-Daten.
 
 ---
 
@@ -550,7 +554,7 @@ EPG-Programme sind Cache-artige Daten und werden im Standard-Backup nicht export
 
 `normalizedTitle` dient Deduplizierung, Suche und stabiler Query-Performance.
 
-Provider-Sender erhalten EPG-Programme ausschliesslich ueber `EPGChannelMappingEntity` und Provider-EPG-Prioritaeten.
+Provider-Sender erhalten EPG-Programme ausschliesslich über `EPGChannelMappingEntity` und Provider-EPG-Prioritäten.
 
 Alle Programmzeiten werden intern als UTC-Zeitpunkte gespeichert.
 
@@ -584,13 +588,13 @@ Automatisch
 Manuell
 ```
 
-Manuelle Zuordnungen muessen backupfaehig sein.
+Manuelle Zuordnungen müssen backupfähig sein.
 
-Standard-Backups referenzieren manuelle EPG-Zuordnungen ueber `providerStableKey + channelStableKey + epgSourceStableKey + epgChannelStableKey` und nicht ueber lokale Room-IDs.
+Standard-Backups referenzieren manuelle EPG-Zuordnungen über `providerStableKey + channelStableKey + epgSourceStableKey + epgChannelStableKey` und nicht über lokale Room-IDs.
 
 Manuelle Zuordnungen gewinnen immer vor automatischen Zuordnungen.
 
-Automatische Zuordnungen duerfen manuelle Zuordnungen nicht ueberschreiben.
+Automatische Zuordnungen dürfen manuelle Zuordnungen nicht überschreiben.
 
 ---
 
@@ -620,13 +624,13 @@ SERIES
 
 ## Regeln
 
-Favoriten sind anbieteruebergreifend sichtbar, bleiben aber intern providergebunden.
+Favoriten sind anbieterübergreifend sichtbar, bleiben aber intern providergebunden.
 
-Manuelle Sortierung ist mindestens fuer Live-TV-Favoriten erforderlich.
+Manuelle Sortierung ist mindestens für Live-TV-Favoriten erforderlich.
 
 Favoriten sind Teil des Standard-Backups.
 
-Standard-Backups referenzieren Favoriten ueber `providerStableKey + mediaType + mediaStableKey`. `mediaId` darf nach Restore fehlen, bis der naechste erfolgreiche Provider-Refresh die Referenz wieder mit einer lokalen Entity verbindet.
+Standard-Backups referenzieren Favoriten über `providerStableKey + mediaType + mediaStableKey`. `mediaId` darf nach Restore fehlen, bis der nächste erfolgreiche Provider-Refresh die Referenz wieder mit einer lokalen Entity verbindet.
 
 ---
 
@@ -659,13 +663,13 @@ EPISODE
 
 Komplette Staffeln und Serien besitzen in v1 keinen eigenen `PlaybackProgressEntity`- oder Abschlussdatensatz.
 
-## Verwendet fuer
+## Verwendet für
 
 - Fortsetzen
 - Gesehen
 - Watch Next
 - Continue Watching
-- Home-Verlauf fuer VOD
+- Home-Verlauf für VOD
 
 ## Abschlussregeln
 
@@ -677,15 +681,15 @@ PLAYBACK_COMPLETION_THRESHOLD_PERCENT = 95
 
 Sie ist kein DataStore-Wert und keine sichtbare Einstellung.
 
-Bei bekannter positiver `durationMillis` wird `progressPercent` konsistent aus Position und Dauer abgeleitet und auf den gueltigen Bereich begrenzt. Sobald `progressPercent >= 95` gilt, wird `isCompleted = true` gesetzt.
+Bei bekannter positiver `durationMillis` wird `progressPercent` konsistent aus Position und Dauer abgeleitet und auf den gültigen Bereich begrenzt. Sobald `progressPercent >= 95` gilt, wird `isCompleted = true` gesetzt.
 
-Ein tatsaechliches Medienende setzt `isCompleted = true`, auch wenn die Dauer fehlt, ungueltig ist oder der berechnete Prozentwert unter 95 liegt.
+Ein tatsaechliches Medienende setzt `isCompleted = true`, auch wenn die Dauer fehlt, ungültig ist oder der berechnete Prozentwert unter 95 liegt.
 
-`isCompleted = true` schliesst den Datensatz als direktes Resume-Ziel aus. Bei Serien darf ein abgeschlossener Episodendatensatz weiterhin als Ausgangspunkt dienen, um die naechste verfuegbare Episode bei Position 0 zu bestimmen. Das Erreichen der Schwelle beendet die Wiedergabe nicht und erzeugt kein Auto-Next-Ereignis; Auto-Next verwendet weiterhin das tatsaechliche Medienende.
+`isCompleted = true` schliesst den Datensatz als direktes Resume-Ziel aus. Bei Serien darf ein abgeschlossener Episodendatensatz weiterhin als Ausgangspunkt dienen, um die nächste verfuegbare Episode bei Position 0 zu bestimmen. Das Erreichen der Schwelle beendet die Wiedergabe nicht und erzeugt kein Auto-Next-Ereignis; Auto-Next verwendet weiterhin das tatsaechliche Medienende.
 
 Automatische Fortschritts- und Abschlussaktualisierungen werden nur aus dem internen Vivicast-Player geschrieben.
 
-Eine Wiedergabe ueber externe Player erzeugt keinen neuen `PlaybackProgressEntity`-Datensatz, aktualisiert keinen vorhandenen Datensatz, setzt `isCompleted` nicht und loest kein Auto-Next-Ereignis aus. Rueckgabewerte externer Player werden in v1 nicht als verlaessliche Position, Dauer, Fortschritt oder Medienende-Erkennung uebernommen.
+Eine Wiedergabe über externe Player erzeugt keinen neuen `PlaybackProgressEntity`-Datensatz, aktualisiert keinen vorhandenen Datensatz, setzt `isCompleted` nicht und loest kein Auto-Next-Ereignis aus. Rueckgabewerte externer Player werden in v1 nicht als verlaessliche Position, Dauer, Fortschritt oder Medienende-Erkennung übernommen.
 
 Live-TV und Catch-Up erzeugen keinen `PlaybackProgressEntity`-Datensatz. Live-TV verwendet `ChannelHistoryEntity`; Catch-Up bleibt an den EPG-Programmpunkt und den PlaybackRequest gebunden und ist kein Resume-Ziel.
 
@@ -693,9 +697,9 @@ Automatische Anlage:
 
 - Ein neuer automatischer Fortschrittsdatensatz entsteht erst ab mindestens 10 Sekunden Position oder mindestens 1 Prozent Fortschritt bei bekannter positiver Dauer.
 - Nach der Anlage schreibt der interne Player mindestens alle 10 Sekunden sowie bei Pause, abgeschlossenem Seek, Player-Verlassen, App-Hintergrund und tatsaechlichem Medienende.
-- Position und Dauer werden auf nicht negative Werte begrenzt; `positionMillis` darf nicht groesser als eine bekannte positive `durationMillis` gespeichert werden.
+- Position und Dauer werden auf nicht negative Werte begrenzt; `positionMillis` darf nicht größer als eine bekannte positive `durationMillis` gespeichert werden.
 - `progressPercent` wird aus Position und Dauer abgeleitet, sobald eine bekannte positive Dauer vorhanden ist.
-- Fortschrittsspeicherung darf keine neue Entitaet fuer komplette Staffeln, Serien, Live-TV, Catch-Up oder externe Player einfuehren.
+- Fortschrittsspeicherung darf keine neue Entitaet für komplette Staffeln, Serien, Live-TV, Catch-Up oder externe Player einfuehren.
 
 Manuelle Aktionen:
 
@@ -704,7 +708,7 @@ Manuelle Aktionen:
 
 Wiedergabefortschritt ist Teil des Standard-Backups. Ein durch `Als ungesehen markieren` geloeschter Datensatz ist folglich nicht mehr Bestandteil nachfolgender Backups.
 
-Standard-Backups referenzieren Wiedergabefortschritt ueber `providerStableKey + mediaType + mediaStableKey`. `mediaId` darf nach Restore fehlen, bis der naechste erfolgreiche Provider-Refresh die Referenz wieder mit einer lokalen Movie- oder Episode-Entity verbindet.
+Standard-Backups referenzieren Wiedergabefortschritt über `providerStableKey + mediaType + mediaStableKey`. `mediaId` darf nach Restore fehlen, bis der nächste erfolgreiche Provider-Refresh die Referenz wieder mit einer lokalen Movie- oder Episode-Entity verbindet.
 
 ---
 
@@ -731,7 +735,7 @@ Der Verlauf dient zuletzt gesehenen Live-TV-Inhalten.
 
 ChannelHistory ist Teil des Standard-Backups.
 
-Standard-Backups referenzieren Live-TV-Verlauf ueber `providerStableKey + CHANNEL + channelStableKey`. `channelId` darf nach Restore fehlen, bis der naechste erfolgreiche Provider-Refresh die Referenz wieder mit einer lokalen Sender-Entity verbindet.
+Standard-Backups referenzieren Live-TV-Verlauf über `providerStableKey + CHANNEL + channelStableKey`. `channelId` darf nach Restore fehlen, bis der nächste erfolgreiche Provider-Refresh die Referenz wieder mit einer lokalen Sender-Entity verbindet.
 
 ---
 
@@ -754,7 +758,7 @@ Der Suchverlauf speichert maximal 20 Eintraege.
 
 `normalizedQuery` verwendet dieselbe Suchnormalisierung wie FTS-Query und Indextexte.
 
-Einzelne Eintraege und der gesamte Suchverlauf koennen geloescht werden.
+Einzelne Eintraege und der gesamte Suchverlauf können geloescht werden.
 
 Suchverlauf ist Teil des Standard-Backups, sofern der Nutzer ihn nicht geloescht hat.
 
@@ -762,7 +766,7 @@ Suchverlauf ist Teil des Standard-Backups, sofern der Nutzer ihn nicht geloescht
 
 # 6.18 Such-FTS-Indexe
 
-Vivicast verwendet fuer die interne Suche abgeleitete Room-FTS4-Indexe.
+Vivicast verwendet für die interne Suche abgeleitete Room-FTS4-Indexe.
 
 FTS-Indexe sind technische Ableitungen aus produktiven Daten. Sie sind nicht Teil des Standard-Backups und werden nach Restore, Migration oder Rebuild aus produktiven Daten neu aufgebaut.
 
@@ -777,7 +781,7 @@ EPGProgramSearchFts
 
 ## Gemeinsame Felder
 
-Jeder FTS-Index enthaelt mindestens:
+Jeder FTS-Index enthält mindestens:
 
 ```text
 sourceEntityId
@@ -793,14 +797,14 @@ updatedAt
 
 `sourceEntityId` verweist auf die produktive Entity, aus der der Indexeintrag abgeleitet wurde.
 
-`stableReference` enthaelt den stabilen fachlichen Schluessel fuer Trefferauflösung:
+`stableReference` enthält den stabilen fachlichen Schluessel für Trefferauflösung:
 
 - Kanäle: `providerStableKey + CHANNEL + channelStableKey`
 - Filme: `providerStableKey + MOVIE + movieStableKey`
 - Serien: `providerStableKey + SERIES + seriesStableKey`
 - EPG: `epgSourceStableKey + epgChannelStableKey + epgProgramStableKey`
 
-Lokale Room-IDs duerfen fuer schnelle Joins verwendet werden, aber nicht als backupstabile Suchidentitaet.
+Lokale Room-IDs dürfen für schnelle Joins verwendet werden, aber nicht als backupstabile Suchidentitaet.
 
 ## Indexinhalt
 
@@ -825,7 +829,7 @@ Die FTS-Indexbefuellung verwendet dieselbe Normalisierung wie die Such-Query:
 - Umlaute und Diakritika tolerant abbilden
 - `ae`, `oe`, `ue` und `ss` als Varianten beruecksichtigen
 
-Originaltitel und Originalmetadaten bleiben in den produktiven Entities unveraendert.
+Originaltitel und Originalmetadaten bleiben in den produktiven Entities unverändert.
 
 ## Pflege
 
@@ -833,9 +837,9 @@ Provider-FTS-Indexe werden im selben atomaren Provider-Commit aktualisiert wie C
 
 EPG-FTS-Indexe werden im selben atomaren EPG-Quellen-Commit aktualisiert wie EPG-Programme.
 
-FTS-Indexe duerfen nicht aus Import- oder Refresh-Staging gelesen werden.
+FTS-Indexe dürfen nicht aus Import- oder Refresh-Staging gelesen werden.
 
-Delete, Restore, Migration und EPG-Cleanup muessen die betroffenen FTS-Indexe aktualisieren oder einen Rebuild ausloesen.
+Delete, Restore, Migration und EPG-Cleanup müssen die betroffenen FTS-Indexe aktualisieren oder einen Rebuild auslösen.
 
 ---
 
@@ -843,7 +847,7 @@ Delete, Restore, Migration und EPG-Cleanup muessen die betroffenen FTS-Indexe ak
 
 Android-TV-Systemsuche, Deep Links und Watch Next verwenden stabile fachliche Zielreferenzen.
 
-Lokale Room-IDs duerfen fuer interne Joins verwendet werden, aber nicht als extern sichtbare System-ID, Deep-Link-ID oder Watch-Next-Identitaet.
+Lokale Room-IDs dürfen für interne Joins verwendet werden, aber nicht als extern sichtbare System-ID, Deep-Link-ID oder Watch-Next-Identitaet.
 
 ## Deep-Link-Referenzen
 
@@ -858,7 +862,7 @@ providerStableKey + EPISODE + episodeStableKey
 
 Deep Links enthalten keine Stream-URLs, Tokens, Zugangswerte, HTTP-Header, Cookies oder lokalen Room-IDs.
 
-Die Deep-Link-Aufloesung sucht zuerst die stabile Referenz in produktiven Daten. Pending Restore-Referenzen, fehlende Inhalte, deaktivierte Provider oder Quellen mit `Zugangsdaten erforderlich` duerfen nicht direkt abgespielt werden.
+Die Deep-Link-Aufloesung sucht zuerst die stabile Referenz in produktiven Daten. Pending Restore-Referenzen, fehlende Inhalte, deaktivierte Provider oder Quellen mit `Zugangsdaten erforderlich` dürfen nicht direkt abgespielt werden.
 
 ## AndroidTvSearchIndex
 
@@ -903,7 +907,7 @@ updatedAt
 
 ## WatchNextPublication
 
-Watch-Next-Publikationen sind technische Systemzuordnungen fuer bereits an Android TV veroeffentlichte Eintraege.
+Watch-Next-Publikationen sind technische Systemzuordnungen für bereits an Android TV veroeffentlichte Eintraege.
 
 Sie sind kein Backup-Bestandteil.
 
@@ -941,10 +945,10 @@ Android-TV-Systemintegrationsdaten werden aktualisiert oder bereinigt bei:
 - Provider-Loeschung
 - Restore
 - Migration
-- Aenderung von Kindersicherung-Schutzregeln
-- Aenderung von Wiedergabefortschritt oder Abschlussstatus
+- Änderung von Kindersicherung-Schutzregeln
+- Änderung von Wiedergabefortschritt oder Abschlussstatus
 
-Systemintegrationsdaten duerfen nicht aus Import- oder Refresh-Staging erzeugt werden.
+Systemintegrationsdaten dürfen nicht aus Import- oder Refresh-Staging erzeugt werden.
 
 Wenn ein erfolgreicher autoritativer Refresh Inhalte entfernt, werden zugehoerige Systemsucheintraege und Watch-Next-Publikationen entfernt.
 
@@ -964,14 +968,14 @@ Dauerhaft gespeicherte sichtbare App-Einstellungen verwenden genau die folgenden
 | `appLanguage` | Enum | `SYSTEM` | `SYSTEM`, `DE`, `EN` |
 | `backgroundRefreshEnabled` | Boolean | `true` | `false`, `true` |
 | `rememberSortOrderEnabled` | Boolean | `true` | `false`, `true` |
-| `globalUserAgent` | String nullable | `null` | `null` oder gueltiger User-Agent-String |
+| `globalUserAgent` | String nullable | `null` | `null` oder gültiger User-Agent-String |
 | `epgRefreshIntervalHours` | Integer | `24` | positive Stundenwerte gemaess UI |
 | `epgPastRetentionDays` | Integer | `1` | `1` bis `14` |
 | `epgFutureRetentionDays` | Integer | `7` | `1` bis `14` |
 | `epgRefreshOnAppStartEnabled` | Boolean | `true` | `false`, `true` |
 | `epgRefreshOnPlaylistChangeEnabled` | Boolean | `true` | `false`, `true` |
 | `themeMode` | Enum | `STANDARD_DARK` | `STANDARD_DARK`, `HIGH_CONTRAST_DARK`, `AMOLED_DARK` |
-| `accentColor` | Enum/String | `VIVICAST_BLUE` | vordefinierte zulaessige Akzente |
+| `accentColor` | Enum/String | `VIVICAST_BLUE` | vordefinierte zulässige Akzente |
 | `panelTransparencyPercent` | Integer | `25` | `0`, `25`, `50` |
 | `fontScale` | Enum | `MEDIUM` | `SMALL`, `MEDIUM`, `LARGE`, `EXTRA_LARGE` |
 | `animationSpeed` | Enum | `NORMAL` | `OFF`, `FAST`, `NORMAL`, `SLOW` |
@@ -997,37 +1001,37 @@ Dauerhaft gespeicherte sichtbare App-Einstellungen verwenden genau die folgenden
 
 Nicht in DataStore gespeichert:
 
-- Der Exportdialog enthaelt das Feld `Backup-Typ` mit Dialog-Default `STANDARD`; es ist kein Settings-Eintrag und wird nicht dauerhaft gespeichert.
+- Der Exportdialog enthält das Feld `Backup-Typ` mit Dialog-Default `STANDARD`; es ist kein Settings-Eintrag und wird nicht dauerhaft gespeichert.
 - EPG-Aktualisierungshistorie liegt in appinternen Refresh-Metadaten `EpgRefreshRunMetadata`.
 - Diagnose-Sitzungen und Segmente liegen als private Dateien und Metadaten im App-Speicher.
-- Geschuetzte Zielauthentifizierung fuer SMB oder Google Drive liegt im geschuetzten Secret Store.
-- Android-SAF-Berechtigungen fuer `localLogoFolderUri` werden ueber die persistierbare URI-Berechtigung des Systems gehalten.
+- Geschuetzte Zielauthentifizierung für SMB oder Google Drive liegt im geschuetzten Secret Store.
+- Android-SAF-Berechtigungen für `localLogoFolderUri` werden über die persistierbare URI-Berechtigung des Systems gehalten.
 
 ## Allgemein
 
 ```text
 App beim TV-Start starten
 Startbereich
-Zurueck Verhalten
+Zurück Verhalten
 Sprache
 Hintergrundaktualisierung
 Sortierung merken
 User-Agent
 ```
 
-DataStore-Schluessel und Default fuer den Startbereich:
+DataStore-Schluessel und Default für den Startbereich:
 
 ```text
 startDestination = HOME
 ```
 
-Zulaessige Werte:
+Zulässige Werte:
 
 ```text
 startDestination = HOME | LIVE_TV | MOVIES | SERIES
 ```
 
-Ein fehlender, unbekannter oder nach einer Migration ungueltiger Wert faellt auf `HOME` zurueck. Der Wert ist global, Teil der App-Einstellungen im Standard-Backup und wird nur bei einem regulaeren App-Start ohne explizites Ziel ausgewertet. Explizite Navigation und das Fortsetzen einer bestehenden Sitzung veraendern den gespeicherten Wert nicht.
+Ein fehlender, unbekannter oder nach einer Migration ungültiger Wert faellt auf `HOME` zurück. Der Wert ist global, Teil der App-Einstellungen im Standard-Backup und wird nur bei einem regulaeren App-Start ohne explizites Ziel ausgewertet. Explizite Navigation und das Fortsetzen einer bestehenden Sitzung verändern den gespeicherten Wert nicht.
 
 ## EPG
 
@@ -1039,20 +1043,20 @@ epgPastRetentionDays = 1
 epgFutureRetentionDays = 7
 ```
 
-Der Wert wird in Stunden gespeichert und gilt global fuer den automatischen intervallgesteuerten EPG-Refresh.
+Der Wert wird in Stunden gespeichert und gilt global für den automatischen intervallgesteuerten EPG-Refresh.
 
-App-Start-Aktualisierung, Aktualisierung bei Playlist-Aenderung und manuelle Aktualisierung sind separate Ausloeser und veraendern diesen gespeicherten Wert nicht.
+App-Start-Aktualisierung, Aktualisierung bei Playlist-Änderung und manuelle Aktualisierung sind separate Ausloeser und verändern diesen gespeicherten Wert nicht.
 
 Die EPG-Aufbewahrung wird in Tagen gespeichert und global angewendet.
 
-Zulaessige Werte:
+Zulässige Werte:
 
 ```text
 epgPastRetentionDays = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
 epgFutureRetentionDays = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
 ```
 
-Ein fehlender, unbekannter oder ungueltiger Wert faellt auf den jeweiligen Default zurueck.
+Ein fehlender, unbekannter oder ungültiger Wert faellt auf den jeweiligen Default zurück.
 
 ## Optik
 
@@ -1060,7 +1064,7 @@ Ein fehlender, unbekannter oder ungueltiger Wert faellt auf den jeweiligen Defau
 Hintergrundthema
 Akzentfarbe
 Transparenz
-Schriftgroesse
+Schriftgröße
 Animationen
 Globale Logo-Standardreihenfolge
 Logos-Ordner
@@ -1070,7 +1074,7 @@ EPG-Darstellung
 ## Wiedergabe
 
 ```text
-Puffergroesse
+Puffergröße
 Audio-Decoder
 Video-Decoder
 AFR
@@ -1079,8 +1083,8 @@ Timeshift maximale Dauer
 Timeshift Speicher
 Audio-Sprache
 Untertitel-Sprache
-Automatisch naechste Folge
-Countdown naechste Folge
+Automatisch nächste Folge
+Countdown nächste Folge
 Audio-Passthrough
 Externer Player
 ```
@@ -1093,14 +1097,14 @@ timeshiftMaxDurationMinutes = 30
 timeshiftStorage = AUTOMATIC
 ```
 
-Zulaessige Werte:
+Zulässige Werte:
 
 ```text
 timeshiftMaxDurationMinutes = 15 | 30 | 60 | 120
 timeshiftStorage = AUTOMATIC | RAM | DISK
 ```
 
-`DISK` entspricht dem sichtbaren Wert `Festplatte` und bezeichnet appverwalteten persistenten Geraetespeicher.
+`DISK` entspricht dem sichtbaren Wert `Festplatte` und bezeichnet appverwalteten persistenten Gerätespeicher.
 
 Player-Track- und External-Player-Schluessel:
 
@@ -1110,7 +1114,7 @@ preferredSubtitleLanguage = OFF
 externalPlayerMode = INTERNAL_ALWAYS
 ```
 
-Zulaessige Werte:
+Zulässige Werte:
 
 ```text
 preferredAudioLanguage = SYSTEM | DE | EN | ORIGINAL
@@ -1118,9 +1122,9 @@ preferredSubtitleLanguage = OFF | SYSTEM | DE | EN
 externalPlayerMode = INTERNAL_ALWAYS | EXTERNAL_ALWAYS | ASK_EVERY_TIME
 ```
 
-`externalPlayerMode` gilt in v1 nur fuer Filme und einzelne Serienepisoden. Live-TV und Catch-Up bleiben interne Vivicast-Player-Kontexte.
+`externalPlayerMode` gilt in v1 nur für Filme und einzelne Serienepisoden. Live-TV und Catch-Up bleiben interne Vivicast-Player-Kontexte.
 
-Manuelle Audio- oder Untertitelwahl im Player ist sitzungsbezogen und aendert diese globalen DataStore-Werte nicht.
+Manuelle Audio- oder Untertitelwahl im Player ist sitzungsbezogen und ändert diese globalen DataStore-Werte nicht.
 
 Auto-Next-Schluessel und Defaults:
 
@@ -1129,7 +1133,7 @@ autoNextEpisodeEnabled = false
 autoNextEpisodeCountdownSeconds = 10
 ```
 
-Zulaessige Werte:
+Zulässige Werte:
 
 ```text
 autoNextEpisodeEnabled = false | true
@@ -1138,7 +1142,7 @@ autoNextEpisodeCountdownSeconds = 5 | 10 | 15 | 30
 
 Der Countdown-Wert bleibt gespeichert, wenn Auto-Next deaktiviert ist. Beide Werte sind globale App-Einstellungen und Bestandteil des Standard-Backups.
 
-Auto-Next verwendet keine eigene Room-Entity. Die naechste Episode wird aus der sortierten Staffel-/Episodenfolge ermittelt; Wiedergabefortschritt und Abschlussstatus bleiben davon getrennte Daten. Insbesondere darf `progressPercent >= 95` kein Auto-Next-Ereignis ersetzen oder ausloesen.
+Auto-Next verwendet keine eigene Room-Entity. Die nächste Episode wird aus der sortierten Staffel-/Episodenfolge ermittelt; Wiedergabefortschritt und Abschlussstatus bleiben davon getrennte Daten. Insbesondere darf `progressPercent >= 95` kein Auto-Next-Ereignis ersetzen oder auslösen.
 
 ## Diagnose
 
@@ -1149,7 +1153,7 @@ diagnosticsLoggingEnabled = false
 diagnosticsRetentionDays = 1
 ```
 
-Zulaessige Werte:
+Zulässige Werte:
 
 ```text
 diagnosticsLoggingEnabled = false | true
@@ -1160,9 +1164,9 @@ Die Aufbewahrungsdauer bleibt gespeichert, wenn die Protokollierung ausgeschalte
 
 Bestehende Sitzungen liegen als appinterne Segmentdateien und Metadaten im privaten App-Speicher. Sie gehoeren nicht in Room, DataStore oder das Standard-Backup.
 
-Pro Diagnosesitzung muessen mindestens `sessionId`, `startedAt`, `endedAt`, `lastRecordedAt`, `endReason` und `endTimeAccuracy` dauerhaft rekonstruierbar sein.
+Pro Diagnosesitzung müssen mindestens `sessionId`, `startedAt`, `endedAt`, `lastRecordedAt`, `endReason` und `endTimeAccuracy` dauerhaft rekonstruierbar sein.
 
-Groessen- und Segmentgrenzen sind feste Implementierungskonstanten und werden nicht in DataStore gespeichert:
+Größen- und Segmentgrenzen sind feste Implementierungskonstanten und werden nicht in DataStore gespeichert:
 
 ```text
 diagnosticsMaxTotalBytes = 20_971_520          // 20 MiB
@@ -1171,7 +1175,7 @@ diagnosticsMaxSegmentsPerSession = 3
 diagnosticsMaxSessionLogBytes = 6_291_456      // 6 MiB
 ```
 
-Eine logische Diagnosesitzung darf aus mehreren physischen Segmenten bestehen. Pro Segment muessen mindestens `segmentIndex`, `firstRecordedAt`, `lastRecordedAt`, `byteSize`, `eventCount` und der Abschlussstatus rekonstruierbar sein.
+Eine logische Diagnosesitzung darf aus mehreren physischen Segmenten bestehen. Pro Segment müssen mindestens `segmentIndex`, `firstRecordedAt`, `lastRecordedAt`, `byteSize`, `eventCount` und der Abschlussstatus rekonstruierbar sein.
 
 Sitzungs- beziehungsweise globale Diagnosemetadaten fuehren bei Rotation oder Kuerzung mindestens:
 
@@ -1193,16 +1197,16 @@ Letzte Sicherung
 ## Kindersicherung
 
 ```text
-Schutz fuer Einstellungen
-Schutz fuer Filme
-Schutz fuer Serien
-Schutz fuer Inhalte ab 18
+Schutz für Einstellungen
+Schutz für Filme
+Schutz für Serien
+Schutz für Inhalte ab 18
 PIN-Fehlversuchszaehler
 PIN-Sperrstufe
 PIN-Sperre bis
 ```
 
-Diese Werte sind lokale Sicherheitszustaende und werden nach einem Restore nicht aus der Backup-Datei uebernommen.
+Diese Werte sind lokale Sicherheitszustaende und werden nach einem Restore nicht aus der Backup-Datei übernommen.
 
 PIN-Klartext wird nicht gespeichert.
 
@@ -1210,7 +1214,7 @@ PIN-Pruefwerte werden als langsame gesalzene Pruefwerte geschuetzt gespeichert.
 
 PIN-Fehlversuchszaehler, Sperrstufe und `lockedUntil` sind lokale Sicherheitszustaende. Eine laufende Sperre wird durch App-Neustart nicht aufgehoben.
 
-Aktive PIN-Freigaben fuer Schutzbereiche sind nur im Speicher. Sie werden nicht in Room, DataStore, Secret Store oder Backups geschrieben.
+Aktive PIN-Freigaben für Schutzbereiche sind nur im Speicher. Sie werden nicht in Room, DataStore, Secret Store oder Backups geschrieben.
 
 PIN-Pruefwerte, aktive PIN-Freigaben, PIN-Sperrstatus und Kindersicherung-Schutzflags aus Backup-Dateien werden beim Restore ignoriert. Nach einem Restore ist Kindersicherung deaktiviert und muss bei Bedarf neu eingerichtet werden.
 
@@ -1224,11 +1228,11 @@ Frei konfigurierbare Verlaufslimits sind nicht Teil von v1. Der Suchverlauf blei
 
 ## Cache
 
-Der Medien-Cache besitzt in v1 keine DataStore-Einstellung fuer Groesse, Rotation oder Aufbewahrung.
+Der Medien-Cache besitzt in v1 keine DataStore-Einstellung für Größe, Rotation oder Aufbewahrung.
 
-Eine sichtbare Cache-Informationszeile zeigt berechnete Werte aus dem Dateisystem, insbesondere die aktuelle Groesse des Medien-Caches.
+Eine sichtbare Cache-Informationszeile zeigt berechnete Werte aus dem Dateisystem, insbesondere die aktuelle Größe des Medien-Caches.
 
-Medien-Cache-Dateien fuer Senderlogos, Film-Poster, Serien-Poster, Staffelbilder und Episodenbilder liegen als appverwaltete Dateien im lokalen Speicher und gehoeren nicht in Room, DataStore oder das Standard-Backup.
+Medien-Cache-Dateien für Senderlogos, Film-Poster, Serien-Poster, Staffelbilder und Episodenbilder liegen als appverwaltete Dateien im lokalen Speicher und gehoeren nicht in Room, DataStore oder das Standard-Backup.
 
 ---
 
@@ -1251,19 +1255,19 @@ PIN-Pruefwerte
 
 Keystore-Schluessel bleiben nicht exportierbar.
 
-Geheime Nutzwerte liegen im geschuetzten Secret Store und werden mit einem Keystore-gebundenen Schluessel verschluesselt.
+Geheime Nutzwerte liegen im geschuetzten Secret Store und werden mit einem Keystore-gebundenen Schluessel verschlüsselt.
 
-Wenn Keystore-Schluessel oder Secret Store verloren, beschaedigt oder nicht entschluesselbar sind, gelten die enthaltenen Geheimnisse als verloren. Betroffene Quellen werden als `Zugangsdaten erforderlich` markiert.
+Wenn Keystore-Schluessel oder Secret Store verloren, beschädigt oder nicht entschluesselbar sind, gelten die enthaltenen Geheimnisse als verloren. Betroffene Quellen werden als `Zugangsdaten erforderlich` markiert.
 
 ## Backup
 
 Standard-Backups exportieren diese Werte nicht.
 
-Verschluesselte Vollbackups duerfen Quellen-, SMB- und Cloud-Zugangswerte enthalten, wenn der Nutzer aktiv eine Backup-Passphrase setzt.
+Verschlüsselte Vollbackups dürfen Quellen-, SMB- und Cloud-Zugangswerte enthalten, wenn der Nutzer aktiv eine Backup-Passphrase setzt.
 
-PIN-Pruefwerte, aktive PIN-Freigaben, PIN-Sperrstatus und Kindersicherung-Schutzflags werden auch aus verschluesselten Backups nicht wiederhergestellt.
+PIN-Pruefwerte, aktive PIN-Freigaben, PIN-Sperrstatus und Kindersicherung-Schutzflags werden auch aus verschlüsselten Backups nicht wiederhergestellt.
 
-Verschluesselte Vollbackups nutzen das Schutzformat aus `prd/PRD-v1/10-backup-import-requirements.md` und `architecture/decisions/ADR-014-security-data-network-backup.md`.
+Verschlüsselte Vollbackups nutzen das Schutzformat aus `prd/PRD-v1/10-backup-import-requirements.md` und `architecture/decisions/ADR-014-security-data-network-backup.md`.
 
 ---
 
@@ -1418,7 +1422,7 @@ EPGChannelMappingEntity.providerId + EPGChannelMappingEntity.channelStableKey + 
 SearchHistoryEntity.normalizedQuery
 ```
 
-Pending Favoriten, Verlaeufe und Fortschritte verwenden dieselben Stable-Key-Constraints. Mehrere pending Datensaetze fuer denselben `providerStableKey + mediaType + mediaStableKey` sind nicht erlaubt.
+Pending Favoriten, Verlaeufe und Fortschritte verwenden dieselben Stable-Key-Constraints. Mehrere pending Datensaetze für denselben `providerStableKey + mediaType + mediaStableKey` sind nicht erlaubt.
 
 ## Foreign Keys
 
@@ -1436,23 +1440,23 @@ Provider-EPG-Zuordnungen referenzieren Provider und EPG-Quelle.
 
 Manuelle EPG-Channel-Mappings referenzieren Provider, Sender und EPG-Quelle.
 
-Manuelle EPG-Channel-Mappings muessen zusaetzlich die stabilen Schluessel fuer Sender, EPG-Quelle und EPG-Kanal speichern, damit sie nach Restore ohne lokale Room-ID wieder verbunden werden koennen.
+Manuelle EPG-Channel-Mappings müssen zusätzlich die stabilen Schluessel für Sender, EPG-Quelle und EPG-Kanal speichern, damit sie nach Restore ohne lokale Room-ID wieder verbunden werden können.
 
-Favoriten, Verlaeufe und Fortschritte duerfen bei pending Restore-Referenzen voruebergehend ohne lokale Medien-Foreign-Key-Verbindung existieren. Die stabile Referenz bleibt dann verbindlich.
+Favoriten, Verlaeufe und Fortschritte dürfen bei pending Restore-Referenzen vorübergehend ohne lokale Medien-Foreign-Key-Verbindung existieren. Die stabile Referenz bleibt dann verbindlich.
 
 ## Delete-Verhalten
 
-Provider loeschen entfernt providerbezogene Kategorien, Sender, Filme, Serien, Staffeln, Episoden, Favoriten, Verlaeufe, Wiedergabefortschritte und Provider-EPG-Zuordnungen.
+Provider löschen entfernt providerbezogene Kategorien, Sender, Filme, Serien, Staffeln, Episoden, Favoriten, Verlaeufe, Wiedergabefortschritte und Provider-EPG-Zuordnungen.
 
-Globale EPG-Quellen werden beim Loeschen eines Providers nicht geloescht.
+Globale EPG-Quellen werden beim Löschen eines Providers nicht geloescht.
 
-Provider loeschen entfernt zugehoerige Android-TV-Systemsucheintraege und Watch-Next-Publikationen.
+Provider löschen entfernt zugehoerige Android-TV-Systemsucheintraege und Watch-Next-Publikationen.
 
 Provider deaktivieren entfernt oder sperrt zugehoerige Android-TV-Systemsucheintraege und Watch-Next-Publikationen, laesst die lokalen Providerdaten aber erhalten.
 
 Wenn ein erfolgreicher autoritativer Provider-Refresh einen Inhalt nicht mehr liefert, werden die zugehoerigen Favoriten, Live-TV-Verlaeufe und Wiedergabefortschritte entfernt.
 
-Wenn ein Provider wegen fehlender Zugangsdaten, Netzwerkfehlern, ungueltiger Quelle, Abbruch oder nicht autoritativem Teilbereich nicht erfolgreich aktualisiert werden kann, duerfen bestehende Inhalte und pending Referenzen dieses Bereichs nicht geloescht werden.
+Wenn ein Provider wegen fehlender Zugangsdaten, Netzwerkfehlern, ungültiger Quelle, Abbruch oder nicht autoritativem Teilbereich nicht erfolgreich aktualisiert werden kann, dürfen bestehende Inhalte und pending Referenzen dieses Bereichs nicht geloescht werden.
 
 ## Migrationen
 
@@ -1462,11 +1466,11 @@ Xtream-Datensaetze werden aus vorhandenen `remoteId`-Werten beziehungsweise Prov
 
 M3U-Datensaetze werden aus den dokumentierten nicht geheimen normalisierten Attributen befuellt.
 
-Wenn ein stabiler Schluessel fuer alte lokale Daten nicht eindeutig erzeugt werden kann, muss die Migration kontrolliert abbrechen oder den Datensatz als nicht restorefaehig markieren. Sie darf keine geheimen Klartextdaten in `stableKey` schreiben.
+Wenn ein stabiler Schluessel für alte lokale Daten nicht eindeutig erzeugt werden kann, muss die Migration kontrolliert abbrechen oder den Datensatz als nicht restorefähig markieren. Sie darf keine geheimen Klartextdaten in `stableKey` schreiben.
 
-Backup-Schema-Migrationen alter kompatibler Versionen laufen vor Restore und duerfen keine lokalen und importierten Daten zusammenfuehren.
+Backup-Schema-Migrationen alter kompatibler Versionen laufen vor Restore und dürfen keine lokalen und importierten Daten zusammenfuehren.
 
-Nach Migrationen, die suchrelevante Produktivdaten veraendern, muessen betroffene FTS-Indexe aktualisiert oder vollstaendig neu aufgebaut werden.
+Nach Migrationen, die suchrelevante Produktivdaten verändern, müssen betroffene FTS-Indexe aktualisiert oder vollstaendig neu aufgebaut werden.
 
 ---
 
@@ -1480,7 +1484,7 @@ prd/PRD-v1/10-backup-import-requirements.md
 
 Diese Datei definiert die Datenstruktur und Speichersysteme.
 
-Bei Konflikten gewinnt der Backup-Datenvertrag fuer Export- und Restore-Verhalten.
+Bei Konflikten gewinnt der Backup-Datenvertrag für Export- und Restore-Verhalten.
 
 ---
 

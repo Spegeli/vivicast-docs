@@ -21,7 +21,7 @@ Der Ordner `codex/` in diesem Repository enthaelt nur Codex-Referenzmaterial fue
 
 - PRD v1: abgeschlossen
 - ADRs: vorhanden und QA-abgeglichen
-- Design-System: verbindliche Design-Referenz, Compose-Template vorhanden und driftbereinigt
+- Design-System: verbindliche Design-Referenz, Compose-Template vorhanden
 - Wireframes: vorhanden und aktualisiert
 - Screen Specs: vorhanden
 - Component Specs: vorhanden
@@ -42,11 +42,14 @@ Der Ordner `codex/` in diesem Repository enthaelt nur Codex-Referenzmaterial fue
 - Android-TV-Systemintegration: stabile Deep Links, Systemsuche, Watch Next und Kindersicherungsschutz dokumentiert
 - Teststrategie: Pflichtfixtures, Mockserver, Roundtrips, Android-TV-QA und messbare DoD-Ziele dokumentiert
 - EPG: quellbezogene Pipeline und globale Aufbewahrung dokumentiert
+
+- Audit-Bereinigung: Live-TV-Fokus, No-EPG-Fallback, Player-Aktionen, Retry/Reconnect und Paging-Vertraege normativ festgelegt
 - Parser: M3U-, Xtream- und XMLTV-Vertraege mit tolerantem Teilimport dokumentiert
 - Import/Refresh: atomarer Commit pro Provider und EPG-Quelle dokumentiert
 - Schutzkonzept: Datenklassifizierung, Secret Store, Vollbackup-Krypto, PIN-Sperrlogik, HTTP/TLS-Policy und Diagnosebereinigung dokumentiert
 - Kindersicherung: PIN- und Schutzbereichsflows QA-verfeinert
-- Backup: Restore-Ersetzen und stabile Restore-Schluessel dokumentiert
+- Speicher & Verlauf: Medien-Cache- und Verlaufswartung als eigener Settings-Bereich dokumentiert
+- Backup: Export, Import, Restore-Ersetzen und stabile Restore-Schluessel dokumentiert
 - Backup/Kindersicherung: Restore deaktiviert Backup-PIN- und Schutzflags dokumentiert
 - Cache und Verlauf: lokale Wartungsaktionen QA-verfeinert
 - Über die App: App-Info-, Support- und Lizenzbereiche QA-verfeinert
@@ -107,7 +110,7 @@ Historische Remediation- und Research-Artefakte liegen unter `archive/remediatio
 
 Historische Review-/QA-Artefakte liegen unter `archive/review/2026-06-24/` und sind nicht Teil der aktiven Arbeitsquellen.
 
-Das Docs-Repository enthaelt bewusst keinen festen Phasenplan und keine fertigen Implementierungs-Prompts mehr.
+Das Docs-Repository enthaelt keine fertigen App-Repo-Implementierungs-Prompts und keinen blind auszufuehrenden App-Code-Phasenplan. Die Umsetzungsreihenfolge fuer Codex wird ueber den Masterplan unter `codex/plans/` gesteuert.
 
 ## Dokumentrollen und Konflikte
 

@@ -4,7 +4,7 @@ Status: verbindlich v5
 
 ## Zweck
 
-Der Player ist der Vollbildbereich fuer Live-TV, Filme, Serien und Catch-Up.
+Der Player ist der Vollbildbereich für Live-TV, Filme, Serien und Catch-Up.
 
 Standard ist Vollbild ohne sichtbare UI.
 
@@ -20,11 +20,11 @@ Standard ist Vollbild ohne sichtbare UI.
 +--------------------------------------------------------------------------------+
 ```
 
-## Overlay oeffnen und schliessen
+## Overlay öffnen und schließen
 
 ```text
-OK ohne Overlay      -> Overlay oeffnen, Fokus auf Timeline
-BACK mit Overlay     -> Overlay schliessen
+OK ohne Overlay      -> Overlay öffnen, Fokus auf Timeline
+BACK mit Overlay     -> Overlay schließen
 BACK ohne Overlay    -> Player verlassen
 Auto-Hide            -> 5 Sekunden Inaktivitaet
 ```
@@ -48,7 +48,7 @@ Catch-Up -> Sender/EPG-Kontext
 | Aktuelle Sendung                                                               |
 | 20:00 - 20:15 | Noch 6 Minuten                                                 |
 | Beschreibung                                                                   |
-| Danach: Naechste Sendung 20:15                                                 |
+| Danach: Nächste Sendung 20:15                                                 |
 |                                                                                |
 | (*) Timeline: ███████░░░░░░░░░░                                                |
 | [Audio] [Untertitel] [Bildformat]                                              |
@@ -83,26 +83,26 @@ Live-TV ohne Timeshift:
 
 ```text
 Timeline sichtbar
-LEFT / RIGHT -> Hinweis: Timeshift fuer diesen Sender nicht verfuegbar
+LEFT / RIGHT -> Hinweis: Timeshift für diesen Sender nicht verfuegbar
 ```
 
 ## CH-Tasten
 
 ```text
-CH+ -> naechster Sender
+CH+ -> nächster Sender
 CH- -> vorheriger Sender
 ```
 
 ## Auto-Next Serie
 
-Nur wenn eine naechste Episode vorhanden ist.
+Nur wenn eine nächste Episode vorhanden ist.
 
 Auto-Next deaktiviert, nach dem tatsaechlichen Episodenende:
 
 ```text
 +---------------------------------------------+
 | <Serientitel> <Staffel/Folge>                |
-| (*)[Naechste Folge abspielen] [Zurueck]      |
+| (*)[Nächste Folge abspielen] [Zurück]      |
 +---------------------------------------------+
 ```
 
@@ -113,15 +113,15 @@ Auto-Next aktiviert, Beispiel 10 Sekunden vor dem tatsaechlichen Episodenende:
 ```text
 +---------------------------------------------+
 | <Serientitel> <Staffel/Folge>                |
-| (*)[Naechste Folge in 10] [Zurueck]          |
+| (*)[Nächste Folge in 10] [Zurück]          |
 +---------------------------------------------+
 ```
 
-Der Wert wird sekundenweise aktualisiert. OK startet sofort; ohne Eingabe startet die naechste Episode beim Ablauf des Countdowns am Episodenende.
+Der Wert wird sekundenweise aktualisiert. OK startet sofort; ohne Eingabe startet die nächste Episode beim Ablauf des Countdowns am Episodenende.
 
-`Zurueck` erscheint in beiden Zustaenden zeitgleich neben dem Hauptbutton. OK auf `Zurueck` oder die Zurueck-Taste verwirft einen laufenden Countdown und fuehrt mit erhaltenem Staffel-/Episodenkontext zur Serien-Detailseite. Einen Button `Abbrechen` gibt es nicht. Nach der letzten Episode der Serie erscheint kein Panel.
+`Zurück` erscheint in beiden Zustaenden zeitgleich neben dem Hauptbutton. OK auf `Zurück` oder die Zurück-Taste verwirft einen laufenden Countdown und fuehrt mit erhaltenem Staffel-/Episodenkontext zur Serien-Detailseite. Einen Button `Abbrechen` gibt es nicht. Nach der letzten Episode der Serie erscheint kein Panel.
 
-Die feste Abschluss-Schwelle von 95 Prozent veraendert nur den Gesehen-/Fortsetzen-Status. Sie beendet die Wiedergabe nicht und zeigt oder startet kein Auto-Next.
+Die feste Abschluss-Schwelle von 95 Prozent verändert nur den Gesehen-/Fortsetzen-Status. Sie beendet die Wiedergabe nicht und zeigt oder startet kein Auto-Next.
 
 ## Rueckkehr aus externem Player
 
@@ -135,11 +135,11 @@ Die feste Abschluss-Schwelle von 95 Prozent veraendert nur den Gesehen-/Fortsetz
 Regeln:
 
 ```text
-vorhandener Fortschritt bleibt unveraendert
+vorhandener Fortschritt bleibt unverändert
 kein neuer Fortschrittsdatensatz
 kein Auto-Next-Panel
 Rueckkehr zum Film- oder Serienkontext
-nur fuer Film und Episode, nicht fuer Live-TV oder Catch-Up
+nur für Film und Episode, nicht für Live-TV oder Catch-Up
 ```
 
 ## Catch-Up
@@ -147,7 +147,7 @@ nur fuer Film und Episode, nicht fuer Live-TV oder Catch-Up
 ```text
 interner Player
 EPG-Kontext sichtbar
-keine externe Player-Uebergabe
+keine externe Player-Übergabe
 kein VOD-Fortschritt
 kein Resume-Ziel
 ```
@@ -156,12 +156,12 @@ kein Resume-Ziel
 
 ```text
 Stream konnte nicht gestartet werden.
-(*)[Erneut versuchen] [Anderen Sender waehlen] [Schliessen]
+(*)[Erneut versuchen] [Anderen Sender wählen] [Schließen]
 ```
 
 ```text
 Verbindung unterbrochen.
-(*)[Erneut versuchen] [Anderen Sender waehlen] [Schliessen]
+(*)[Erneut versuchen] [Anderen Sender wählen] [Schließen]
 ```
 
 ## Akzeptanzkriterien
@@ -175,10 +175,10 @@ Live-TV ohne Timeshift zeigt Hinweis bei Seek
 VOD Overlay bleibt minimal
 Auto-Next Aus zeigt die manuelle Aktion erst nach dem Episodenende
 Auto-Next Ein zeigt den dynamischen Hauptbutton vor dem Episodenende
-Auto-Next-Hauptbutton behaelt Fokus und Position
-BACK oder OK auf Zurueck im Auto-Next-Panel fuehrt mit erhaltenem Staffel-/Episodenkontext zur Serien-Detailseite
+Auto-Next-Hauptbutton behält Fokus und Position
+BACK oder OK auf Zurück im Auto-Next-Panel fuehrt mit erhaltenem Staffel-/Episodenkontext zur Serien-Detailseite
 Nach Serienende erscheint kein Auto-Next-Panel
 95-Prozent-Abschluss-Schwelle beendet Wiedergabe nicht und loest kein Auto-Next aus
-Externe Player schreiben keinen Fortschritt zurueck
+Externe Player schreiben keinen Fortschritt zurück
 Catch-Up bleibt intern und erzeugt keinen VOD-Fortschritt
 ```

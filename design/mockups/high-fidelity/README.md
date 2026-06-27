@@ -8,7 +8,7 @@ Dieses Verzeichnis beschreibt die aktuelle hochwertige visuelle Zielrichtung von
 
 Die Markdown-Dateien in diesem Ordner beschreiben die aktive High-Fidelity-UI-Richtung.
 
-Die gerenderten PNGs unter `rendered/` sind die aktuelle visuelle Zielreferenz. Sie sind keine normative Quelle fuer Navigation, Labels oder UI-Texte. Falls sichtbare Navigation oder Labels in PNGs von aktuellen PRD-, Design- oder Wireframe-Markdown-Quellen abweichen, gelten die Markdown-Quellen.
+Die gerenderten PNGs unter `rendered/` sind die aktuelle visuelle Zielreferenz. Sie sind keine normative Quelle für Navigation, Labels oder UI-Texte. Falls sichtbare Navigation oder Labels in PNGs von aktuellen PRD-, Design- oder Wireframe-Markdown-Quellen abweichen, gelten die Markdown-Quellen.
 
 Die aktuelle Top Navigation ist:
 
@@ -48,4 +48,4 @@ design/design-system/compose-template/*.kt
 
 High-Fidelity prueft Zieloptik, visuelle Qualitaet und UI-Richtung.
 
-Die echte Umsetzung erfolgt spaeter in Jetpack Compose for TV. Die Compose-Dateien unter `design/design-system/compose-template/` sind Startvorlagen fuer diese Umsetzung, aber kein App-Code in diesem Docs-Repository.
+Die echte Umsetzung erfolgt später in Jetpack Compose for TV. Die Compose-Dateien unter `design/design-system/compose-template/` sind Startvorlagen für diese Umsetzung, aber kein App-Code in diesem Docs-Repository.

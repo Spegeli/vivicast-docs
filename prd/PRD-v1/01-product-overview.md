@@ -1,10 +1,10 @@
 # Vivicast – Product Requirements Document (PRD)
 ## Version 1.0
-## Kapitel 1-3: Produktuebersicht, Ziele, Plattform und Architekturgrundlagen
+## Kapitel 1-3: Produktübersicht, Ziele, Plattform und Architekturgrundlagen
 
 ---
 
-# 1. Produktuebersicht
+# 1. Produktübersicht
 
 ## Produktname
 
@@ -18,11 +18,11 @@ com.vivicast.tv
 
 ## Produktbeschreibung
 
-Vivicast ist eine moderne IPTV-Anwendung fuer Android TV.
+Vivicast ist eine moderne IPTV-Anwendung für Android TV.
 
 Die App unterstuetzt:
 
-- Home als festen Start- und Uebersichtsbereich
+- Home als festen Start- und Übersichtsbereich
 - Live-TV
 - Filme (Video on Demand)
 - Serien (Video on Demand)
@@ -34,7 +34,7 @@ Wiedergabequellen:
 - M3U
 - Xtream Codes
 
-Vivicast wurde speziell fuer die Nutzung auf Android TV entwickelt und setzt den Fokus auf:
+Vivicast wurde speziell für die Nutzung auf Android TV entwickelt und setzt den Fokus auf:
 
 - fernbedienungsoptimierte Bedienung
 - hohe Performance
@@ -56,7 +56,7 @@ Home ist fester Bestandteil von Vivicast.
 
 Es ist der Standard-Startscreen und bietet schnellen Zugriff auf Fortsetzen sowie zuletzt gesehene Live-TV-Sender.
 
-Fortsetzen enthaelt Filme und Serien gemeinsam.
+Fortsetzen enthält Filme und Serien gemeinsam.
 
 Live-TV erscheint nicht in Fortsetzen, sondern nur in zuletzt gesehenen Live-TV-Sendern.
 
@@ -64,23 +64,23 @@ Provider- und Update-Status werden nicht im Home-Bereich angezeigt, sondern in d
 
 Der Startbereich ist global unter `Einstellungen > Allgemein` einstellbar.
 
-Zulaessige Startbereiche sind Home, Live-TV, Filme und Serien. Standard ist Home.
+Zulässige Startbereiche sind Home, Live-TV, Filme und Serien. Standard ist Home.
 
-Die Auswahl gilt beim naechsten regulaeren App-Start ohne explizites Ziel. App-Autostart verwendet denselben Wert; Deep Links und andere explizite Android-TV-Ziele haben Vorrang. Rueckkehr aus dem Hintergrund behaelt den aktuellen Bereich.
+Die Auswahl gilt beim nächsten regulaeren App-Start ohne explizites Ziel. App-Autostart verwendet denselben Wert; Deep Links und andere explizite Android-TV-Ziele haben Vorrang. Rueckkehr aus dem Hintergrund behält den aktuellen Bereich.
 
-Suche und Einstellungen sind keine waehbaren Startbereiche. Fehlen im gewaehlten Bereich Inhalte, erscheint dessen normaler Empty State ohne automatischen Fallback auf Home.
+Suche und Einstellungen sind keine waehbaren Startbereiche. Fehlen im gewählten Bereich Inhalte, erscheint dessen normaler Empty State ohne automatischen Fallback auf Home.
 
 ### Live-TV
 
-Benutzer sollen grosse Senderlisten schnell durchsuchen und Sender mit moeglichst wenigen Tastendruecken erreichen koennen.
+Benutzer sollen grosse Senderlisten schnell durchsuchen und Sender mit möglichst wenigen Tastendruecken erreichen können.
 
 ### Video-On-Demand
 
-Filme und Serien sollen uebersichtlich dargestellt und komfortabel durchsucht werden koennen.
+Filme und Serien sollen übersichtlich dargestellt und komfortabel durchsucht werden können.
 
 ### Mehrere Provider
 
-Die App muss mehrere IPTV-Anbieter gleichzeitig verwalten koennen.
+Die App muss mehrere IPTV-Anbieter gleichzeitig verwalten können.
 
 Provider bleiben technisch vollstaendig voneinander getrennt.
 
@@ -90,13 +90,13 @@ Unterstuetzung mehrerer EPG-Quellen.
 
 Priorisierung pro Provider.
 
-Manuelle EPG-Zuordnung moeglich.
+Manuelle EPG-Zuordnung möglich.
 
 ### Performance
 
 Die Anwendung muss auch bei sehr grossen Bibliotheken performant bleiben.
 
-Zielgroessen:
+Zielgrößen:
 
 ```text
 10.000+ Sender
@@ -107,14 +107,14 @@ Millionen EPG-Eintraege
 
 ### Android TV Optimierung
 
-Die App wird primaer fuer Android TV entwickelt.
+Die App wird primaer für Android TV entwickelt.
 
-Die gesamte Bedienung erfolgt ueber:
+Die gesamte Bedienung erfolgt über:
 
 ```text
 D-Pad
 OK
-Zurueck
+Zurück
 CH+
 CH-
 ```
@@ -123,20 +123,20 @@ Hauptnavigation:
 
 - dauerhaft oben sichtbar, ausser im Player
 - Hauptbereiche: Home, Live-TV, Filme, Serien, Suche, Einstellungen
-- Zurueck springt auf Hauptscreens zuerst in die Top Navigation
-- Beenden erfolgt per doppelter Zurueck-Bestaetigung aus der Top Navigation
+- Zurück springt auf Hauptscreens zuerst in die Top Navigation
+- Beenden erfolgt per doppelter Zurück-Bestätigung aus der Top Navigation
 
 Beim Wechsel zwischen Hauptbereichen wird der interne Fokus des verlassenen Bereichs nicht wiederhergestellt.
 
 ### Hohe Konfigurierbarkeit
 
-Benutzer koennen unter anderem anpassen:
+Benutzer können unter anderem anpassen:
 
 - Startbereich
 - Farben
 - Transparenz
 - Animationen
-- Cachegroessen
+- Cachegrößen
 - Timeshift
 - Decoder
 - Audio
@@ -179,7 +179,7 @@ Gleiche Inhalte verschiedener Provider bleiben getrennt.
 
 Nicht vorgesehen.
 
-Provider-Kategorien werden unveraendert uebernommen.
+Provider-Kategorien werden unverändert übernommen.
 
 ## Cloud-Konto-System
 
@@ -204,7 +204,7 @@ Backups werden ausschliesslich manuell gestartet.
 
 Nicht Bestandteil von Version 1.0.
 
-Fuer spaetere Versionen geplant.
+Für spätere Versionen geplant.
 
 ---
 
@@ -216,7 +216,7 @@ Fuer spaetere Versionen geplant.
 Android TV
 ```
 
-## Unterstuetzte Geraete
+## Unterstuetzte Geräte
 
 Beispiele:
 
@@ -228,12 +228,12 @@ Sony Android TV
 Philips Android TV
 TCL Android TV
 Xiaomi TV Box
-Formuler Geraete
+Formuler Geräte
 ```
 
 ## Sekundaerplattformen
 
-Moegliche spaetere Erweiterungen:
+Mögliche spätere Erweiterungen:
 
 ```text
 Android Smartphone

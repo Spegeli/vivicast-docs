@@ -20,12 +20,12 @@ Fachliche Anforderungen zu Providern, Kategorien, Sendern und EPG bleiben im PRD
 1. Top Navigation
 2. Provider- und Kategorienbereich
 3. Senderliste
-4. Sender-EPG fuer den fokussierten Sender
+4. Sender-EPG für den fokussierten Sender
 5. Vorschau- und Detailbereich
 
 ## Startzustand
 
-Beim frischen Oeffnen liegt der Fokus auf der ersten Kategorie des ersten Providers.
+Beim frischen Öffnen liegt der Fokus auf der ersten Kategorie des ersten Providers.
 
 Der erste Provider ist aufgeklappt.
 
@@ -33,7 +33,7 @@ Die Senderliste zeigt sofort die Sender dieser Kategorie.
 
 ## Globale Favoriten-Kategorie
 
-Live-TV Favoriten sind anbieteruebergreifend.
+Live-TV Favoriten sind anbieterübergreifend.
 
 Die Favoriten-Kategorie wird als eigenstaendiger Punkt oberhalb des ersten Providers angezeigt.
 
@@ -59,7 +59,7 @@ Zeigt:
 
 - globale Favoriten oberhalb des ersten Providers
 - Providername
-- geoeffnet oder geschlossen
+- geöffnet oder geschlossen
 - Kategorien des aktiven Providers
 - Nicht kategorisiert als Fallback-Kategorie
 
@@ -79,7 +79,7 @@ Jede Senderzeile zeigt:
 - Favoritenstatus
 - Catch-Up-Symbol, falls verfuegbar
 
-Lange Sendernamen duerfen gekuerzt werden, muessen aber fokussiert lesbar bleiben.
+Lange Sendernamen dürfen gekuerzt werden, müssen aber fokussiert lesbar bleiben.
 
 ## OK auf Sender
 
@@ -89,15 +89,18 @@ Erstes OK in der Senderspalte:
 
 - blendet Provider/Kategorien aus
 - aktiviert den Sender-Modus
-- zeigt zwischen Senderliste und Preview die EPG-Spalte fuer den gewaehlten Sender
+- zeigt zwischen Senderliste und Preview die EPG-Spalte für den gewählten Sender
 - startet gleichzeitig rechts in der Preview-Spalte die Live-Vorschau
 - setzt den Fokus auf die aktuelle Sendung in der EPG-Spalte, sofern vorhanden
+- setzt den Fokus auf den No-EPG-Placeholder in der EPG-Spalte, wenn keine aktuelle EPG-Sendung vorhanden ist
 
-Zweites OK auf der fokussierten aktuellen Sendung oeffnet die Vollbildwiedergabe des ausgewaehlten Senders.
+Zweites OK auf der fokussierten aktuellen Sendung oeffnet die Vollbildwiedergabe des ausgewählten Senders.
+
+OK auf dem fokussierten No-EPG-Placeholder oeffnet ebenfalls die Vollbildwiedergabe des ausgewählten Senders. Catch-Up bleibt in diesem Zustand deaktiviert.
 
 ## Sender-EPG
 
-Die EPG-Spalte zeigt fuer den aktuell gewaehlten Sender:
+Die EPG-Spalte zeigt für den aktuell gewählten Sender:
 
 - vergangene Sendungen, wenn relevant
 - aktuelle Sendung
@@ -106,17 +109,17 @@ Die EPG-Spalte zeigt fuer den aktuell gewaehlten Sender:
 - Catch-Up-Markierung
 - klar markierten aktuellen Programmpunkt
 
-Wenn kein EPG vorhanden ist, zeigt die Spalte einen No-EPG-Zustand.
+Wenn kein EPG vorhanden ist, zeigt die Spalte einen No-EPG-Zustand. Dieser Zustand ist fokussierbar, wenn er nach dem ersten OK auf einen Sender als Fallbackziel benoetigt wird.
 
 ## Catch-Up
 
-Catch-Up-Aktionen erscheinen nur fuer vergangene EPG-Programmpunkte, wenn Sender, Provider und EPG-Kontext Catch-Up erlauben.
+Catch-Up-Aktionen erscheinen nur für vergangene EPG-Programmpunkte, wenn Sender, Provider und EPG-Kontext Catch-Up erlauben.
 
 Catch-Up startet im internen Vivicast-Player mit EPG-Kontext.
 
-Aktuelle Sendungen werden ueber Live-TV oder Timeshift behandelt.
+Aktuelle Sendungen werden über Live-TV oder Timeshift behandelt.
 
-Catch-Up wird nicht an externe Player uebergeben und erzeugt keinen VOD-Fortschritt.
+Catch-Up wird nicht an externe Player übergeben und erzeugt keinen VOD-Fortschritt.
 
 ## Vorschau- und Detailbereich
 
@@ -126,7 +129,7 @@ Zeigt:
 - Sendername
 - aktuelle Sendung mit Zeit
 - Beschreibung, falls vorhanden
-- naechste Sendung
+- nächste Sendung
 - Streamstatus
 - EPG-Hinweise
 
@@ -137,20 +140,22 @@ Ein separater EPG-Button ist nicht notwendig, da EPG im Sender-Modus sichtbar is
 - Links aus Senderliste im Kategorie-Modus fokussiert Provider/Kategorien.
 - Fokus auf Kategorie aktualisiert die Senderliste sofort.
 - OK in der Senderspalte startet Sender-Modus, EPG-Spalte und Preview und fokussiert die aktuelle EPG-Sendung, sofern vorhanden.
+- Wenn keine aktuelle EPG-Sendung vorhanden ist, fokussiert OK in der Senderspalte den No-EPG-Placeholder.
 - OK auf der fokussierten aktuellen EPG-Sendung startet Vollbild.
+- OK auf dem fokussierten No-EPG-Placeholder startet Vollbild ohne Catch-Up-Kontext.
 - Rechts aus der Senderliste fokussiert die EPG-Spalte.
-- Rechts aus der EPG-Spalte fokussiert Preview/Details.
+- Rechts aus der EPG-Spalte oder aus dem No-EPG-Placeholder fokussiert Preview/Details.
 - CH+ und CH- bewegen im Browser den Fokus in der Senderliste.
-- CH+ und CH- wechseln im Player direkt den naechsten oder vorherigen Sender.
-- Zurueck geht stufenweise: EPG-Spalte, Senderliste, Provider/Kategorien, Top Navigation.
+- CH+ und CH- wechseln im Player direkt den nächsten oder vorherigen Sender.
+- Zurück geht stufenweise: EPG-Spalte, Senderliste, Provider/Kategorien, Top Navigation.
 
 ## Zustaende
 
 Loading: Senderliste mit Skeleton-Zeilen.
 
-Empty: Kategorie enthaelt keine Sender.
+Empty: Kategorie enthält keine Sender.
 
-No EPG: Sender bleibt sichtbar, EPG-Bereich zeigt `Keine Programminformationen verfuegbar`.
+No EPG: Sender bleibt sichtbar, EPG-Bereich zeigt `Keine Programminformationen verfuegbar`. Im Sender-Modus ist dieser Zustand fokussierbar; OK startet Vollbild, Catch-Up bleibt nicht verfügbar.
 
 No Logo: Fallback-Icon und Sendername anzeigen.
 

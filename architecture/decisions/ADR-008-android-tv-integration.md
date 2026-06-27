@@ -35,6 +35,8 @@ Globale Android-TV-Suche enthaelt nicht:
 
 Die interne Vivicast-Suche darf EPG-Treffer enthalten.
 
+Ein EPG-Treffer aus der internen Vivicast-Suche baut keinen Android-TV-Systemsuchtreffer auf. Er oeffnet intern Live-TV im Sender-Modus, aktiviert den passenden Sender, scrollt die EPG-Spalte zum Zielprogrammpunkt und fokussiert diesen Programmpunkt.
+
 Deep Links verwenden keine lokalen Room-IDs und keine geheimen Werte.
 
 Deep-Link-Ziele verwenden stabile fachliche Schluessel:
@@ -99,7 +101,7 @@ Sie muessen aktualisiert oder bereinigt werden bei:
 
 Pending Restore-Referenzen werden nicht in globale Android-TV-Suche oder Watch Next veroeffentlicht, bis ein erfolgreicher Provider-Refresh sie mit lokalen Entities verbunden hat.
 
-Wenn Kindersicherung fuer Filme, Serien oder Inhalte ab 18 aktiv ist, werden betroffene Inhalte nicht in Android-Systemsuche oder Watch Next veroeffentlicht. Stale Systemeintraege muessen beim naechsten Sync entfernt werden. Stale Deep Links muessen beim Oeffnen trotzdem gegen die aktuelle Schutzkonfiguration geprueft werden.
+Wenn Kindersicherung fuer Filme, Serien oder Inhalte ab 18 aktiv ist, werden betroffene Inhalte nicht in Android-Systemsuche oder Watch Next veroeffentlicht. Stale Systemeintraege muessen beim naechsten Sync entfernt werden. Stale Deep Links muessen beim Öffnen trotzdem gegen die aktuelle Schutzkonfiguration geprueft werden.
 
 ## Gruende
 

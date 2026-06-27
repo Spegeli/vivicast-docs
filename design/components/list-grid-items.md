@@ -4,19 +4,19 @@ Status: verbindlich v8
 
 ## Zweck
 
-Diese Datei beschreibt wiederverwendbare Elemente fuer Listen, Reihen und Grids.
+Diese Datei beschreibt wiederverwendbare Elemente für Listen, Reihen und Grids.
 
-Sie gilt fuer Live-TV, Filme, Serien, Episoden und Suche.
+Sie gilt für Live-TV, Filme, Serien, Episoden und Suche.
 
 ## Grundregeln
 
 - Fokus muss klar sichtbar sein.
-- Fokus darf nicht nur ueber Farbe erkennbar sein.
+- Fokus darf nicht nur über Farbe erkennbar sein.
 - Vivicast nutzt einen globalen Fokus-Stil.
 - Fokus kombiniert Scale, Ring und leichte Schattenhebung.
 - Fehlende Bilder nutzen Fallbacks.
 - Lange Titel werden kontrolliert gekuerzt.
-- Fokussierte Elemente duerfen mehr Informationen zeigen als nicht fokussierte.
+- Fokussierte Elemente dürfen mehr Informationen zeigen als nicht fokussierte.
 - Komponenten enthalten keine fachliche Datenlogik.
 
 ## Loading
@@ -37,18 +37,18 @@ Empty States enthalten eine klare Aktion, wenn eine sinnvolle Aktion existiert.
 
 Beispiele:
 
-- keine Wiedergabeliste -> Wiedergabeliste hinzufuegen
-- keine EPG-Quelle -> EPG-Quelle hinzufuegen
+- keine Wiedergabeliste -> Wiedergabeliste hinzufügen
+- keine EPG-Quelle -> EPG-Quelle hinzufügen
 - keine Suchergebnisse -> nur Hinweis
 
 ## Channel Card
 
-Channel Cards werden kontextabhaengig verwendet.
+Channel Cards werden kontextabhängig verwendet.
 
 Verwendung:
 
 - Live-TV Senderliste
-- Suchergebnisse fuer Kanäle
+- Suchergebnisse für Kanäle
 - zuletzt gesehene Live-TV-Sender im Home-Bereich
 
 ### Live-TV Senderliste
@@ -67,7 +67,7 @@ Interaktion in der Live-TV-Senderliste:
 
 - blosses Fokussieren aktualisiert Informationen, startet aber keinen Stream
 - erstes OK aktiviert den Sender-Modus, oeffnet die EPG-Spalte, startet die Live-Vorschau und verschiebt den Fokus auf die aktuelle Sendung, sofern vorhanden
-- OK auf der fokussierten aktuellen Sendung oeffnet Vollbild fuer den ausgewaehlten Sender
+- OK auf der fokussierten aktuellen Sendung oeffnet Vollbild für den ausgewählten Sender
 - dieser Ablauf ist fest und besitzt keine Preview-Einstellung
 
 ### Suche: Kanal-Ergebnisse
@@ -96,7 +96,7 @@ Verwendung:
 
 - Filme
 - Serien
-- Suchergebnisse fuer VOD
+- Suchergebnisse für VOD
 - Fortsetzen im Home-Bereich
 
 Inhalte:
@@ -115,7 +115,7 @@ Verwendung:
 
 - Serien-Detailseite
 
-Episode Rows werden nicht fuer Suchergebnisse verwendet.
+Episode Rows werden nicht für Suchergebnisse verwendet.
 
 Inhalte:
 
@@ -131,7 +131,7 @@ Interaktion auf der Serien-Detailseite:
 
 - OK auf der Episode startet oder setzt fort.
 - Rechts aus der fokussierten Episode wechselt auf `Als gesehen markieren` oder `Als ungesehen markieren`.
-- Links aus der Markierungsaktion kehrt zur Episode zurueck.
+- Links aus der Markierungsaktion kehrt zur Episode zurück.
 - Die Aktion bleibt bei nicht fokussierten Rows ausgeblendet.
 - Es gibt keine Staffel- oder Serien-Markierungsaktion.
 

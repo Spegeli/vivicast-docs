@@ -2,7 +2,7 @@
 
 Status: High-Fidelity Zielreferenz v5
 
-Dieses Verzeichnis beschreibt die aktiven Mockups fuer Vivicast.
+Dieses Verzeichnis beschreibt die aktiven Mockups für Vivicast.
 
 Die aktive visuelle Zielrichtung liegt unter:
 
@@ -13,7 +13,7 @@ design/mockups/high-fidelity/rendered/
 
 Low-Fidelity-Mockups sind nicht mehr Teil der aktiven Dokumentationsstruktur.
 
-Gerenderte PNGs sind visuelle Stilreferenzen. Sie sind keine normative Quelle fuer Navigation, Labels oder UI-Texte. Falls sichtbare Navigation oder Labels in PNGs von aktuellen PRD-, Design- oder Wireframe-Markdown-Quellen abweichen, gelten die Markdown-Quellen.
+Gerenderte PNGs sind visuelle Stilreferenzen. Sie sind keine normative Quelle für Navigation, Labels oder UI-Texte. Falls sichtbare Navigation oder Labels in PNGs von aktuellen PRD-, Design- oder Wireframe-Markdown-Quellen abweichen, gelten die Markdown-Quellen.
 
 Die aktuelle Top Navigation ist:
 
@@ -70,7 +70,7 @@ Compose-UI-Vorlage
 ```text
 1. Home
 2. Live-TV Browser Kategorie-Modus
-3. Filme Uebersicht
+3. Filme Übersicht
 4. Serien Detailseite
 5. Suche
 6. Player Overlay Live-TV
@@ -85,16 +85,25 @@ Compose-UI-Vorlage
 
 ## Formatentscheidung
 
-PNG wird in diesem Repository als Arbeitsformat fuer gerenderte Mockup-Previews genutzt.
+PNG wird in diesem Repository als Arbeitsformat für gerenderte Mockup-Previews genutzt.
 
 SVG wird aktuell nicht benoetigt.
 
 ## Verwandte Designsystem-Umsetzung
 
-Die technische Designsystem-Umsetzungsreferenz fuer Compose liegt unter:
+Die technische Designsystem-Umsetzungsreferenz für Compose liegt unter:
 
 ```text
 design/design-system/compose-template/
 ```
 
-Diese Dateien sind keine App-Code-Dateien im Docs-Repository. Sie dienen Codex spaeter als Vorlage fuer ein App-Repository-Designsystem.
+Diese Dateien sind keine App-Code-Dateien im Docs-Repository. Sie dienen Codex später als Vorlage für ein App-Repository-Designsystem.
+
+
+## Token-Hinweis
+
+Mockup-Spezifikationen beschreiben Screen-Ziel und visuelle Absicht. Exakte Farben, Spacing, Radien, Typografie und Fokuswerte liegen zentral unter:
+
+```text
+design/design-system/compose-template/
+```

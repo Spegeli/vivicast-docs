@@ -77,7 +77,7 @@ Im Sender-Modus ist die Provider-/Kategorien-Spalte ausgeblendet.
 
 ## Initialfokus
 
-Beim frischen Oeffnen:
+Beim frischen Öffnen:
 
 ```text
 erste Kategorie des ersten Providers
@@ -141,28 +141,29 @@ Große VOD-Bibliotheken schnell durchsuchbar und visuell verständlich darstelle
 
 ```text
 ┌──────────────────────────────────────────────────────────────┐
-│ Hero Info                                                     │
-├──────────────────────────────────────────────────────────────┤
-│ Kategorie-Chips                                               │
-├──────────────────────────────────────────────────────────────┤
-│ Poster-Raster                                                 │
+│ Provider/Kategorien │ Hero Info + Poster-Raster              │
 └──────────────────────────────────────────────────────────────┘
 ```
+
+Links stehen globale App-Kategorien und providergruppierte Kategorien. Rechts stehen Hero-Informationen und Poster-Raster.
 
 ## Initialfokus
 
 ```text
-Filme:  erstes Poster in Favoriten/Fortsetzen/aktiver Kategorie
-Serien: erstes Poster in Fortsetzen/Favoriten/aktiver Kategorie
+erste Kategorie des ersten Providers
 ```
+
+Globale App-Kategorien wie Favoriten und Fortsetzen sind sichtbar, aber nicht der initiale Inhaltsfokus.
 
 ## Verhalten
 
 ```text
-Fokus auf Poster -> Hero Info aktualisiert
-OK auf Poster    -> Detailseite
-Hoch             -> Kategorie-Chips
-Zurück           -> vorheriger Hauptbereich / Navigation
+Fokus auf Kategorie -> Poster-Raster aktualisiert sofort
+Fokus auf Poster    -> Hero Info aktualisiert
+OK auf Poster       -> Detailseite
+Links aus Grid      -> Kategorien
+Zurück aus Grid     -> Kategorien
+Zurück aus Kategorien -> Top Navigation
 ```
 
 ## Kategorien
@@ -179,7 +180,7 @@ Optional, falls Daten vorhanden:
 Fortsetzen
 ```
 
-Provider-Kategorien werden unverändert übernommen.
+Darunter folgen Provider mit ihren eigenen Kategorien. Gleichnamige Provider-Kategorien werden nicht zusammengeführt.
 
 ## Empty States
 
@@ -452,6 +453,7 @@ EPG
 Optik
 Wiedergabe
 Kindersicherung
+Speicher & Verlauf
 Backup
 Über die App
 ```
@@ -662,12 +664,12 @@ Catch-Up nutzt den internen Player mit EPG-Kontext, wird aber nicht als VOD-Fort
 ## Fokus und Timeline
 
 ```text
-Initialfokus beim Oeffnen -> Timeline
+Initialfokus beim Öffnen -> Timeline
 OK auf Timeline           -> Play/Pause
 Links/Rechts auf Timeline -> Seek oder Timeshift-Bewegung
 ```
 
-Pause, Vorspulen und Zurueckspulen werden nicht als separate Hauptbuttons angeboten.
+Pause, Vorspulen und Zurückspulen werden nicht als separate Hauptbuttons angeboten.
 
 Audio- und Untertitelauswahl im Player ist sitzungsbezogen und aendert keine globalen Wiedergabe-Einstellungen.
 

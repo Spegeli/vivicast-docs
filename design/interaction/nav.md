@@ -40,6 +40,8 @@ Deep Links, globale Android-TV-Suchergebnisse, Watch Next und andere explizite S
 
 Explizite Systemziele verwenden stabile fachliche Ziel-IDs und keine lokalen Room-IDs.
 
+EPG-Kontext aus interner Suche ist kein Android-TV-Systemsuchziel, darf aber intern Live-TV im Sender-Modus mit fokussiertem Programmpunkt oeffnen.
+
 Fehlt das Ziel, ist es pending, geloescht, der Provider deaktiviert oder sind Zugangsdaten erforderlich, zeigt Vivicast einen kontrollierten Fehler- oder Nicht-verfuegbar-Zustand. Es gibt keinen stillen Fallback auf Home.
 
 Ist das Ziel durch Kindersicherung geschuetzt, oeffnet Vivicast zuerst die PIN-Abfrage. Abbrechen fuehrt in den vorherigen sicheren Kontext oder beendet den externen Einstieg ohne den geschuetzten Inhalt zu zeigen.
@@ -54,13 +56,13 @@ Home ist fester Bestandteil von Vivicast und bleibt der Standard-Startscreen.
 
 Die Hauptnavigation ist dauerhaft oben sichtbar, ausser im Player.
 
-Wenn der Fokus innerhalb eines Hauptscreens liegt, springt `Zurueck` zuerst in die Top Navigation.
+Wenn der Fokus innerhalb eines Hauptscreens liegt, springt `Zurück` zuerst in die Top Navigation.
 
 Erst wenn der Fokus bereits in der Top Navigation liegt, greift die Exit-Regel.
 
 ## Exit-Regel
 
-Beenden erfolgt ueber doppelte Zurueck-Bestaetigung aus der Top Navigation.
+Beenden erfolgt ueber doppelte Zurück-Bestätigung aus der Top Navigation.
 
 ## Fokus beim Bereichswechsel
 
@@ -80,7 +82,7 @@ Wenn die Suche vollstaendig verlassen wird, springt der Fokus zuerst in die Top 
 
 ## Player Rueckkehr
 
-Nach `Zurueck` aus dem Player gilt:
+Nach `Zurück` aus dem Player gilt:
 
 - Live-TV kehrt zum fokussierten Sender zurueck
 - Film kehrt zur Film-Detailseite zurueck

@@ -26,16 +26,26 @@ Die konkrete Modulstruktur bleibt App-Repo- oder Codex-Baseline und ist keine De
 
 ## Standard Theme
 
+Aktive technische Tokenwerte stehen im Compose-Template unter `design/design-system/compose-template/`.
+
 ```text
 Name                         Hex        Zweck
 --------------------------------------------------------------------
-vc_background                #070A0F    App-Hintergrund
-vc_background_elevated       #0B1220    leicht angehobene Bereiche
-vc_surface                   #111827    Karten, Panels, Listenflächen
-vc_surface_high              #172033    fokussierbare Flächen ruhend
-vc_surface_focus             #1E3A5F    fokussierte Flächen
-vc_surface_pressed           #24476F    gedrückte Flächen
+vc_background                #050914    App-Hintergrund
+vc_background_deep           #020617    tiefster Hintergrund
+vc_background_elevated       #07111F    leicht angehobene Bereiche
+vc_surface                   #0B1628    Karten, Panels, Listenflächen
+vc_surface_high              #101D33    fokussierbare Flächen ruhend
+vc_surface_focus             #102B46    fokussierte Flächen
+vc_surface_pressed           #15395C    gedrückte Flächen
 vc_surface_disabled          #11182780  deaktivierte Flächen
+
+vc_panel                     #CC07111F  Panels / Sidebar / Overlay
+vc_panel_strong              #E60B1628  stärkere Panels
+vc_dialog                    #F20B1628  Dialoge
+
+vc_border                    #22334A    Standard-Rahmen
+vc_border_soft               #17263A    dezenter Rahmen
 
 vc_text_primary              #F8FAFC    Haupttext
 vc_text_secondary            #CBD5E1    Sekundärtext
@@ -43,20 +53,20 @@ vc_text_tertiary             #94A3B8    Metadaten
 vc_text_disabled             #64748B    deaktivierter Text
 vc_text_on_accent            #031525    Text auf Akzentfläche
 
-vc_accent                    #38BDF8    Standard-Akzent
-vc_accent_soft               #0EA5E9    sekundärer Akzent
-vc_focus_ring                #7DD3FC    Fokusrahmen
-vc_focus_glow                #38BDF866  Fokusglow
+vc_accent                    #00C8FF    Standard-Akzent
+vc_accent_strong             #38D5FF    starker Akzent
+vc_focus_ring                #00D4FF    Fokusrahmen
+vc_focus_glow                #6600BFFF  Fokusglow
+vc_progress                  #159BFF    Wiedergabefortschritt
 
 vc_success                   #22C55E    Erfolg / aktiv
 vc_warning                   #F59E0B    Warnung
 vc_error                     #EF4444    Fehler / destruktiv
 vc_info                      #38BDF8    Information
 
-vc_live                      #EF4444    Live-Indikator
+vc_live                      #FF2D3A    Live-Indikator
 vc_favorite                  #FACC15    Favorit
-vc_catchup                   #A78BFA    Catch-Up
-vc_progress                  #38BDF8    Wiedergabefortschritt
+vc_catchup                   #0EA5E9    Catch-Up
 ```
 
 ## Hintergrundregel
@@ -64,10 +74,10 @@ vc_progress                  #38BDF8    Wiedergabefortschritt
 Standard:
 
 ```text
-App-Hintergrund: vc_background
-Panels:          vc_background_elevated oder vc_surface
+App-Hintergrund: vc_background / vc_background_deep
+Panels:          vc_panel oder vc_surface
 Karten:          vc_surface
-Fokus:           vc_surface_focus + vc_focus_ring
+Fokus:           vc_surface_focus + vc_focus_ring + vc_focus_glow
 ```
 
 Keine rein schwarzen Vollflächen außer im Player.
@@ -80,7 +90,6 @@ Benutzerkonfiguration laut PRD:
 0 %
 25 %
 50 %
-75 %
 ```
 
 Token-Mapping:
@@ -89,7 +98,6 @@ Token-Mapping:
 0 %    Alpha 1.00
 25 %   Alpha 0.75
 50 %   Alpha 0.50
-75 %   Alpha 0.25
 ```
 
 Wichtig:
@@ -194,8 +202,8 @@ vc_space_10     80 dp
 ## Standard Padding
 
 ```text
-Screen horizontal:     64 dp
-Screen vertical:       48 dp
+Screen horizontal:     48 dp
+Screen vertical:       32 dp
 Panel innen:           24 dp
 Karte innen:           16 dp
 Button horizontal:     24 dp
@@ -285,13 +293,13 @@ Chips/Tabs:    999 dp
 ## Fokus-Tokens
 
 ```text
-vc_focus_scale_small       1.03
-vc_focus_scale_medium      1.06
-vc_focus_scale_large       1.08
-vc_focus_ring_width        3 dp
+vc_focus_scale_small       1.02
+vc_focus_scale_card        1.06
+vc_focus_scale_button      1.03
+vc_focus_ring_width        2 dp
 vc_focus_ring_gap          3 dp
-vc_focus_shadow_blur       24 dp
-vc_focus_shadow_alpha      0.40
+vc_focus_glow_elevation    18 dp
+vc_focus_animation         120 ms
 ```
 
 ## Fokus-Kombination

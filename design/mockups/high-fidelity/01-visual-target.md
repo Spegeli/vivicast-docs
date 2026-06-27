@@ -4,7 +4,7 @@ Status: verbindliche visuelle Zielreferenz v2
 
 ## Ziel
 
-Dieses Dokument definiert die hochwertige UI-Richtung fuer Vivicast auf Basis der aktuellen High-Fidelity-Renderings.
+Dieses Dokument definiert die hochwertige UI-Richtung für Vivicast auf Basis der aktuellen High-Fidelity-Renderings.
 
 Die aktiven Bilder liegen unter:
 
@@ -16,7 +16,7 @@ Low-Fidelity-Mockups sind keine aktive Referenz mehr.
 
 ## Zielwirkung
 
-Vivicast soll wirken wie eine moderne Premium-App fuer Android TV:
+Vivicast soll wirken wie eine moderne Premium-App für Android TV:
 
 ```text
 hochwertig
@@ -64,7 +64,7 @@ angehobene Flaeche
 klaren Kontrast
 ```
 
-Fokus darf nicht nur ueber eine kleine Farbaenderung dargestellt werden.
+Fokus darf nicht nur über eine kleine Farbaenderung dargestellt werden.
 
 ## Screen-Ziele
 
@@ -135,7 +135,7 @@ Fokus sofort sichtbar ist
 TV-Lesbarkeit erhalten bleibt
 Android-TV-Navigation nachvollziehbar bleibt
 Provider-Isolation nicht verletzt wird
-Design spaeter in Jetpack Compose for TV realistisch umsetzbar ist
+Design später in Jetpack Compose for TV realistisch umsetzbar ist
 ```
 
 ## Technische Umsetzungshilfe
@@ -146,4 +146,4 @@ Die technische Ableitung der aktuellen Zieloptik liegt unter:
 design/design-system/compose-template/
 ```
 
-Diese Dateien konkretisieren Farben, Typografie, Spacing, Shapes und Fokuswerte fuer eine spaetere Compose-Umsetzung.
+Diese Dateien konkretisieren Farben, Typografie, Spacing, Shapes und Fokuswerte für eine spätere Compose-Umsetzung.

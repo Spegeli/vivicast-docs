@@ -31,16 +31,16 @@ Atomarer Import- und Refresh-Vertrag: `prd/PRD-v1/07-background-jobs-performance
 
 Der Fokus startet auf der ersten vorhandenen Wiedergabeliste.
 
-Wenn keine Wiedergabeliste existiert, startet der Fokus auf `Wiedergabeliste hinzufuegen`.
+Wenn keine Wiedergabeliste existiert, startet der Fokus auf `Wiedergabeliste hinzufügen`.
 
-## Wiedergabeliste hinzufuegen
+## Wiedergabeliste hinzufügen
 
 Der Flow ist mehrstufig:
 
 1. Name eingeben
-2. Quelltyp waehlen: M3U oder Xtream Codes
-3. bei M3U Eingabeart waehlen: URL, Datei oder Zwischenablage
-4. typabhaengiges Formular ausfuellen
+2. Quelltyp wählen: M3U oder Xtream Codes
+3. bei M3U Eingabeart wählen: URL, Datei oder Zwischenablage
+4. typabhängiges Formular ausfuellen
 5. Verbindung testen
 6. bei Erfolg speichern
 7. direkt aktualisieren/importieren
@@ -51,9 +51,9 @@ Name muss eindeutig sein.
 
 Wenn der Name bereits existiert, wird ein Fehler direkt am Feld angezeigt.
 
-Der Quelltyp kann nach dem Speichern nicht geaendert werden.
+Der Quelltyp kann nach dem Speichern nicht geändert werden.
 
-Der Add Flow enthaelt keine User-Agent-Option.
+Der Add Flow enthält keine User-Agent-Option.
 
 User-Agent wird global in `Einstellungen > Allgemein` gesetzt.
 
@@ -71,23 +71,23 @@ M3U URL zeigt:
 
 HTTP-URLs sind erlaubt, werden aber als unsicher markiert. HTTPS wird bevorzugt.
 
-M3U Add- und Edit-Formulare duerfen keine eigenen HTTP-Header-, Cookie- oder User-Agent-Optionen anzeigen.
+M3U Add- und Edit-Formulare dürfen keine eigenen HTTP-Header-, Cookie- oder User-Agent-Optionen anzeigen.
 
 M3U Datei zeigt:
 
-- Datei auswaehlen
+- Datei auswählen
 
 M3U Zwischenablage zeigt:
 
-- Inhalt oder URL aus Zwischenablage uebernehmen
+- Inhalt oder URL aus Zwischenablage übernehmen
 
-Bei M3U gibt es keine Importauswahl fuer Live-TV, Filme oder Serien.
+Bei M3U gibt es keine Importauswahl für Live-TV, Filme oder Serien.
 
 Bei M3U-Dateiimport wird keine dauerhafte Kopie der Datei lokal gespeichert.
 
-M3U Add- und Edit-Formulare duerfen keine eigene User-Agent-Option anzeigen.
+M3U Add- und Edit-Formulare dürfen keine eigene User-Agent-Option anzeigen.
 
-M3U-Import kann mit Teilfehlern abschliessen. Die UI zeigt dann einen zusammenfassenden Status statt einzelner Rohdaten.
+M3U-Import kann mit Teilfehlern abschließen. Die UI zeigt dann einen zusammenfassenden Status statt einzelner Rohdaten.
 
 ## Xtream Codes Add-Formular
 
@@ -107,9 +107,9 @@ Importoptionen:
 - Filme importieren
 - Serien importieren
 
-Xtream-Codes Add- und Edit-Formulare duerfen keine eigene User-Agent-Option anzeigen.
+Xtream-Codes Add- und Edit-Formulare dürfen keine eigene User-Agent-Option anzeigen.
 
-Xtream-Codes-Import kann mit Teilfehlern abschliessen. Unvollstaendige, aber verwertbare Eintraege duerfen importiert werden.
+Xtream-Codes-Import kann mit Teilfehlern abschließen. Unvollstaendige, aber verwertbare Eintraege dürfen importiert werden.
 
 ## Verbindungstest
 
@@ -121,11 +121,11 @@ Bei Fehler wird nicht gespeichert.
 
 Fehler werden direkt im Formular angezeigt.
 
-Teilfehler aus einem spaeteren Import werden als Quellenstatus oder Aktualisierungshistorie zusammengefasst.
+Teilfehler aus einem späteren Import werden als Quellenstatus oder Aktualisierungshistorie zusammengefasst.
 
 Der Verbindungstest verwendet den globalen User-Agent, sofern technisch anwendbar.
 
-Verbindungstests laufen ueber die zentrale Netzwerk- und Sicherheitsrichtlinie. TLS-Zertifikatsfehler werden nicht bypassed.
+Verbindungstests laufen über die zentrale Netzwerk- und Sicherheitsrichtlinie. TLS-Zertifikatsfehler werden nicht bypassed.
 
 ## Wiedergabelistenliste
 
@@ -139,7 +139,7 @@ Ein Eintrag zeigt:
 
 Statuswerte werden als Status Badge angezeigt.
 
-Teilfehler duerfen als zusammenfassender Status wie `Aktiv mit Teilfehlern` oder in der Aktualisierungshistorie angezeigt werden.
+Teilfehler dürfen als zusammenfassender Status wie `Aktiv mit Teilfehlern` oder in der Aktualisierungshistorie angezeigt werden.
 
 Bei fehlgeschlagenem oder abgebrochenem Refresh bleiben alte Inhalte sichtbar.
 
@@ -147,17 +147,17 @@ Bei fehlgeschlagenem oder abgebrochenem Refresh bleiben alte Inhalte sichtbar.
 
 Primaere Aktionen:
 
-- Wiedergabeliste hinzufuegen
+- Wiedergabeliste hinzufügen
 - alle Wiedergabelisten aktualisieren
 
 Aktionen pro Wiedergabeliste:
 
-- Details oeffnen
+- Details öffnen
 - bearbeiten
 - aktualisieren
 - aktivieren
 - deaktivieren
-- loeschen
+- löschen
 
 ## Wiedergabelisten-Details und Bearbeiten
 
@@ -166,15 +166,15 @@ Der Detailbereich zeigt und erlaubt Bearbeitung von:
 - Aktivieren / Deaktivieren
 - Name
 - M3U-Daten oder Xtream-Codes-Zugangsdaten
-- EPG-Quellen und Prioritaeten
-- Logo-Prioritaet
+- EPG-Quellen und Prioritäten
+- Logo-Priorität
 - Gruppen verwalten
 - Update-Optionen
-- Loeschen
+- Löschen
 
-Der Quelltyp kann nicht geaendert werden.
+Der Quelltyp kann nicht geändert werden.
 
-Wenn URL, Datei-Quelle, M3U-Inhalt oder Xtream-Zugangsdaten geaendert werden, muss vor dem Speichern erneut getestet werden.
+Wenn URL, Datei-Quelle, M3U-Inhalt oder Xtream-Zugangsdaten geändert werden, muss vor dem Speichern erneut getestet werden.
 
 Bei erfolgreichem Test wird gespeichert und direkt aktualisiert/importiert.
 
@@ -191,7 +191,7 @@ Anzeigen, falls vorhanden:
 
 EPG-Quellen werden global verwaltet und pro Provider zugeordnet.
 
-EPG-Daten werden quellbezogen als EPG-Quelle, EPG-Kanal und EPG-Programm gespeichert. Provider-Sender erhalten Programme ueber Mapping und Prioritaet.
+EPG-Daten werden quellbezogen als EPG-Quelle, EPG-Kanal und EPG-Programm gespeichert. Provider-Sender erhalten Programme über Mapping und Priorität.
 
 Ein EPG-Eintrag zeigt:
 
@@ -206,23 +206,23 @@ Ein EPG-Eintrag zeigt:
 
 Primaere Aktionen:
 
-- EPG-Quelle hinzufuegen
+- EPG-Quelle hinzufügen
 - EPG-Quelle bearbeiten
-- EPG-Quelle loeschen
-- manuelle Zuordnung oeffnen
-- Prioritaet aendern
+- EPG-Quelle löschen
+- manuelle Zuordnung öffnen
+- Priorität ändern
 - EPG jetzt aktualisieren
 - Aktualisierungshistorie anzeigen
 
-EPG-Quellen Add- und Edit-Formulare duerfen keine eigene User-Agent-Option anzeigen.
+EPG-Quellen Add- und Edit-Formulare dürfen keine eigene User-Agent-Option anzeigen.
 
-Der globale User-Agent aus Allgemein wird fuer EPG-HTTP-Anfragen verwendet, sofern technisch anwendbar.
+Der globale User-Agent aus Allgemein wird für EPG-HTTP-Anfragen verwendet, sofern technisch anwendbar.
 
 HTTP-EPG-Quellen sind erlaubt, werden aber als unsicher markiert. HTTPS wird bevorzugt. EPG-Formulare enthalten keine eigenen Header-, Cookie- oder User-Agent-Optionen.
 
 EPG-Programme werden nicht als providerbezogene Kopien dargestellt oder verwaltet.
 
-## EPG-Quelle hinzufuegen und bearbeiten
+## EPG-Quelle hinzufügen und bearbeiten
 
 Ein EPG-Formular zeigt mindestens:
 
@@ -233,54 +233,54 @@ Ein EPG-Formular zeigt mindestens:
 
 Fehler werden direkt am Feld oder im Formular angezeigt.
 
-## EPG-Prioritaet
+## EPG-Priorität
 
 Ein Provider kann mehrere EPG-Quellen haben.
 
-Prioritaeten:
+Prioritäten:
 
-- EPG 1 = Prioritaet 1
-- EPG 2 = Prioritaet 2
-- EPG 3 = Prioritaet 3
+- EPG 1 = Priorität 1
+- EPG 2 = Priorität 2
+- EPG 3 = Priorität 3
 
-Niedrigere Prioritaetszahl gewinnt bei konkurrierenden EPG-Daten.
+Niedrigere Prioritätszahl gewinnt bei konkurrierenden EPG-Daten.
 
 Manuelle Zuordnung gewinnt immer vor automatischer Zuordnung.
 
 ## EPG-Aktualisierung
 
-Die EPG-Gruppe enthaelt globale Aktualisierungsoptionen:
+Die EPG-Gruppe enthält globale Aktualisierungsoptionen:
 
 - globales Aktualisierungsintervall; Standard 24 Stunden
 - EPG-Vergangenheit behalten; 1 bis 14 Tage; Standard 1 Tag
 - EPG-Zukunft laden/behalten; 1 bis 14 Tage; Standard 7 Tage
 - beim App-Start aktualisieren
-- bei Playlist-Aenderung aktualisieren
+- bei Playlist-Änderung aktualisieren
 - jetzt aktualisieren
 - letzte Aktualisierung anzeigen
 - Aktualisierungshistorie anzeigen
 
-Das globale Intervall gilt nur fuer den automatischen intervallgesteuerten Refresh. App-Start und Playlist-Aenderung bleiben separate Ausloeser.
+Das globale Intervall gilt nur für den automatischen intervallgesteuerten Refresh. App-Start und Playlist-Änderung bleiben separate Ausloeser.
 
 Die EPG-Aufbewahrung steuert nur lokale EPG-Programmdaten. Quellen, EPG-Kanäle, Provider-Zuordnungen und manuelle Mappings bleiben erhalten.
 
 Wenn Hintergrundaktualisierung in Allgemein deaktiviert ist, werden automatische EPG-Aktualisierungen nicht ausgefuehrt.
 
-Manuelle EPG-Aktualisierung bleibt moeglich.
+Manuelle EPG-Aktualisierung bleibt möglich.
 
-## Loeschen
+## Löschen
 
-Loeschen nutzt eine einfache Bestaetigung.
+Löschen nutzt eine einfache Bestätigung.
 
-Wenn PIN-Schutz fuer Einstellungen aktiv ist, muss vor dem Loeschen zusaetzlich die PIN bestaetigt werden.
+Wenn PIN-Schutz für Einstellungen aktiv ist, muss vor dem Löschen zusätzlich die PIN bestätigt werden.
 
 ## Bedienung
 
 - OK auf Quelle oeffnet Details.
-- OK auf Hinzufuegen startet den Add Flow.
+- OK auf Hinzufügen startet den Add Flow.
 - Rechts wechselt zu Aktionen, wenn vorhanden.
-- Links kehrt zur Liste zurueck.
-- Zurueck schliesst Dialoge vor Rueckkehr zu Einstellungen.
+- Links kehrt zur Liste zurück.
+- Zurück schliesst Dialoge vor Rueckkehr zu Einstellungen.
 
 ## Zustaende
 
@@ -290,11 +290,11 @@ Loading: Aktualisierung laeuft.
 
 Source Error: Quelle konnte nicht geladen werden.
 
-Invalid Credentials: Zugangsdaten sind ungueltig oder fehlen.
+Invalid Credentials: Zugangsdaten sind ungültig oder fehlen.
 
 Duplicate Name: Providername existiert bereits.
 
-Partial Success: Aktualisierung abgeschlossen, einzelne Eintraege wurden uebersprungen.
+Partial Success: Aktualisierung abgeschlossen, einzelne Eintraege wurden übersprungen.
 
 No EPG Assigned: Provider hat keine EPG-Quelle zugeordnet.
 

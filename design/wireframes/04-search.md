@@ -67,8 +67,8 @@ auch bei gefuelltem Suchfeld sichtbar
 auch bei Ergebnisgruppen sichtbar
 maximal 20 Eintraege
 Eintrag erneut verwenden
-Eintrag loeschen
-Verlauf loeschen
+Eintrag löschen
+Verlauf löschen
 ```
 
 ## Ergebnisgruppen
@@ -87,13 +87,26 @@ Episoden sind keine eigene Suchgruppe. EPG-Ergebnisse erscheinen erst ab fachlic
 ## OK auf Ergebnis
 
 ```text
-Kanal   -> zugehoerigen Sender im Live-TV-Browser oeffnen; weiterer Ablauf gemaess Live-TV-Spezifikation
+Kanal   -> zugehoerigen Sender im Live-TV-Browser öffnen; weiterer Ablauf gemaess Live-TV-Spezifikation
 Film    -> Film-Detailseite
 Serie   -> Serien-Detailseite
 EPG     -> Live-TV Sender mit fokussiertem EPG-Eintrag
 ```
 
-## Zurueck
+EPG-Zielzustand:
+
+```text
+Live-TV im Sender-Modus
+passender Sender aktiv
+EPG-Spalte zum Zielprogrammpunkt gescrollt
+Fokus auf Zielprogrammpunkt
+aktuelle Sendung -> Vollbild Live-TV
+vergangene Sendung mit Catch-Up -> Catch-Up im internen Player
+vergangene Sendung ohne Catch-Up -> Details/Info, keine Wiedergabe
+zukuenftige Sendung -> Details/Info, keine Wiedergabe
+```
+
+## Zurück
 
 ```text
 BACK schliesst zuerst Texteingabe

@@ -2,7 +2,7 @@
 
 Status: verbindlich v3
 
-Dieses Verzeichnis enthaelt textbasierte Wireframes fuer die Android-TV-Oberflaeche von Vivicast.
+Dieses Verzeichnis enthält textbasierte Wireframes für die Android-TV-Oberflaeche von Vivicast.
 
 Die Wireframes sind keine finalen Mockups. Sie definieren grobe Struktur, Fokuswege, Zustaende und Screen-Verhalten. Visuelle Details wie Farben, Abstaende, Typografie und Komponentenregeln liegen im Design-System und in den Component Specs.
 
@@ -28,7 +28,7 @@ Der Player ist ein Fullscreen-Kontext ohne dauerhaft sichtbare Hauptnavigation.
 
 1. Hauptscreens vor der Implementierung validieren.
 2. D-Pad-Navigation sichtbar machen.
-3. Fokus- und Zurueck-Verhalten pro Screen zeigen.
+3. Fokus- und Zurück-Verhalten pro Screen zeigen.
 4. Empty-, Loading- und Error-States skizzieren.
 5. Provider-Isolation auch im Layout abbilden.
 6. Grosse IPTV-Bibliotheken lazy und skalierbar darstellen.
@@ -57,11 +57,11 @@ Der Player ist ein Fullscreen-Kontext ohne dauerhaft sichtbare Hauptnavigation.
 ## Fokusnotation
 
 - `UP / DOWN / LEFT / RIGHT`: D-Pad Richtung
-- `OK`: Aktion ausloesen
-- `BACK`: Zurueck-Taste
+- `OK`: Aktion auslösen
+- `BACK`: Zurück-Taste
 - `CHANNEL UP / CHANNEL DOWN`: Kanalwechsel oder Senderlistenfokus je Kontext
 
-## Screen-Prioritaet
+## Screen-Priorität
 
 1. Home
 2. Live-TV Browser

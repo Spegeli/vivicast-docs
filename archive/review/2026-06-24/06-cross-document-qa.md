@@ -30,8 +30,8 @@ Geprueft wurden Widersprueche, fehlende Referenzen, Codex-Einstiegspunkte und of
 - `design/wireframes/08-about-app.md`
 - `design/components/settings.md`
 - `design/components/about-app.md`
-- `design/review/04-visual-acceptance-checklist.md`
-- `design/review/05-about-app-qa.md`
+- `archive/review/2026-06-24/04-visual-acceptance-checklist.md`
+- `archive/review/2026-06-24/05-about-app-qa.md`
 
 ## Ergebnis
 
@@ -68,7 +68,7 @@ Behoben:
 - `prd/PRD-v1/11-about-app-requirements.md` ergaenzt.
 - `design/wireframes/08-about-app.md` ergaenzt.
 - `design/components/about-app.md` ergaenzt.
-- `design/review/05-about-app-qa.md` ergaenzt.
+- `archive/review/2026-06-24/05-about-app-qa.md` ergaenzt.
 
 ### 3. Settings-Screen-Quellenliste unvollstaendig
 
@@ -337,9 +337,9 @@ Keine blockierenden Widersprueche fuer die bereits entschiedenen Teile der Setti
 
 Die frueher offenen Folgepruefungen wurden spaeter abgeschlossen:
 
-- globale Cross-QA aller PRD-Kapitel gegen ADRs: siehe `design/review/08-adr-alignment-qa.md` und `design/review/10-final-cross-qa-and-dry-run.md`
-- Datenmodell-QA gegen Backup, Favoriten, Verlauf und Wiedergabefortschritt: siehe `design/review/07-data-model-qa.md`
-- Implementierungsbereitschaft-QA fuer das App-Repository `Spegeli/vivicast`: siehe `design/review/09-codex-implementation-readiness-qa.md` und `design/review/10-final-cross-qa-and-dry-run.md`
+- globale Cross-QA aller PRD-Kapitel gegen ADRs: siehe `archive/review/2026-06-24/08-adr-alignment-qa.md` und `archive/review/2026-06-24/10-final-cross-qa-and-dry-run.md`
+- Datenmodell-QA gegen Backup, Favoriten, Verlauf und Wiedergabefortschritt: siehe `archive/review/2026-06-24/07-data-model-qa.md`
+- Implementierungsbereitschaft-QA fuer das App-Repository `Spegeli/vivicast`: siehe `archive/review/2026-06-24/09-codex-implementation-readiness-qa.md` und `archive/review/2026-06-24/10-final-cross-qa-and-dry-run.md`
 
 ## Empfehlung fuer Codex
 
@@ -355,6 +355,6 @@ Vor Settings-Implementierung muss Codex mindestens lesen:
 8. `design/wireframes/08-about-app.md`
 9. `design/components/settings.md`
 10. `design/components/about-app.md`
-11. `design/review/04-visual-acceptance-checklist.md`
-12. `design/review/05-about-app-qa.md`
+11. `archive/review/2026-06-24/04-visual-acceptance-checklist.md`
+12. `archive/review/2026-06-24/05-about-app-qa.md`
 13. `architecture/decisions/ADR-014-security-data-network-backup.md`

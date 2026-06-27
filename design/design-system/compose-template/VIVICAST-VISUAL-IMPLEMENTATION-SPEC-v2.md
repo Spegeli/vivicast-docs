@@ -77,7 +77,7 @@ Text Disabled           #64748B
 Accent                  #00C8FF
 Accent Strong           #38D5FF
 Focus Ring              #00D4FF
-Focus Glow              #00BFFF66
+Focus Glow              #6600BFFF
 Progress                #159BFF
 
 Live                    #FF2D3A
@@ -181,17 +181,21 @@ VivicastDialog
 VivicastPinDialog
 ```
 
-## Harte UI-Regeln
+## Grenzen dieser Vorlage
+
+Diese Vorlage definiert technische Tokenwerte und Compose-Startpunkte.
+
+Sie definiert keine Produkt-, Navigations-, Settings-, Sicherheits-, PIN-, Backup/Restore- oder Playback-Regeln neu.
+
+Für solche Regeln gelten die aktiven Quellen gemäß `DOCS-GOVERNANCE.md`, insbesondere:
 
 ```text
-- Hauptscreens haben Top Navigation.
-- Player hat keine Top Navigation.
-- Top Navigation: Home | Live-TV | Filme | Serien | Suche | Einstellungen
-- Settings bleiben Master-Detail.
-- User-Agent nur unter Einstellungen > Allgemein als letzte Option.
-- PIN-Dialog nutzt keine eigene Zifferntastatur.
-- Dialoge sind TV-lesbar und D-Pad-bedienbar.
-- Destruktive Aktionen zeigen immer Abbrechen.
+prd/PRD-v1/
+design/screens/
+design/wireframes/
+design/components/
+design/interaction/
+architecture/decisions/
 ```
 
 ## Hinweis für spätere Feinjustierung

@@ -30,23 +30,23 @@ Auswahldialog        -> aktiver Wert
 
 BACK schliesst Dialoge, wenn der Zustand abbrechbar ist.
 
-## Bestaetigung
+## Bestätigung
 
 ```text
 +---------------------------------------------+
-| Aktion bestaetigen                           |
-| Moechtest du diese Aktion ausfuehren?        |
-| (*)[Bestaetigen] [Abbrechen]                 |
+| Aktion bestätigen                           |
+| Möchtest du diese Aktion ausführen?        |
+| (*)[Bestätigen] [Abbrechen]                 |
 +---------------------------------------------+
 ```
 
-## Loeschen mit optionalem PIN-Schutz
+## Löschen mit optionalem PIN-Schutz
 
 ```text
 +---------------------------------------------+
-| Wirklich loeschen?                           |
+| Wirklich löschen?                           |
 | Diese Aktion kann nicht rueckgaengig werden. |
-| (*)[Abbrechen] [Loeschen]                    |
+| (*)[Abbrechen] [Löschen]                    |
 +---------------------------------------------+
 ```
 
@@ -59,7 +59,7 @@ Wenn Einstellungsschutz aktiv ist:
 | [1] [2] [3]                                  |
 | [4] [5] [6]                                  |
 | [7] [8] [9]                                  |
-|     [0] [Loeschen]                           |
+|     [0] [Löschen]                           |
 | [Abbrechen]                                  |
 +---------------------------------------------+
 ```
@@ -76,12 +76,12 @@ Beispiele:
 
 ```text
 Keine Wiedergabelisten vorhanden
-(*)[Wiedergabeliste hinzufuegen]
+(*)[Wiedergabeliste hinzufügen]
 ```
 
 ```text
 Keine EPG-Quellen vorhanden
-(*)[EPG-Quelle hinzufuegen]
+(*)[EPG-Quelle hinzufügen]
 ```
 
 ```text
@@ -117,7 +117,7 @@ Provider konnte nicht aktualisiert werden.
 {Aktiv}
 {Aktualisierung laeuft}
 {Verbindungsfehler}
-{Anmeldedaten ungueltig}
+{Anmeldedaten ungültig}
 {Abgelaufen}
 {Deaktiviert}
 {LIVE}
@@ -135,7 +135,7 @@ Farbe allein reicht nicht. Badge muss textlich oder symbolisch verstaendlich sei
 +-----------------------------------+
 ```
 
-Position innerhalb Safe Area, nicht fuer kritische Fehler verwenden.
+Position innerhalb Safe Area, nicht für kritische Fehler verwenden.
 
 ## Akzeptanzkriterien
 
@@ -144,7 +144,7 @@ Jeder Dialog hat Initialfokus
 Destruktive Dialoge fokussieren Abbrechen
 BACK schliesst Dialoge
 Empty States bieten Aktionen nur wenn sinnvoll
-Loading blockiert nur wenn keine sinnvolle Nutzung moeglich ist
+Loading blockiert nur wenn keine sinnvolle Nutzung möglich ist
 Fehler sind handhabbar
 Status Badges sind nicht nur farblich verstaendlich
 ```

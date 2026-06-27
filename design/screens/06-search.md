@@ -6,7 +6,7 @@ Status: verbindlich v8
 
 Die Suche findet Kanäle, Filme, Serien und EPG-Inhalte zentral.
 
-Episoden werden nicht als eigene Suchgruppe angezeigt. Nutzer erreichen Episoden ueber die Serien-Detailseite.
+Episoden werden nicht als eigene Suchgruppe angezeigt. Nutzer erreichen Episoden über die Serien-Detailseite.
 
 Fachliche Suchregeln bleiben im PRD.
 
@@ -24,11 +24,11 @@ Fachliche Suchregeln bleiben im PRD.
 2. Suchfeld mit Sprachsuche-Aktion
 3. Suchhistorie
 4. Ergebnisgruppen
-5. Detailbereich fuer fokussiertes Ergebnis
+5. Detailbereich für fokussiertes Ergebnis
 
 ## Initialfokus
 
-Beim Oeffnen liegt der Fokus auf dem Suchfeld.
+Beim Öffnen liegt der Fokus auf dem Suchfeld.
 
 ## Suchfeld
 
@@ -36,7 +36,7 @@ Das Suchfeld steht im oberen Bereich des Screens.
 
 OK auf dem Suchfeld oeffnet die System-Tastatur.
 
-Eigene On-Screen-Tastatur ist fuer v1 nicht vorgesehen.
+Eigene On-Screen-Tastatur ist für v1 nicht vorgesehen.
 
 Die Sprachsuche ist eine eigene fokussierbare Aktion und startet nie automatisch.
 
@@ -51,8 +51,8 @@ Eintraege werden als Chips dargestellt.
 Unterstuetzt:
 
 - Suchbegriff erneut verwenden
-- einzelnen Eintrag loeschen
-- gesamten Verlauf loeschen
+- einzelnen Eintrag löschen
+- gesamten Verlauf löschen
 
 ## Ergebnisgruppen
 
@@ -67,7 +67,7 @@ Jede Gruppe wird als horizontale Row dargestellt.
 
 Es gibt keine verpflichtende `Alle anzeigen`-Aktion.
 
-Jede Gruppe zeigt hoechstens die technisch gelieferten v1-Treffer an.
+Jede Gruppe zeigt höchstens die technisch gelieferten v1-Treffer an.
 
 EPG-Ergebnisse erscheinen erst, wenn die Suche die fachliche Mindestlaenge erreicht.
 
@@ -89,6 +89,15 @@ Der Detailbereich zeigt zum fokussierten Ergebnis:
 - Serie oeffnet Serien-Detailseite.
 - EPG oeffnet Live-TV Sender mit fokussiertem EPG-Eintrag.
 
+EPG-Ergebnis öffnet Live-TV im Sender-Modus. Der passende Sender ist aktiv, die EPG-Spalte ist zum Zielprogrammpunkt gescrollt, und der Zielprogrammpunkt erhält Fokus.
+
+EPG-Ergebnisaktionen:
+
+- aktuelle Sendung -> Vollbild Live-TV
+- vergangene Sendung mit Catch-Up -> Catch-Up im internen Player
+- vergangene Sendung ohne Catch-Up -> Details/Info, keine Wiedergabe
+- zukünftige Sendung -> Details/Info, keine Wiedergabe
+
 ## Bedienung
 
 - OK auf Suchfeld oeffnet System-Tastatur.
@@ -97,7 +106,7 @@ Der Detailbereich zeigt zum fokussierten Ergebnis:
 - Links/Rechts navigiert innerhalb einer Gruppe.
 - Hoch/Runter wechselt zwischen Gruppen.
 - OK auf Ergebnis oeffnet Ziel gemaess Ergebnistyp.
-- Zurueck schliesst zuerst Texteingabe, danach springt die Suche in die Top Navigation.
+- Zurück schliesst zuerst Texteingabe, danach springt die Suche in die Top Navigation.
 
 ## Zustaende
 
@@ -105,7 +114,7 @@ Initial: Suchfeld und Suchhistorie sichtbar.
 
 Typing: Ergebnisse aktualisieren nach Debounce, Suchhistorie bleibt sichtbar.
 
-Short Query: Suchhistorie bleibt sichtbar; EPG-Ergebnisse muessen noch nicht erscheinen.
+Short Query: Suchhistorie bleibt sichtbar; EPG-Ergebnisse müssen noch nicht erscheinen.
 
 Loading: Ergebnisgruppen zeigen Platzhalter.
 

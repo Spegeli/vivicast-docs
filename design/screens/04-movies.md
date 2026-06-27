@@ -32,7 +32,7 @@ Der Fokus-Detailbereich liegt oberhalb des Poster Grids und aktualisiert sich be
 
 ## Initialfokus
 
-Beim frischen Oeffnen liegt der Fokus auf der ersten Kategorie des ersten Providers.
+Beim frischen Öffnen liegt der Fokus auf der ersten Kategorie des ersten Providers.
 
 Globale App-Kategorien wie Favoriten und Fortsetzen sind sichtbar, aber nicht der initiale Inhaltsfokus.
 
@@ -111,7 +111,7 @@ Neuer Film:
 
 - Abspielen
 - Trailer
-- Zu Favoriten hinzufuegen
+- Zu Favoriten hinzufügen
 - Als gesehen markieren
 
 Begonnener Film:
@@ -119,7 +119,7 @@ Begonnener Film:
 - Fortsetzen
 - Von Anfang an
 - Trailer
-- Zu Favoriten hinzufuegen
+- Zu Favoriten hinzufügen
 - Als gesehen markieren
 
 Gesehener Film:
@@ -127,7 +127,7 @@ Gesehener Film:
 - Status `Gesehen` anzeigen
 - Von Anfang an
 - Trailer
-- Zu Favoriten hinzufuegen
+- Zu Favoriten hinzufügen
 - Als ungesehen markieren
 
 ## Abschluss und Fortsetzen
@@ -140,9 +140,9 @@ Ab 95 Prozent oder beim tatsaechlichen Medienende wird der Film als gesehen darg
 
 ## Trailer
 
-Wenn eine gueltige YouTube-URL vorhanden ist, wird die YouTube-App geoeffnet.
+Wenn eine gültige YouTube-URL vorhanden ist, wird die YouTube-App geöffnet.
 
-Wenn keine URL vorhanden ist, wird YouTube mit Suchbegriff geoeffnet:
+Wenn keine URL vorhanden ist, wird YouTube mit Suchbegriff geöffnet:
 
 ```text
 <Titel> Trailer
@@ -153,24 +153,24 @@ Wenn die YouTube-App fehlt, wird ein Hinweis angezeigt.
 ## Bedienung
 
 - Links aus dem Grid fokussiert Kategorien.
-- Rechts im Grid bewegt zum naechsten Poster.
+- Rechts im Grid bewegt zum nächsten Poster.
 - Hoch/Runter bewegt im Grid oder zwischen Bereichen.
 - OK auf Poster oeffnet die Detailseite.
-- Zurueck aus Detailseite kehrt zum Grid zurueck.
-- Zurueck aus Grid fokussiert Kategorien.
-- Zurueck aus Kategorien springt in die Top Navigation.
+- Zurück aus Detailseite kehrt zum Grid zurück.
+- Zurück aus Grid fokussiert Kategorien.
+- Zurück aus Kategorien springt in die Top Navigation.
 
 ## Zustaende
 
 Loading: Poster Grid mit Skeleton Cards.
 
-Empty: Kategorie enthaelt keine Filme.
+Empty: Kategorie enthält keine Filme.
 
 No Poster: Gradient- oder Icon-Platzhalter.
 
 No Metadata: fehlende Werte werden ausgelassen, nicht geraten.
 
-Error: Providerdaten koennen nicht geladen werden.
+Error: Providerdaten können nicht geladen werden.
 
 ## Komponenten
 

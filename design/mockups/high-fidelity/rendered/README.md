@@ -1,14 +1,14 @@
 # High-Fidelity Rendered Images
 
-Status: active v2
+Status: active v3
 
-Dieser Ordner enthaelt die aktuellen gerenderten High-Fidelity-Bilder fuer Vivicast.
+Dieser Ordner enthält die aktuellen gerenderten High-Fidelity-Bilder für Vivicast.
 
 ## Rolle
 
 Gerenderte PNGs sind visuelle Zielreferenzen.
 
-Sie sind keine normative Quelle fuer:
+Sie sind keine normative Quelle für:
 
 - Produktumfang
 - Navigation
@@ -23,6 +23,8 @@ Sie sind keine normative Quelle fuer:
 - Playback-Regeln
 
 Bei Konflikten gelten die aktiven Markdown-Quellen nach `DOCS-GOVERNANCE.md`.
+
+Renderings v3 sind an die aktiven Markdown-Quellen angeglichen: Player-Aktionen verwenden `Mehr` statt `EPG`, VOD-/Suchaktionen verwenden Favoriten-Terminologie statt Merkliste-/Meine-Liste-Terminologie.
 
 ## Aktuelle Renderings
 
@@ -47,7 +49,7 @@ Bei Konflikten gelten die aktiven Markdown-Quellen nach `DOCS-GOVERNANCE.md`.
 ```text
 01 Home
 02 Live-TV Browser Kategorie-Modus
-03 Filme Uebersicht
+03 Filme Übersicht
 04 Serien Detailseite
 05 Suche
 06 Player Overlay Live-TV
@@ -60,11 +62,29 @@ Bei Konflikten gelten die aktiven Markdown-Quellen nach `DOCS-GOVERNANCE.md`.
 13 Einstellungen Backup Export Dialog
 ```
 
+## Aufloesung und Artboard
+
+Die aktuellen PNGs sind 16:9-Referenzen und nicht zwingend exakt `1920 x 1080`.
+
+Technische Designreferenz bleibt:
+
+```text
+1920 x 1080
+16:9
+dp/sp-basierte Compose-Umsetzung
+```
+
+## Bekannte Interpretationsregel
+
+Sichtbare Beispielwerte in PNGs, zum Beispiel konkrete EPG-Intervallwerte, Statuszeiten oder Beispielinhalte, sind Demo-Daten.
+
+Verbindliche Defaultwerte und sichtbare Optionslisten stehen in PRD, Screen Specs, Wireframes und Settings-Vertrag.
+
 ## Regeln
 
 - Keine Low-Fidelity-Bilder in diesem Ordner ablegen.
 - Keine historischen Renderings in diesem Ordner ablegen.
-- Neue aktive High-Fidelity-Bilder muessen konsistent benannt und in dieser README nachgezogen werden.
+- Neue aktive High-Fidelity-Bilder müssen konsistent benannt und in dieser README nachgezogen werden.
 - PNGs konkretisieren die visuelle Zieloptik, aber nicht Produktlogik oder sichtbare Texte, falls sie aktuellen Markdown-Quellen widersprechen.
 
 ## Verwandte Umsetzungsvorlage
@@ -73,4 +93,4 @@ Bei Konflikten gelten die aktiven Markdown-Quellen nach `DOCS-GOVERNANCE.md`.
 design/design-system/compose-template/
 ```
 
-Die Compose-Template-Dateien konkretisieren die visuelle Zielrichtung in Tokens und Kotlin-Vorlagen fuer spaetere App-Umsetzung.
+Die Compose-Template-Dateien konkretisieren die visuelle Zielrichtung in Tokens und Kotlin-Vorlagen für spätere App-Umsetzung.

@@ -6,7 +6,7 @@ Status: verbindlich v1
 
 Diese Datei legt fest, welche Informationen im PRD stehen und welche Informationen in Design- oder Architekturdateien gehoeren.
 
-## PRD ist Hauptquelle fuer
+## PRD ist Hauptquelle für
 
 - Produktumfang
 - fachliche Anforderungen
@@ -15,7 +15,7 @@ Diese Datei legt fest, welche Informationen im PRD stehen und welche Information
 - Nicht-Ziele
 - Akzeptanzkriterien
 
-## PRD ist nicht Hauptquelle fuer
+## PRD ist nicht Hauptquelle für
 
 - konkrete Screen-Layouts
 - Fokuspfade
@@ -24,7 +24,7 @@ Diese Datei legt fest, welche Informationen im PRD stehen und welche Information
 - visuelle Tokens
 - Wireframe-Details
 
-## Verweise fuer Layout und Bedienung
+## Verweise für Layout und Bedienung
 
 Wenn ein PRD-Abschnitt Layout oder Bedienung beruehrt, soll er auf die passende Designquelle verweisen.
 
@@ -36,8 +36,8 @@ Quellen:
 - `design/components/`
 - `design/design-system/`
 
-## Regel fuer spaetere Bereinigung
+## Regel für spätere Bereinigung
 
 Bestehende Layoutdetails im PRD sollen nicht erweitert werden.
 
-Wenn sie ueberarbeitet werden, sollen sie gekuerzt und durch Verweise auf die passende Designquelle ersetzt werden.
+Wenn sie überarbeitet werden, sollen sie gekuerzt und durch Verweise auf die passende Designquelle ersetzt werden.

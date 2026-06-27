@@ -18,7 +18,7 @@ M3U
 Xtream Codes
 ```
 
-Der verbindliche Parser- und Quellenvertrag fuer M3U, Xtream Codes und XMLTV liegt in:
+Der verbindliche Parser- und Quellenvertrag für M3U, Xtream Codes und XMLTV liegt in:
 
 ```text
 prd/PRD-v1/12-parser-source-contracts.md
@@ -30,7 +30,7 @@ Der verbindliche atomare Import- und Refresh-Vertrag liegt in:
 prd/PRD-v1/07-background-jobs-performance.md
 ```
 
-Der verbindliche Sicherheitsvertrag fuer HTTP/TLS, Secret Store und Diagnosebereinigung liegt in:
+Der verbindliche Sicherheitsvertrag für HTTP/TLS, Secret Store und Diagnosebereinigung liegt in:
 
 ```text
 prd/PRD-v1/08-android-tv-security.md
@@ -43,18 +43,18 @@ Provider werden niemals automatisch zusammengefuehrt.
 
 Gleiche Inhalte verschiedener Provider bleiben getrennt.
 
-Provider-Namen muessen eindeutig sein.
+Provider-Namen müssen eindeutig sein.
 
 ---
 
-# Provider hinzufuegen
+# Provider hinzufügen
 
 Der Add Flow ist verbindlich:
 
 1. Name eingeben
-2. Quelltyp waehlen: M3U oder Xtream Codes
-3. bei M3U Eingabeart waehlen: URL, Datei oder Zwischenablage
-4. typabhaengige Daten eingeben
+2. Quelltyp wählen: M3U oder Xtream Codes
+3. bei M3U Eingabeart wählen: URL, Datei oder Zwischenablage
+4. typabhängige Daten eingeben
 5. Verbindung testen
 6. bei erfolgreichem Test speichern
 7. direkt aktualisieren/importieren
@@ -63,7 +63,7 @@ Name ist Pflichtfeld.
 
 Jeder Name darf nur einmal als Provider vorhanden sein.
 
-Wenn der Name bereits existiert, wird ein Hinweis angezeigt und Speichern ist nicht moeglich.
+Wenn der Name bereits existiert, wird ein Hinweis angezeigt und Speichern ist nicht möglich.
 
 ## M3U
 
@@ -75,9 +75,9 @@ Datei
 Zwischenablage
 ```
 
-M3U hat keine Optionen fuer Live-TV, Filme oder Serien importieren.
+M3U hat keine Optionen für Live-TV, Filme oder Serien importieren.
 
-M3U wird so importiert, wie die App die Playlist erhaelt.
+M3U wird so importiert, wie die App die Playlist erhält.
 
 Filme und Serien in M3U werden wie normale Playlist-Inhalte behandelt.
 
@@ -89,7 +89,7 @@ Private M3U-URLs mit eingebetteten Zugangswerten werden wie geheime Werte behand
 
 HTTP-M3U-URLs sind erlaubt, werden aber als unsicher markiert. HTTPS wird bevorzugt.
 
-M3U-Import nutzt toleranten Teilimport. Fehlerhafte Eintraege werden uebersprungen, solange verwertbare Eintraege importiert werden koennen.
+M3U-Import nutzt toleranten Teilimport. Fehlerhafte Eintraege werden übersprungen, solange verwertbare Eintraege importiert werden können.
 
 ## Xtream Codes
 
@@ -130,28 +130,28 @@ Bei erfolgreichem Test wird gespeichert und direkt aktualisiert/importiert.
 
 Bei fehlgeschlagenem Test wird nicht gespeichert.
 
-Der Nutzer erhaelt einen Hinweis zum Grund, soweit ermittelbar.
+Der Nutzer erhält einen Hinweis zum Grund, soweit ermittelbar.
 
-Verbindungstests laufen ueber die zentrale Netzwerk- und Sicherheitsrichtlinie. TLS-Zertifikatsfehler werden nicht bypassed.
+Verbindungstests laufen über die zentrale Netzwerk- und Sicherheitsrichtlinie. TLS-Zertifikatsfehler werden nicht bypassed.
 
 Beispiele:
 
 ```text
 Name bereits vorhanden
-URL ungueltig
+URL ungültig
 Server nicht erreichbar
-Anmeldedaten ungueltig
+Anmeldedaten ungültig
 Datei nicht lesbar
-Zwischenablage enthaelt keine nutzbare M3U-Quelle
+Zwischenablage enthält keine nutzbare M3U-Quelle
 ```
 
-Teilfehler einzelner Eintraege brechen einen spaeteren Import nicht ab. Der Nutzer erhaelt nach Abschluss einen zusammenfassenden Teilfehler-Status.
+Teilfehler einzelner Eintraege brechen einen späteren Import nicht ab. Der Nutzer erhält nach Abschluss einen zusammenfassenden Teilfehler-Status.
 
 ---
 
 # Provider bearbeiten
 
-Alle Felder duerfen bearbeitet werden, ausser der Quelltyp.
+Alle Felder dürfen bearbeitet werden, ausser der Quelltyp.
 
 Ein Wechsel zwischen M3U und Xtream Codes ist nicht erlaubt.
 
@@ -161,16 +161,16 @@ Bearbeitbare Optionen:
 Aktivieren / Deaktivieren
 Name
 M3U-Daten oder Xtream-Codes-Zugangsdaten
-EPG-Quellen und Prioritaeten
-Logo-Prioritaet
+EPG-Quellen und Prioritäten
+Logo-Priorität
 Gruppen verwalten
 Update-Optionen
-Loeschen
+Löschen
 ```
 
 Name bleibt Pflichtfeld und muss eindeutig sein.
 
-Wenn M3U-URL, M3U-Inhalt, Datei-Quelle oder Xtream-Zugangsdaten geaendert werden, muss beim Speichern zuerst erneut ein Verbindungstest erfolgen.
+Wenn M3U-URL, M3U-Inhalt, Datei-Quelle oder Xtream-Zugangsdaten geändert werden, muss beim Speichern zuerst erneut ein Verbindungstest erfolgen.
 
 Bei erfolgreichem Test wird gespeichert und direkt aktualisiert/importiert.
 
@@ -182,10 +182,10 @@ Bearbeitung umfasst:
 
 ```text
 EPG-Quellen zuweisen
-EPG-Prioritaet aendern
+EPG-Priorität ändern
 ```
 
-## Logo Prioritaet pro Provider
+## Logo Priorität pro Provider
 
 Optionen:
 
@@ -219,7 +219,7 @@ letzte Aktualisierung anzeigen
 
 Wenn globale Hintergrundaktualisierung deaktiviert ist, laufen keine automatischen Aktualisierungen.
 
-Manuelle Aktualisierung bleibt moeglich.
+Manuelle Aktualisierung bleibt möglich.
 
 ## Provider-Detailinformationen
 
@@ -243,7 +243,7 @@ Aktiv
 Aktiv mit Teilfehlern
 Aktualisierung laeuft
 Verbindungsfehler
-Anmeldedaten ungueltig
+Anmeldedaten ungültig
 Abgelaufen
 Deaktiviert
 Zugangsdaten erforderlich
@@ -267,11 +267,11 @@ Zugehoerige Android-TV-Systemsucheintraege und Watch-Next-Publikationen werden e
 
 ---
 
-# Provider loeschen
+# Provider löschen
 
-Provider loeschen nutzt eine einfache Bestaetigung.
+Provider löschen nutzt eine einfache Bestätigung.
 
-Wenn PIN-Schutz fuer Einstellungen aktiv ist, muss vor dem Loeschen zusaetzlich die PIN bestaetigt werden.
+Wenn PIN-Schutz für Einstellungen aktiv ist, muss vor dem Löschen zusätzlich die PIN bestätigt werden.
 
 Mitgeloescht werden:
 
@@ -302,7 +302,7 @@ Diese bleiben erhalten.
 
 # Playlist Typ
 
-Nicht aenderbar.
+Nicht änderbar.
 
 ```text
 M3U <-> Xtream Codes
@@ -314,11 +314,11 @@ nicht erlaubt.
 
 # 5.1 Kategorien
 
-Kategorien werden unveraendert vom Provider uebernommen.
+Kategorien werden unverändert vom Provider übernommen.
 
 Keine automatische Zusammenfuehrung.
 
-Benutzer koennen Kategorien ausblenden und sortieren.
+Benutzer können Kategorien ausblenden und sortieren.
 
 Fehlende Kategorien:
 
@@ -348,7 +348,7 @@ EPG-Kanal
 EPG-Programm
 ```
 
-Provider-Sender werden ueber Mapping und Provider-EPG-Prioritaeten mit EPG-Kanälen verbunden.
+Provider-Sender werden über Mapping und Provider-EPG-Prioritäten mit EPG-Kanälen verbunden.
 
 EPG-Programme werden nicht als providerbezogene Kopien gespeichert.
 
@@ -373,23 +373,23 @@ Aktiviert
 
 Private EPG-URLs mit eingebetteten Zugangswerten werden wie geheime Werte behandelt.
 
-## EPG Prioritaeten
+## EPG Prioritäten
 
-Pro Provider koennen mehrere EPG-Quellen priorisiert werden.
+Pro Provider können mehrere EPG-Quellen priorisiert werden.
 
 Beispiel:
 
 ```text
-EPG 1 -> Prioritaet 1
-EPG 2 -> Prioritaet 2
-EPG 3 -> Prioritaet 3
+EPG 1 -> Priorität 1
+EPG 2 -> Priorität 2
+EPG 3 -> Priorität 3
 ```
 
 ## Automatische Zuordnung
 
 Sender werden automatisch zugeordnet.
 
-Automatische Zuordnung darf manuelle Zuordnung nicht ueberschreiben.
+Automatische Zuordnung darf manuelle Zuordnung nicht überschreiben.
 
 ## Manuelle Zuordnung
 
@@ -409,9 +409,9 @@ Manuelle Zuordnungen gewinnen immer vor automatischen Zuordnungen.
 
 Das globale EPG-Aktualisierungsintervall hat den Standardwert 24 Stunden.
 
-Es gilt fuer den automatischen intervallgesteuerten Refresh. App-Start, Playlist-Aenderung und manuelle Aktualisierung bleiben separate Ausloeser.
+Es gilt für den automatischen intervallgesteuerten Refresh. App-Start, Playlist-Änderung und manuelle Aktualisierung bleiben separate Ausloeser.
 
-Mehrere Provider koennen dieselbe EPG Quelle nutzen.
+Mehrere Provider können dieselbe EPG Quelle nutzen.
 
 Die Quelle wird pro Refresh-Zyklus nur einmal aktualisiert.
 
@@ -434,17 +434,17 @@ Alle Programmzeiten werden intern als UTC-Zeitpunkte gespeichert.
 
 Der Zeitversatz der EPG-Quelle wird beim Import angewendet.
 
-Fehlende Endzeiten duerfen aus dem naechsten Programmbeginn desselben EPG-Kanals abgeleitet werden.
+Fehlende Endzeiten dürfen aus dem nächsten Programmbeginn desselben EPG-Kanals abgeleitet werden.
 
-Ueberlappungen und Duplikate brechen den Import nicht ab. Innerhalb derselben Quelle und desselben EPG-Kanals werden Duplikate ueber Startzeit und normalisierten Titel dedupliziert.
+Überlappungen und Duplikate brechen den Import nicht ab. Innerhalb derselben Quelle und desselben EPG-Kanals werden Duplikate über Startzeit und normalisierten Titel dedupliziert.
 
 ## Fehlgeschlagene Aktualisierung
 
 Alte EPG-Daten bleiben erhalten.
 
-Ein fehlgeschlagener oder abgebrochener Provider-Refresh veraendert keine produktiven Inhalte dieses Providers.
+Ein fehlgeschlagener oder abgebrochener Provider-Refresh verändert keine produktiven Inhalte dieses Providers.
 
-Ein Provider-Refresh mit Teilfehlern darf valide Inhalte uebernehmen. Inhalte duerfen nur dann als entfernt geloescht werden, wenn der betroffene Teilbereich vollstaendig gelesen und validiert wurde.
+Ein Provider-Refresh mit Teilfehlern darf valide Inhalte übernehmen. Inhalte dürfen nur dann als entfernt geloescht werden, wenn der betroffene Teilbereich vollstaendig gelesen und validiert wurde.
 
 Ein erfolgreicher autoritativer Provider-Refresh entfernt nicht mehr gelieferte Inhalte und die zugehoerigen Favoriten, Verlaeufe und Wiedergabefortschritte.
 
@@ -458,11 +458,11 @@ Keine Programminformationen verfuegbar
 
 Sender bleibt sichtbar.
 
-## EPG Quelle loeschen
+## EPG Quelle löschen
 
 Wenn eine EPG Quelle noch verwendet wird, wird eine Warnung angezeigt.
 
-Loeschen bleibt moeglich.
+Löschen bleibt möglich.
 
 ---
 
@@ -480,8 +480,8 @@ EPG vorhanden
 
 Zugriff:
 
-- ueber vergangene EPG-Sendungen
-- ueber Sender-Menue
+- über vergangene EPG-Sendungen
+- über Sender-Menue
 
 Ohne EPG wird Catch-Up deaktiviert.
 
@@ -497,7 +497,7 @@ Filme
 Serien
 ```
 
-Favoriten werden ueber IDs gespeichert.
+Favoriten werden über IDs gespeichert.
 
 ```text
 providerId
@@ -507,7 +507,7 @@ mediaType
 
 ## Live-TV
 
-Live-TV Favoriten sind anbieteruebergreifend sichtbar, bleiben intern aber providergebunden.
+Live-TV Favoriten sind anbieterübergreifend sichtbar, bleiben intern aber providergebunden.
 
 Standardsortierung:
 
@@ -596,9 +596,9 @@ Abschlussstatus
 
 Suchverlauf speichert maximal 20 Eintraege.
 
-Einzelne Eintraege und der gesamte Suchverlauf koennen geloescht werden.
+Einzelne Eintraege und der gesamte Suchverlauf können geloescht werden.
 
-## Verlauf loeschen
+## Verlauf löschen
 
 Unterstuetzt:
 
@@ -642,23 +642,23 @@ innerhalb des Serienbereichs.
 
 ## Home
 
-Home zeigt Fortsetzen fuer Filme und Serien gemischt.
+Home zeigt Fortsetzen für Filme und Serien gemischt.
 
 Live-TV erscheint nicht in Fortsetzen.
 
 ## Abschluss
 
-Film-Fortsetzen enthaelt nur Filme mit fortsetzbarem Fortschritt und `isCompleted = false`.
+Film-Fortsetzen enthält nur Filme mit fortsetzbarem Fortschritt und `isCompleted = false`.
 
-Serien-Fortsetzen setzt eine nicht abgeschlossene Episode an ihrer gespeicherten Position fort. Ist die zuletzt relevante Episode abgeschlossen und eine naechste Episode verfuegbar, verweist der Serien-Eintrag stattdessen auf diese naechste Episode bei Position 0. Die abgeschlossene Episode selbst wird nicht fortgesetzt.
+Serien-Fortsetzen setzt eine nicht abgeschlossene Episode an ihrer gespeicherten Position fort. Ist die zuletzt relevante Episode abgeschlossen und eine nächste Episode verfuegbar, verweist der Serien-Eintrag stattdessen auf diese nächste Episode bei Position 0. Die abgeschlossene Episode selbst wird nicht fortgesetzt.
 
-Filme und Episoden gelten ab mindestens 95 Prozent oder beim tatsaechlichen Medienende als abgeschlossen. Der Wert ist fuer v1 fest und nicht als Einstellung verfuegbar.
+Filme und Episoden gelten ab mindestens 95 Prozent oder beim tatsaechlichen Medienende als abgeschlossen. Der Wert ist für v1 fest und nicht als Einstellung verfuegbar.
 
 `Als gesehen markieren` setzt den Abschlussstatus ebenfalls. `Als ungesehen markieren` loescht den vollstaendigen zugehoerigen Wiedergabefortschritt.
 
-Abgeschlossene Filme und abgeschlossene Episoden werden als direkte Resume-Ziele aus Home sowie Film- und Serien-Fortsetzen entfernt. Ein Serien-Eintrag darf danach auf die naechste verfuegbare Episode wechseln; nach Abschluss der letzten Episode verschwindet er, sofern kein anderer unvollstaendiger Episodenfortschritt existiert.
+Abgeschlossene Filme und abgeschlossene Episoden werden als direkte Resume-Ziele aus Home sowie Film- und Serien-Fortsetzen entfernt. Ein Serien-Eintrag darf danach auf die nächste verfuegbare Episode wechseln; nach Abschluss der letzten Episode verschwindet er, sofern kein anderer unvollstaendiger Episodenfortschritt existiert.
 
-Der Abschlussstatus gilt bei Serien nur fuer einzelne Episoden. Fuer komplette Staffeln oder Serien existiert in v1 kein eigener Abschlussdatensatz.
+Der Abschlussstatus gilt bei Serien nur für einzelne Episoden. Für komplette Staffeln oder Serien existiert in v1 kein eigener Abschlussdatensatz.
 
 Continue Watching basiert auf `PlaybackProgressEntity`.
 
@@ -684,14 +684,14 @@ Google Drive
 
 ```text
 Standard-Backup
-Verschluesseltes Vollbackup
+Verschlüsseltes Vollbackup
 ```
 
 Standard-Backup exportiert keine geheimen Zugangswerte und keine privaten Quellen-URLs mit eingebetteten Zugangswerten.
 
-Verschluesseltes Vollbackup darf geheime Zugangswerte enthalten, wenn der Nutzer aktiv eine Backup-Passphrase setzt.
+Verschlüsseltes Vollbackup darf geheime Zugangswerte enthalten, wenn der Nutzer aktiv eine Backup-Passphrase setzt.
 
-Verschluesselte Vollbackups nutzen das Schutzformat aus `prd/PRD-v1/10-backup-import-requirements.md` und `architecture/decisions/ADR-014-security-data-network-backup.md`.
+Verschlüsselte Vollbackups nutzen das Schutzformat aus `prd/PRD-v1/10-backup-import-requirements.md` und `architecture/decisions/ADR-014-security-data-network-backup.md`.
 
 Die Backup-Passphrase wird nicht gespeichert, nicht geloggt und nicht in Diagnoseexporte geschrieben.
 
@@ -703,13 +703,13 @@ Die App fuehrt lokale und importierte Provider, EPG-Quellen, Favoriten, Verlaeuf
 
 Vor Restore werden Backup-Datei, Passphrase, Schema-Migration und Inhalt validiert.
 
-Restore erfordert eine klare Bestaetigung und bei aktivem lokalem Einstellungsschutz oder lokaler Backup-/Restore-PIN-Schutzregel eine PIN-Abfrage.
+Restore erfordert eine klare Bestätigung und bei aktivem lokalem Einstellungsschutz oder lokaler Backup-/Restore-PIN-Schutzregel eine PIN-Abfrage.
 
 Vor dem Ersetzen versucht die App ein internes Sicherheitsbackup der aktuellen lokalen Daten zu erstellen. Wenn dieses Sicherheitsbackup fehlschlaegt, fragt die App den Nutzer, ob Restore trotzdem fortgesetzt oder abgebrochen werden soll.
 
 Die PIN-Abfrage vor Restore nutzt immer die aktuell lokale PIN.
 
-PIN-Pruefwerte, aktive PIN-Freigaben und Kindersicherung-Schutzflags aus der Backup-Datei werden nach Restore nicht uebernommen.
+PIN-Pruefwerte, aktive PIN-Freigaben und Kindersicherung-Schutzflags aus der Backup-Datei werden nach Restore nicht übernommen.
 
 Wenn Kindersicherung beim Export aktiv war, wird sie nach Restore deaktiviert und die App zeigt einen Hinweis zur manuellen Reaktivierung unter `Einstellungen > Kindersicherung`.
 
@@ -717,7 +717,7 @@ Lokale Provider und backupbezogene Nutzerdaten, die nicht im Backup enthalten si
 
 `Als Kopie importieren` und Restore-Konfliktdialoge sind nicht Teil von v1.
 
-Alte Backup-Schema-Versionen duerfen vor Restore migriert werden. Diese Schema-Migration ist kein Zusammenfuehren lokaler und importierter Daten.
+Alte Backup-Schema-Versionen dürfen vor Restore migriert werden. Diese Schema-Migration ist kein Zusammenfuehren lokaler und importierter Daten.
 
 ## Backup-Teilrestore
 
@@ -731,4 +731,4 @@ Backups werden ausschliesslich manuell gestartet.
 
 ## Backup Rotation
 
-Eine konfigurierbare Backup-Rotation ist nicht Teil von v1, sofern spaeter nicht explizit entschieden.
+Eine konfigurierbare Backup-Rotation ist nicht Teil von v1, sofern später nicht explizit entschieden.

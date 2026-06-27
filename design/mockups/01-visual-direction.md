@@ -1,28 +1,44 @@
 # 01 – Visual Direction
 
-Status: Spezifikation v1
+Status: visuelle Übersicht v2
 
-## Ziel
+## Rolle
 
-Dieses Dokument legt die visuelle Richtung für Vivicast fest.
+Diese Datei beschreibt die übergeordnete visuelle Richtung für Vivicast.
 
-Vivicast soll wie eine moderne Android-TV-App wirken, aber nicht wie ein überladenes Streaming-Portal.
-
-## Kurzbeschreibung
+Sie ist keine Token-Quelle und keine pixelgenaue Mockup-Spezifikation. Exakte Farben, Spacing, Radien, Typografie und Fokuswerte liegen zentral unter:
 
 ```text
-Dunkel
+design/design-system/compose-template/
+```
+
+Aktuelle High-Fidelity-Renderings liegen unter:
+
+```text
+design/mockups/high-fidelity/rendered/
+```
+
+## Zielbild
+
+Vivicast soll wie eine hochwertige Android-TV-App wirken:
+
+```text
+dunkel
 ruhig
 schnell
 technisch sauber
 fokusstark
 inhaltzentriert
+TV-first
 ```
+
+Vivicast soll nicht wie ein überladenes Streaming-Portal, eine Touch-App oder ein Web-Dashboard wirken.
 
 ## Nicht gewünscht
 
 ```text
 Touch-App-Optik
+Bottom Navigation
 überladene Startseiten
 bunte Portal-Kacheln ohne Ordnung
 Autoplay beim Fokus
@@ -30,6 +46,7 @@ zu kleine Texte
 schwache Fokuszustände
 unnötige Blur-Effekte
 zu viele Animationen
+Mobile-first-Layouts
 ```
 
 ## Gewünscht
@@ -59,17 +76,10 @@ Accent: Cyan/Blau
 Error: Rot
 Warning: Amber
 Favorite: Gelb
-Catch-Up: Violett
+Catch-Up: Blau
 ```
 
-Beispielwirkung:
-
-```text
-Hintergrund dunkel und zurückhaltend
-Content-Flächen leicht abgehoben
-Fokus klar und hell
-Aktionen sparsam akzentuiert
-```
+Die technische Farbdefinition liegt im Compose-Template. Diese Datei beschreibt nur die Zielwirkung.
 
 ---
 
@@ -111,13 +121,13 @@ volle Zeilenfläche + Rahmen
 Für Poster:
 
 ```text
-Skalierung + Rahmen + Schatten
+Skalierung + Rahmen + Schatten/Glow
 ```
 
 Für Buttons:
 
 ```text
-Akzentfläche + Text auf Akzent
+Akzentfläche oder klarer Akzentrahmen
 ```
 
 ## Fokus darf nicht subtil sein
@@ -133,7 +143,7 @@ nur kleine Textänderung
 Richtig:
 
 ```text
-Farbe + Rahmen + Formänderung
+Farbe + Rahmen + Form-/Flächenänderung
 ```
 
 ---
@@ -169,26 +179,29 @@ Titel sichtbar
 ## Live-TV
 
 ```text
-funktional
 spaltenbasiert
+Provider-Isolation sichtbar
 hohe Informationsdichte
+schnelle Sendernavigation
 keine Cover-Art-Dominanz
 ```
 
 ## VOD
 
 ```text
-hero-orientiert
-Poster-Raster
-ruhiger oberer Informationsbereich
+Provider-/Kategorien-Spalte links
+Hero-/Detailbereich rechts
+Poster-Raster rechts
+ruhige obere Informationszone
 ```
 
 ## Player
 
 ```text
-maximal reduziert
 Vollbild zuerst
+keine Top Navigation
 Overlay nur temporär
+Timeline als primärer Fokus
 ```
 
 ## Einstellungen
@@ -197,6 +210,7 @@ Overlay nur temporär
 Master-Detail
 links Bereiche
 rechts Optionen
+Dialoge nur bei Bedarf
 keine komplexen Tabellen
 ```
 
@@ -213,47 +227,39 @@ unterstützend
 nicht verspielt
 ```
 
-Fokusanimation:
-
-```text
-120 ms
-```
-
-Overlayanimation:
-
-```text
-180 ms
-```
-
 Wenn Animationen deaktiviert sind:
 
 ```text
 alle Screens bleiben vollständig verständlich
 ```
 
+Konkrete Motion-Werte liegen im Compose-Template.
+
 ---
 
-# Mockup-Referenzauflösung
+# Mockup-Referenz
+
+Die aktuelle visuelle Referenz sind die High-Fidelity-Renderings:
 
 ```text
-1920 x 1080
+design/mockups/high-fidelity/rendered/
+```
+
+Die technische Designreferenz bleibt:
+
+```text
 16:9
+1920 x 1080 als Artboard-Referenz
+dp/sp-basierte Compose-Umsetzung
 ```
 
-Safe Area:
-
-```text
-64 dp horizontal
-48 dp vertikal
-```
-
-Mockups müssen später zusätzlich in 720p und 4K gedanklich geprüft werden.
+Die aktuellen PNGs müssen nicht exakt 1920 x 1080 groß sein, solange sie 16:9-Zielwirkung und TV-Lesbarkeit zeigen.
 
 ---
 
 # Visueller Qualitätsmaßstab
 
-Ein Mockup ist akzeptabel, wenn:
+Ein Mockup oder eine spätere Compose-Umsetzung ist akzeptabel, wenn:
 
 ```text
 Fokus sofort erkennbar ist
@@ -264,4 +270,5 @@ Fallbacks nicht wie Fehler aussehen
 Live-TV schnell bedienbar wirkt
 Player nicht vom Overlay dominiert wird
 Provider-Isolation sichtbar bleibt
+Settings klar in Gruppen getrennt sind
 ```

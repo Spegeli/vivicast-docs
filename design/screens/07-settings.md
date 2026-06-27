@@ -4,7 +4,7 @@ Status: verbindlich v24
 
 ## Zweck
 
-Der Einstellungen-Screen sammelt App-Konfigurationen fuer Allgemein, Wiedergabelisten, EPG, Optik, Wiedergabe, Kindersicherung, Backup und App-Info.
+Der Einstellungen-Screen sammelt App-Konfigurationen für Allgemein, Wiedergabelisten, EPG, Optik, Wiedergabe, Kindersicherung, Speicher & Verlauf, Backup und Über die App.
 
 Fachliche Einstellungsoptionen bleiben im PRD.
 
@@ -35,6 +35,7 @@ Fachliche Einstellungsoptionen bleiben im PRD.
 - Optik
 - Wiedergabe
 - Kindersicherung
+- Speicher & Verlauf
 - Backup
 - Über die App
 
@@ -42,17 +43,17 @@ Diese Gruppen sind final.
 
 ## Initialfokus
 
-Beim frischen Oeffnen liegt der Fokus auf Allgemein.
+Beim frischen Öffnen liegt der Fokus auf Allgemein.
 
 ## Allgemein
 
-Allgemein enthaelt globale App-Optionen.
+Allgemein enthält globale App-Optionen.
 
 Reihenfolge der Optionen:
 
 1. App beim TV-Start starten
 2. Startbereich
-3. doppelte Zurueck-Taste zum Beenden
+3. doppelte Zurück-Taste zum Beenden
 4. Sprache
 5. Hintergrundaktualisierung erlauben
 6. Sortierung merken
@@ -60,11 +61,11 @@ Reihenfolge der Optionen:
 
 Startbereich ist eine Select Row mit Home, Live-TV, Filme und Serien. Der initial sichtbare Standardwert ist Home.
 
-Die Aenderung gilt ab dem naechsten regulaeren App-Start; die Settings-Ansicht navigiert nach der Auswahl nicht unmittelbar in den gewaehlten Bereich.
+Die Änderung gilt ab dem nächsten regulaeren App-Start; die Settings-Ansicht navigiert nach der Auswahl nicht unmittelbar in den gewählten Bereich.
 
 User-Agent steht am Ende der Allgemein-Liste.
 
-User-Agent gilt appweit, sofern technisch anwendbar, zum Beispiel fuer Playlist-, EPG-, Logo- und Stream-Anfragen.
+User-Agent gilt appweit, sofern technisch anwendbar, zum Beispiel für Playlist-, EPG-, Logo- und Stream-Anfragen.
 
 User-Agent ist keine individuelle Wiedergabelisten-, Provider-, EPG-Quellen- oder Stream-Option.
 
@@ -76,13 +77,13 @@ Die Gruppe Wiedergabelisten fuehrt zur Quellenverwaltung aus `design/screens/08-
 
 Primaere Aktionen:
 
-- Wiedergabeliste hinzufuegen
+- Wiedergabeliste hinzufügen
 - alle Wiedergabelisten aktualisieren
-- vorhandene Wiedergabeliste oeffnen
+- vorhandene Wiedergabeliste öffnen
 
 Der Add Flow beginnt mit Name, danach Quelltyp.
 
-Wiedergabelisten-Formulare duerfen keine eigene User-Agent-Option anzeigen.
+Wiedergabelisten-Formulare dürfen keine eigene User-Agent-Option anzeigen.
 
 ## EPG
 
@@ -90,39 +91,39 @@ Die Gruppe EPG fuehrt zur EPG-Quellenverwaltung aus `design/screens/08-playlist-
 
 Primaere Aktionen:
 
-- EPG-Quelle hinzufuegen
+- EPG-Quelle hinzufügen
 - EPG-Quelle bearbeiten
-- EPG-Quelle loeschen
+- EPG-Quelle löschen
 - globales EPG-Aktualisierungsintervall konfigurieren; Standard 24 Stunden
 - EPG-Vergangenheit behalten; 1 bis 14 Tage; Standard 1 Tag
 - EPG-Zukunft laden/behalten; 1 bis 14 Tage; Standard 7 Tage
 - EPG beim App-Start aktualisieren; Standard Ein
-- EPG bei Playlist-Aenderung aktualisieren; Standard Ein
+- EPG bei Playlist-Änderung aktualisieren; Standard Ein
 - EPG jetzt aktualisieren
 - EPG-Aktualisierungshistorie anzeigen
 
-Das 24-Stunden-Intervall gilt nur fuer den automatischen intervallgesteuerten Refresh. Die anderen Ausloeser bleiben separat konfigurierbar beziehungsweise manuell ausloesbar.
+Das 24-Stunden-Intervall gilt nur für den automatischen intervallgesteuerten Refresh. Die anderen Ausloeser bleiben separat konfigurierbar beziehungsweise manuell ausloesbar.
 
-Die App-Start- und Playlist-Aenderungs-Ausloeser sind gespeicherte DataStore-Optionen. Die Aktualisierungshistorie ist nur Anzeige aus Refresh-Metadaten und keine eigene Einstellung.
+Die App-Start- und Playlist-Änderungs-Ausloeser sind gespeicherte DataStore-Optionen. Die Aktualisierungshistorie ist nur Anzeige aus Refresh-Metadaten und keine eigene Einstellung.
 
 EPG-Aufbewahrung steuert nur lokale EPG-Programmdaten. EPG-Quellen, EPG-Kanäle, Provider-Zuordnungen und manuelle Mappings bleiben erhalten.
 
-EPG-Quellen-Formulare duerfen keine eigene User-Agent-Option anzeigen.
+EPG-Quellen-Formulare dürfen keine eigene User-Agent-Option anzeigen.
 
 ## Optik
 
-Optik enthaelt visuelle Darstellung und UI-Dichte.
+Optik enthält visuelle Darstellung und UI-Dichte.
 
-Sprache gehoert nicht in Optik, sondern in Allgemein.
+Sprache gehört nicht in Optik, sondern in Allgemein.
 
-Optik darf Grundlayout, D-Pad-Navigation, Mindestkontraste, Fokusindikator, Safe-Area und Mindestgroessen fokussierbarer Elemente nicht veraendern.
+Optik darf Grundlayout, D-Pad-Navigation, Mindestkontraste, Fokusindikator, Safe-Area und Mindestgrößen fokussierbarer Elemente nicht verändern.
 
 Reihenfolge der Optionen:
 
 1. Hintergrundthema
 2. Akzentfarbe
 3. Transparenz
-4. Schriftgroesse
+4. Schriftgröße
 5. Animationen
 6. globale Logo-Standardreihenfolge
 7. Logos-Ordner
@@ -130,7 +131,7 @@ Reihenfolge der Optionen:
 
 ### Hintergrundthema
 
-Auswahl fuer grundlegende Flaechenwirkung.
+Auswahl für grundlegende Flaechenwirkung.
 
 Beispiele:
 
@@ -142,7 +143,7 @@ Das Theme bleibt immer TV-tauglich und dunkel. Helle Themes sind nicht Teil von 
 
 ### Akzentfarbe
 
-Auswahl fuer Akzent- und Markenfarbe.
+Auswahl für Akzent- und Markenfarbe.
 
 Akzentfarbe darf Fokus, Warnung, Fehler und Erfolg nicht unlesbar machen.
 
@@ -154,9 +155,9 @@ Auswahl gemaess Design-System.
 
 Transparenz darf Textbereiche, Dialoge und Player-Overlays nicht unlesbar machen.
 
-Wenn eine Transparenzstufe technisch oder visuell unpassend ist, muss die App sie fuer betroffene Komponenten begrenzen.
+Wenn eine Transparenzstufe technisch oder visuell unpassend ist, muss die App sie für betroffene Komponenten begrenzen.
 
-### Schriftgroesse
+### Schriftgröße
 
 Auswahlwerte:
 
@@ -165,7 +166,7 @@ Auswahlwerte:
 - gross
 - sehr gross
 
-Bei `sehr gross` duerfen Layouts nicht brechen. Lange Texte werden kontrolliert gekuerzt oder in Detailbereichen scrollbar gemacht.
+Bei `sehr gross` dürfen Layouts nicht brechen. Lange Texte werden kontrolliert gekuerzt oder in Detailbereichen scrollbar gemacht.
 
 ### Animationen
 
@@ -176,7 +177,7 @@ Auswahlwerte:
 - normal
 - langsam
 
-Animationen duerfen Fokuswechsel nicht unvorhersehbar machen.
+Animationen dürfen Fokuswechsel nicht unvorhersehbar machen.
 
 ### Globale Logo-Standardreihenfolge
 
@@ -186,13 +187,13 @@ Auswahlwerte:
 - Logos aus EPG bevorzugen
 - Logos aus lokalem Ordner bevorzugen
 
-Diese Einstellung ist globaler Standard. Eine Wiedergabeliste kann ueber ihre eigene Logo-Prioritaet abweichen.
+Diese Einstellung ist globaler Standard. Eine Wiedergabeliste kann über ihre eigene Logo-Priorität abweichen.
 
 ### Logos-Ordner
 
-Oeffnet eine Ordnerauswahl oder einen Detaildialog fuer lokale Logos.
+Oeffnet eine Ordnerauswahl oder einen Detaildialog für lokale Logos.
 
-Wenn kein Ordner gesetzt ist, nutzt die App Playlist- oder EPG-Logos gemaess Logo-Prioritaet.
+Wenn kein Ordner gesetzt ist, nutzt die App Playlist- oder EPG-Logos gemaess Logo-Priorität.
 
 Der gespeicherte Standard ist `Nicht gesetzt`. Eine gesetzte Auswahl nutzt die gespeicherte Ordner-URI und die persistierte Android-SAF-Berechtigung.
 
@@ -200,7 +201,7 @@ Der gespeicherte Standard ist `Nicht gesetzt`. Eine gesetzte Auswahl nutzt die g
 
 Oeffnet einen Detailbereich mit mehreren Toggles.
 
-Enthaelt:
+Enthält:
 
 - Kanalnummer anzeigen
 - Sendername anzeigen
@@ -213,11 +214,11 @@ Enthaelt:
 
 ## Wiedergabe
 
-Wiedergabe enthaelt Player- und Stream-Verhalten.
+Wiedergabe enthält Player- und Stream-Verhalten.
 
 Reihenfolge der Optionen:
 
-1. Puffergroesse
+1. Puffergröße
 2. Audio-Decoder
 3. Video-Decoder
 4. AFR
@@ -226,12 +227,12 @@ Reihenfolge der Optionen:
 7. Timeshift-Speicher
 8. Audio-Sprache
 9. Untertitel-Sprache
-10. Automatisch naechste Folge
-11. Countdown naechste Folge
+10. Automatisch nächste Folge
+11. Countdown nächste Folge
 12. Audio-Passthrough
 13. externer Player
 
-### Puffergroesse
+### Puffergröße
 
 Auswahlwerte:
 
@@ -241,9 +242,9 @@ Auswahlwerte:
 - gross
 - sehr gross
 
-Aenderungen gelten beim naechsten Streamstart.
+Änderungen gelten beim nächsten Streamstart.
 
-Wenn ein Stream bereits laeuft, muss ein Hinweis angezeigt werden, dass die Aenderung erst nach Stream-Neustart gilt.
+Wenn ein Stream bereits laeuft, muss ein Hinweis angezeigt werden, dass die Änderung erst nach Stream-Neustart gilt.
 
 ### Audio-Decoder und Video-Decoder
 
@@ -254,19 +255,19 @@ Auswahlwerte:
 
 Standard ist Hardware.
 
-Software dient als Fallback fuer problematische Streams oder Geraete.
+Software dient als Fallback für problematische Streams oder Geräte.
 
-Aenderungen gelten beim naechsten Streamstart.
+Änderungen gelten beim nächsten Streamstart.
 
 ### AFR
 
-Toggle fuer automatische Bildwiederholraten-Anpassung, sofern Geraet und Android-Version dies unterstuetzen.
+Toggle für automatische Bildwiederholraten-Anpassung, sofern Gerät und Android-Version dies unterstuetzen.
 
 Wenn nicht unterstuetzt, wird die Option deaktiviert mit Hinweis angezeigt.
 
 ### Timeshift
 
-Toggle fuer Timeshift-Unterstuetzung.
+Toggle für Timeshift-Unterstuetzung.
 
 Standardwert:
 
@@ -274,9 +275,9 @@ Standardwert:
 Ein
 ```
 
-Timeshift bleibt abhaengig von Provider, Sender und Stream.
+Timeshift bleibt abhängig von Provider, Sender und Stream.
 
-Wenn Timeshift deaktiviert oder nicht verfuegbar ist, darf Live-TV-Seek nicht moeglich sein und muss einen kurzen Hinweis anzeigen.
+Wenn Timeshift deaktiviert oder nicht verfuegbar ist, darf Live-TV-Seek nicht möglich sein und muss einen kurzen Hinweis anzeigen.
 
 ### Maximale Timeshift-Dauer
 
@@ -309,17 +310,17 @@ Standardwert:
 Automatisch
 ```
 
-`Automatisch` laesst Vivicast zwischen RAM und persistentem Geraetespeicher waehlen.
+`Automatisch` laesst Vivicast zwischen RAM und persistentem Gerätespeicher wählen.
 
-`Festplatte` verwendet appverwalteten persistenten Geraetespeicher. Eine freie Ordner- oder Pfadauswahl ist in v1 nicht vorgesehen.
+`Festplatte` verwendet appverwalteten persistenten Gerätespeicher. Eine freie Ordner- oder Pfadauswahl ist in v1 nicht vorgesehen.
 
 Maximale Dauer und Timeshift-Speicher bleiben bei deaktiviertem Timeshift sichtbar, werden dann aber deaktiviert dargestellt.
 
-Aenderungen an den Timeshift-Einstellungen werden beim naechsten Aufbau eines Timeshift-Puffers wirksam.
+Änderungen an den Timeshift-Einstellungen werden beim nächsten Aufbau eines Timeshift-Puffers wirksam.
 
 ### Audio-Sprache
 
-Auswahl fuer bevorzugte Audiosprache.
+Auswahl für bevorzugte Audiosprache.
 
 Werte mindestens:
 
@@ -330,11 +331,11 @@ Werte mindestens:
 
 Falls die bevorzugte Sprache im Stream nicht existiert, verwendet die App die erste verfuegbare Spur.
 
-Die Einstellung wird beim Streamstart angewendet. Eine manuelle Audioauswahl im Player gilt nur fuer die aktuelle Wiedergabe.
+Die Einstellung wird beim Streamstart angewendet. Eine manuelle Audioauswahl im Player gilt nur für die aktuelle Wiedergabe.
 
 ### Untertitel-Sprache
 
-Auswahl fuer bevorzugte Untertitelsprache.
+Auswahl für bevorzugte Untertitelsprache.
 
 Werte mindestens:
 
@@ -345,11 +346,11 @@ Werte mindestens:
 
 Falls die bevorzugte Sprache im Stream nicht existiert, bleiben Untertitel aus oder die App nutzt die Stream-Vorgabe.
 
-Die Einstellung wird beim Streamstart angewendet. Eine manuelle Untertitelauswahl im Player gilt nur fuer die aktuelle Wiedergabe.
+Die Einstellung wird beim Streamstart angewendet. Eine manuelle Untertitelauswahl im Player gilt nur für die aktuelle Wiedergabe.
 
-### Automatisch naechste Folge
+### Automatisch nächste Folge
 
-Toggle fuer Serienepisoden im internen Vivicast-Player.
+Toggle für Serienepisoden im internen Vivicast-Player.
 
 Standardwert:
 
@@ -357,11 +358,11 @@ Standardwert:
 Aus
 ```
 
-Bei `Aus` erscheint die manuelle Aktion `Naechste Folge abspielen` erst nach dem tatsaechlichen Episodenende.
+Bei `Aus` erscheint die manuelle Aktion `Nächste Folge abspielen` erst nach dem tatsaechlichen Episodenende.
 
-Bei `Ein` erscheint `Naechste Folge in X` um den konfigurierten Zeitraum vor dem Episodenende und startet die naechste Episode beim Ablauf automatisch.
+Bei `Ein` erscheint `Nächste Folge in X` um den konfigurierten Zeitraum vor dem Episodenende und startet die nächste Episode beim Ablauf automatisch.
 
-### Countdown naechste Folge
+### Countdown nächste Folge
 
 Auswahlwerte:
 
@@ -376,13 +377,13 @@ Standardwert:
 10 Sekunden
 ```
 
-Die Zeile bleibt bei deaktiviertem Auto-Next sichtbar, wird dann aber deaktiviert dargestellt und ist nicht fokussierbar oder aenderbar.
+Die Zeile bleibt bei deaktiviertem Auto-Next sichtbar, wird dann aber deaktiviert dargestellt und ist nicht fokussierbar oder änderbar.
 
-Die Abschluss-Schwelle fuer Filme und Episoden ist in v1 fest auf 95 Prozent gesetzt und erscheint nicht als eigene Settings-Zeile.
+Die Abschluss-Schwelle für Filme und Episoden ist in v1 fest auf 95 Prozent gesetzt und erscheint nicht als eigene Settings-Zeile.
 
 ### Audio-Passthrough
 
-Toggle fuer Passthrough an kompatible Ausgabegeraete.
+Toggle für Passthrough an kompatible Ausgabegeräte.
 
 Wenn nicht unterstuetzt, wird die Option deaktiviert mit Hinweis angezeigt.
 
@@ -398,39 +399,39 @@ Standard ist immer intern.
 
 Bei `jedes Mal fragen` oeffnet der Playerstart einen D-Pad-bedienbaren Auswahl-Dialog.
 
-Externe Player schreiben in v1 keinen automatischen Fortschritt zurueck. Nach Rueckkehr aus externer Film- oder Episodenwiedergabe zeigt Vivicast einen Hinweis, dass der Fortschritt nicht automatisch ermittelt werden konnte.
+Externe Player schreiben in v1 keinen automatischen Fortschritt zurück. Nach Rueckkehr aus externer Film- oder Episodenwiedergabe zeigt Vivicast einen Hinweis, dass der Fortschritt nicht automatisch ermittelt werden konnte.
 
-Die Einstellung gilt nur fuer Filme und einzelne Serienepisoden. Live-TV und Catch-Up bleiben interne Vivicast-Player-Kontexte.
+Die Einstellung gilt nur für Filme und einzelne Serienepisoden. Live-TV und Catch-Up bleiben interne Vivicast-Player-Kontexte.
 
 Es existiert immer nur eine aktive Wiedergabe.
 
 ## Kindersicherung
 
-Kindersicherung enthaelt PIN-Optionen und Schutzbereiche.
+Kindersicherung enthält PIN-Optionen und Schutzbereiche.
 
 Reihenfolge der Optionen:
 
-1. PIN setzen oder PIN aendern
-2. Einstellungen schuetzen
-3. Filme schuetzen
-4. Serien schuetzen
-5. Inhalte ab 18 schuetzen
-6. Freigabe fuer aktuelle Sitzung sperren, falls aktuell freigegeben
+1. PIN setzen oder PIN ändern
+2. Einstellungen schützen
+3. Filme schützen
+4. Serien schützen
+5. Inhalte ab 18 schützen
+6. Freigabe für aktuelle Sitzung sperren, falls aktuell freigegeben
 7. Kindersicherung deaktivieren, falls PIN gesetzt
 
-### PIN setzen oder aendern
+### PIN setzen oder ändern
 
 Wenn keine PIN gesetzt ist, zeigt die erste Option `PIN setzen`.
 
-Wenn eine PIN gesetzt ist, zeigt die erste Option `PIN aendern`.
+Wenn eine PIN gesetzt ist, zeigt die erste Option `PIN ändern`.
 
 PIN-Dialoge sind D-Pad-bedienbar und nutzen verdeckte Zifferneingabe.
 
-PIN-Felder oeffnen die Android-/TV-Systemtastatur als numerische Passwort-Eingabe.
+PIN-Felder öffnen die Android-/TV-Systemtastatur als numerische Passwort-Eingabe.
 
 Vivicast zeigt keine eigene Zifferntastatur.
 
-Nach der vierten Ziffer wird nicht automatisch gespeichert oder entsperrt. Der Nutzer bestaetigt bewusst ueber `Speichern`, `Entsperren` oder `Deaktivieren`.
+Nach der vierten Ziffer wird nicht automatisch gespeichert oder entsperrt. Der Nutzer bestätigt bewusst über `Speichern`, `Entsperren` oder `Deaktivieren`.
 
 Bei temporaerer Sperre oeffnet sich keine Tastatur; der Dialog zeigt Restzeit und `Abbrechen`.
 
@@ -440,14 +441,14 @@ PIN setzen:
 
 1. neue PIN eingeben
 2. neue PIN wiederholen
-3. bei Uebereinstimmung speichern
+3. bei Übereinstimmung speichern
 
-PIN aendern:
+PIN ändern:
 
 1. aktuelle PIN eingeben
 2. neue PIN eingeben
 3. neue PIN wiederholen
-4. bei korrekter aktueller PIN und Uebereinstimmung speichern
+4. bei korrekter aktueller PIN und Übereinstimmung speichern
 
 PIN-Laenge:
 
@@ -461,16 +462,16 @@ Diese Toggles sind deaktiviert, solange keine PIN gesetzt ist.
 
 Schutzbereiche:
 
-- Einstellungen schuetzen
-- Filme schuetzen
-- Serien schuetzen
-- Inhalte ab 18 schuetzen
+- Einstellungen schützen
+- Filme schützen
+- Serien schützen
+- Inhalte ab 18 schützen
 
 Wenn ein Schutzbereich aktiviert wird und keine PIN existiert, startet zuerst der PIN-setzen-Flow.
 
 ### PIN-Abfrage
 
-PIN wird in einem Dialog abgefragt, wenn ein geschuetzter Bereich geoeffnet oder eine geschuetzte Aktion ausgefuehrt wird.
+PIN wird in einem Dialog abgefragt, wenn ein geschuetzter Bereich geöffnet oder eine geschuetzte Aktion ausgefuehrt wird.
 
 Der Dialog zeigt:
 
@@ -481,19 +482,19 @@ Der Dialog zeigt:
 - verbleibende Sperrzeit, falls temporaer blockiert
 - Abbrechen
 
-### Freigabe fuer aktuelle Sitzung
+### Freigabe für aktuelle Sitzung
 
-Nach erfolgreicher PIN-Eingabe bleibt der jeweilige Schutzbereich fuer die aktuelle App-Sitzung freigegeben.
+Nach erfolgreicher PIN-Eingabe bleibt der jeweilige Schutzbereich für die aktuelle App-Sitzung freigegeben.
 
-Wenn mindestens ein Schutzbereich aktuell freigegeben ist, zeigt Kindersicherung die Aktion `Freigabe fuer aktuelle Sitzung sperren`.
+Wenn mindestens ein Schutzbereich aktuell freigegeben ist, zeigt Kindersicherung die Aktion `Freigabe für aktuelle Sitzung sperren`.
 
-Diese Aktion setzt alle laufenden Freigaben zurueck, aendert aber keine Einstellungen.
+Diese Aktion setzt alle laufenden Freigaben zurück, ändert aber keine Einstellungen.
 
 Session-Freigaben sind nur im Speicher und erscheinen nicht in Backups oder Restore-Zusammenfassungen.
 
 ### Kindersicherung deaktivieren
 
-Deaktivieren erfordert aktuelle PIN und Bestaetigung.
+Deaktivieren erfordert aktuelle PIN und Bestätigung.
 
 Nach Deaktivierung werden alle Schutzbereiche ausgeschaltet.
 
@@ -519,9 +520,19 @@ FSK-18-Schutz greift nur bei eindeutiger 18+-Kennzeichnung oder vorhandenen Alte
 
 Fehlende Altersdaten werden nicht automatisch als 18+ behandelt.
 
+## Speicher & Verlauf
+
+Speicher & Verlauf enthält lokale Wartungsaktionen für Medien-Cache und Verlauf.
+
+Reihenfolge der Optionen:
+
+1. Medien-Cache
+2. Cache leeren
+3. Verlauf löschen
+
 ## Backup
 
-Backup enthaelt Export, Import, Restore und lokale Datenwartung.
+Backup enthält Export, Import, Restore und Verwaltung vorhandener Backup-Dateien.
 
 Fachlicher Datenvertrag: `prd/PRD-v1/10-backup-import-requirements.md`.
 
@@ -532,9 +543,6 @@ Reihenfolge der Optionen:
 3. Backup-Ziel
 4. letzte Sicherung
 5. vorhandene Backups verwalten
-6. Medien-Cache
-7. Cache leeren
-8. Verlauf loeschen
 
 ### Backup exportieren
 
@@ -549,13 +557,13 @@ Ziele:
 Exportmodi:
 
 - Standard-Backup
-- verschluesseltes Vollbackup
+- verschlüsseltes Vollbackup
 
 Der Exportmodus ist ein transienter Dialogwert. Der Dialog startet mit `Standard-Backup`; dieser Wert wird nicht als dauerhafte Einstellung gespeichert.
 
-Standard-Backup enthaelt keine geheimen Zugangswerte.
+Standard-Backup enthält keine geheimen Zugangswerte.
 
-Verschluesseltes Vollbackup erfordert eine Backup-Passphrase und zeigt vor Export einen klaren Hinweis, dass geheime Quellen- und Zielzugangsdaten enthalten sein koennen.
+Verschlüsseltes Vollbackup erfordert eine Backup-Passphrase und zeigt vor Export einen klaren Hinweis, dass geheime Quellen- und Zielzugangsdaten enthalten sein können.
 
 Die Passphrase wird nicht gespeichert, nicht geloggt und bei falscher Eingabe bricht Restore vor lokalen Datenaenderungen ab.
 
@@ -583,9 +591,9 @@ Vor Restore validiert die App Backup-Datei, Passphrase, Schema-Migration und Inh
 
 Nach erfolgreicher Validierung versucht die App ein internes Sicherheitsbackup der aktuellen lokalen Daten zu erstellen. Wenn dieses Sicherheitsbackup fehlschlaegt, fragt die App den Nutzer, ob Restore trotzdem fortgesetzt oder abgebrochen werden soll.
 
-Restore erfordert eine klare Bestaetigung.
+Restore erfordert eine klare Bestätigung.
 
-Wenn aktuell lokal Einstellungsschutz aktiv ist oder die lokale Schutzkonfiguration eine PIN fuer Backup/Restore verlangt, muss vor Restore die aktuell lokale PIN bestaetigt werden. Eine in der Backup-Datei enthaltene fruehere PIN oder fruehere Schutzkonfiguration darf fuer diese Autorisierung nicht verwendet werden.
+Wenn aktuell lokal Einstellungsschutz aktiv ist oder die lokale Schutzkonfiguration eine PIN für Backup/Restore verlangt, muss vor Restore die aktuell lokale PIN bestätigt werden. Eine in der Backup-Datei enthaltene fruehere PIN oder fruehere Schutzkonfiguration darf für diese Autorisierung nicht verwendet werden.
 
 Nach Restore ist Kindersicherung deaktiviert. Wenn Kindersicherung beim Export aktiv war, zeigt die App einen Hinweis, dass die PIN-Funktion vor dem Backup aktiv war, nach dem Restore deaktiviert wurde und in `Einstellungen > Kindersicherung` manuell wieder aktiviert werden muss.
 
@@ -603,47 +611,13 @@ SMB- und Google-Drive-Anmeldung werden nicht in Standard-Backups exportiert.
 
 Oeffnet Detailbereich mit vorhandenen Backups, falls Ziel dies unterstuetzt.
 
-Moegliche Aktionen:
+Mögliche Aktionen:
 
 - Backup anzeigen
 - Backup importieren
-- Backup loeschen
+- Backup löschen
 
-Backup loeschen braucht eine Bestaetigung.
-
-### Medien-Cache
-
-Zeigt mindestens die aktuelle Groesse des Medien-Caches.
-
-Optional koennen Dateianzahl und interne Cache-Grenze angezeigt werden, wenn diese Werte verfuegbar sind.
-
-Die Groesse oder Rotation des Medien-Caches ist in v1 nicht frei konfigurierbar.
-
-### Cache leeren
-
-Oeffnet einen Bestaetigungsdialog.
-
-Die Aktion loescht heruntergeladene Medien-Cache-Dateien wie Senderlogos, Film-Poster, Serien-Poster, Staffelbilder und Episodenbilder.
-
-Providerdaten, Favoriten, Verlauf, Wiedergabefortschritt, Suchverlauf, EPG-Zuordnungen, Zugangsdaten, EPG-Programmdaten sowie aktive Stream- oder Timeshift-Puffer bleiben erhalten.
-
-Wenn Einstellungsschutz aktiv ist, muss vor der Aktion die PIN bestaetigt werden.
-
-### Verlauf loeschen
-
-Oeffnet einen Auswahl- und Bestaetigungsdialog.
-
-Optionen:
-
-- Live-TV-Verlauf
-- Filmverlauf und Film-Wiedergabefortschritt
-- Serienverlauf und Episoden-Wiedergabefortschritt
-- Suchverlauf
-- gesamter Verlauf
-
-Verlaufslimits sind in v1 nicht frei konfigurierbar. Der Suchverlauf bleibt fest auf maximal 20 Eintraege begrenzt.
-
-Wenn Einstellungsschutz aktiv ist, muss vor der Aktion die PIN bestaetigt werden.
+Backup löschen braucht eine Bestätigung.
 
 ### Import- und Restore-Fehler
 
@@ -651,16 +625,16 @@ Fehler werden inline angezeigt.
 
 Beispiele:
 
-- Backup-Datei ungueltig
+- Backup-Datei ungültig
 - Backup-Version nicht unterstuetzt
-- Backup beschaedigt
+- Backup beschädigt
 - Passphrase falsch
 - Ziel nicht erreichbar
 - Speicherzugriff verweigert
 - Nicht genug Speicherplatz
 - Migration fehlgeschlagen
 
-Fehler duerfen lokale Daten nicht teilweise unkontrolliert veraendern.
+Fehler dürfen lokale Daten nicht teilweise unkontrolliert verändern.
 
 ## Über die App
 
@@ -687,14 +661,14 @@ Anzeigen:
 - Paketname
 - Datenbank-Version
 - Android-Version
-- Geraetemodell
+- Gerätemodell
 - Player-Engine
 
 ### Versionsinformationen kopieren
 
 Kopiert eine kurze technische Zusammenfassung in die Zwischenablage.
 
-Die kopierten Daten duerfen nur nicht-private technische Informationen enthalten.
+Die kopierten Daten dürfen nur nicht-private technische Informationen enthalten.
 
 ### Diagnose und Support
 
@@ -718,29 +692,29 @@ Aufbewahrungsdauer: 1 Tag
 
 Regeln:
 
-- Die Aufbewahrungsdauer bleibt bei ausgeschalteter Diagnoseprotokollierung sichtbar, ist dann aber nicht aenderbar.
+- Die Aufbewahrungsdauer bleibt bei ausgeschalteter Diagnoseprotokollierung sichtbar, ist dann aber nicht änderbar.
 - Bereits vorhandene Sitzungen bleiben nach dem Ausschalten bis zu ihrem regulaeren Ablauf exportierbar.
-- Groessenlimit und Rotation sind feste interne Werte und werden nicht als weitere Settings-Zeilen angezeigt.
-- Allgemeine nicht-private Support-Informationen duerfen angezeigt und kopiert werden.
+- Größenlimit und Rotation sind feste interne Werte und werden nicht als weitere Settings-Zeilen angezeigt.
+- Allgemeine nicht-private Support-Informationen dürfen angezeigt und kopiert werden.
 - Das Diagnoseprotokoll wird vor Export zentral bereinigt.
 - Diagnoseereignisse werden schon vor dauerhaftem Schreiben zentral bereinigt.
 - Der Inhalt der Log- oder Diagnoseprotokolldatei wird niemals in der App angezeigt.
 - Es gibt keine Logvorschau, keinen scrollbaren Logtext und keine Aktion zum Kopieren des Logdatei-Inhalts.
 - Nach Export zeigt die UI nur Erfolg, Fehler oder Exportziel.
-- Das ZIP enthaelt verpflichtend `vivicast-diagnostics.log` und `diagnostics-metadata.json`.
-- Die Logdatei enthaelt nur freigegebene technische Ereignisse zu App, Import/Refresh, EPG, Player, Netzwerk, Backup/Restore, Cache und Datenbank sowie bereinigte Stacktraces fuer Warnungen, Fehler und Abstuerze.
-- Die Metadatendatei enthaelt App-/Build-, Geraete-, Datenbank-, Sprach-, Zeitzonen-, Exportzeit-, Zeitraum-, Sitzungs-, Grenzwert- und Trunkierungsdaten.
+- Das ZIP enthält verpflichtend `vivicast-diagnostics.log` und `diagnostics-metadata.json`.
+- Die Logdatei enthält nur freigegebene technische Ereignisse zu App, Import/Refresh, EPG, Player, Netzwerk, Backup/Restore, Cache und Datenbank sowie bereinigte Stacktraces für Warnungen, Fehler und Abstuerze.
+- Die Metadatendatei enthält App-/Build-, Geräte-, Datenbank-, Sprach-, Zeitzonen-, Exportzeit-, Zeitraum-, Sitzungs-, Grenzwert- und Trunkierungsdaten.
 - Der Export umfasst alle noch vorhandenen Segmente und weist den tatsaechlich enthaltenen Zeitraum aus.
 - Intern gelten 20 MiB Gesamtlimit, 2 MiB pro Segment und maximal drei Segmente beziehungsweise 6 MiB Logdaten pro Sitzung.
 - Zugangswerte, Tokens, Cookies, HTTP-Header, URLs, Rohdaten, Provider-/Inhaltsnamen, Suchverlauf, Datenbank-Dumps, Screenshots und ungefiltertes System-Logcat sind ausgeschlossen.
 - Unsichere oder nicht eindeutig unkritische Diagnosefelder werden verworfen oder neutralisiert.
-- Neutrale interne IDs duerfen bei Bedarf als technische Referenz verwendet werden.
+- Neutrale interne IDs dürfen bei Bedarf als technische Referenz verwendet werden.
 
 ### Lizenzhinweise und Drittanbieter-Lizenzen
 
 Oeffnet lokale Seiten oder Dialoge.
 
-Die Seiten muessen per D-Pad lesbar und scrollbar sein.
+Die Seiten müssen per D-Pad lesbar und scrollbar sein.
 
 ### Datenschutzinformationen
 
@@ -752,7 +726,7 @@ Nicht in Über die App:
 
 - Anzeige oder Vorschau von Logdatei-Inhalten
 - Kopieren von Logdatei-Inhalten
-- Daten zuruecksetzen
+- Daten zurücksetzen
 - Backup oder Restore
 - Wiedergabelistenverwaltung
 - EPG-Verwaltung
@@ -762,7 +736,7 @@ Nicht in Über die App:
 
 Jede Option zeigt Titel, kurze Beschreibung, aktuellen Wert oder Status.
 
-Optional kann ein Hinweis bei Gefahr, Neustartbedarf, Re-Import, Stream-Neustart, fehlender Geraeteunterstuetzung, Diagnoseexport oder sensiblen Backup-Daten angezeigt werden.
+Optional kann ein Hinweis bei Gefahr, Neustartbedarf, Re-Import, Stream-Neustart, fehlender Geräteunterstuetzung, Diagnoseexport oder sensiblen Backup-Daten angezeigt werden.
 
 ## Bedienung
 
@@ -770,27 +744,27 @@ Optional kann ein Hinweis bei Gefahr, Neustartbedarf, Re-Import, Stream-Neustart
 - Rechts wechselt von Gruppe zu Optionen.
 - Links wechselt von Optionen zu Gruppen.
 - OK oeffnet Toggle, Auswahl, Textfeld, PIN-Dialog, Dialog oder Detailseite.
-- Zurueck schliesst Dialoge, danach verlaesst es Einstellungen.
+- Zurück schliesst Dialoge, danach verlaesst es Einstellungen.
 
 ## Dialoge
 
-Dialoge muessen per D-Pad bedienbar sein.
+Dialoge müssen per D-Pad bedienbar sein.
 
-Primaere Aktion und Abbrechen muessen klar fokussierbar sein.
+Primaere Aktion und Abbrechen müssen klar fokussierbar sein.
 
-Kritische Aktionen brauchen eine klare Bestaetigung.
+Kritische Aktionen brauchen eine klare Bestätigung.
 
-Wenn der PIN-Schutz fuer Einstellungen aktiv ist, muss vor geschuetzten Aktionen die PIN abgefragt werden.
+Wenn der PIN-Schutz für Einstellungen aktiv ist, muss vor geschuetzten Aktionen die PIN abgefragt werden.
 
 ## Zustaende
 
-Loading: nur fuer Bereiche mit Datenzugriff, zum Beispiel Backup oder Quellen.
+Loading: nur für Bereiche mit Datenzugriff, zum Beispiel Backup oder Quellen.
 
 Empty: keine Wiedergabelisten oder keine EPG-Quellen.
 
 Error: Fehler wird im betroffenen Bereich angezeigt, nicht global blockierend.
 
-Unsupported: Option wird deaktiviert mit kurzer Begruendung angezeigt, wenn das Geraet die Funktion nicht unterstuetzt.
+Unsupported: Option wird deaktiviert mit kurzer Begruendung angezeigt, wenn das Gerät die Funktion nicht unterstuetzt.
 
 Locked: geschuetzter Bereich wartet auf PIN-Freigabe.
 
@@ -800,7 +774,7 @@ Migration Required: Backup kann nur nach kompatibler Migration importiert werden
 
 Credentials Required: Quelle wurde importiert, benoetigt aber erneute Zugangsdaten.
 
-Copied: Kopieraktion fuer allgemeine Support- oder Versionsinformationen wurde erfolgreich ausgefuehrt.
+Copied: Kopieraktion für allgemeine Support- oder Versionsinformationen wurde erfolgreich ausgefuehrt.
 
 Exported: Diagnoseprotokoll wurde erfolgreich exportiert; Loginhalt wird nicht angezeigt.
 

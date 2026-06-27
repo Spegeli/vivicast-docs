@@ -58,21 +58,21 @@ Deaktiviert
 
 ## Aktiviert
 
-Automatische Aktualisierungen duerfen im Hintergrund laufen, soweit Android TV dies zulaesst.
+Automatische Aktualisierungen dürfen im Hintergrund laufen, soweit Android TV dies zulaesst.
 
-Konkrete Ausloeser wie App-Start oder Playlist-Aenderung folgen den jeweiligen Settings.
+Konkrete Ausloeser wie App-Start oder Playlist-Änderung folgen den jeweiligen Settings.
 
 ## Deaktiviert
 
 Automatische Hintergrundaktualisierungen werden nicht ausgefuehrt.
 
-Manuelle Aktualisierung bleibt moeglich.
+Manuelle Aktualisierung bleibt möglich.
 
 ---
 
 # Appstart
 
-Wenn App-Start-Aktualisierung aktiviert ist und Daten ueberfaellig sind:
+Wenn App-Start-Aktualisierung aktiviert ist und Daten überfaellig sind:
 
 ```text
 App startet sofort
@@ -82,7 +82,7 @@ Vorhandene Daten anzeigen
 Aktualisierung starten, ohne UI zu blockieren
 ```
 
-Wenn der globale Hauptschalter fuer Hintergrundaktualisierung deaktiviert ist, startet keine automatische App-Start-Aktualisierung.
+Wenn der globale Hauptschalter für Hintergrundaktualisierung deaktiviert ist, startet keine automatische App-Start-Aktualisierung.
 
 ---
 
@@ -113,7 +113,7 @@ Vermeidung mehrfacher Aktualisierungen.
 4. Duplikate entfernen
 5. EPG Quellen einmalig aktualisieren
 6. EPG-Kanäle und EPG-Programme quellbezogen speichern
-7. EPG Mapping und Provider-EPG-Prioritaeten anwenden
+7. EPG Mapping und Provider-EPG-Prioritäten anwenden
 8. EPG-Programmdaten ausserhalb der konfigurierten Aufbewahrung entfernen
 9. Logos aktualisieren
 10. Cache Cleanup
@@ -163,11 +163,11 @@ Diese Begrenzung ist in v1 keine zwingende UI-Einstellung.
 
 Import und Refresh sind atomar pro Provider und pro EPG-Quelle.
 
-Der globale Refresh-Scheduler koordiniert mehrere Jobs, bildet aber keine globale Alles-oder-nichts-Transaktion ueber alle Provider und EPG-Quellen.
+Der globale Refresh-Scheduler koordiniert mehrere Jobs, bildet aber keine globale Alles-oder-nichts-Transaktion über alle Provider und EPG-Quellen.
 
-Wenn Provider A erfolgreich aktualisiert wird und Provider B wegen Netzwerkfehler fehlschlaegt, wird Provider A committed und Provider B behaelt alte Daten.
+Wenn Provider A erfolgreich aktualisiert wird und Provider B wegen Netzwerkfehler fehlschlaegt, wird Provider A committed und Provider B behält alte Daten.
 
-Wenn EPG-Quelle A erfolgreich aktualisiert wird und EPG-Quelle B fehlschlaegt, wird EPG-Quelle A committed und EPG-Quelle B behaelt alte EPG-Daten bis zum normalen Cleanup.
+Wenn EPG-Quelle A erfolgreich aktualisiert wird und EPG-Quelle B fehlschlaegt, wird EPG-Quelle A committed und EPG-Quelle B behält alte EPG-Daten bis zum normalen Cleanup.
 
 Die Architekturentscheidung dazu liegt in:
 
@@ -189,7 +189,7 @@ Jeder Provider-Refresh und jeder EPG-Quellen-Refresh folgt diesem Ablauf:
 7. Cleanup
 ```
 
-Vor `Commit` duerfen keine produktiven Provider-, Medien-, EPG- oder nutzerbezogenen Daten veraendert werden.
+Vor `Commit` dürfen keine produktiven Provider-, Medien-, EPG- oder nutzerbezogenen Daten verändert werden.
 
 ## Staging
 
@@ -201,10 +201,10 @@ Staging-Daten sind keine produktiven App-Daten:
 
 - sie werden nicht in normalen Listen angezeigt
 - sie sind nicht Teil von Backup oder Restore
-- sie duerfen keine neue lokale Identitaet fuer Nutzerreferenzen erzeugen
-- sie muessen ueber einen Laufkontext wie `refreshRunId` oder gleichwertig bereinigt werden koennen
+- sie dürfen keine neue lokale Identitaet für Nutzerreferenzen erzeugen
+- sie müssen über einen Laufkontext wie `refreshRunId` oder gleichwertig bereinigt werden können
 
-Nach Prozessabbruch, App-Absturz oder Systemabbruch werden verwaiste Staging-Daten beim naechsten App-Start oder vor dem naechsten Refresh geloescht.
+Nach Prozessabbruch, App-Absturz oder Systemabbruch werden verwaiste Staging-Daten beim nächsten App-Start oder vor dem nächsten Refresh geloescht.
 
 ## Validate und Diff
 
@@ -220,11 +220,11 @@ Validate prueft mindestens:
 
 Diff wird ausschliesslich aus validierten Staging-Daten und bestehenden produktiven Daten berechnet.
 
-Lokale Room-IDs sind fuer Diff-Identitaet nicht massgeblich. Fuer Provider-Inhalte gilt `providerStableKey + mediaType + mediaStableKey`. Fuer EPG gilt `epgSourceStableKey + epgChannelStableKey + startTimeUtc + normalizedTitle` beziehungsweise der im EPG-Vertrag definierte stabile Schluessel.
+Lokale Room-IDs sind für Diff-Identitaet nicht massgeblich. Für Provider-Inhalte gilt `providerStableKey + mediaType + mediaStableKey`. Für EPG gilt `epgSourceStableKey + epgChannelStableKey + startTimeUtc + normalizedTitle` beziehungsweise der im EPG-Vertrag definierte stabile Schluessel.
 
 ## Commit-Grenzen
 
-Der Commit fuer einen Provider laeuft in einer Room-Transaktion und umfasst die produktive Aenderung dieses Providers:
+Der Commit für einen Provider laeuft in einer Room-Transaktion und umfasst die produktive Änderung dieses Providers:
 
 - Provider-Metadaten und Status
 - Kategorien
@@ -237,24 +237,24 @@ Der Commit fuer einen Provider laeuft in einer Room-Transaktion und umfasst die 
 - Entfernen nicht mehr vorhandener providerbezogener Inhalte, sofern der betroffene Teilbereich autoritativ ist
 - Entfernen zugehoeriger Favoriten, Verlaeufe und Wiedergabefortschritte, sofern Inhalte autoritativ entfernt werden
 
-Der Commit fuer eine EPG-Quelle laeuft in einer Room-Transaktion und umfasst die produktive Aenderung dieser EPG-Quelle:
+Der Commit für eine EPG-Quelle laeuft in einer Room-Transaktion und umfasst die produktive Änderung dieser EPG-Quelle:
 
 - EPG-Quellen-Metadaten und Status
 - EPG-Kanäle
 - EPG-Programme
 - technische Zaehler und letzte erfolgreiche Aktualisierung
 
-EPG-Mapping und Provider-EPG-Prioritaeten duerfen nach erfolgreichen Provider- oder EPG-Commits separat aktualisiert werden. Manuelle EPG-Zuordnungen duerfen durch einen fehlgeschlagenen oder nicht autoritativen Refresh nie geloescht oder ueberschrieben werden.
+EPG-Mapping und Provider-EPG-Prioritäten dürfen nach erfolgreichen Provider- oder EPG-Commits separat aktualisiert werden. Manuelle EPG-Zuordnungen dürfen durch einen fehlgeschlagenen oder nicht autoritativen Refresh nie geloescht oder überschrieben werden.
 
 ## Autoritative Ergebnisse
 
-`Erfolgreich` ist autoritativ fuer den kompletten aktivierten Importumfang.
+`Erfolgreich` ist autoritativ für den kompletten aktivierten Importumfang.
 
-`Erfolgreich mit Teilfehlern` darf valide neue oder geaenderte Eintraege committen.
+`Erfolgreich mit Teilfehlern` darf valide neue oder geänderte Eintraege committen.
 
-Destruktive Entfernt-Loeschungen duerfen bei `Erfolgreich mit Teilfehlern` nur fuer Teilbereiche ausgefuehrt werden, die vollstaendig gelesen und validiert wurden. Teilbereiche mit uebersprungenen Eintraegen, Bereichsfehlern oder nicht garantierter Vollstaendigkeit behalten vorhandene alte Inhalte, die im aktuellen Lauf nicht sicher zugeordnet wurden.
+Destruktive Entfernt-Loeschungen dürfen bei `Erfolgreich mit Teilfehlern` nur für Teilbereiche ausgefuehrt werden, die vollstaendig gelesen und validiert wurden. Teilbereiche mit übersprungenen Eintraegen, Bereichsfehlern oder nicht garantierter Vollstaendigkeit behalten vorhandene alte Inhalte, die im aktuellen Lauf nicht sicher zugeordnet wurden.
 
-`Fehlgeschlagen` und `Abgebrochen` duerfen keine produktiven Inhaltsaenderungen committen.
+`Fehlgeschlagen` und `Abgebrochen` dürfen keine produktiven Inhaltsaenderungen committen.
 
 ## Fatalfehler und Abbruchschwelle
 
@@ -265,43 +265,65 @@ Ein Lauf ist fatal fehlgeschlagen, wenn mindestens eine dieser Bedingungen zutri
 - Antwortformat nicht nutzbar
 - kein verwertbarer Eintrag im aktivierten Importumfang
 - ein aktivierter Xtream-Bereich liefert wegen Endpoint-, Netzwerk- oder Formatfehler kein vollstaendig auswertbares Ergebnis
-- produktive Constraints koennen vor Commit nicht erfuellt werden
+- produktive Constraints können vor Commit nicht erfuellt werden
 
-Ein leerer, aber gueltig geladener aktivierter Xtream-Bereich ist kein Fatalfehler, wenn der Provider diesen Bereich plausibel leer liefert.
+Ein leerer, aber gültig geladener aktivierter Xtream-Bereich ist kein Fatalfehler, wenn der Provider diesen Bereich plausibel leer liefert.
 
 Die Abbruchschwelle ist fachlich qualitativ und nicht als sichtbare Prozent-Einstellung definiert.
 
 ## Abbruch und Prozessfehler
 
-Wenn Download, Parse, Validate, Stage oder Diff abbrechen, bleiben produktive Daten unveraendert.
+Wenn Download, Parse, Validate, Stage oder Diff abbrechen, bleiben produktive Daten unverändert.
 
-Wenn der Prozess waehrend einer Room-Transaktion abbricht, muss die Datenbanktransaktion vollstaendig committen oder vollstaendig zurueckrollen.
+Wenn der Prozess während einer Room-Transaktion abbricht, muss die Datenbanktransaktion vollstaendig committen oder vollstaendig zurückrollen.
 
-Wenn der Prozess nach erfolgreichem Commit, aber vor Cleanup abbricht, bleiben die committed produktiven Daten gueltig. Verwaiste Staging- und Temporaerdaten werden spaeter bereinigt.
+Wenn der Prozess nach erfolgreichem Commit, aber vor Cleanup abbricht, bleiben die committed produktiven Daten gültig. Verwaiste Staging- und Temporaerdaten werden später bereinigt.
 
-Aktive Streams duerfen durch Import oder Refresh nicht unterbrochen werden.
+Aktive Streams dürfen durch Import oder Refresh nicht unterbrochen werden.
 
 ## Scheduling und Wiederholungen
 
-Der Scheduler dedupliziert gleichartige Refresh-Anfragen fuer dieselbe Provider- oder EPG-Quelle.
+Der Scheduler dedupliziert gleichartige Refresh-Anfragen für dieselbe Provider- oder EPG-Quelle.
 
-Fuer denselben Provider oder dieselbe EPG-Quelle darf nicht gleichzeitig mehr als ein produktiver Refresh laufen.
+Für denselben Provider oder dieselbe EPG-Quelle darf nicht gleichzeitig mehr als ein produktiver Refresh laufen.
 
-Manuelle Aktualisierung darf einen ausstehenden automatischen Lauf vorziehen oder ersetzen, aber keinen zweiten parallelen Lauf fuer dieselbe Einheit starten.
+Manuelle Aktualisierung darf einen ausstehenden automatischen Lauf vorziehen oder ersetzen, aber keinen zweiten parallelen Lauf für dieselbe Einheit starten.
 
 Parallele Refreshes verschiedener Provider oder EPG-Quellen sind erlaubt und intern begrenzt.
 
 Wiederholungen sind begrenzt. Ein erneuter Versuch darf erst nach einem vollstaendig fehlgeschlagenen oder abgebrochenen Lauf starten und muss einen neuen Laufkontext verwenden.
 
-## Initiales Hinzufuegen
+## Initiales Hinzufügen
 
 Der Verbindungstest entscheidet, ob eine neue Wiedergabeliste gespeichert werden darf.
 
-Nach erfolgreichem Verbindungstest wird der Provider gespeichert und anschliessend importiert.
+Nach erfolgreichem Verbindungstest wird der Provider gespeichert und anschließend importiert.
 
-Wenn dieser erste Import fehlschlaegt, bleibt der Provider mit Fehlerstatus bestehen. Es duerfen keine halb importierten Inhalte sichtbar werden.
+Wenn dieser erste Import fehlschlaegt, bleibt der Provider mit Fehlerstatus bestehen. Es dürfen keine halb importierten Inhalte sichtbar werden.
 
 ---
+
+# 7.3a Listenfenster und Paging
+
+Sender, Filme und Serien duerfen nicht vollstaendig in UI-State geladen werden.
+
+Room-Abfragen fuer grosse Listen muessen paging- oder fensterfaehig sein.
+
+Der UI-State haelt nur:
+
+- sichtbares Fenster
+- Fokus-ID
+- aktive Filter
+- aktive Sortierung
+- notwendigen Screen-Kontext
+
+Poster und Logos werden nur fuer sichtbare oder kurz bevorstehende Elemente geladen.
+
+EPG-Tagesansichten werden pro Sender lazy beziehungsweise fensterfaehig geladen.
+
+Horizontale Suchreihen bleiben bei maximal 20 Treffern je Gruppe.
+
+Import-, Refresh- und FTS-Rebuild-Arbeiten duerfen keine blockierenden UI-Pfade erzeugen.
 
 # 7.4 Playlist Refresh
 
@@ -312,16 +334,16 @@ Delta-Synchronisation.
 ## Verhalten
 
 ```text
-Neu       -> hinzufuegen
-Geaendert -> aktualisieren
-Entfernt -> loeschen, wenn Teilbereich autoritativ
+Neu       -> hinzufügen
+Geändert -> aktualisieren
+Entfernt -> löschen, wenn Teilbereich autoritativ
 ```
 
 ## Entfernte Inhalte
 
 Wenn Inhalte beim Provider nach einem autoritativen Refresh nicht mehr vorhanden sind, werden sie lokal entfernt.
 
-Abhaengige lokale Daten fuer diesen Inhalt werden ebenfalls entfernt:
+Abhängige lokale Daten für diesen Inhalt werden ebenfalls entfernt:
 
 ```text
 Favoriten
@@ -329,7 +351,7 @@ Playback Progress
 Verlauf
 ```
 
-Wenn ein Refresh fehlschlaegt, abgebrochen wird oder fuer einen Teilbereich nicht autoritativ ist, bleiben bestehende Inhalte dieses Teilbereichs erhalten.
+Wenn ein Refresh fehlschlaegt, abgebrochen wird oder für einen Teilbereich nicht autoritativ ist, bleiben bestehende Inhalte dieses Teilbereichs erhalten.
 
 ## Fehlgeschlagene Aktualisierung
 
@@ -359,11 +381,11 @@ Status: Verbindungsfehler
 
 ## Aktualisierungsintervall
 
-Der globale Standardwert fuer den automatischen intervallgesteuerten EPG-Refresh betraegt 24 Stunden.
+Der globale Standardwert für den automatischen intervallgesteuerten EPG-Refresh betraegt 24 Stunden.
 
 Der Wert wird in DataStore als `epgRefreshIntervalHours = 24` gespeichert.
 
-App-Start-Aktualisierung, Aktualisierung bei Playlist-Aenderung und manuelle Aktualisierung bleiben separate Ausloeser. Ist der globale Hauptschalter fuer Hintergrundaktualisierung deaktiviert, wird kein automatischer Intervall-Refresh ausgefuehrt.
+App-Start-Aktualisierung, Aktualisierung bei Playlist-Änderung und manuelle Aktualisierung bleiben separate Ausloeser. Ist der globale Hauptschalter für Hintergrundaktualisierung deaktiviert, wird kein automatischer Intervall-Refresh ausgefuehrt.
 
 ## Speicherung
 
@@ -375,7 +397,7 @@ EPGSource
 -> EPGProgram
 ```
 
-Provider-Sender erhalten Programme ueber EPG-Mapping und Provider-EPG-Prioritaeten.
+Provider-Sender erhalten Programme über EPG-Mapping und Provider-EPG-Prioritäten.
 
 EPG-Programme werden nicht als providerbezogene Kopien gespeichert.
 
@@ -392,7 +414,7 @@ epgPastRetentionDays = 1
 epgFutureRetentionDays = 7
 ```
 
-Zulaessige Werte:
+Zulässige Werte:
 
 ```text
 1 bis 14 Tage
@@ -408,27 +430,27 @@ Alle EPG-Programmzeiten werden intern als UTC-Zeitpunkte gespeichert.
 
 `timeShiftMinutes` der EPG-Quelle wird beim Import angewendet.
 
-Wenn eine Endzeit fehlt, darf das Programm gespeichert werden. Fuer Now/Next und Tagesansicht darf die Endzeit aus dem naechsten Programmbeginn desselben EPG-Kanals abgeleitet werden. Wenn keine plausible Endzeit ermittelbar ist, ist das Programm fuer Now/Next nur eingeschraenkt nutzbar.
+Wenn eine Endzeit fehlt, darf das Programm gespeichert werden. Für Now/Next und Tagesansicht darf die Endzeit aus dem nächsten Programmbeginn desselben EPG-Kanals abgeleitet werden. Wenn keine plausible Endzeit ermittelbar ist, ist das Programm für Now/Next nur eingeschraenkt nutzbar.
 
-Ueberlappende Programme fuehren nicht zum Abbruch des Imports. Fuer Anzeige und Now/Next gewinnt das plausiblere Zeitfenster. Wenn beide Eintraege gleich plausibel sind, gewinnt der spaeter importierte Datensatz innerhalb derselben Quelle und desselben EPG-Kanals.
+Überlappende Programme fuehren nicht zum Abbruch des Imports. Für Anzeige und Now/Next gewinnt das plausiblere Zeitfenster. Wenn beide Eintraege gleich plausibel sind, gewinnt der später importierte Datensatz innerhalb derselben Quelle und desselben EPG-Kanals.
 
-Duplikate werden innerhalb derselben EPG-Quelle und desselben EPG-Kanals ueber `startTimeUtc + normalizedTitle` dedupliziert.
+Duplikate werden innerhalb derselben EPG-Quelle und desselben EPG-Kanals über `startTimeUtc + normalizedTitle` dedupliziert.
 
-## Mapping und Prioritaet
+## Mapping und Priorität
 
 Manuelle EPG-Zuordnungen gewinnen immer vor automatischen Zuordnungen.
 
-Automatisches Mapping darf Vorschlaege oder automatische Zuordnungen erzeugen, aber keine manuelle Zuordnung ueberschreiben.
+Automatisches Mapping darf Vorschlaege oder automatische Zuordnungen erzeugen, aber keine manuelle Zuordnung überschreiben.
 
-Wenn mehrere EPG-Quellen fuer einen Provider Programme liefern, gewinnt die niedrigere Provider-EPG-Prioritaet.
+Wenn mehrere EPG-Quellen für einen Provider Programme liefern, gewinnt die niedrigere Provider-EPG-Priorität.
 
-Now/Next nutzt fuer einen Sender zuerst die gueltige manuelle Zuordnung, sonst die beste automatische Zuordnung entsprechend Provider-EPG-Prioritaet.
+Now/Next nutzt für einen Sender zuerst die gültige manuelle Zuordnung, sonst die beste automatische Zuordnung entsprechend Provider-EPG-Priorität.
 
-Tagesansicht berechnet lokale Tagesgrenzen in UTC und fragt die quellbezogenen Programme ueber das Mapping ab.
+Tagesansicht berechnet lokale Tagesgrenzen in UTC und fragt die quellbezogenen Programme über das Mapping ab.
 
-EPG-Suche laeuft lokal ueber Titel, Untertitel und Beschreibung. Treffer bleiben in der eigenen Suchgruppe `EPG` und werden nicht mit Sender-, Film- oder Serienergebnissen verschmolzen.
+EPG-Suche laeuft lokal über Titel, Untertitel und Beschreibung. Treffer bleiben in der eigenen Suchgruppe `EPG` und werden nicht mit Sender-, Film- oder Serienergebnissen verschmolzen.
 
-Fuer Now/Next, Tagesansicht und Suche muessen Indizes auf EPG-Quelle, EPG-Kanal, Startzeit, Endzeit und Titel beziehungsweise normalisiertem Titel vorhanden sein.
+Für Now/Next, Tagesansicht und Suche müssen Indizes auf EPG-Quelle, EPG-Kanal, Startzeit, Endzeit und Titel beziehungsweise normalisiertem Titel vorhanden sein.
 
 ## Fehlgeschlagene Aktualisierung
 
@@ -438,7 +460,7 @@ Altes EPG behalten
 
 Bei fehlgeschlagenem oder abgebrochenem EPG-Refresh bleiben vorhandene EPG-Programme bis zum normalen Cleanup erhalten.
 
-Wenn ein EPG-Refresh mit Teilfehlern abgeschlossen wird, duerfen valide Programme committed werden. Destruktives Ersetzen vorhandener Programme ist nur fuer vollstaendig gelesene und validierte EPG-Teilbereiche erlaubt.
+Wenn ein EPG-Refresh mit Teilfehlern abgeschlossen wird, dürfen valide Programme committed werden. Destruktives Ersetzen vorhandener Programme ist nur für vollstaendig gelesene und validierte EPG-Teilbereiche erlaubt.
 
 ---
 
@@ -447,7 +469,7 @@ Wenn ein EPG-Refresh mit Teilfehlern abgeschlossen wird, duerfen valide Programm
 ## Standard
 
 ```text
-Nur geaenderte Logos aktualisieren
+Nur geänderte Logos aktualisieren
 ```
 
 ## Optional
@@ -476,7 +498,7 @@ TV Standard Icon
 
 # 7.7 Medien Cache
 
-## Enthaelt
+## Enthält
 
 ```text
 Senderlogos
@@ -486,18 +508,18 @@ Staffelbilder
 Episodenbilder
 ```
 
-## Groessenlimit
+## Größenlimit
 
 Das Medien-Cache-Limit ist ein interner v1-Wert.
 
-Eine freie Groessenwahl oder Cache-Rotation in den Settings ist nicht Teil von v1.
+Eine freie Größenwahl oder Cache-Rotation in den Settings ist nicht Teil von v1.
 
 ## Cache Informationen
 
 Anzeige unter `Einstellungen > Backup`:
 
 ```text
-Aktuelle Groesse
+Aktuelle Größe
 Dateianzahl
 Interne Grenze, falls technisch verfuegbar
 ```
@@ -510,7 +532,7 @@ Sichtbare v1-Aktion:
 Cache leeren
 ```
 
-`Cache leeren` entfernt heruntergeladene Medien-Cache-Dateien fuer Senderlogos, Film-Poster, Serien-Poster, Staffelbilder und Episodenbilder.
+`Cache leeren` entfernt heruntergeladene Medien-Cache-Dateien für Senderlogos, Film-Poster, Serien-Poster, Staffelbilder und Episodenbilder.
 
 Nicht entfernt werden Providerdaten, Favoriten, Verlauf, Wiedergabefortschritt, Suchverlauf, EPG-Zuordnungen, Zugangsdaten, EPG-Programmdaten sowie aktive Stream- oder Timeshift-Puffer.
 
@@ -522,7 +544,7 @@ Medien-Cache-Daten sind nicht Teil des Standard-Backups.
 
 ## Ziel
 
-Fehler duerfen niemals unkontrollierten Datenverlust verursachen.
+Fehler dürfen niemals unkontrollierten Datenverlust verursachen.
 
 ## Senderstart
 
@@ -559,7 +581,7 @@ Der verbindliche Parser- und Quellenvertrag liegt in `prd/PRD-v1/12-parser-sourc
 Fehlerhafte Eintraege:
 
 ```text
-Ueberspringen
+Überspringen
 Weiter importieren
 ```
 
@@ -569,17 +591,17 @@ Diagnose:
 interne Diagnoseinformationen
 ```
 
-Diagnoseinformationen duerfen keine geheimen Zugangswerte enthalten.
+Diagnoseinformationen dürfen keine geheimen Zugangswerte enthalten.
 
-Toleranter Teilimport ist Standard. Einzelne fehlerhafte M3U-, Xtream- oder XMLTV-Eintraege werden uebersprungen, solange verwertbare Eintraege importiert werden koennen.
+Toleranter Teilimport ist Standard. Einzelne fehlerhafte M3U-, Xtream- oder XMLTV-Eintraege werden übersprungen, solange verwertbare Eintraege importiert werden können.
 
 Bei Teilfehlern zeigt die App einen zusammenfassenden Status und speichert nur bereinigte technische Zaehler.
 
 ## Import- und Refresh-Fehler
 
-Provider- und EPG-Refreshes duerfen keine halb aktualisierte Bibliothek hinterlassen.
+Provider- und EPG-Refreshes dürfen keine halb aktualisierte Bibliothek hinterlassen.
 
-Fehler vor Commit behalten alte Daten. Fehler innerhalb der Commit-Transaktion muessen vollstaendig zurueckrollen. Fehler nach Commit duerfen nur Cleanup oder technische Metadaten betreffen.
+Fehler vor Commit behalten alte Daten. Fehler innerhalb der Commit-Transaktion müssen vollstaendig zurückrollen. Fehler nach Commit dürfen nur Cleanup oder technische Metadaten betreffen.
 
 ## EPG Fehler
 
@@ -614,7 +636,7 @@ __UNCATEGORIZED__
 Anzeige:
 
 ```text
-Anmeldedaten ungueltig
+Anmeldedaten ungültig
 ```
 
 ---
@@ -635,13 +657,13 @@ Diagnoseprotokollierung: Aus
 Aufbewahrungsdauer: 1 Tag
 ```
 
-Die Aufbewahrungsdauer bleibt bei ausgeschalteter Protokollierung sichtbar, ist dann aber nicht aenderbar. Bereits vorhandene Sitzungen bleiben bis zu ihrem regulaeren Ablauf exportierbar.
+Die Aufbewahrungsdauer bleibt bei ausgeschalteter Protokollierung sichtbar, ist dann aber nicht änderbar. Bereits vorhandene Sitzungen bleiben bis zu ihrem regulaeren Ablauf exportierbar.
 
 ## Diagnoseprotokollierung
 
-Bei aktivierter Diagnoseprotokollierung koennen intern bereinigte technische Ereignisse zu Refreshes, Fehlern, Warnungen, Player, Netzwerk, Backup/Restore, Cache und Datenbank geschrieben werden.
+Bei aktivierter Diagnoseprotokollierung können intern bereinigte technische Ereignisse zu Refreshes, Fehlern, Warnungen, Player, Netzwerk, Backup/Restore, Cache und Datenbank geschrieben werden.
 
-Pro App-Prozessstart wird eine neue logische Diagnosesitzung im privaten App-Speicher begonnen. Aktivierung waehrend eines laufenden Prozesses beginnt eine Sitzung zum Aktivierungszeitpunkt.
+Pro App-Prozessstart wird eine neue logische Diagnosesitzung im privaten App-Speicher begonnen. Aktivierung während eines laufenden Prozesses beginnt eine Sitzung zum Aktivierungszeitpunkt.
 
 Jede Sitzung fuehrt mindestens:
 
@@ -656,7 +678,7 @@ endTimeAccuracy
 
 Kontrolliertes Beenden verwendet `USER_EXIT`/`EXACT`; Ausschalten der Diagnoseprotokollierung verwendet `DIAGNOSTICS_DISABLED`/`EXACT`.
 
-Bildschirm-Aus, Standby oder TV-Aus beendet die Sitzung nicht, solange der Prozess weiterlebt. Eine beim naechsten Prozessstart noch offene Sitzung wird ab Android 11/API 30 nach Moeglichkeit mit einem passenden `ApplicationExitInfo`-Zeitstempel als `SYSTEM_REPORTED` geschlossen. Fehlt ein passender Systemdatensatz, wird `lastRecordedAt` als geschaetztes Ende mit `endTimeAccuracy=ESTIMATED` verwendet.
+Bildschirm-Aus, Standby oder TV-Aus beendet die Sitzung nicht, solange der Prozess weiterlebt. Eine beim nächsten Prozessstart noch offene Sitzung wird ab Android 11/API 30 nach Möglichkeit mit einem passenden `ApplicationExitInfo`-Zeitstempel als `SYSTEM_REPORTED` geschlossen. Fehlt ein passender Systemdatensatz, wird `lastRecordedAt` als geschaetztes Ende mit `endTimeAccuracy=ESTIMATED` verwendet.
 
 ## Aufbewahrung
 
@@ -685,7 +707,7 @@ Diagnoseprotokoll exportieren
 
 Logs sind export-only. Der Inhalt einer Log- oder Diagnoseprotokolldatei darf niemals direkt in der App angezeigt oder in die Zwischenablage kopiert werden.
 
-Die App darf nach dem Export nur Erfolg, Fehler oder Exportziel anzeigen. Logzeilen oder Ausschnitte aus der Exportdatei duerfen dabei nicht wiedergegeben werden.
+Die App darf nach dem Export nur Erfolg, Fehler oder Exportziel anzeigen. Logzeilen oder Ausschnitte aus der Exportdatei dürfen dabei nicht wiedergegeben werden.
 
 Technische Ereignisse werden bereits vor dem dauerhaften Schreiben bereinigt. Vor dem Export wird der Ausgabestrom erneut zentral auf geheime Zugangswerte, Tokens, private URLs und vergleichbare sensible Werte geprueft.
 
@@ -699,7 +721,7 @@ Verpflichtende Eintraege: vivicast-diagnostics.log, diagnostics-metadata.json
 Kodierung beider Eintraege: UTF-8
 ```
 
-Vivicast erzeugt das ZIP-Archiv selbst mit den standardmaessigen Android-ZIP-APIs. Eine externe ZIP- oder Dateimanager-App ist fuer die Erstellung nicht erforderlich.
+Vivicast erzeugt das ZIP-Archiv selbst mit den standardmaessigen Android-ZIP-APIs. Eine externe ZIP- oder Dateimanager-App ist für die Erstellung nicht erforderlich.
 
 Das Archiv wird direkt in den Ziel-OutputStream geschrieben. Es darf nicht vollstaendig als grosse Bytefolge im RAM aufgebaut werden.
 
@@ -707,14 +729,14 @@ Wenn Erstellen oder Schreiben fehlschlaegt, wird ein konkreter Exportfehler ange
 
 ## Verbindlicher Exportinhalt
 
-Das ZIP-Archiv enthaelt verpflichtend:
+Das ZIP-Archiv enthält verpflichtend:
 
 ```text
 vivicast-diagnostics.log
 diagnostics-metadata.json
 ```
 
-`vivicast-diagnostics.log` enthaelt ausschliesslich bereinigte technische Ereignisse zu:
+`vivicast-diagnostics.log` enthält ausschliesslich bereinigte technische Ereignisse zu:
 
 - App-Start, App-Version und Abstuerzen
 - Playlist-Importen und -Aktualisierungen mit Beginn, Ende, Ergebnis, Dauer und Anzahl verarbeiteter Eintraege
@@ -722,15 +744,15 @@ diagnostics-metadata.json
 - Player-Startfehlern, Retries, Reconnects, Decoder- und Timeshift-Fehlern
 - Netzwerkfehlern mit Fehlerart, HTTP-Status und Dauer, jedoch ohne URL
 - Backup-, Restore-, Cache- und Datenbankaktionen sowie Fehlern
-- bereinigten Stacktraces fuer Warnungen, Fehler und Abstuerze
+- bereinigten Stacktraces für Warnungen, Fehler und Abstuerze
 
-`diagnostics-metadata.json` enthaelt App-/Build-Version, Android-Version, Geraetemodell, Datenbank-Version, Sprache, Zeitzone, Exportzeitpunkt, Aufbewahrungsdauer, feste Groessengrenzen, den tatsaechlich abgedeckten Zeitraum sowie Sitzungs- und Trunkierungsmetadaten.
+`diagnostics-metadata.json` enthält App-/Build-Version, Android-Version, Gerätemodell, Datenbank-Version, Sprache, Zeitzone, Exportzeitpunkt, Aufbewahrungsdauer, feste Größengrenzen, den tatsaechlich abgedeckten Zeitraum sowie Sitzungs- und Trunkierungsmetadaten.
 
 Nicht exportiert werden Zugangswerte, Tokens, Cookies, HTTP-Header, URLs, rohe Playlist-/EPG-Inhalte, Provider- oder Inhaltsnamen, Suchverlauf, Datenbank-Dumps, Screenshots oder ungefiltertes System-Logcat.
 
-Bei Bedarf duerfen neutrale interne IDs als technische Referenz verwendet werden.
+Bei Bedarf dürfen neutrale interne IDs als technische Referenz verwendet werden.
 
-## Groessenbegrenzung und bytebasierte Rotation
+## Größenbegrenzung und bytebasierte Rotation
 
 Verbindliche feste v1-Grenzen:
 
@@ -743,11 +765,11 @@ diagnosticsMaxSessionLogBytes = 6_291_456      // 6 MiB
 
 Die Grenzen sind interne Konstanten und nicht benutzerkonfigurierbar.
 
-Eine logische Diagnosesitzung kann aus mehreren physischen Segmenten bestehen. Bevor ein bereinigtes Ereignis die Segmentgrenze ueberschreiten wuerde, wird das aktuelle Segment geschlossen und ein neues Segment derselben Sitzung geoeffnet.
+Eine logische Diagnosesitzung kann aus mehreren physischen Segmenten bestehen. Bevor ein bereinigtes Ereignis die Segmentgrenze überschreiten wuerde, wird das aktuelle Segment geschlossen und ein neues Segment derselben Sitzung geoeffnet.
 
 Sind bereits drei Segmente vorhanden, wird das aelteste geschlossene Segment dieser Sitzung entfernt. Ein einzelnes zu grosses, bereits bereinigtes Ereignis wird passend gekuerzt und mit `recordTruncated=true` markiert.
 
-Das Gesamtlimit umfasst Segmente und zugehoerige Sitzungs-/Segmentmetadaten. Vor groessenbedingter Bereinigung laeuft zuerst die Altersbereinigung. Danach werden die aeltesten abgeschlossenen Sitzungen vollstaendig entfernt. Die globale Groessenbereinigung entfernt keine Segmente der aktiven Sitzung; deren aelteste geschlossene Segmente werden nur durch die feste Drei-Segment-Rotation ersetzt.
+Das Gesamtlimit umfasst Segmente und zugehoerige Sitzungs-/Segmentmetadaten. Vor größenbedingter Bereinigung laeuft zuerst die Altersbereinigung. Danach werden die aeltesten abgeschlossenen Sitzungen vollstaendig entfernt. Die globale Größenbereinigung entfernt keine Segmente der aktiven Sitzung; deren aelteste geschlossene Segmente werden nur durch die feste Drei-Segment-Rotation ersetzt.
 
 Kann ein Ereignis danach nicht innerhalb der Grenzen geschrieben werden, wird es verworfen und als Kuerzung gezaehlt. Das aktuelle Schreibsegment und die Metadaten der aktiven Sitzung bleiben geschuetzt.
 
@@ -765,7 +787,7 @@ Der Export verbindet nur die noch vorhandenen Segmente chronologisch. Sein Zeitr
 
 Die vollstaendige Inhalts-, Sitzungs- und Rotationsregel liegt in `prd/PRD-v1/11-about-app-requirements.md`.
 
-Allgemeine Support-Informationen im Bereich `Über die App` duerfen weiterhin bereinigte technische Daten anzeigen und kopieren.
+Allgemeine Support-Informationen im Bereich `Über die App` dürfen weiterhin bereinigte technische Daten anzeigen und kopieren.
 
 ---
 
@@ -783,13 +805,13 @@ Diese Funktion muss nicht zwingend im v1-UI sichtbar sein.
 
 ## Cache
 
-Sichtbare v1-Wartung:
+Sichtbare v1-Wartung liegt unter `Einstellungen > Speicher & Verlauf`:
 
 ```text
 Cache leeren
 ```
 
-Optional fuer interne oder spaetere Support-Wartung:
+Optional für interne oder spätere Support-Wartung:
 
 ```text
 Logo Cache neu aufbauen
@@ -798,7 +820,7 @@ Poster Cache neu aufbauen
 
 ## IPTV
 
-Unterstuetzt ueber vorhandene Refresh-Aktionen:
+Unterstuetzt über vorhandene Refresh-Aktionen:
 
 ```text
 EPG neu herunterladen
@@ -817,19 +839,19 @@ Sender
 Filme
 Serien
 EPG Eintraege
-Groesse des Medien-Caches
-Datenbankgroesse
+Größe des Medien-Caches
+Datenbankgröße
 Favoriten
 Verlaufseintraege
 ```
 
-Diese Werte duerfen in Support-Informationen nur ohne geheime Details angezeigt werden.
+Diese Werte dürfen in Support-Informationen nur ohne geheime Details angezeigt werden.
 
 ---
 
 # 7.11 Performance Anforderungen
 
-## Zielgroessen
+## Zielgrößen
 
 ```text
 10.000+ Sender
@@ -838,7 +860,7 @@ Diese Werte duerfen in Support-Informationen nur ohne geheime Details angezeigt 
 Millionen EPG Eintraegen
 ```
 
-Messbare v1-Budgets fuer Import, Suche, Datenbank, EPG und Speicherverbrauch liegen in `prd/PRD-v1/13-test-strategy.md`.
+Messbare v1-Budgets für Import, Suche, Datenbank, EPG und Speicherverbrauch liegen in `prd/PRD-v1/13-test-strategy.md`.
 
 Dieses Kapitel definiert Laufzeitverhalten und Performanceanforderungen. Kapitel 13 definiert die reproduzierbare Messung.
 
@@ -880,7 +902,7 @@ Room FTS4
 
 Suche erfolgt ausschliesslich lokal.
 
-Die interne Suche verwendet getrennte FTS-Indexe fuer:
+Die interne Suche verwendet getrennte FTS-Indexe für:
 
 ```text
 Kanäle
@@ -893,7 +915,7 @@ Episoden sind keine eigene Suchgruppe.
 
 Leere Suche fuehrt keine Ergebnisabfrage aus.
 
-Bei einem normalisierten Zeichen durchsucht Vivicast nur Titel- oder Name-Prefixe fuer Kanäle, Filme und Serien.
+Bei einem normalisierten Zeichen durchsucht Vivicast nur Titel- oder Name-Prefixe für Kanäle, Filme und Serien.
 
 EPG-Suche startet erst ab drei normalisierten Zeichen.
 
@@ -904,13 +926,13 @@ FTS-Indexpflege laeuft als Teil der produktiven Commit-Pfade:
 - Provider-Refresh aktualisiert Channel-, Movie- und Series-FTS im selben atomaren Provider-Commit.
 - EPG-Refresh aktualisiert EPG-FTS im selben atomaren EPG-Quellen-Commit.
 - EPG-Cleanup entfernt zugehoerige EPG-FTS-Eintraege.
-- Restore und Migration loesen einen FTS-Rebuild aus, wenn suchrelevante produktive Daten ersetzt oder veraendert wurden.
+- Restore und Migration loesen einen FTS-Rebuild aus, wenn suchrelevante produktive Daten ersetzt oder verändert wurden.
 
-FTS-Rebuilds duerfen die UI nicht blockieren. Wenn ein Rebuild nach Restore oder Migration noch laeuft, darf die Suche einen Loading- oder temporaeren Error-Zustand anzeigen, aber keine Staging-Daten durchsuchen.
+FTS-Rebuilds dürfen die UI nicht blockieren. Wenn ein Rebuild nach Restore oder Migration noch laeuft, darf die Suche einen Loading- oder temporaeren Error-Zustand anzeigen, aber keine Staging-Daten durchsuchen.
 
 ## Channel Zapping Optimierung
 
-Wenn mehrere Sender schnell ausgewaehlt werden:
+Wenn mehrere Sender schnell ausgewählt werden:
 
 ```text
 Nur letzte Auswahl starten
@@ -922,4 +944,4 @@ Vorherige Startvorgaenge werden abgebrochen.
 
 # Speicherziel
 
-Die App soll auch auf schwaecheren Android-TV-Geraeten fluessig bedienbar bleiben.
+Die App soll auch auf schwaecheren Android-TV-Geräten fluessig bedienbar bleiben.

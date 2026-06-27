@@ -5,9 +5,9 @@ Status: verbindlich v1
 
 ## Zweck
 
-Diese Datei definiert die verbindliche v1-Teststrategie fuer Vivicast.
+Diese Datei definiert die verbindliche v1-Teststrategie für Vivicast.
 
-Sie legt fest, welche kritischen Anforderungen automatisiert, instrumentiert oder manuell mit Nachweis geprueft werden muessen.
+Sie legt fest, welche kritischen Anforderungen automatisiert, instrumentiert oder manuell mit Nachweis geprueft werden müssen.
 
 Sie ergaenzt `prd/PRD-v1/09-implementation-and-dod.md`.
 
@@ -27,7 +27,7 @@ Ein Testfall muss enthalten:
 
 Automatisierung ist Pflicht, wenn das Verhalten ohne echte Android-TV-Hardware zuverlaessig pruefbar ist.
 
-Manuelle QA ist nur fuer echte TV-Interaktion, Fokus, visuelle Skalierung, Geraeteverhalten und Systemintegrationen erlaubt, die nicht stabil automatisierbar sind. Manuelle QA braucht protokollierte Schritte und Ergebnisnachweis.
+Manuelle QA ist nur für echte TV-Interaktion, Fokus, visuelle Skalierung, Geräteverhalten und Systemintegrationen erlaubt, die nicht stabil automatisierbar sind. Manuelle QA braucht protokollierte Schritte und Ergebnisnachweis.
 
 ## Testarten
 
@@ -36,7 +36,7 @@ Vivicast verwendet folgende Testarten:
 | Testart | Zweck |
 | --- | --- |
 | Unit-Test | reine fachliche Logik, Parser, Normalisierung, Stable Keys, Redaction, Validierung |
-| JVM-/Repository-Test | Use Cases, Repository-Regeln, Backup-Schema, Migration ohne echtes Geraet |
+| JVM-/Repository-Test | Use Cases, Repository-Regeln, Backup-Schema, Migration ohne echtes Gerät |
 | Room-Migrationstest | Datenbankmigrationen, Indizes, Constraints, FTS-Rebuilds |
 | Instrumented Android Test | DataStore, Keystore-Grenzen, Compose-TV-Fokus, Systemintegration, echte Android-Laufzeit |
 | Mockserver-Integrationstest | M3U, Xtream Codes, XMLTV, Timeouts, Fehlerantworten, Redirects |
@@ -45,7 +45,7 @@ Vivicast verwendet folgende Testarten:
 
 ## Referenzdaten
 
-Das App-Repository muss reproduzierbare Fixtures fuer kleine, grosse und fehlerhafte Datenstaende fuehren.
+Das App-Repository muss reproduzierbare Fixtures für kleine, grosse und fehlerhafte Datenstaende fuehren.
 
 ### Kleine Fixtures
 
@@ -57,7 +57,7 @@ Kleine Fixtures dienen schnellen CI-Tests:
 - 100 Serien
 - 1.000 Episoden, sofern Seriendetails getestet werden
 - 5.000 EPG-Programme
-- Favoriten, Verlauf, Suchverlauf und Playback Progress fuer alle Medientypen
+- Favoriten, Verlauf, Suchverlauf und Playback Progress für alle Medientypen
 
 ### Grosse Fixtures
 
@@ -75,43 +75,43 @@ Grosse Fixtures dienen Performance-, Migrations- und Speicherpruefungen:
 
 ### Fehlerfixtures
 
-Fehlerfixtures muessen mindestens enthalten:
+Fehlerfixtures müssen mindestens enthalten:
 
-- ungueltige Encoding-Varianten
+- ungültige Encoding-Varianten
 - UTF-8 mit BOM
 - `LF`, `CRLF` und gemischte Zeilenenden
 - fehlende Pflichtfelder
 - Duplikate
 - unvollstaendige Xtream-Antworten
-- ungueltige oder mehrdeutige XMLTV-Zeiten
+- ungültige oder mehrdeutige XMLTV-Zeiten
 - ZIP ohne XMLTV-Datei
 - ZIP mit mehreren XMLTV-Dateien
 - Timeouts
 - HTTP-Fehler
 - Redirects
-- beschaedigte Backups
+- beschädigte Backups
 - alte kompatible Backup-Schema-Versionen
 - alte inkompatible Backup-Schema-Versionen
 - alte Merge-, Konflikt- oder Kopie-Felder in Backups
 
-Fixtures duerfen keine echten Zugangsdaten, Tokens, privaten URLs, Provider-Inhaltslisten oder personenbezogenen Daten enthalten.
+Fixtures dürfen keine echten Zugangsdaten, Tokens, privaten URLs, Provider-Inhaltslisten oder personenbezogenen Daten enthalten.
 
-## Referenzgeraet und Messung
+## Referenzgerät und Messung
 
-Vor v1-Release muss das App-Repository mindestens ein Referenzgeraet oder Emulatorprofil dokumentieren.
+Vor v1-Release muss das App-Repository mindestens ein Referenzgerät oder Emulatorprofil dokumentieren.
 
 Mindestklasse:
 
 - Android TV oder Google TV
 - vom App-Repository unterstuetztes Android-API-Level
-- 2 GiB RAM oder weniger, wenn ein bewusst niedrigeres Zielgeraet gewaehlt wird
+- 2 GiB RAM oder weniger, wenn ein bewusst niedrigeres Zielgerät gewählt wird
 
-Alle Performancebudgets werden auf diesem Referenzgeraet oder Profil gemessen.
+Alle Performancebudgets werden auf diesem Referenzgerät oder Profil gemessen.
 
-Benchmarkberichte muessen enthalten:
+Benchmarkberichte müssen enthalten:
 
 - App-Version oder Commit
-- Geraet oder Emulatorprofil
+- Gerät oder Emulatorprofil
 - Android-Version
 - Datenfixture
 - Wiederholungszahl
@@ -124,12 +124,12 @@ Wenn ein Budget nicht erreicht wird, darf die Abweichung nur mit dokumentierter 
 
 ## Parser-Golden-Tests
 
-Parser-Golden-Tests sind Pflicht fuer M3U, Xtream Codes und XMLTV.
+Parser-Golden-Tests sind Pflicht für M3U, Xtream Codes und XMLTV.
 
 Jeder Golden-Test prueft:
 
 - importierte Anzahl
-- uebersprungene Anzahl
+- übersprungene Anzahl
 - Fehlerkategorien
 - Teilfehlerstatus
 - Stable-Key-Ableitung
@@ -142,7 +142,7 @@ Jeder Golden-Test prueft:
 
 Pflichtfaelle:
 
-- gueltiges Extended M3U
+- gültiges Extended M3U
 - UTF-8 mit BOM
 - `LF`, `CRLF` und gemischte Zeilenenden
 - unbekannte Attribute
@@ -155,24 +155,24 @@ Pflichtfaelle:
 - Eintrag ohne verwertbaren Namen
 - Eintrag ohne verwertbare Stream-Referenz
 - Duplikate mit gleichem Stable Key
-- grosse Datei mit streaming- oder chunkfaehiger Verarbeitung
+- grosse Datei mit streaming- oder chunkfähiger Verarbeitung
 - private URLs mit Tokens, ohne Klartext in Stable Key, Log, Diagnose oder Backup
 
 ### Xtream Codes
 
 Pflichtfaelle:
 
-- gueltige Kategorien
-- gueltige Live-TV-Streams
-- gueltige Filme
-- gueltige Serien
+- gültige Kategorien
+- gültige Live-TV-Streams
+- gültige Filme
+- gültige Serien
 - Staffeln und Episoden
 - fehlende optionale Metadaten
 - fehlende Kategorie
 - fehlende Kern-ID
 - fehlender Name
 - unvollstaendige Antworten mit Teilimport
-- ungueltige Zugangsdaten
+- ungültige Zugangsdaten
 - Timeouts
 - HTTP-Fehler
 - Redirects
@@ -198,17 +198,17 @@ Pflichtfaelle:
 - Zeitzonen
 - `timeShiftMinutes`
 - Duplikate
-- Ueberlappungen
+- Überlappungen
 - Programme ausserhalb der EPG-Aufbewahrung
 - rohe XMLTV-Inhalte ohne Log-, Diagnose- oder Backup-Leak
 
 ## Mockserver-Tests
 
-Ein lokaler Mockserver ist Pflicht fuer Quellen- und Netzwerkpfade.
+Ein lokaler Mockserver ist Pflicht für Quellen- und Netzwerkpfade.
 
 Der Mockserver muss reproduzierbar pruefen:
 
-- HTTP und HTTPS, soweit technisch im Testaufbau moeglich
+- HTTP und HTTPS, soweit technisch im Testaufbau möglich
 - unsichere HTTP-Markierung
 - TLS-Fehler ohne Bypass
 - Redirects nur zu `http` oder `https`
@@ -221,11 +221,11 @@ Der Mockserver muss reproduzierbar pruefen:
 - falsche MIME-Typen, sofern relevant
 - keine Zugangswerte in Fehlern, Logs oder Diagnoseexporten
 
-Xtream-Mockserver muessen mindestens `player_api.php` fuer Kategorien, Live-TV, VOD, Serien und Details abbilden.
+Xtream-Mockserver müssen mindestens `player_api.php` für Kategorien, Live-TV, VOD, Serien und Details abbilden.
 
 ## Datenbank- und Migrationstests
 
-Room- und Migrationstests sind Pflicht fuer:
+Room- und Migrationstests sind Pflicht für:
 
 - jede Datenbankversionsaenderung
 - neue Indizes
@@ -248,41 +248,41 @@ Pflichtszenarien:
 - Verknuepfung pending Favoriten nach erfolgreichem Provider-Refresh
 - Verknuepfung pending Playback Progress nach erfolgreichem Provider-Refresh
 - pending Referenzen bleiben erhalten, wenn Zugangsdaten fehlen
-- erfolgreiche Refreshes loeschen entfernte Inhalte gemaess Entfernte-Inhalte-Regel
+- erfolgreiche Refreshes löschen entfernte Inhalte gemaess Entfernte-Inhalte-Regel
 - lokale Room-IDs werden nicht als Backup- oder Restore-Identitaet verwendet
 
 ## Refresh-, Abbruch- und Atomizitaetstests
 
-Refresh-Tests muessen Provider-Refresh und EPG-Refresh getrennt pruefen.
+Refresh-Tests müssen Provider-Refresh und EPG-Refresh getrennt pruefen.
 
 Pflichtszenarien:
 
-- Fehler vor Commit veraendert produktive Daten nicht
-- Fehler innerhalb der Commit-Transaktion rollt vollstaendig zurueck
-- Nutzerabbruch vor Commit laesst produktive Daten unveraendert
+- Fehler vor Commit verändert produktive Daten nicht
+- Fehler innerhalb der Commit-Transaktion rollt vollstaendig zurück
+- Nutzerabbruch vor Commit laesst produktive Daten unverändert
 - Nutzerabbruch nach sicherem Commit-Punkt erzeugt keinen teilzerstoerten Zustand
 - Prozessabbruch hinterlaesst nur bereinigbare Staging-Daten
-- naechster App-Start bereinigt verwaiste Staging-Daten
-- `Erfolgreich mit Teilfehlern` uebernimmt valide Daten
-- destruktive Loeschungen erfolgen nur fuer vollstaendig gelesene und validierte autoritative Teilbereiche
-- keine parallelen produktiven Refreshes fuer denselben Provider
-- keine parallelen produktiven Refreshes fuer dieselbe EPG-Quelle
-- manuelle Aktualisierung ersetzt oder priorisiert einen ausstehenden Lauf, ohne Parallelcommit fuer dieselbe Einheit
+- nächster App-Start bereinigt verwaiste Staging-Daten
+- `Erfolgreich mit Teilfehlern` übernimmt valide Daten
+- destruktive Loeschungen erfolgen nur für vollstaendig gelesene und validierte autoritative Teilbereiche
+- keine parallelen produktiven Refreshes für denselben Provider
+- keine parallelen produktiven Refreshes für dieselbe EPG-Quelle
+- manuelle Aktualisierung ersetzt oder priorisiert einen ausstehenden Lauf, ohne Parallelcommit für dieselbe Einheit
 - aktive Streams werden durch Refresh nicht unterbrochen
 
 ## Backup- und Restore-Tests
 
-Backup- und Restore-Roundtrips sind Pflicht fuer Standard-Backup und verschluesseltes Vollbackup.
+Backup- und Restore-Roundtrips sind Pflicht für Standard-Backup und verschlüsseltes Vollbackup.
 
 Pflichtszenarien:
 
 - Standard-Backup ohne geheime Zugangswerte
 - Vollbackup mit Passphrase und Zugangsdaten
 - falsche Vollbackup-Passphrase bricht vor lokaler Datenaenderung ab
-- beschaedigtes Backup bricht vor lokaler Datenaenderung ab
+- beschädigtes Backup bricht vor lokaler Datenaenderung ab
 - inkompatible Backup-Version bricht vor lokaler Datenaenderung ab
 - kompatible alte Backup-Version wird vor Restore migriert
-- alte Merge-, Konflikt- und Kopie-Felder werden ignoriert oder in das Ersetzen-Modell ueberfuehrt
+- alte Merge-, Konflikt- und Kopie-Felder werden ignoriert oder in das Ersetzen-Modell überfuehrt
 - lokaler Datenstand Provider A, B, C und Backup A, C ergibt nach Restore nur A und C
 - Provider, EPG-Quellen, Mappings, Favoriten, Verlauf, Fortschritt und Einstellungen entsprechen nach Restore dem Backup-Stand
 - Standard-Backup verwendet keine lokalen Room-IDs als Identitaet
@@ -296,10 +296,10 @@ Pflichtszenarien:
 - internes Sicherheitsbackup wird nach Validierung und vor Ersetzen versucht
 - Fehlschlag des Sicherheitsbackups erlaubt Abbruch ohne lokale Datenaenderung
 - bewusstes Fortsetzen trotz fehlgeschlagenem Sicherheitsbackup ersetzt danach den Backup-Umfang
-- Favoriten und Fortschritt duerfen nach Restore pending sein
+- Favoriten und Fortschritt dürfen nach Restore pending sein
 - pending Referenzen werden nach erfolgreichem Provider-Refresh verbunden
 
-Es gibt keine v1-Tests fuer Restore-Zusammenfuehren, Import-Konfliktdialoge oder `Als Kopie importieren`, ausser als Legacy-Migrationsfaelle, die belegen, dass solche alten Felder nicht als Restore-Merge interpretiert werden.
+Es gibt keine v1-Tests für Restore-Zusammenfuehren, Import-Konfliktdialoge oder `Als Kopie importieren`, ausser als Legacy-Migrationsfaelle, die belegen, dass solche alten Felder nicht als Restore-Merge interpretiert werden.
 
 ## Player-, Catch-Up-, Timeshift- und Progress-Tests
 
@@ -317,7 +317,7 @@ Pflichtszenarien:
 - Progress wird mindestens alle 10 Sekunden und bei relevanten Lifecycle-Ereignissen gespeichert
 - 95 Prozent setzt Abschlussstatus, beendet aber keine Wiedergabe und loest kein Auto-Next aus
 - tatsaechliches Medienende setzt Abschlussstatus
-- `Als gesehen markieren` setzt Abschlussstatus fuer Film oder einzelne Episode
+- `Als gesehen markieren` setzt Abschlussstatus für Film oder einzelne Episode
 - `Als ungesehen markieren` loescht den kompletten Progress-Datensatz
 - externe Player erzeugen keinen Progress, keinen Abschlussstatus, kein Watch Next und kein Auto-Next
 - Rueckkehr aus externem Player zeigt den Fortschritt-nicht-verfuegbar-Hinweis
@@ -325,7 +325,7 @@ Pflichtszenarien:
 - Auto-Next ein startet erst am tatsaechlichen Episodenende automatisch
 - Auto-Next-Countdown bleibt visuell stabil
 - letzte Episode zeigt kein Auto-Next-Panel
-- Timeshift nur fuer Live-TV
+- Timeshift nur für Live-TV
 - Timeshift-Fehler lassen Live-TV ohne Timeshift weiterlaufen und sperren Seek mit Hinweis
 - Senderwechsel verwirft Timeshift-Puffer
 
@@ -351,7 +351,7 @@ Pflichtpruefungen:
 - Initialfokus gemaess Screen-Spec
 - D-Pad hoch, runter, links und rechts
 - OK-Aktion
-- Zurueck-Verhalten
+- Zurück-Verhalten
 - keine Fokusfallen
 - Fokus bleibt sichtbar
 - Fokus nach Loading, Empty und Error States
@@ -368,11 +368,11 @@ Pflichtpruefungen:
 - Watch Next
 - fehlende oder pending Systemziele
 
-UI-QA prueft betroffene Aenderungen direkt gegen die jeweils zustaendigen PRD-, Screen-, Wireframe-, Interaction-, Component-, Design-System- und Mockup-Markdownquellen.
+UI-QA prueft betroffene Änderungen direkt gegen die jeweils zustaendigen PRD-, Screen-, Wireframe-, Interaction-, Component-, Design-System- und Mockup-Markdownquellen.
 
-Pflichtbereiche bei betroffenen UI-Aenderungen:
+Pflichtbereiche bei betroffenen UI-Änderungen:
 
-- D-Pad, OK, Zurueck und Fokuspfade
+- D-Pad, OK, Zurück und Fokuspfade
 - Initialfokus, Fokusfallen und sichtbarer Fokus
 - Fokus nach Loading, Empty und Error States
 - 720p, 1080p, 4K, grosse Schrift, lange Texte und Overscan
@@ -381,7 +381,19 @@ Pflichtbereiche bei betroffenen UI-Aenderungen:
 - Settings-, Backup-/Restore-, PIN- und Diagnose-Dialoge
 - Android-TV-Systemintegration, Deep Links, Systemsuche und Watch Next
 
-Gerenderte Mockup-PNGs sind visuelle Stilreferenzen. Sie sind keine normative Quelle fuer Navigation, Labels oder UI-Texte.
+Gerenderte Mockup-PNGs sind visuelle Stilreferenzen. Sie sind keine normative Quelle für Navigation, Labels oder UI-Texte.
+
+## Listen-, Paging- und UI-Performance-Tests
+
+Pflichtszenarien:
+
+- erste Senderlisten-Seite mit grossem Fixture laden
+- Scrollen durch grosse VOD-Kategorie ohne UI-Blockade
+- Wechsel zwischen sehr grossen Kategorien ohne Fokusverlust und ohne sichtbare Blockade
+- EPG-Tagesansicht mit sehr vielen Eintraegen fensterfaehig laden
+- Suchergebnisse je Gruppe auf maximal 20 Treffer begrenzen
+- kein OOM bei Import und anschließendem Öffnen zentraler Screens
+- Poster- und Logo-Laden nur fuer sichtbare oder kurz bevorstehende Elemente nachweisen
 
 ## Schutz- und Bereinigungstests
 
@@ -389,52 +401,52 @@ Pflichtszenarien:
 
 - PIN-Sperre nach fuenf Fehlversuchen
 - Sperrdauern 30 Sekunden, 60 Sekunden und danach 5 Minuten
-- Sperre ueber App-Neustart hinweg
+- Sperre über App-Neustart hinweg
 - Session-Freigaben nur im Speicher
 - geschuetzte Inhalte erscheinen nicht in Android-TV-Systemsuche
 - geschuetzte Inhalte erscheinen nicht in Watch Next
-- Deep Links pruefen Kindersicherung beim Oeffnen erneut
+- Deep Links pruefen Kindersicherung beim Öffnen erneut
 - Provider-Deaktivierung bereinigt Android-TV-Systemsuche und Watch Next
 - Provider-Loeschung bereinigt Android-TV-Systemsuche und Watch Next
 - Restore bereinigt Android-TV-Systemsuche und Watch Next
 - Migration bereinigt oder baut Systemeintraege neu auf
-- Schutzregel-Aenderung bereinigt Systemeintraege
-- Abschlussstatus-Aenderung aktualisiert Watch Next
-- Diagnoseexport enthaelt keine Zugangswerte, Tokens, Cookies, Header, URLs, Rohdaten, Provider-/Inhaltsnamen, Suchverlaeufe, Datenbank-Dumps, Screenshots oder ungefiltertes Logcat
-- Backup-Export enthaelt keine Geheimnisse im Standard-Backup
+- Schutzregel-Änderung bereinigt Systemeintraege
+- Abschlussstatus-Änderung aktualisiert Watch Next
+- Diagnoseexport enthält keine Zugangswerte, Tokens, Cookies, Header, URLs, Rohdaten, Provider-/Inhaltsnamen, Suchverlaeufe, Datenbank-Dumps, Screenshots oder ungefiltertes Logcat
+- Backup-Export enthält keine Geheimnisse im Standard-Backup
 - Vollbackup-Metadaten enthalten keine Geheimnisse
 
 ## Messbare Performancebudgets
 
 Die folgenden Werte sind v1-Zielbudgets.
 
-Sie gelten fuer das dokumentierte Referenzgeraet oder Referenzprofil und die grossen Fixtures aus dieser Datei.
+Sie gelten für das dokumentierte Referenzgerät oder Referenzprofil und die grossen Fixtures aus dieser Datei.
 
 | Bereich | Messung | Zielbudget |
 | --- | --- | --- |
 | Suche | lokale Suche nach 300 ms Debounce mit grossem Fixture | erste Ergebnislieferung <= 500 ms p95 und <= 1.000 ms p99 |
 | Suche | Ergebnisumfang | maximal 20 Treffer je Ergebnisgruppe |
 | Suche | UI | keine DB-Abfrage auf dem Main Thread |
-| Datenbank | erste Listen-Seite fuer Sender, Filme oder Serien | <= 300 ms p95 |
-| Datenbank | Detail-Lookup fuer Film, Serie, Episode oder Sender | <= 150 ms p95 |
+| Datenbank | erste Listen-Seite für Sender, Filme oder Serien | <= 300 ms p95 |
+| Datenbank | Detail-Lookup für Film, Serie, Episode oder Sender | <= 150 ms p95 |
 | Datenbank | Migration aus letzter produktiver Schema-Version mit grossem Fixture | erfolgreich ohne Datenverlust; Dauer im Benchmarkbericht ausgewiesen |
 | Datenbank | FTS-Rebuild nach Restore oder Migration | laeuft ausserhalb blockierender UI-Pfade; Suche zeigt kontrollierten Loading- oder temporaeren Error-Zustand |
-| EPG | Now/Next fuer 50 sichtbare Sender | <= 500 ms p95 |
+| EPG | Now/Next für 50 sichtbare Sender | <= 500 ms p95 |
 | EPG | Tagesansicht eines Senders | <= 500 ms p95 |
 | EPG | Cleanup ausserhalb `epgPastRetentionDays` und `epgFutureRetentionDays` | im Hintergrund, wiederaufnehmbar nach Neustart, ohne UI-Blockade |
-| Import M3U | 10.000 Sender aus lokalem Mockserver | <= 120 Sekunden fuer Download, Parse, Stage und Commit |
-| Import Xtream | 10.000 Live-TV-Eintraege, 50.000 Filme, 20.000 Serien aus lokalem Mockserver | <= 15 Minuten fuer Metadaten-Import ohne Bilddownloads und ohne Wiedergabestarts |
-| Import XMLTV | 3.000.000 Programme aus lokalem Mockserver | <= 30 Minuten fuer Download, Parse, Stage, Commit und Cleanup |
-| Abbruch | Nutzerabbruch vor Commit | produktive Daten unveraendert, sichtbarer Abbruchstatus innerhalb von 5 Sekunden am naechsten sicheren Abbruchpunkt |
+| Import M3U | 10.000 Sender aus lokalem Mockserver | <= 120 Sekunden für Download, Parse, Stage und Commit |
+| Import Xtream | 10.000 Live-TV-Eintraege, 50.000 Filme, 20.000 Serien aus lokalem Mockserver | <= 15 Minuten für Metadaten-Import ohne Bilddownloads und ohne Wiedergabestarts |
+| Import XMLTV | 3.000.000 Programme aus lokalem Mockserver | <= 30 Minuten für Download, Parse, Stage, Commit und Cleanup |
+| Abbruch | Nutzerabbruch vor Commit | produktive Daten unverändert, sichtbarer Abbruchstatus innerhalb von 5 Sekunden am nächsten sicheren Abbruchpunkt |
 | Restore | Standard-Backup-Roundtrip mit grossem Nutzer-Datenfixture | lokale Daten erst nach Validierung und Sicherheitsbackup-Versuch ersetzen |
-| Speicher | grosse Provider-Imports | kein OOM; Peak App Heap unter 70 Prozent des App-Heap-Limits und hoechstens 256 MiB ueber App-Start-Baseline |
-| Speicher | grosse XMLTV-Imports | kein OOM; Peak App Heap unter 70 Prozent des App-Heap-Limits und hoechstens 384 MiB ueber App-Start-Baseline |
-| Speicher | wiederholtes Oeffnen und Schliessen zentraler Screens | nach 10 Zyklen kein monotones Heap-Wachstum ueber 25 MiB |
+| Speicher | grosse Provider-Imports | kein OOM; Peak App Heap unter 70 Prozent des App-Heap-Limits und höchstens 256 MiB über App-Start-Baseline |
+| Speicher | grosse XMLTV-Imports | kein OOM; Peak App Heap unter 70 Prozent des App-Heap-Limits und höchstens 384 MiB über App-Start-Baseline |
+| Speicher | wiederholtes Öffnen und Schließen zentraler Screens | nach 10 Zyklen kein monotones Heap-Wachstum über 25 MiB |
 | UI | Fokuswechsel auf Hauptscreens | keine sichtbare Blockade durch Import, FTS-Rebuild, Bildladen oder EPG-Abfragen |
 
-Bilddownloads, echte WAN-Latenz, Provider-Drosselung und externe Player sind nicht Teil der Importzeitbudgets. Sie muessen getrennt gemessen oder als Laufzeitumgebung dokumentiert werden.
+Bilddownloads, echte WAN-Latenz, Provider-Drosselung und externe Player sind nicht Teil der Importzeitbudgets. Sie müssen getrennt gemessen oder als Laufzeitumgebung dokumentiert werden.
 
-## Release-DoD fuer Tests
+## Release-DoD für Tests
 
 Ein Vivicast-Release-Kandidat darf nur freigegeben werden, wenn:
 
@@ -445,14 +457,14 @@ Ein Vivicast-Release-Kandidat darf nur freigegeben werden, wenn:
 - Backup- und Restore-Roundtrips erfolgreich sind
 - Schutz- und Redaction-Tests erfolgreich sind
 - Android-TV-Systemintegration gegen Kindersicherung und Providerstatus geprueft ist
-- D-Pad-, Fokus- und Back-Pfade fuer betroffene Screens geprueft sind
-- 720p, 1080p, 4K und grosse Schrift fuer betroffene UI-Aenderungen geprueft sind
+- D-Pad-, Fokus- und Back-Pfade für betroffene Screens geprueft sind
+- 720p, 1080p, 4K und grosse Schrift für betroffene UI-Änderungen geprueft sind
 - Performancebudgets gemessen und bewertet sind
 - bekannte Budgetabweichungen mit Risikoentscheidung dokumentiert sind
 
 ## App-Repository-Nachweis
 
-Das App-Repository soll fuer groessere PRs einen Testnachweis enthalten:
+Das App-Repository soll für größere PRs einen Testnachweis enthalten:
 
 ```text
 Test Evidence:
@@ -470,4 +482,4 @@ Test Evidence:
 - Known gaps:
 ```
 
-Dieser Nachweis ersetzt keine Tests. Er macht sichtbar, welche Testarten fuer die Aenderung relevant waren.
+Dieser Nachweis ersetzt keine Tests. Er macht sichtbar, welche Testarten für die Änderung relevant waren.

@@ -4,24 +4,36 @@ Status: verbindlich v18
 
 ## Zweck
 
-Die Einstellungen buendeln Allgemein, Wiedergabelisten, EPG, Optik, Wiedergabe, Kindersicherung, Backup und App-Info.
+Die Einstellungen buendeln Allgemein, Wiedergabelisten, EPG, Optik, Wiedergabe, Kindersicherung, Speicher & Verlauf, Backup und Über die App.
 
-## Primaerlayout
+## Primärlayout
+
+Die Wireframes trennen linke Gruppenliste und rechte Optionsliste bewusst, damit Codex keine Zeilenzuordnung zwischen linker Gruppe und rechter Option ableitet.
 
 ```text
 +--------------------------------------------------------------------------------+
-| Vivicast        Home | Live-TV | Filme | Serien | Suche | Einstellungen   |
-+----------------------+---------------------------------------------------------+
-| GRUPPEN              | OPTIONEN                                                |
-| (*)[Allgemein]       | (*) App beim TV-Start starten              [Aus]        |
-| [Wiedergabelisten]   |     Startbereich                          [Home]  |
-| [EPG]                |     Doppelte Zurueck-Taste zum Beenden     [Ein]        |
-| [Optik]              |     Sprache                               [System]     |
-| [Wiedergabe]         |     Hintergrundaktualisierung erlauben    [Ein]        |
-| [Kindersicherung]    |     Sortierung merken                     [Ein]        |
-| [Backup]             |     User-Agent                            [App-Standard]|
-| [Über die App]      |                                                         |
-+----------------------+---------------------------------------------------------+
+| Vivicast        Home | Live-TV | Filme | Serien | Suche | Einstellungen        |
++--------------------------------------------------------------------------------+
+
+GRUPPEN:
+(*) Allgemein
+    Wiedergabelisten
+    EPG
+    Optik
+    Wiedergabe
+    Kindersicherung
+    Speicher & Verlauf
+    Backup
+    Über die App
+
+OPTIONEN FÜR ALLGEMEIN:
+(*) App beim TV-Start starten                  [Aus]
+    Startbereich                               [Home]
+    Doppelte Zurück-Taste zum Beenden          [Ein]
+    Sprache                                    [System]
+    Hintergrundaktualisierung erlauben         [Ein]
+    Sortierung merken                          [Ein]
+    User-Agent                                 [App-Standard]
 ```
 
 ## Initialfokus
@@ -39,6 +51,7 @@ EPG
 Optik
 Wiedergabe
 Kindersicherung
+Speicher & Verlauf
 Backup
 Über die App
 ```
@@ -48,7 +61,7 @@ Backup
 ```text
 App beim TV-Start starten
 Startbereich
-Doppelte Zurueck-Taste zum Beenden
+Doppelte Zurück-Taste zum Beenden
 Sprache
 Hintergrundaktualisierung erlauben
 Sortierung merken
@@ -59,9 +72,9 @@ Regeln:
 
 ```text
 Startbereich ist eine Auswahl mit Home, Live-TV, Filme und Serien; Standard Home.
-Eine Aenderung gilt ab dem naechsten regulaeren App-Start und loest keine sofortige Navigation aus.
+Eine Änderung gilt ab dem nächsten regulaeren App-Start und loest keine sofortige Navigation aus.
 Explizite Android-TV-Ziele haben Vorrang; leere Zielbereiche zeigen ihren normalen Empty State.
-Sprache gehoert in Allgemein, nicht in Optik.
+Sprache gehört in Allgemein, nicht in Optik.
 User-Agent ist die letzte Allgemein-Option.
 User-Agent ist global und nicht pro Wiedergabeliste, Provider, EPG-Quelle oder Stream einstellbar.
 Leerer User-Agent-Wert bedeutet App-Standard.
@@ -74,31 +87,42 @@ UP/DOWN links       -> Gruppe wechseln
 RIGHT aus Gruppen   -> Optionen
 LEFT aus Optionen   -> Gruppen
 OK auf Row          -> Toggle, Auswahl, Textfeld, PIN-Dialog, Dialog oder Detail
-BACK Dialog         -> Dialog schliessen
+BACK Dialog         -> Dialog schließen
 BACK Einstellungen  -> Top Navigation
 ```
 
 ## Wiedergabelisten
 
 ```text
-+----------------------+---------------------------------------------------------+
-| GRUPPEN              | WIEDERGABELISTEN                                      |
-| [Allgemein]          | (*) [Wiedergabeliste hinzufuegen]                     |
-| (*)[Wiedergabelisten]|     [Alle Wiedergabelisten aktualisieren]             |
-| [EPG]                |                                                         |
-| ...                  |     Provider A                         {Aktiv}         |
-|                      |     Live-TV: <n> Filme: <n> Serien: <n>                |
-|                      |     Letzte Aktualisierung: <Zeit>                      |
-+----------------------+---------------------------------------------------------+
+GRUPPEN:
+    Allgemein
+(*) Wiedergabelisten
+    EPG
+    Optik
+    Wiedergabe
+    Kindersicherung
+    Speicher & Verlauf
+    Backup
+    Über die App
+
+OPTIONEN FÜR WIEDERGABELISTEN:
+(*) Wiedergabeliste hinzufügen
+    Alle Wiedergabelisten aktualisieren
+
+KONFIGURIERTE WIEDERGABELISTEN:
+    Provider A                         {Aktiv}
+    Live-TV: <n> Filme: <n> Serien: <n>
+    Letzte Aktualisierung: <Zeit>
 ```
 
-## Add Flow: Wiedergabeliste hinzufuegen
+
+## Add Flow: Wiedergabeliste hinzufügen
 
 Schritt 1 Name:
 
 ```text
 +---------------------------------------------+
-| Wiedergabeliste hinzufuegen                  |
+| Wiedergabeliste hinzufügen                  |
 | Name *                                       |
 | (*)[________________________]                |
 |                                             |
@@ -111,10 +135,10 @@ Schritt 2 Typ:
 
 ```text
 +---------------------------------------------+
-| Quelltyp waehlen                             |
+| Quelltyp wählen                             |
 | (*)[M3U]                                     |
 | [Xtream Codes]                               |
-| [Zurueck] [Abbrechen]                        |
+| [Zurück] [Abbrechen]                        |
 +---------------------------------------------+
 ```
 
@@ -126,7 +150,7 @@ Schritt 3 M3U Eingabeart:
 | (*)[URL]                                     |
 | [Datei]                                      |
 | [Zwischenablage]                             |
-| [Zurueck] [Abbrechen]                        |
+| [Zurück] [Abbrechen]                        |
 +---------------------------------------------+
 ```
 
@@ -138,7 +162,7 @@ M3U URL:
 | URL *                                        |
 | (*)[https://...]                             |
 | Hinweis bei HTTP: Unsichere Verbindung.      |
-| [Verbindung testen] [Zurueck] [Abbrechen]    |
+| [Verbindung testen] [Zurück] [Abbrechen]    |
 +---------------------------------------------+
 ```
 
@@ -147,10 +171,10 @@ M3U Datei:
 ```text
 +---------------------------------------------+
 | M3U Datei                                    |
-| (*)[Datei auswaehlen]                        |
+| (*)[Datei auswählen]                        |
 | Hinweis: Datei wird nur importiert.          |
 | Es wird keine dauerhafte Kopie gespeichert.  |
-| [Verbindung testen] [Zurueck] [Abbrechen]    |
+| [Verbindung testen] [Zurück] [Abbrechen]    |
 +---------------------------------------------+
 ```
 
@@ -159,9 +183,9 @@ M3U Zwischenablage:
 ```text
 +---------------------------------------------+
 | M3U Zwischenablage                            |
-| (*)[Aus Zwischenablage uebernehmen]           |
+| (*)[Aus Zwischenablage übernehmen]           |
 | Erlaubt: M3U URL oder kompletter M3U Inhalt.  |
-| [Verbindung testen] [Zurueck] [Abbrechen]     |
+| [Verbindung testen] [Zurück] [Abbrechen]     |
 +---------------------------------------------+
 ```
 
@@ -176,7 +200,7 @@ Xtream Codes:
 |                                             |
 | Hinweis bei HTTP: Unsichere Verbindung.       |
 | Importieren: [x] Live-TV [x] Filme [x] Serien |
-| [Verbindung testen] [Zurueck] [Abbrechen]     |
+| [Verbindung testen] [Zurück] [Abbrechen]     |
 +---------------------------------------------+
 ```
 
@@ -214,26 +238,26 @@ Quelle konnte nicht geprueft werden.
 +--------------------------------------------------------------------------------+
 | Status                 [Aktiviert]                                             |
 | Name *                 [Provider A]                                            |
-| Typ                    Xtream Codes  (nicht aenderbar)                         |
+| Typ                    Xtream Codes  (nicht änderbar)                         |
 | Zugangsdaten           [Bearbeiten]                                            |
-| EPG Quellen            [Zuweisen / Prioritaet aendern]                         |
-| Logo Prioritaet        [Globale Reihenfolge verwenden]                         |
+| EPG Quellen            [Zuweisen / Priorität ändern]                         |
+| Logo Priorität        [Globale Reihenfolge verwenden]                         |
 | Gruppen verwalten      [Anzeigen / Ausblenden / Sortieren]                     |
 | Update Optionen        [Intervall / App-Start / Jetzt aktualisieren]           |
 | Letzte Aktualisierung  <Datum/Uhrzeit>                                         |
 | Ablaufdatum            <falls vorhanden>                                       |
 | Maximale Verbindungen  <falls vorhanden>                                       |
 |                                                                                |
-| [Speichern] [Loeschen]                                                         |
+| [Speichern] [Löschen]                                                         |
 +--------------------------------------------------------------------------------+
 ```
 
 Regeln:
 
 ```text
-Typ kann nicht geaendert werden.
+Typ kann nicht geändert werden.
 Name ist Pflichtfeld und eindeutig.
-Bei geaenderter URL oder geaenderten Zugangsdaten: erst Verbindung testen.
+Bei geänderter URL oder geänderten Zugangsdaten: erst Verbindung testen.
 Nach erfolgreichem Speichern: direkt aktualisieren/importieren.
 User-Agent wird hier nicht angeboten; er liegt global unter Allgemein.
 ```
@@ -241,24 +265,34 @@ User-Agent wird hier nicht angeboten; er liegt global unter Allgemein.
 ## EPG
 
 ```text
-+----------------------+---------------------------------------------------------+
-| GRUPPEN              | EPG                                                     |
-| [Allgemein]          | (*) [EPG-Quelle hinzufuegen]                            |
-| [Wiedergabelisten]   |     [EPG jetzt aktualisieren]                           |
-| (*)[EPG]             |     Globales Intervall              [24 Stunden]        |
-| [Optik]              |     Vergangenheit behalten          [1 Tag]             |
-| [Wiedergabe]         |     Zukunft laden/behalten          [7 Tage]            |
-| ...                  |     Beim App-Start aktualisieren    [Ein]               |
-|                      |     Bei Playlist-Aenderung          [Ein]               |
-|                      |     Aktualisierungshistorie         [Oeffnen]           |
-+----------------------+---------------------------------------------------------+
+GRUPPEN:
+    Allgemein
+    Wiedergabelisten
+(*) EPG
+    Optik
+    Wiedergabe
+    Kindersicherung
+    Speicher & Verlauf
+    Backup
+    Über die App
+
+OPTIONEN FÜR EPG:
+(*) EPG-Quelle hinzufügen
+    Globales Aktualisierungsintervall          [24 Stunden]
+    EPG-Vergangenheit behalten                [1 Tag]
+    EPG-Zukunft laden/behalten                 [7 Tage]
+    Beim App-Start aktualisieren               [Ein]
+    Bei Playlist-Änderung aktualisieren        [Ein]
+    EPG jetzt aktualisieren                    [Öffnen]
+    Aktualisierungshistorie                    [Öffnen]
 ```
+
 
 EPG-Quellen werden global verwaltet.
 
-`24 Stunden` ist der verbindliche Standardwert des globalen Intervalls. App-Start, Playlist-Aenderung und manuelle Aktualisierung bleiben getrennte Ausloeser.
+`24 Stunden` ist der verbindliche Standardwert des globalen Intervalls. App-Start, Playlist-Änderung und manuelle Aktualisierung bleiben getrennte Ausloeser.
 
-`Beim App-Start aktualisieren` und `Bei Playlist-Aenderung` starten bei Erstinitialisierung auf `Ein` und sind gespeicherte DataStore-Optionen. `Aktualisierungshistorie` ist nur Anzeige aus Refresh-Metadaten.
+`Beim App-Start aktualisieren` und `Bei Playlist-Änderung` starten bei Erstinitialisierung auf `Ein` und sind gespeicherte DataStore-Optionen. `Aktualisierungshistorie` ist nur Anzeige aus Refresh-Metadaten.
 
 EPG-Aufbewahrung: Vergangenheit und Zukunft erlauben jeweils 1 bis 14 Tage. Defaults sind 1 Tag Vergangenheit und 7 Tage Zukunft.
 
@@ -266,7 +300,7 @@ Cleanup entfernt nur EPG-Programmdaten ausserhalb dieses Fensters.
 
 EPG-Quellen werden pro Provider zugeordnet.
 
-Mehrere EPG-Quellen pro Provider haben Prioritaet 1, 2, 3.
+Mehrere EPG-Quellen pro Provider haben Priorität 1, 2, 3.
 
 EPG-Quellen-Formulare enthalten keinen User-Agent.
 
@@ -284,7 +318,7 @@ EPG-Quellen-Formulare enthalten keinen User-Agent.
 | Letzte Aktualisierung  <Datum/Uhrzeit>                                         |
 | Programme              <n>                                                     |
 |                                                                                |
-| [Speichern] [Loeschen]                                                         |
+| [Speichern] [Löschen]                                                         |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -297,23 +331,33 @@ User-Agent
 ## Optik
 
 ```text
-+----------------------+---------------------------------------------------------+
-| GRUPPEN              | OPTIK                                                   |
-| [Allgemein]          | (*) Hintergrundthema                [Standard dunkel]   |
-| [Wiedergabelisten]   |     Akzentfarbe                     [Vivicast Blau]     |
-| [EPG]                |     Transparenz                     [25 %]              |
-| (*)[Optik]           |     Schriftgroesse                  [Mittel]            |
-| [Wiedergabe]         |     Animationen                     [Normal]            |
-| ...                  |     Globale Logo-Reihenfolge        [Playlist zuerst]   |
-|                      |     Logos-Ordner                    [Nicht gesetzt]     |
-|                      |     EPG-Darstellung                 [Oeffnen]           |
-+----------------------+---------------------------------------------------------+
+GRUPPEN:
+    Allgemein
+    Wiedergabelisten
+    EPG
+(*) Optik
+    Wiedergabe
+    Kindersicherung
+    Speicher & Verlauf
+    Backup
+    Über die App
+
+OPTIONEN FÜR OPTIK:
+(*) Hintergrundthema                           [Standard dunkel]
+    Akzentfarbe                                [Vivicast Blau]
+    Transparenz                                [25 %]
+    Schriftgröße                               [Mittel]
+    Animationen                                [Normal]
+    Globale Logo-Standardreihenfolge           [Playlist]
+    Logos-Ordner                               [Nicht gesetzt]
+    EPG-Darstellung                            [Öffnen]
 ```
+
 
 Regeln:
 
 ```text
-Optik veraendert keine Grundlayoutachsen.
+Optik verändert keine Grundlayoutachsen.
 Fokus, Mindestkontrast und D-Pad-Bedienung bleiben verbindlich.
 Sprache ist nicht hier, sondern unter Allgemein.
 Logos-Ordner ist standardmaessig Nicht gesetzt und speichert bei Auswahl eine persistierbare Ordner-URI.
@@ -341,23 +385,33 @@ Logos-Ordner ist standardmaessig Nicht gesetzt und speichert bei Auswahl eine pe
 ## Wiedergabe
 
 ```text
-+----------------------+---------------------------------------------------------+
-| GRUPPEN              | WIEDERGABE                                             |
-| [Allgemein]          | (*) Puffergroesse                  [Mittel]            |
-| [Wiedergabelisten]   |     Audio-Decoder                 [Hardware]          |
-| [EPG]                |     Video-Decoder                 [Hardware]          |
-| [Optik]              |     AFR                           [Aus]               |
-| (*)[Wiedergabe]      |     Timeshift                     [Ein]               |
-| [Kindersicherung]    |     Maximale Timeshift-Dauer      [30 Minuten]        |
-| [Backup]             |     Timeshift-Speicher            [Automatisch]       |
-| [Über die App]      |     Audio-Sprache                 [Systemstandard]    |
-|                      |     Untertitel-Sprache            [Aus]               |
-|                      |     Automatisch naechste Folge     [Aus]               |
-|                      |     Countdown naechste Folge [10 Sekunden] {Deaktiviert} |
-|                      |     Audio-Passthrough             [Aus]               |
-|                      |     Externer Player               [Immer intern]      |
-+----------------------+---------------------------------------------------------+
+GRUPPEN:
+    Allgemein
+    Wiedergabelisten
+    EPG
+    Optik
+(*) Wiedergabe
+    Kindersicherung
+    Speicher & Verlauf
+    Backup
+    Über die App
+
+OPTIONEN FÜR WIEDERGABE:
+(*) Puffergröße                                [Mittel]
+    Audio-Decoder                              [Hardware]
+    Video-Decoder                              [Hardware]
+    AFR                                        [Aus]
+    Timeshift                                  [Ein]
+    Maximale Timeshift-Dauer                   [30 Minuten]
+    Timeshift-Speicher                         [Automatisch]
+    Audio-Sprache                              [Systemstandard]
+    Untertitel-Sprache                         [Aus]
+    Automatisch nächste Folge                  [Aus]
+    Countdown nächste Folge                    [10 Sekunden]
+    Audio-Passthrough                          [Aus]
+    Externer Player                            [Immer intern]
 ```
+
 
 Hinweise:
 
@@ -366,10 +420,10 @@ Timeshift ist standardmaessig Ein.
 Maximale Dauer: 15 / 30 / 60 / 120 Minuten; Standard 30 Minuten.
 Speicher: Automatisch / RAM / Festplatte; Standard Automatisch.
 Bei Timeshift Aus bleiben Dauer und Speicher sichtbar, aber deaktiviert.
-Festplatte nutzt appverwalteten persistenten Geraetespeicher ohne freie Pfadauswahl.
-Puffergroesse und Decoder gelten beim naechsten Streamstart.
-AFR und Audio-Passthrough koennen auf nicht unterstuetzten Geraeten deaktiviert sein.
-Timeshift bleibt abhaengig von Provider, Sender und Stream.
+Festplatte nutzt appverwalteten persistenten Gerätespeicher ohne freie Pfadauswahl.
+Puffergröße und Decoder gelten beim nächsten Streamstart.
+AFR und Audio-Passthrough können auf nicht unterstuetzten Geräten deaktiviert sein.
+Timeshift bleibt abhängig von Provider, Sender und Stream.
 Auto-Next ist standardmaessig Aus.
 Countdown: 5 / 10 / 15 / 30 Sekunden; Standard 10 Sekunden.
 Bei Auto-Next Aus bleibt der Countdown sichtbar, aber deaktiviert.
@@ -386,11 +440,11 @@ Timeshift-Speicher            [Automatisch] {Deaktiviert}
 ## Wiedergabe bei deaktiviertem Auto-Next
 
 ```text
-Automatisch naechste Folge     [Aus]
-Countdown naechste Folge       [10 Sekunden] {Deaktiviert}
+Automatisch nächste Folge     [Aus]
+Countdown nächste Folge       [10 Sekunden] {Deaktiviert}
 ```
 
-Bei `Ein` wird die Countdown-Zeile fokussierbar und aenderbar.
+Bei `Ein` wird die Countdown-Zeile fokussierbar und änderbar.
 
 Eine Abschluss-Schwellen-Zeile existiert nicht. Der v1-Wert von 95 Prozent ist fest.
 
@@ -400,7 +454,7 @@ Eine Abschluss-Schwellen-Zeile existiert nicht. Der v1-Wert von 95 Prozent ist f
 +---------------------------------------------+
 | Wiedergabe starten                           |
 | (*)[Intern abspielen]                        |
-| [Externen Player waehlen]                    |
+| [Externen Player wählen]                    |
 | [Abbrechen]                                  |
 +---------------------------------------------+
 ```
@@ -409,7 +463,7 @@ Hinweis:
 
 ```text
 Externe Player speichern keinen Fortschritt in Vivicast.
-Gilt nur fuer Filme und einzelne Episoden.
+Gilt nur für Filme und einzelne Episoden.
 Live-TV und Catch-Up bleiben intern.
 ```
 
@@ -418,33 +472,50 @@ Live-TV und Catch-Up bleiben intern.
 Ohne gesetzte PIN:
 
 ```text
-+----------------------+---------------------------------------------------------+
-| GRUPPEN              | KINDERSICHERUNG                                        |
-| [Allgemein]          | (*) PIN setzen                         [Nicht gesetzt] |
-| [Wiedergabelisten]   |     Einstellungen schuetzen             [Deaktiviert]  |
-| [EPG]                |     Filme schuetzen                     [Deaktiviert]  |
-| [Optik]              |     Serien schuetzen                    [Deaktiviert]  |
-| [Wiedergabe]         |     Inhalte ab 18 schuetzen             [Deaktiviert]  |
-| (*)[Kindersicherung] |                                                         |
-| [Backup]             | Hinweis: PIN setzen, um Schutzbereiche zu aktivieren.  |
-| [Über die App]      |                                                         |
-+----------------------+---------------------------------------------------------+
+GRUPPEN:
+    Allgemein
+    Wiedergabelisten
+    EPG
+    Optik
+    Wiedergabe
+(*) Kindersicherung
+    Speicher & Verlauf
+    Backup
+    Über die App
+
+OPTIONEN FÜR KINDERSICHERUNG:
+(*) PIN setzen                                [Nicht gesetzt]
+    Einstellungen schützen                    [Deaktiviert]
+    Filme schützen                            [Deaktiviert]
+    Serien schützen                           [Deaktiviert]
+    Inhalte ab 18 schützen                    [Deaktiviert]
+
+HINWEIS:
+    PIN setzen, um Schutzbereiche zu aktivieren.
 ```
 
 Mit gesetzter PIN:
 
 ```text
-+----------------------+---------------------------------------------------------+
-| GRUPPEN              | KINDERSICHERUNG                                        |
-| [Allgemein]          | (*) PIN aendern                        [Gesetzt]       |
-| [Wiedergabelisten]   |     Einstellungen schuetzen             [Ein]          |
-| [EPG]                |     Filme schuetzen                     [Aus]          |
-| [Optik]              |     Serien schuetzen                    [Aus]          |
-| [Wiedergabe]         |     Inhalte ab 18 schuetzen             [Ein]          |
-| (*)[Kindersicherung] |     Freigabe fuer Sitzung sperren       [Oeffnen]      |
-| [Backup]             |     Kindersicherung deaktivieren        [Oeffnen]      |
-| [Über die App]      |                                                         |
-+----------------------+---------------------------------------------------------+
+GRUPPEN:
+    Allgemein
+    Wiedergabelisten
+    EPG
+    Optik
+    Wiedergabe
+(*) Kindersicherung
+    Speicher & Verlauf
+    Backup
+    Über die App
+
+OPTIONEN FÜR KINDERSICHERUNG:
+(*) PIN ändern                                [Gesetzt]
+    Einstellungen schützen                    [Ein]
+    Filme schützen                            [Aus]
+    Serien schützen                           [Aus]
+    Inhalte ab 18 schützen                    [Ein]
+    Freigabe für Sitzung sperren              [Öffnen]
+    Kindersicherung deaktivieren              [Öffnen]
 ```
 
 ## PIN setzen
@@ -461,13 +532,13 @@ Mit gesetzter PIN:
 +---------------------------------------------+
 ```
 
-PIN-Felder oeffnen die numerische Passwort-Systemtastatur. Vivicast zeigt keine eigene Zifferntastatur. Nach vier Ziffern erfolgt keine automatische Bestaetigung; `Speichern` bleibt die bewusste Aktion.
+PIN-Felder öffnen die numerische Passwort-Systemtastatur. Vivicast zeigt keine eigene Zifferntastatur. Nach vier Ziffern erfolgt keine automatische Bestätigung; `Speichern` bleibt die bewusste Aktion.
 
-## PIN aendern
+## PIN ändern
 
 ```text
 +---------------------------------------------+
-| PIN aendern                                  |
+| PIN ändern                                  |
 | Aktuelle PIN                                 |
 | (*)[••••]                                    |
 | Neue PIN                                     |
@@ -479,7 +550,7 @@ PIN-Felder oeffnen die numerische Passwort-Systemtastatur. Vivicast zeigt keine 
 +---------------------------------------------+
 ```
 
-Auch hier oeffnen PIN-Felder die numerische Passwort-Systemtastatur und bleiben verdeckt.
+Auch hier öffnen PIN-Felder die numerische Passwort-Systemtastatur und bleiben verdeckt.
 
 ## PIN-Abfrage
 
@@ -527,29 +598,34 @@ Im blockierten Zustand oeffnet keine Tastatur.
 
 Nach vier Ziffern wird nicht automatisch deaktiviert. `Deaktivieren` bleibt die bewusste Aktion.
 
-## Backup
+## Speicher & Verlauf
 
 ```text
-+----------------------+---------------------------------------------------------+
-| GRUPPEN              | BACKUP                                                  |
-| [Allgemein]          | (*) Backup exportieren                  [Oeffnen]      |
-| [Wiedergabelisten]   |     Backup importieren                  [Oeffnen]      |
-| [EPG]                |     Backup-Ziel                         [Lokaler Speicher]|
-| [Optik]              |     Letzte Sicherung                    [Nie]          |
-| [Wiedergabe]         |     Vorhandene Backups verwalten        [Oeffnen]      |
-| (*)[Backup]          |     Medien-Cache                        [128 MB]       |
-| [Über die App]      |     Cache leeren                        [Oeffnen]      |
-|                      |     Verlauf loeschen                    [Oeffnen]      |
-+----------------------+---------------------------------------------------------+
+GRUPPEN:
+    Allgemein
+    Wiedergabelisten
+    EPG
+    Optik
+    Wiedergabe
+    Kindersicherung
+(*) Speicher & Verlauf
+    Backup
+    Über die App
+
+OPTIONEN FÜR SPEICHER & VERLAUF:
+(*) Medien-Cache                               [128 MB]
+    Cache leeren                               [Öffnen]
+    Verlauf löschen                            [Öffnen]
 ```
 
-## Cache leeren - Bestaetigung
+
+## Cache leeren - Bestätigung
 
 ```text
 +----------------------------------------------------------+
 | Cache leeren                                             |
-| Medien-Cache-Dateien fuer Logos, Poster und Bilder werden|
-| geloescht und bei Bedarf neu geladen.                    |
+| Medien-Cache-Dateien für Logos, Poster und Bilder werden|
+| gelöscht und bei Bedarf neu geladen.                    |
 |                                                          |
 | Providerdaten, Favoriten, Verlauf und Fortschritt bleiben|
 | erhalten.                                                |
@@ -564,26 +640,49 @@ Wenn Einstellungsschutz aktiv ist:
 PIN-Abfrage vor Cache leeren
 ```
 
-## Verlauf loeschen
+## Verlauf löschen
 
 ```text
 +----------------------------------------------------------+
-| Verlauf loeschen                                         |
+| Verlauf löschen                                         |
 | (*) Live-TV-Verlauf                                      |
 |     Filmverlauf und Film-Wiedergabefortschritt           |
 |     Serienverlauf und Episoden-Wiedergabefortschritt     |
 |     Suchverlauf                                          |
 |     Gesamter Verlauf                                     |
 |                                                          |
-| [Loeschen] [Abbrechen]                                   |
+| [Löschen] [Abbrechen]                                   |
 +----------------------------------------------------------+
 ```
 
 Wenn Einstellungsschutz aktiv ist:
 
 ```text
-PIN-Abfrage vor Verlauf loeschen
+PIN-Abfrage vor Verlauf löschen
 ```
+
+## Backup
+
+```text
+GRUPPEN:
+    Allgemein
+    Wiedergabelisten
+    EPG
+    Optik
+    Wiedergabe
+    Kindersicherung
+    Speicher & Verlauf
+(*) Backup
+    Über die App
+
+OPTIONEN FÜR BACKUP:
+(*) Backup exportieren                         [Öffnen]
+    Backup importieren                         [Öffnen]
+    Backup-Ziel                                [Lokaler Speicher]
+    Letzte Sicherung                           [Nie]
+    Vorhandene Backups verwalten               [Öffnen]
+```
+
 
 ## Backup exportieren
 
@@ -591,10 +690,10 @@ PIN-Abfrage vor Verlauf loeschen
 +----------------------------------------------------------+
 | Backup exportieren                                       |
 | Ziel                  (*)[Lokaler Speicher] [SMB] [Drive] |
-| Backup-Typ             [Standard] [Verschluesselt]        |
+| Backup-Typ             [Standard] [Verschlüsselt]        |
 |                                                          |
-| Standard enthaelt keine geheimen Zugangswerte.           |
-| Verschluesselt kann Quellen-Zugangsdaten enthalten.      |
+| Standard enthält keine geheimen Zugangswerte.           |
+| Verschlüsselt kann Quellen-Zugangsdaten enthalten.      |
 |                                                          |
 | [Exportieren] [Abbrechen]                                |
 +----------------------------------------------------------+
@@ -602,7 +701,7 @@ PIN-Abfrage vor Verlauf loeschen
 
 `Backup-Typ` ist ein transienter Exportdialogwert. Der Dialog startet mit `Standard`; der Wert wird nicht als dauerhafte Setting-Option gespeichert.
 
-## Verschluesseltes Vollbackup
+## Verschlüsseltes Vollbackup
 
 ```text
 +----------------------------------------------------------+
@@ -614,7 +713,7 @@ PIN-Abfrage vor Verlauf loeschen
 |                                                          |
 | Ohne Passphrase kann dieses Backup nicht importiert werden.|
 | Die Passphrase wird nicht gespeichert.                   |
-| [Exportieren] [Zurueck] [Abbrechen]                      |
+| [Exportieren] [Zurück] [Abbrechen]                      |
 +----------------------------------------------------------+
 ```
 
@@ -625,7 +724,7 @@ PIN-Abfrage vor Verlauf loeschen
 | Backup importieren                                       |
 | App-Version: <Version>                                   |
 | Erstellt: <Datum/Uhrzeit>                                |
-| Modus: Standard / Verschluesselt                         |
+| Modus: Standard / Verschlüsselt                         |
 | Datenbereiche: Einstellungen, Quellen, Favoriten, Verlauf |
 | Migration: Nicht erforderlich / Erforderlich             |
 | Sensible Daten: Nein / Ja                                |
@@ -637,13 +736,13 @@ PIN-Abfrage vor Verlauf loeschen
 +----------------------------------------------------------+
 ```
 
-## Restore ersetzen - Bestaetigung
+## Restore ersetzen - Bestätigung
 
 ```text
 +----------------------------------------------------------+
 | Lokale Daten ersetzen                                    |
-| Dieser Vorgang ueberschreibt lokale App-Daten.           |
-| Nach Moeglichkeit wird vorher ein Sicherheitsbackup erstellt.|
+| Dieser Vorgang überschreibt lokale App-Daten.           |
+| Nach Möglichkeit wird vorher ein Sicherheitsbackup erstellt.|
 |                                                          |
 | [Ersetzen] [Abbrechen]                                  |
 +----------------------------------------------------------+
@@ -686,9 +785,9 @@ PIN-Abfrage mit aktuell lokaler PIN vor Ersetzen
 ## Backup-Fehler
 
 ```text
-Backup-Datei ungueltig
+Backup-Datei ungültig
 Backup-Version nicht unterstuetzt
-Backup beschaedigt
+Backup beschädigt
 Passphrase falsch
 Ziel nicht erreichbar
 Speicherzugriff verweigert
@@ -697,18 +796,18 @@ Migration fehlgeschlagen
 Zugangsdaten erforderlich
 ```
 
-## Loeschen
+## Löschen
 
 ```text
-einfache Bestaetigung
-wenn Einstellungsschutz aktiv: zusaetzlich PIN
+einfache Bestätigung
+wenn Einstellungsschutz aktiv: zusätzlich PIN
 ```
 
 ## Empty States
 
 ```text
-Keine Wiedergabelisten -> [Wiedergabeliste hinzufuegen]
-Keine EPG-Quellen     -> [EPG-Quelle hinzufuegen]
+Keine Wiedergabelisten -> [Wiedergabeliste hinzufügen]
+Keine EPG-Quellen     -> [EPG-Quelle hinzufügen]
 Keine Backups         -> [Backup exportieren]
 ```
 

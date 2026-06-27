@@ -20,7 +20,7 @@ Verbindliche Designquellen:
 - `design/interaction/nav.md`
 - `design/design-system/`
 
-Verbindliche Architekturquelle fuer globale Android-TV-Suche, Deep Links, Watch Next und Kindersicherungsabgrenzung:
+Verbindliche Architekturquelle für globale Android-TV-Suche, Deep Links, Watch Next und Kindersicherungsabgrenzung:
 
 - `architecture/decisions/ADR-008-android-tv-integration.md`
 
@@ -34,12 +34,12 @@ Aktivierung:
 
 1. Benutzer startet Sprachsuche explizit
 2. Android-Sprachsuche startet
-3. erkannter Text wird in die Suche uebernommen
+3. erkannter Text wird in die Suche übernommen
 4. lokale Suche aktualisiert Ergebnisse
 
 Sprachsuche startet nicht automatisch.
 
-Nicht beim Oeffnen der Suche.
+Nicht beim Öffnen der Suche.
 
 Nicht allein durch Fokus auf das Suchfeld.
 
@@ -62,7 +62,7 @@ Nicht enthalten:
 - Catch-Up
 - geschuetzte Inhalte, solange der jeweilige Kindersicherungs-Schutz aktiv ist
 
-Treffer oeffnen direkt den passenden Inhalt in Vivicast.
+Treffer öffnen direkt den passenden Inhalt in Vivicast.
 
 Der Android-TV-Suchindex ist ein abgeleiteter Systemindex aus produktiven Room-Daten.
 
@@ -75,7 +75,7 @@ Index-Update oder Cleanup ist erforderlich bei:
 - Provider-Loeschung
 - Restore
 - Migration
-- Aenderung von Kindersicherung-Schutzregeln
+- Änderung von Kindersicherung-Schutzregeln
 
 Suchtreffer verwenden stabile Deep-Link-Ziele und keine lokalen Room-IDs.
 
@@ -108,9 +108,9 @@ Deep Links verwenden stabile fachliche Schluessel:
 - Serie: `providerStableKey + SERIES + seriesStableKey`
 - Episode: `providerStableKey + EPISODE + episodeStableKey`
 
-Deep Links duerfen keine lokalen Room-IDs, Stream-URLs, Tokens, Zugangswerte, HTTP-Header oder Cookies enthalten.
+Deep Links dürfen keine lokalen Room-IDs, Stream-URLs, Tokens, Zugangswerte, HTTP-Header oder Cookies enthalten.
 
-Deep Links, Android-TV-Suchergebnisse und Watch Next haben Vorrang vor dem Startbereich, oeffnen aber keinen unkontrollierten Fallback.
+Deep Links, Android-TV-Suchergebnisse und Watch Next haben Vorrang vor dem Startbereich, öffnen aber keinen unkontrollierten Fallback.
 
 Wenn das Ziel fehlt, geloescht wurde, pending ist, der Provider deaktiviert ist oder Zugangsdaten fehlen, zeigt Vivicast einen kontrollierten Fehler- oder Nicht-verfuegbar-Zustand.
 
@@ -120,12 +120,12 @@ Wenn das Ziel aktuell geschuetzt ist, muss die aktuelle lokale PIN-Freigabe erfo
 
 # 8.4 Watch Next
 
-Watch Next wird unterstuetzt fuer:
+Watch Next wird unterstuetzt für:
 
 - Filme
 - Serienepisoden
 
-Nicht unterstuetzt fuer:
+Nicht unterstuetzt für:
 
 - Live-TV
 - Catch-Up
@@ -136,17 +136,17 @@ Filme zeigen Wiedergabefortschritt, solange sie nicht abgeschlossen sind. Ab min
 
 Serien zeigen Serie, Staffel und Episode.
 
-Nach Abschluss einer Episode wird Watch Next auf die naechste verfuegbare Episode aktualisiert. Nach Abschluss der letzten Episode wird der Serien-Eintrag entfernt, sofern kein anderer nicht abgeschlossener Episodenfortschritt existiert.
+Nach Abschluss einer Episode wird Watch Next auf die nächste verfuegbare Episode aktualisiert. Nach Abschluss der letzten Episode wird der Serien-Eintrag entfernt, sofern kein anderer nicht abgeschlossener Episodenfortschritt existiert.
 
 `Als gesehen markieren` nutzt dieselbe Abschlusslogik. `Als ungesehen markieren` loescht den gespeicherten Episodenfortschritt; ohne weiteren fortsetzbaren Episodenfortschritt besteht daraus kein Watch-Next-Eintrag.
 
 Watch Next wird ausschliesslich aus produktiven Fortschrittsdaten des internen Vivicast-Players und manuellen Gesehen-/Ungesehen-Aktionen gepflegt.
 
-Externe Player erzeugen, aktualisieren oder loeschen keine Watch-Next-Eintraege.
+Externe Player erzeugen, aktualisieren oder löschen keine Watch-Next-Eintraege.
 
 Pending Restore-Referenzen werden nicht in Watch Next veroeffentlicht, bis ein erfolgreicher Provider-Refresh sie mit lokalen Entities verbunden hat.
 
-Watch-Next-Eintraege muessen entfernt oder aktualisiert werden bei:
+Watch-Next-Eintraege müssen entfernt oder aktualisiert werden bei:
 
 - Abschluss eines Films oder einer Episode
 - `Als gesehen markieren`
@@ -155,24 +155,24 @@ Watch-Next-Eintraege muessen entfernt oder aktualisiert werden bei:
 - Provider-Loeschung
 - Restore
 - Migration
-- Aenderung von Kindersicherung-Schutzregeln
+- Änderung von Kindersicherung-Schutzregeln
 
 ---
 
 # 8.5 Continue Watching
 
-Continue Watching wird unterstuetzt fuer:
+Continue Watching wird unterstuetzt für:
 
 - Filme
 - Serien
 
-Abgeschlossene Filme und Episoden sind keine direkten Resume-Ziele. Bei Serien darf ein Eintrag nach einer abgeschlossenen Episode auf die naechste verfuegbare Episode bei Position 0 wechseln.
+Abgeschlossene Filme und Episoden sind keine direkten Resume-Ziele. Bei Serien darf ein Eintrag nach einer abgeschlossenen Episode auf die nächste verfuegbare Episode bei Position 0 wechseln.
 
-Nicht unterstuetzt fuer:
+Nicht unterstuetzt für:
 
 - Live-TV
 
-Continue Watching innerhalb der App folgt denselben Abschluss- und Providerstatusregeln wie Watch Next, bleibt aber eine App-interne Ansicht. Geschuetzte Inhalte duerfen innerhalb der App erst nach erfolgreicher PIN-Freigabe geoeffnet oder abgespielt werden.
+Continue Watching innerhalb der App folgt denselben Abschluss- und Providerstatusregeln wie Watch Next, bleibt aber eine App-interne Ansicht. Geschuetzte Inhalte dürfen innerhalb der App erst nach erfolgreicher PIN-Freigabe geoeffnet oder abgespielt werden.
 
 ---
 
@@ -182,7 +182,7 @@ Die App muss vollstaendig bedienbar sein mit:
 
 - D-Pad
 - OK
-- Zurueck
+- Zurück
 - CH+
 - CH-
 
@@ -192,11 +192,11 @@ Konkrete Fokusdarstellung liegt im Design-System und in `design/interaction/focu
 
 PIN-Eingaben nutzen die Android-/TV-Systemtastatur als numerische Passwort-Eingabe.
 
-Vivicast zeigt keine eigene Zifferntastatur fuer PINs.
+Vivicast zeigt keine eigene Zifferntastatur für PINs.
 
 PIN-Felder bleiben verdeckt, bieten keine Zwischenablage, keine Autovervollstaendigung und keine Klartextanzeige.
 
-Nach vier Ziffern wird nicht automatisch bestaetigt. Der Nutzer aktiviert bewusst die sichtbare Aktion.
+Nach vier Ziffern wird nicht automatisch bestätigt. Der Nutzer aktiviert bewusst die sichtbare Aktion.
 
 ---
 
@@ -253,15 +253,17 @@ Sicherheitswirksam lokale Werte werden nie aus Backups wiederhergestellt.
 
 Room speichert strukturierte normale App-Daten, grosse Bibliotheken und nicht geheime nutzerbezogene Daten. Room speichert keine geheimen Zugangswerte.
 
-DataStore speichert kleine normale App-Einstellungen und lokale nicht geheime Flags. Sicherheitswirksam lokale Flags duerfen in DataStore oder gleichwertigem privaten Speicher liegen, sind aber kein Restore-Ziel.
+DataStore speichert normale nicht geheime App-Einstellungen.
+
+Sicherheitswirksame lokale Flags, PIN-Sperrstatus, Fehlversuchszaehler und aktive Schutzfreigaben gehoeren in privaten, backup-ausgeschlossenen lokalen Sicherheitszustand. Sie sind kein Restore-Ziel und dürfen nicht aus Backup-Dateien übernommen werden.
 
 Android Keystore speichert nicht exportierbare Schluessel.
 
-Ein geschuetzter lokaler Secret Store speichert geheime Werte verschluesselt im privaten App-Speicher. Die Verschluesselung nutzt einen Keystore-gebundenen Schluessel.
+Ein geschuetzter lokaler Secret Store speichert geheime Werte verschlüsselt im privaten App-Speicher. Die Verschluesselung nutzt einen Keystore-gebundenen Schluessel.
 
 Vivicast baut neue geschuetzte Speicherung nicht auf `EncryptedSharedPreferences` oder Jetpack `security-crypto` auf.
 
-Normale nicht-geheime Server- oder Quellenadressen duerfen als Konfiguration gespeichert werden, wenn sie fuer die Funktion notwendig sind.
+Normale nicht-geheime Server- oder Quellenadressen dürfen als Konfiguration gespeichert werden, wenn sie für die Funktion notwendig sind.
 
 Private Quellenadressen mit eingebetteten Tokens, Zugangswerten oder personenbezogenen Zugriffsdaten werden wie geheime Werte behandelt.
 
@@ -269,14 +271,14 @@ Private Quellenadressen mit eingebetteten Tokens, Zugangswerten oder personenbez
 
 # 9.3 Verlust geschuetzter lokaler Daten
 
-Wenn Android-Keystore-Schluessel oder der lokale Secret Store verloren, beschaedigt oder nicht entschluesselbar sind:
+Wenn Android-Keystore-Schluessel oder der lokale Secret Store verloren, beschädigt oder nicht entschluesselbar sind:
 
 - geheime lokale Quellen- und Zielzugangsdaten gelten als verloren
 - Provider, EPG-Quellen und Backup-Ziele bleiben als Konfiguration erhalten
 - Quellen oder Ziele, die Geheimnisse benoetigen, werden als `Zugangsdaten erforderlich` markiert
-- Standard-Backups koennen diese Geheimnisse nicht wiederherstellen
-- verschluesselte Vollbackups duerfen Geheimnisse nach korrekter Passphrase wiederherstellen
-- PIN und Kindersicherung werden deaktiviert und muessen bei Bedarf neu eingerichtet werden
+- Standard-Backups können diese Geheimnisse nicht wiederherstellen
+- verschlüsselte Vollbackups dürfen Geheimnisse nach korrekter Passphrase wiederherstellen
+- PIN und Kindersicherung werden deaktiviert und müssen bei Bedarf neu eingerichtet werden
 
 ---
 
@@ -284,23 +286,23 @@ Wenn Android-Keystore-Schluessel oder der lokale Secret Store verloren, beschaed
 
 HTTPS wird bevorzugt.
 
-HTTP bleibt fuer nutzer- oder providerdefinierte IPTV-, EPG- und Stream-Endpunkte erlaubt, weil reale Quellen haeufig HTTP verwenden.
+HTTP bleibt für nutzer- oder providerdefinierte IPTV-, EPG- und Stream-Endpunkte erlaubt, weil reale Quellen häufig HTTP verwenden.
 
-HTTP-Quellen muessen sichtbar als unsicher markiert werden.
+HTTP-Quellen müssen sichtbar als unsicher markiert werden.
 
-Alle HTTP-Nutzung muss durch eine zentrale Netzwerk- und Sicherheitsrichtlinie laufen. App-eigene Dienste duerfen kein HTTP verwenden.
+Alle HTTP-Nutzung muss durch eine zentrale Netzwerk- und Sicherheitsrichtlinie laufen. App-eigene Dienste dürfen kein HTTP verwenden.
 
-Es gibt keine unkontrollierte breite Manifest-Freigabe fuer Klartextverkehr.
+Es gibt keine unkontrollierte breite Manifest-Freigabe für Klartextverkehr.
 
-TLS-Zertifikatsfehler duerfen nicht bypassed werden.
+TLS-Zertifikatsfehler dürfen nicht bypassed werden.
 
-Certificate Pinning ist fuer nutzerdefinierte IPTV-Server kein v1-Default.
+Certificate Pinning ist für nutzerdefinierte IPTV-Server kein v1-Default.
 
 Provider-spezifische User-Agent-, Header- oder Cookie-Einstellungen sind nicht Teil von v1. Vivicast bietet nur den globalen User-Agent unter Allgemein.
 
-HTTP-Weiterleitungen duerfen nur auf `http` oder `https` zeigen. Finale Redirect-URLs bleiben Laufzeitdaten und werden nicht dauerhaft gespeichert oder geloggt.
+HTTP-Weiterleitungen dürfen nur auf `http` oder `https` zeigen. Finale Redirect-URLs bleiben Laufzeitdaten und werden nicht dauerhaft gespeichert oder geloggt.
 
-Parser fuer M3U, Xtream Codes und XMLTV duerfen Zugangswerte, Tokens, private URLs, HTTP-Header, Rohdaten und Provider-/Inhaltsnamen nicht in Logs, Diagnoseexporte oder unverschluesselte Backups schreiben.
+Parser für M3U, Xtream Codes und XMLTV dürfen Zugangswerte, Tokens, private URLs, HTTP-Header, Rohdaten und Provider-/Inhaltsnamen nicht in Logs, Diagnoseexporte oder unverschlüsselte Backups schreiben.
 
 Der vollstaendige Parser- und Quellenvertrag liegt in `prd/PRD-v1/12-parser-source-contracts.md`.
 
@@ -310,7 +312,7 @@ Der vollstaendige Parser- und Quellenvertrag liegt in `prd/PRD-v1/12-parser-sour
 
 Standard-Backups enthalten keine geheimen Zugangswerte, keine privaten Quellen-URLs mit eingebetteten Zugangswerten und keine PIN-Pruefwerte.
 
-Verschluesselte Vollbackups duerfen geheime Quellen- und Zielzugangsdaten enthalten, wenn der Nutzer aktiv eine Backup-Passphrase setzt.
+Verschlüsselte Vollbackups dürfen geheime Quellen- und Zielzugangsdaten enthalten, wenn der Nutzer aktiv eine Backup-Passphrase setzt.
 
 Passphrase-Regeln:
 
@@ -322,7 +324,7 @@ Passphrase-Regeln:
 Vollbackup-Schutzformat:
 
 - versionierter Container
-- unverschluesselte Metadaten ohne Geheimnisse
+- unverschlüsselte Metadaten ohne Geheimnisse
 - `kdf`, `salt` und `iterations` oder gleichwertige KDF-Parameter
 - AES-GCM-Payload mit `nonce`, `ciphertext` und `authTag`
 - v1 bevorzugt PBKDF2-HMAC-SHA256 als KDF
@@ -331,11 +333,11 @@ Wiederherstellung:
 
 1. lokale PIN pruefen, falls aktuell lokal erforderlich
 2. Backup lesen
-3. Passphrase pruefen, falls verschluesselt
+3. Passphrase pruefen, falls verschlüsselt
 4. Backup-Schema migrieren, falls kompatibel
 5. Inhalt validieren
 6. internes Sicherheitsbackup versuchen
-7. nach Bestaetigung Backup-Umfang ersetzen
+7. nach Bestätigung Backup-Umfang ersetzen
 
 PIN-Pruefwerte, aktive PIN-Freigaben und sicherheitswirksame Kindersicherung-Schutzflags aus Backups werden nicht wiederhergestellt. Nach Restore ist Kindersicherung deaktiviert und muss bei Bedarf manuell neu aktiviert werden.
 
@@ -347,11 +349,11 @@ PINs bestehen aus vier Ziffern.
 
 PIN-Eingaben nutzen die Android-/TV-Systemtastatur als numerische Passwort-Eingabe.
 
-Vivicast zeigt keine eigene Zifferntastatur fuer PINs.
+Vivicast zeigt keine eigene Zifferntastatur für PINs.
 
 PIN-Felder bleiben verdeckt, bieten keine Zwischenablage, keine Autovervollstaendigung und keine Klartextanzeige.
 
-Nach vier Ziffern wird nicht automatisch bestaetigt. Der Nutzer aktiviert bewusst die sichtbare Aktion.
+Nach vier Ziffern wird nicht automatisch bestätigt. Der Nutzer aktiviert bewusst die sichtbare Aktion.
 
 Gespeichert wird nur ein langsamer gesalzener PIN-Pruefwert, niemals PIN-Klartext.
 
@@ -367,9 +369,9 @@ Sperrdauern:
 
 Eine laufende PIN-Sperre wird durch App-Neustart nicht aufgehoben.
 
-Erfolgreiche PIN-Eingabe gibt nur den angefragten Schutzbereich fuer die aktuelle App-Sitzung frei.
+Erfolgreiche PIN-Eingabe gibt nur den angefragten Schutzbereich für die aktuelle App-Sitzung frei.
 
-Aktive PIN-Freigaben sind nur im Speicher, nicht persistent und nicht backupfaehig.
+Aktive PIN-Freigaben sind nur im Speicher, nicht persistent und nicht backupfähig.
 
 ---
 
@@ -377,9 +379,9 @@ Aktive PIN-Freigaben sind nur im Speicher, nicht persistent und nicht backupfaeh
 
 Der bereinigte Diagnoseexport wird unterstuetzt.
 
-Diagnoseereignisse muessen vor dauerhaftem Schreiben zentral bereinigt werden.
+Diagnoseereignisse müssen vor dauerhaftem Schreiben zentral bereinigt werden.
 
-Vor Export wird der gesamte Ausgabestrom als zusaetzliche Schutzschicht erneut zentral geprueft.
+Vor Export wird der gesamte Ausgabestrom als zusätzliche Schutzschicht erneut zentral geprueft.
 
 Vor dauerhaftem Schreiben und vor Export zentral entfernen oder unkenntlich machen:
 
@@ -397,15 +399,15 @@ Wenn ein Wert nicht sicher als unkritisch eingeordnet werden kann, wird er verwo
 
 Ungefiltertes System-Logcat darf nicht exportiert werden.
 
-Bereinigte Stacktraces sind nur fuer Warnungen, Fehler und Abstuerze erlaubt.
+Bereinigte Stacktraces sind nur für Warnungen, Fehler und Abstuerze erlaubt.
 
-Technische Zuordnungen duerfen bei Bedarf ausschliesslich neutrale interne IDs verwenden.
+Technische Zuordnungen dürfen bei Bedarf ausschliesslich neutrale interne IDs verwenden.
 
-Der Export enthaelt `vivicast-diagnostics.log` und `diagnostics-metadata.json` gemaess `prd/PRD-v1/11-about-app-requirements.md`.
+Der Export enthält `vivicast-diagnostics.log` und `diagnostics-metadata.json` gemaess `prd/PRD-v1/11-about-app-requirements.md`.
 
-Interne Diagnosesitzungen und Segmente duerfen nur im privaten App-Speicher liegen. Sie sind nicht Teil des Standard-Backups.
+Interne Diagnosesitzungen und Segmente dürfen nur im privaten App-Speicher liegen. Sie sind nicht Teil des Standard-Backups.
 
-Die Aufbewahrungsdauer ist auf 1 bis 7 Tage begrenzt und steht standardmaessig auf 1 Tag. Das interne Gesamtlimit betraegt 20 MiB, die Segmentgrenze 2 MiB und die Sitzungsgrenze drei Segmente beziehungsweise 6 MiB Logdaten. Diese Groessengrenzen sind keine Benutzereinstellungen.
+Die Aufbewahrungsdauer ist auf 1 bis 7 Tage begrenzt und steht standardmaessig auf 1 Tag. Das interne Gesamtlimit betraegt 20 MiB, die Segmentgrenze 2 MiB und die Sitzungsgrenze drei Segmente beziehungsweise 6 MiB Logdaten. Diese Größengrenzen sind keine Benutzereinstellungen.
 
 ---
 
@@ -426,7 +428,7 @@ Nicht vorgesehen:
 
 # 9.9 Sichere Wiederherstellung
 
-Wenn ein Backup Provider enthaelt, aber keine Zugangsdaten:
+Wenn ein Backup Provider enthält, aber keine Zugangsdaten:
 
 - Provider importieren
 - Status: `Zugangsdaten erforderlich`

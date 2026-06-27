@@ -34,7 +34,7 @@ Ein Fachbereich ist bereit fuer Codex-Planung, wenn folgende Punkte fuer diesen 
 - Codex weiss, dass es keinen festen Phasenplan aus dem Docs-Repo gibt.
 - Codex weiss, dass es eigene Annahmen explizit nennen muss.
 - Codex weiss, dass es vor groesseren Aenderungen im App-Repo einen eigenen Plan dokumentieren muss.
-- Finale Cross-QA und Fresh-Developer-Dry-Run sind in `design/review/10-final-cross-qa-and-dry-run.md` dokumentiert.
+- Finale Cross-QA und Fresh-Developer-Dry-Run sind in `archive/review/2026-06-24/10-final-cross-qa-and-dry-run.md` dokumentiert.
 
 ## Verbindliche Einstiegspunkte fuer Codex
 
@@ -48,8 +48,8 @@ Codex startet mit:
 6. den betroffenen Design- und Interaction-Dateien
 7. den betroffenen Component-Dateien
 8. passenden Diagrammen aus `architecture/diagrams/`, wenn Systemkontext oder Kernfluesse betroffen sind
-9. den passenden QA-Dateien in `design/review/`
-10. `design/review/10-final-cross-qa-and-dry-run.md` fuer Traceability und Abschlussstatus
+9. den passenden QA-Dateien in `archive/review/2026-06-24/`
+10. `archive/review/2026-06-24/10-final-cross-qa-and-dry-run.md` fuer Traceability und Abschlussstatus
 
 Diese Liste ist eine Quellenorientierung, keine Umsetzungsreihenfolge.
 

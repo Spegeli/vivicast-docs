@@ -6,7 +6,7 @@ Status: verbindlich v5
 
 Der Filmbereich zeigt VOD-Filme nach Provider und Kategorie.
 
-## Uebersicht
+## Übersicht
 
 ```text
 +--------------------------------------------------------------------------------+
@@ -50,7 +50,7 @@ Gleichnamige Kategorien verschiedener Provider werden nicht zusammengefuehrt.
 
 ```text
 LEFT aus Grid       -> Kategorien
-RIGHT im Grid       -> naechstes Poster
+RIGHT im Grid       -> nächstes Poster
 UP/DOWN im Grid     -> Reihe wechseln
 OK auf Poster       -> Film-Detailseite
 BACK Detailseite    -> Grid

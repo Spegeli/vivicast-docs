@@ -6,14 +6,14 @@ Rolle: visuelle Richtungsentscheidung. Diese Datei konkretisiert die visuelle Ri
 
 ## Grundlage
 
-Diese Datei ist die aktive Markdown-Quelle fuer die High-Fidelity-UI-Richtung.
+Diese Datei ist die aktive Markdown-Quelle für die High-Fidelity-UI-Richtung. Die aktuellen Renderings unter `rendered/` sind die visuelle Hauptreferenz.
 
-Aktuell bestaetigte Owner-Entscheidungen aus frueheren Archiv-Artefakten sind hier integriert. Archivdateien duerfen nicht ohne erneute Pruefung gegen aktuelle PRD-, ADR-, Design-, Codex- und Governance-Quellen reaktiviert werden.
+Aktuell bestätigte Owner-Entscheidungen aus frueheren Archiv-Artefakten sind hier integriert. Archivdateien dürfen nicht ohne erneute Pruefung gegen aktuelle PRD-, ADR-, Design-, Codex- und Governance-Quellen reaktiviert werden.
 
 
 ## Aktuelle Zielreferenz v2
 
-Die aktuellen neu gerenderten High-Fidelity-Mockups unter `design/mockups/high-fidelity/rendered/` sind die aktive visuelle Hauptreferenz fuer die Zieloptik.
+Die aktuellen neu gerenderten High-Fidelity-Mockups unter `design/mockups/high-fidelity/rendered/` sind die aktive visuelle Hauptreferenz für die Zieloptik.
 
 Die technische Designsystem-Ableitung liegt unter:
 
@@ -21,18 +21,18 @@ Die technische Designsystem-Ableitung liegt unter:
 design/design-system/compose-template/
 ```
 
-Dort enthaltene Markdown-, JSON- und Kotlin-Dateien sind keine App-Code-Dateien im Docs-Repository. Sie sind technische Designsystem-Vorlagen fuer die spaetere Compose-Umsetzung im App-Repository.
+Dort enthaltene Markdown-, JSON- und Kotlin-Dateien sind keine App-Code-Dateien im Docs-Repository. Sie sind technische Designsystem-Vorlagen für die spätere Compose-Umsetzung im App-Repository.
 
-Prioritaet fuer visuelle Umsetzung:
+Quellenrolle für die visuelle Umsetzung:
 
 ```text
-1. Aktuelle High-Fidelity-Renderings unter design/mockups/high-fidelity/rendered/
-2. Diese UI Direction Decisions
-3. design/design-system/compose-template/
-4. Bestehende Design-System-Tokens als sekundäre technische Orientierung
+High-Fidelity-Renderings: visuelle Zielwirkung
+UI Direction Decisions: visuelle Richtung und Stilentscheidungen
+Compose Template: technische Token- und Compose-Startwerte
+Bestehende Design-System-Dateien: Markdown-Kontext, konsistent mit Compose Template
 ```
 
-Gerenderte PNGs bleiben nicht normativ fuer Navigation, Labels, UI-Texte, Produktlogik, Datenmodell, Sicherheit, Backup/Restore, PIN oder Playback. Dafuer gelten PRD, ADRs, Screens, Wireframes, Interaction Specs und Components gemaess `DOCS-GOVERNANCE.md`.
+Gerenderte PNGs bleiben nicht normativ für Navigation, Labels, UI-Texte, Produktlogik, Datenmodell, Sicherheit, Backup/Restore, PIN oder Playback. Dafür gelten PRD, ADRs, Screens, Wireframes, Interaction Specs und Components gemaess `DOCS-GOVERNANCE.md`.
 
 
 ## Grundentscheidung
@@ -49,7 +49,7 @@ schnell
 inhaltzentriert
 ```
 
-## Allgemein uebernehmen
+## Allgemein übernehmen
 
 ```text
 dunkler atmosphaerischer Hintergrund
@@ -83,11 +83,11 @@ Regeln:
 ```text
 Provider-Spalte bleibt im Kategorie-Modus sichtbar
 erstes OK in der Senderspalte blendet Provider/Kategorien aus und aktiviert den Sender-Modus
-mittlere Spalte zeigt dann EPG fuer den ausgewaehlten Sender
+mittlere Spalte zeigt dann EPG für den ausgewählten Sender
 Stream-Vorschau startet gleichzeitig mit dem Sender-Modus
 Fokus springt auf die aktuelle Sendung in der EPG-Spalte, sofern vorhanden
 OK auf der fokussierten aktuellen Sendung oeffnet Vollbild
-wenn der Nutzer nach links zurueck navigiert, erscheint die Provider-Spalte wieder
+wenn der Nutzer nach links zurück navigiert, erscheint die Provider-Spalte wieder
 EPG-Button in der rechten Spalte entfaellt
 keine Preview-Einstellung und kein direkter Vollbildstart beim ersten OK
 ```
@@ -105,7 +105,7 @@ Player Controls:
 
 ```text
 Pause-Button entfernen
-Zurueckspulen-Button entfernen
+Zurückspulen-Button entfernen
 Vorspulen-Button entfernen
 Timeline fokussierbar machen
 OK auf Timeline pausiert
@@ -113,15 +113,15 @@ zweites OK auf Timeline spielt weiter
 Links/Rechts auf Timeline spult
 ```
 
-Auto-Next Panel fuer Serien:
+Auto-Next Panel für Serien:
 
 ```text
-Auto-Next Aus: Naechste Folge abspielen erst nach dem Episodenende
-Auto-Next Ein: Naechste Folge in X entsprechend Countdown vor dem Episodenende
+Auto-Next Aus: Nächste Folge abspielen erst nach dem Episodenende
+Auto-Next Ein: Nächste Folge in X entsprechend Countdown vor dem Episodenende
 Hauptbutton bleibt fokussiert und startet bei OK sofort
-bei Ablauf startet die naechste Episode automatisch
-Zurueck erscheint zeitgleich neben dem Hauptbutton; kein Button Abbrechen
-OK auf Zurueck oder die Zurueck-Taste fuehrt mit erhaltenem Staffel-/Episodenkontext zur Serien-Detailseite
+bei Ablauf startet die nächste Episode automatisch
+Zurück erscheint zeitgleich neben dem Hauptbutton; kein Button Abbrechen
+OK auf Zurück oder die Zurück-Taste fuehrt mit erhaltenem Staffel-/Episodenkontext zur Serien-Detailseite
 kein Panel nach der letzten Serienepisode
 ```
 
@@ -136,14 +136,18 @@ Audio: Mono, Stereo, 5.1
 ## VOD Entscheidung
 
 ```text
-Hero-Bereich mit dunklem Backdrop
+Provider-/Kategorien-Spalte links
+Hero-/Detailbereich und Poster-Raster rechts
+Provider-Kategorien bleiben sichtbar getrennt
+Globale Kategorien Favoriten und Fortsetzen stehen oberhalb der Provider
 Poster-Cards mit Fokus-Skalierung
-Kategorie-Chips als Pills
 Fortsetzen-Fortschritt direkt auf Cards
 Fallback-Poster bewusst gestalten
 Bewertung auf Posterkarte anzeigen
 Titel unter Poster anzeigen
 ```
+
+Kategorie-Chips sind nicht die primaere VOD-Navigation. Sie dürfen nur für untergeordnete Filter oder Detailkontexte verwendet werden, wenn die Screen-Spezifikation dies erlaubt.
 
 Fallback-Regel:
 
@@ -172,7 +176,7 @@ Kanäle, Filme, Serien und EPG getrennt
 fokussierte Ergebniscard mit Cyan-Fokus
 Bewertung bei Filmen und Serien anzeigen
 Alle-anzeigen-Aktion entfernen
-Kategorie-Reihen horizontal scrollbar machen
+Suchverlauf-Chips dauerhaft sichtbar halten
 ```
 
 ## Einstellungen Entscheidung
@@ -184,10 +188,10 @@ Optionskarten rechts
 Werte rechtsbuendig
 kurzer Hilfetext unter dem Titel
 fokussierte Settings-Row mit Cyan-Ring
-aktuelles Mockup ohne groessere Aenderungen uebernehmen
+aktuelles Mockup ohne größere Änderungen übernehmen
 ```
 
-## Nicht direkt uebernehmen
+## Nicht direkt übernehmen
 
 ```text
 zufaellige Logos
@@ -198,11 +202,11 @@ zufaellige Textfehler
 inkonsistente Badge-Formen
 ```
 
-Echte App-Elemente muessen spaeter aus Design-System, Providerdaten oder kontrollierten Fallbacks entstehen.
+Echte App-Elemente müssen später aus Design-System, Providerdaten oder kontrollierten Fallbacks entstehen.
 
 ## Compose Designsystem Ableitung
 
-Nicht-normativer Umsetzungshinweis fuer ein spaeteres Compose-Designsystem, zum Beispiel gemaess Codex-Baseline `:core:designsystem`:
+Nicht-normativer Umsetzungshinweis für ein späteres Compose-Designsystem, zum Beispiel gemaess Codex-Baseline `:core:designsystem`:
 
 ```text
 VivicastTheme
@@ -227,23 +231,34 @@ VivicastStreamInfoBadge
 
 Die konkrete Modulstruktur bleibt App-Repo-offen. Diese Liste beschreibt wiederverwendbare UI-Bausteine, nicht die verbindliche Modulaufteilung.
 
+## Aktuelle visuelle Quellenrolle
+
+```text
+Renderings = Zielwirkung
+UI Direction Decisions = Stilrichtung
+Compose Template = technische Tokenwerte und Compose-Startpunkte
+Design-System Markdown = erläuternder Designsystem-Kontext
+```
+
+Gerenderte PNGs bleiben visuelle Referenzen. Sie ersetzen keine PRD-, Screen-, Wireframe-, Interaction- oder Component-Vorgaben für Produktlogik, Labels, Navigation oder Fokuspfade.
+
 ## Offene Designpunkte
 
 ```text
 exakte Fokusstaerke
 finale Akzentfarbe
 Player Overlay Hoehe
-Poster Card Groessen
+Poster Card Größen
 Settings Row Hoehen bei grosser Schrift
 EPG Ergebnisdarstellung in Suche
-Fallback-Look fuer fehlende Backdrops
+Fallback-Look für fehlende Backdrops
 Timeline-Verhalten bei Live-TV ohne Timeshift
 Position der Stream-Info-Badges
 ```
 
-## Relevanz fuer App-Planung
+## Relevanz für App-Planung
 
-App-Repo-Planung fuer betroffene UI-Bereiche soll diese Quellen beruecksichtigen:
+App-Repo-Planung für betroffene UI-Bereiche soll diese Quellen beruecksichtigen:
 
 ```text
 PRD
@@ -252,6 +267,7 @@ Design-System
 Wireframes
 High-Fidelity Mockups
 UI Direction Decisions
+Compose Designsystem Template
 ```
 
 Status:

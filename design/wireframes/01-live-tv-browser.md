@@ -50,9 +50,9 @@ Er bildet das aktuelle adaptive Spaltenmodell ab.
 erste Kategorie des ersten Providers
 ```
 
-Der erste Provider ist beim frischen Oeffnen aufgeklappt.
+Der erste Provider ist beim frischen Öffnen aufgeklappt.
 
-Die globale Favoriten-Kategorie steht oberhalb des ersten Providers und ist providerunabhaengig.
+Die globale Favoriten-Kategorie steht oberhalb des ersten Providers und ist providerunabhängig.
 
 ## Fokuswege
 
@@ -63,12 +63,14 @@ RIGHT aus Kategorie       -> Senderliste
 FOCUS auf Kategorie       -> Senderliste aktualisiert sofort
 OK auf Sender             -> Sender-Modus + EPG-Spalte + Preview
                               Fokus -> aktuelle EPG-Sendung, sofern vorhanden
+                              sonst Fokus -> No-EPG-Placeholder
 
 Sender-Modus:
 OK auf aktueller EPG-Sendung -> Vollbild-Player
+OK auf No-EPG-Placeholder    -> Vollbild-Player ohne Catch-Up-Kontext
 RIGHT aus Senderliste        -> EPG-Spalte
 RIGHT aus EPG-Spalte         -> Preview/Details
-LEFT entsprechend zurueck
+LEFT entsprechend zurück
 ```
 
 ## OK-Verhalten
@@ -78,10 +80,12 @@ OK auf Provider              -> ein-/ausklappen
 OK auf Kategorie             -> Kategorie aktivieren
 OK in Senderspalte           -> Sender-Modus, EPG-Spalte, Preview
                                Fokus auf aktuelle EPG-Sendung, sofern vorhanden
+                               sonst Fokus auf No-EPG-Placeholder
 OK auf aktueller EPG-Sendung -> Vollbild-Player
+OK auf No-EPG-Placeholder    -> Vollbild-Player ohne Catch-Up-Kontext
 ```
 
-## Zurueck-Verhalten
+## Zurück-Verhalten
 
 ```text
 BACK aus EPG-Spalte        -> Senderliste
@@ -93,7 +97,7 @@ BACK aus Provider/Kategorien -> Top Navigation
 
 ```text
 Browser: CH+ / CH- bewegt Fokus in Senderliste
-Player:  CH+ / CH- startet direkt naechsten/vorherigen Sender
+Player:  CH+ / CH- startet direkt nächsten/vorherigen Sender
 ```
 
 ## Channel Card im Live-TV Browser
@@ -108,7 +112,7 @@ Sendernummer | Logo | Sendername | aktuelles Programm | Fortschritt | Favorit | 
 
 ```text
 Kategorie leer          -> Keine Sender in dieser Kategorie
-Kein EPG                -> Keine Programminformationen verfuegbar
+Kein EPG                -> Keine Programminformationen verfuegbar; fokussierbarer No-EPG-Placeholder im Sender-Modus
 Kein Logo               -> Icon-Fallback + Sendername
 Provider Fehler         -> Inline im Providerbereich
 Loading                 -> Skeleton-Zeilen, Navigation bleibt nutzbar
@@ -118,11 +122,13 @@ Loading                 -> Skeleton-Zeilen, Navigation bleibt nutzbar
 
 ```text
 globale Navigation vollstaendig
-Favoriten global ueber erstem Provider
+Favoriten global über erstem Provider
 erster Provider aufgeklappt
 OK auf Sender startet festen Sender-Modus und Preview
 Fokus springt auf aktuelle EPG-Sendung, sofern vorhanden
+Wenn keine aktuelle EPG-Sendung vorhanden ist, springt Fokus auf den No-EPG-Placeholder
 OK auf aktueller EPG-Sendung startet Vollbild
+OK auf No-EPG-Placeholder startet Vollbild ohne Catch-Up-Kontext
 keine Preview-Einstellung
 RIGHT Senderliste -> EPG -> Preview
 BACK-Kette korrekt

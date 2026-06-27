@@ -1,4 +1,6 @@
-package com.vivicast.tv.core.designsystem
+// TEMPLATE ONLY.
+// Copy this file into the app repository and set the real package there.
+// This file is not app code inside vivicast-docs and does not define final module structure.
 
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily

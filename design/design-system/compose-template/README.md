@@ -7,6 +7,8 @@ Ziel: Die aktuellen High-Fidelity-Mockups in konkrete Jetpack-Compose-for-TV-Des
 
 Diese Dateien sind keine fertige App-Implementierung. Sie sind eine Startvorlage für ein späteres `:core:designsystem` oder ähnliches Modul.
 
+Die `.kt`-Dateien enthalten bewusst keinen finalen Package-Namen. Beim Kopieren in das App-Repository muss Codex den echten Package-Namen und die echte Modulstruktur dort festlegen.
+
 Die aktuellen neu gerenderten Mockups sind visuell primär. Die bestehenden Repo-Design-Tokens dienen nur noch als sekundäre technische Orientierung, wenn die Mockups keine klare Aussage liefern.
 
 ## Enthaltene Dateien

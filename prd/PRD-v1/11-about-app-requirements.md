@@ -5,15 +5,15 @@ Status: verbindlich v7
 
 ## Zweck
 
-Diese Datei definiert fachliche Anforderungen fuer den Bereich `Über die App`.
+Diese Datei definiert fachliche Anforderungen für den Bereich `Über die App`.
 
-Sie konkretisiert den App-Info-Bereich aus `prd/PRD-v1/04-search-settings-player-requirements.md`.
+Sie konkretisiert den Bereich `Über die App` aus `prd/PRD-v1/04-search-settings-player-requirements.md`.
 
 ## Ziel
 
 `Über die App` stellt technische App-Informationen, rechtliche Hinweise sowie Diagnose- und Supportfunktionen bereit.
 
-Der Bereich soll nur Informationen zeigen, die fuer Support, Versionserkennung und rechtliche Hinweise sinnvoll sind.
+Der Bereich soll nur Informationen zeigen, die für Support, Versionserkennung und rechtliche Hinweise sinnvoll sind.
 
 ## Angezeigte Informationen
 
@@ -26,7 +26,7 @@ Anzeigen:
 - Datenbank-Version
 - Build-Typ, falls sinnvoll
 - Android-Version
-- Geraetemodell
+- Gerätemodell
 - Player-Engine, zum Beispiel Media3 / ExoPlayer
 - UI-Technologie-Hinweis, zum Beispiel Jetpack Compose for TV
 
@@ -35,14 +35,14 @@ Anzeigen:
 Unterstuetzte Aktionen:
 
 - Versionsinformationen kopieren
-- Diagnose und Support oeffnen
-- Lizenzhinweise oeffnen
-- Datenschutzinformationen oeffnen
-- Drittanbieter-Lizenzen oeffnen
+- Diagnose und Support öffnen
+- Lizenzhinweise öffnen
+- Datenschutzinformationen öffnen
+- Drittanbieter-Lizenzen öffnen
 
 ## Diagnose und Support
 
-Der verbindliche UI-Ort fuer den bereinigten Log-Export ist:
+Der verbindliche UI-Ort für den bereinigten Log-Export ist:
 
 ```text
 Einstellungen > Über die App > Diagnose und Support
@@ -56,7 +56,7 @@ Erlaubt:
 - Build-Nummer
 - Paketname
 - Android-Version
-- Geraetemodell
+- Gerätemodell
 - Datenbank-Version
 - aktive App-Sprache
 - Anzahl Provider
@@ -79,13 +79,13 @@ Diagnoseprotokollierung: Aus
 Aufbewahrungsdauer: 1 Tag
 ```
 
-Die Aufbewahrungsdauer bleibt bei ausgeschalteter Diagnoseprotokollierung sichtbar, ist dann aber nicht aenderbar. Bereits vorhandene Sitzungen bleiben bis zu ihrem regulaeren Ablauf exportierbar.
+Die Aufbewahrungsdauer bleibt bei ausgeschalteter Diagnoseprotokollierung sichtbar, ist dann aber nicht änderbar. Bereits vorhandene Sitzungen bleiben bis zu ihrem regulaeren Ablauf exportierbar.
 
-Groessenlimit, Segmentgroesse und Rotationsregeln sind feste interne v1-Werte und werden nicht als weitere Einstellungen angezeigt.
+Größenlimit, Segmentgröße und Rotationsregeln sind feste interne v1-Werte und werden nicht als weitere Einstellungen angezeigt.
 
-## Export-only-Regel fuer Logs
+## Export-only-Regel für Logs
 
-Logs duerfen in der App ausschliesslich als bereinigte Datei exportiert werden.
+Logs dürfen in der App ausschliesslich als bereinigte Datei exportiert werden.
 
 Der Inhalt einer Log- oder Diagnoseprotokolldatei darf niemals direkt in der App angezeigt werden.
 
@@ -96,13 +96,13 @@ Insbesondere nicht erlaubt:
 - Logdatei-Inhalt als langen Text in `Über die App` anzeigen
 - Logdatei-Inhalt in die Zwischenablage kopieren
 
-Die App darf nach einem Export nur Statusinformationen anzeigen, zum Beispiel Erfolg, Fehler oder ausgewaehltes Exportziel. Sie darf dabei keinen Loginhalt wiedergeben.
+Die App darf nach einem Export nur Statusinformationen anzeigen, zum Beispiel Erfolg, Fehler oder ausgewähltes Exportziel. Sie darf dabei keinen Loginhalt wiedergeben.
 
-Technische Ereignisse muessen bereits vor dem dauerhaften Schreiben nach den Ausschlussregeln bereinigt werden. Vor dem Export wird der gesamte Ausgabestrom als zusaetzliche Schutzschicht erneut zentral geprueft. Geheime Zugangswerte, Tokens, private URLs und vergleichbare sensible Werte duerfen weder intern protokolliert noch exportiert werden.
+Technische Ereignisse müssen bereits vor dem dauerhaften Schreiben nach den Ausschlussregeln bereinigt werden. Vor dem Export wird der gesamte Ausgabestrom als zusätzliche Schutzschicht erneut zentral geprueft. Geheime Zugangswerte, Tokens, private URLs und vergleichbare sensible Werte dürfen weder intern protokolliert noch exportiert werden.
 
 ## Zentrale Bereinigung
 
-Vivicast verwendet eine zentrale Bereinigungsschicht fuer Diagnoseereignisse.
+Vivicast verwendet eine zentrale Bereinigungsschicht für Diagnoseereignisse.
 
 Sie wird angewendet:
 
@@ -138,7 +138,7 @@ Das Archiv wird von Vivicast selbst mit den standardmaessigen Android-ZIP-APIs e
 
 Die Archivdaten werden direkt in den Ziel-OutputStream geschrieben. Das vollstaendige Archiv darf nicht zuerst als grosse Bytefolge im RAM aufgebaut werden.
 
-Das ZIP-Archiv enthaelt verpflichtend diese UTF-8-codierten Eintraege:
+Das ZIP-Archiv enthält verpflichtend diese UTF-8-codierten Eintraege:
 
 ```text
 vivicast-diagnostics.log
@@ -147,7 +147,7 @@ diagnostics-metadata.json
 
 ## Inhalt von `vivicast-diagnostics.log`
 
-Die Protokolldatei enthaelt ausschliesslich bereinigte technische Ereignisse:
+Die Protokolldatei enthält ausschliesslich bereinigte technische Ereignisse:
 
 - App-Start, App-Version und Abstuerze
 - Playlist-Importe und Aktualisierungen mit Beginn, Ende, Ergebnis, Dauer und Anzahl verarbeiteter Eintraege
@@ -155,19 +155,19 @@ Die Protokolldatei enthaelt ausschliesslich bereinigte technische Ereignisse:
 - Player-Startfehler, Retries, Reconnects, Decoder- und Timeshift-Fehler
 - Netzwerkfehler mit Fehlerart, HTTP-Status und Dauer, jedoch ohne URL
 - Backup-, Restore-, Cache- und Datenbankaktionen sowie zugehoerige Fehler
-- bereinigte Stacktraces fuer Warnungen, Fehler und Abstuerze
+- bereinigte Stacktraces für Warnungen, Fehler und Abstuerze
 
 ## Inhalt von `diagnostics-metadata.json`
 
-Die Metadatendatei enthaelt mindestens:
+Die Metadatendatei enthält mindestens:
 
 - App-Version und Build-Nummer
-- Android-Version und Geraetemodell
+- Android-Version und Gerätemodell
 - Datenbank-Version
 - aktive App-Sprache und Zeitzone
 - Exportzeitpunkt
 - konfigurierte Aufbewahrungsdauer in Tagen
-- feste Groessengrenzen und Segmentgrenze
+- feste Größengrenzen und Segmentgrenze
 - Beginn und Ende des tatsaechlich abgedeckten Protokollzeitraums
 - `contentTruncated`
 - `firstRetainedAt`
@@ -176,7 +176,7 @@ Die Metadatendatei enthaelt mindestens:
 - `discardedEventCount`
 - eine Liste der im Export noch enthaltenen Diagnosesitzungen
 
-Jede Diagnosesitzung enthaelt mindestens:
+Jede Diagnosesitzung enthält mindestens:
 
 ```text
 sessionId
@@ -202,7 +202,7 @@ eventCount
 closed
 ```
 
-Bei einer zum Exportzeitpunkt aktiven Sitzung bleibt `endedAt` leer. Der Export verwendet fuer diese Sitzung `lastRecordedAt` als aktuellen Zeitraum-Endpunkt und kennzeichnet sie mit `active=true`.
+Bei einer zum Exportzeitpunkt aktiven Sitzung bleibt `endedAt` leer. Der Export verwendet für diese Sitzung `lastRecordedAt` als aktuellen Zeitraum-Endpunkt und kennzeichnet sie mit `active=true`.
 
 ## Diagnoseprotokollierung und Sitzungen
 
@@ -210,9 +210,9 @@ Interne Diagnoseprotokolle liegen ausschliesslich im privaten App-Speicher. Sie 
 
 Bei aktivierter Diagnoseprotokollierung beginnt mit jedem App-Prozessstart eine neue logische Diagnosesitzung. Wird die Protokollierung in einem bereits laufenden Prozess aktiviert, beginnt die Sitzung zum Aktivierungszeitpunkt.
 
-Eine Sitzung kann wegen der Rotation aus mehreren physischen Segmentdateien bestehen. Interne Segmentdateinamen oder gleichwertige Metadaten enthalten mindestens den Sitzungsbeginn, eine stabile `sessionId` und den `segmentIndex`. Die Endzeit wird in den Sitzungsmetadaten gefuehrt und muss nicht durch eine spaetere Dateiumbenennung in den Dateinamen geschrieben werden.
+Eine Sitzung kann wegen der Rotation aus mehreren physischen Segmentdateien bestehen. Interne Segmentdateinamen oder gleichwertige Metadaten enthalten mindestens den Sitzungsbeginn, eine stabile `sessionId` und den `segmentIndex`. Die Endzeit wird in den Sitzungsmetadaten gefuehrt und muss nicht durch eine spätere Dateiumbenennung in den Dateinamen geschrieben werden.
 
-Fuer jede Sitzung gelten diese Felder:
+Für jede Sitzung gelten diese Felder:
 
 - `startedAt`: tatsaechlicher Beginn der Diagnosesitzung
 - `lastRecordedAt`: Zeitpunkt des letzten dauerhaft geschriebenen Ereignisses
@@ -222,20 +222,20 @@ Fuer jede Sitzung gelten diese Felder:
 
 Ein kontrolliertes Beenden setzt `endReason=USER_EXIT` und `endTimeAccuracy=EXACT`. Das Ausschalten der Diagnoseprotokollierung beendet die aktive Sitzung sofort mit `endReason=DIAGNOSTICS_DISABLED` und `endTimeAccuracy=EXACT`.
 
-Bildschirm-Aus, Standby oder das Ausschalten des Fernsehers duerfen nicht allein als Sitzungsende gewertet werden. Solange der App-Prozess weiterlebt, bleibt die Sitzung aktiv.
+Bildschirm-Aus, Standby oder das Ausschalten des Fernsehers dürfen nicht allein als Sitzungsende gewertet werden. Solange der App-Prozess weiterlebt, bleibt die Sitzung aktiv.
 
-Findet Vivicast beim naechsten App-Prozessstart eine noch offene vorherige Sitzung, wird sie nachtraeglich abgeschlossen:
+Findet Vivicast beim nächsten App-Prozessstart eine noch offene vorherige Sitzung, wird sie nachtraeglich abgeschlossen:
 
 1. Ab Android 11/API 30 wird ein passender Eintrag aus `ApplicationExitInfo` verwendet, sofern vorhanden. Dessen Zeitstempel wird als `endedAt` gespeichert; `endTimeAccuracy=SYSTEM_REPORTED`. Der Systemgrund wird auf `CRASH`, `SYSTEM_KILL` oder `UNKNOWN` abgebildet.
 2. Ist kein passender Systemdatensatz verfuegbar, wird `endedAt=lastRecordedAt` gesetzt; `endTimeAccuracy=ESTIMATED`. Ein bereits eindeutig erkannter Absturz bleibt `CRASH`, andernfalls wird `UNKNOWN` verwendet.
 
-Vivicast darf fuer ein nicht beobachtetes Prozessende keine scheinbar exakte Endzeit erfinden.
+Vivicast darf für ein nicht beobachtetes Prozessende keine scheinbar exakte Endzeit erfinden.
 
 ## Aufbewahrung und Exportzeitraum
 
 Die Aufbewahrungsdauer ist auf 1 bis 7 Tage begrenzt; Standard ist 1 Tag.
 
-Fuer die automatische Altersbereinigung gilt:
+Für die automatische Altersbereinigung gilt:
 
 - geschlossene Sitzungen altern anhand von `endedAt`
 - noch unvollstaendige Sitzungen altern anhand von `lastRecordedAt`
@@ -247,7 +247,7 @@ Der Diagnoseexport umfasst alle zum Exportzeitpunkt noch vorhandenen Segmente un
 
 Der ausgewiesene Gesamtzeitraum beginnt beim fruehesten tatsaechlich noch exportierten Ereignis und endet beim spaetesten tatsaechlich noch exportierten Ereignis. Bei einer aktiven Sitzung kann `lastRecordedAt` den Endpunkt bilden. Der Zeitraum darf weder pauschal aus der konfigurierten Tageszahl noch aus einem bereits durch Rotation verlorenen `startedAt` abgeleitet werden.
 
-## Groessenbegrenzung und Rotation
+## Größenbegrenzung und Rotation
 
 Verbindliche feste v1-Grenzen:
 
@@ -260,28 +260,28 @@ diagnosticsMaxSessionLogBytes = 6_291_456      // 6 MiB
 
 Diese Werte sind nicht benutzerkonfigurierbar.
 
-Bevor das Anhaengen eines bereits bereinigten Ereignisses die Segmentgrenze ueberschreiten wuerde, wird das aktuelle Segment geschlossen und innerhalb derselben Sitzung das naechste Segment geoeffnet.
+Bevor das Anhaengen eines bereits bereinigten Ereignisses die Segmentgrenze überschreiten wuerde, wird das aktuelle Segment geschlossen und innerhalb derselben Sitzung das nächste Segment geoeffnet.
 
-Sind bereits drei Segmente der Sitzung vorhanden, wird vor dem Anlegen des naechsten Segments das aelteste geschlossene Segment dieser Sitzung entfernt. Das aktuelle Schreibsegment wird niemals durch diese sitzungsinterne Rotation entfernt.
+Sind bereits drei Segmente der Sitzung vorhanden, wird vor dem Anlegen des nächsten Segments das aelteste geschlossene Segment dieser Sitzung entfernt. Das aktuelle Schreibsegment wird niemals durch diese sitzungsinterne Rotation entfernt.
 
-Passt ein einzelnes bereits bereinigtes Ereignis selbst nicht in ein leeres Segment, wird sein Nutzinhalt so gekuerzt, dass der Datensatz in das Segment passt. Der Datensatz muss `recordTruncated=true` enthalten. Die Bereinigung sensibler Daten erfolgt vor Groessenpruefung und Kuerzung.
+Passt ein einzelnes bereits bereinigtes Ereignis selbst nicht in ein leeres Segment, wird sein Nutzinhalt so gekuerzt, dass der Datensatz in das Segment passt. Der Datensatz muss `recordTruncated=true` enthalten. Die Bereinigung sensibler Daten erfolgt vor Größenpruefung und Kuerzung.
 
 Das Gesamtlimit umfasst alle internen Logsegmente sowie zugehoerige Sitzungs-, Segment- und Rotationsmetadaten im privaten App-Speicher. DataStore-Einstellungen und das direkt in ein externes Ziel gestreamte Diagnose-ZIP sind nicht Teil dieses Limits.
 
-Vor jeder groessenbedingten Bereinigung wird zuerst die altersbasierte Aufbewahrungsbereinigung ausgefuehrt. Reicht der Platz danach fuer den naechsten Schreibvorgang nicht aus, werden die aeltesten abgeschlossenen Sitzungen anhand ihres Endzeitpunkts vollstaendig entfernt, bis der Schreibvorgang innerhalb des Gesamtlimits moeglich ist.
+Vor jeder größenbedingten Bereinigung wird zuerst die altersbasierte Aufbewahrungsbereinigung ausgefuehrt. Reicht der Platz danach für den nächsten Schreibvorgang nicht aus, werden die aeltesten abgeschlossenen Sitzungen anhand ihres Endzeitpunkts vollstaendig entfernt, bis der Schreibvorgang innerhalb des Gesamtlimits möglich ist.
 
-Die globale Groessenbereinigung entfernt keine Segmente der aktiven Sitzung. Deren aelteste geschlossene Segmente werden ausschliesslich durch die feste Drei-Segment-Rotation ersetzt. Nicht entfernt werden:
+Die globale Größenbereinigung entfernt keine Segmente der aktiven Sitzung. Deren aelteste geschlossene Segmente werden ausschliesslich durch die feste Drei-Segment-Rotation ersetzt. Nicht entfernt werden:
 
 - das aktuell offene Schreibsegment
 - die Metadaten der aktiven Sitzung
 
-Kann ein bereinigtes Ereignis trotz Altersbereinigung, Entfernung abgeschlossener Sitzungen und sitzungsinterner Rotation nicht innerhalb der Grenzen geschrieben werden, wird dieses Ereignis verworfen und in `discardedEventCount` sowie `contentTruncated` ausgewiesen. Das Gesamtlimit darf nicht ueberschritten werden.
+Kann ein bereinigtes Ereignis trotz Altersbereinigung, Entfernung abgeschlossener Sitzungen und sitzungsinterner Rotation nicht innerhalb der Grenzen geschrieben werden, wird dieses Ereignis verworfen und in `discardedEventCount` sowie `contentTruncated` ausgewiesen. Das Gesamtlimit darf nicht überschritten werden.
 
-Rotationsmetadaten muessen kompakt bleiben und duerfen keine unbegrenzte Liste verworfener Einzelelemente fuehren.
+Rotationsmetadaten müssen kompakt bleiben und dürfen keine unbegrenzte Liste verworfener Einzelelemente fuehren.
 
-Bei jeder groessenbedingten Entfernung oder Datensatzkuerzung werden die Trunkierungs- und Zaehlerfelder fortgeschrieben. `firstRetainedAt` bezeichnet den Zeitpunkt des fruehesten noch vorhandenen Ereignisses.
+Bei jeder größenbedingten Entfernung oder Datensatzkuerzung werden die Trunkierungs- und Zaehlerfelder fortgeschrieben. `firstRetainedAt` bezeichnet den Zeitpunkt des fruehesten noch vorhandenen Ereignisses.
 
-`vivicast-diagnostics.log` wird beim Export aus den noch vorhandenen Segmenten in chronologischer Reihenfolge erzeugt. Die Rotation veraendert weder ZIP-Dateinamen noch verpflichtende ZIP-Eintraege.
+`vivicast-diagnostics.log` wird beim Export aus den noch vorhandenen Segmenten in chronologischer Reihenfolge erzeugt. Die Rotation verändert weder ZIP-Dateinamen noch verpflichtende ZIP-Eintraege.
 
 ## Ausgeschlossene Daten
 
@@ -297,35 +297,35 @@ Der Export darf insbesondere nicht enthalten:
 - Screenshots
 - ungefiltertes System-Logcat
 
-Wenn eine technische Zuordnung erforderlich ist, duerfen ausschliesslich neutrale interne IDs wie `providerId=3` oder `channelId=128` verwendet werden.
+Wenn eine technische Zuordnung erforderlich ist, dürfen ausschliesslich neutrale interne IDs wie `providerId=3` oder `channelId=128` verwendet werden.
 
 Wenn Erstellen oder Schreiben des ZIP-Archivs fehlschlaegt, zeigt die App einen konkreten Exportfehler. Sie wechselt nicht stillschweigend auf ein anderes Dateiformat und hinterlaesst keine als erfolgreich gemeldete unvollstaendige Datei.
 
 ## Rechtliche Hinweise
 
-Der Bereich enthaelt Einstiege fuer:
+Der Bereich enthält Einstiege für:
 
 - Datenschutz
 - Open-Source-Lizenzen
 - Drittanbieter-Lizenzen
 
-Diese Inhalte duerfen als lokale Seiten oder Dialoge umgesetzt werden.
+Diese Inhalte dürfen als lokale Seiten oder Dialoge umgesetzt werden.
 
 ## Update-Pruefung
 
-Eine manuelle Update-Pruefung ist fuer v1 nicht verbindlich.
+Eine manuelle Update-Pruefung ist für v1 nicht verbindlich.
 
-Wenn spaeter eine Update-Pruefung eingebaut wird, muss klar getrennt werden zwischen:
+Wenn später eine Update-Pruefung eingebaut wird, muss klar getrennt werden zwischen:
 
 - App-Version anzeigen
 - Update suchen
 - Update installieren
 
-## Daten zuruecksetzen
+## Daten zurücksetzen
 
-`Daten zuruecksetzen` gehoert nicht in `Über die App`.
+`Daten zurücksetzen` gehört nicht in `Über die App`.
 
-Wenn diese Funktion spaeter umgesetzt wird, gehoert sie in einen eigenen gefaehrlichen Settings-Bereich oder in Backup/Restore mit klarer Bestaetigung.
+Wenn diese Funktion später umgesetzt wird, gehört sie in einen eigenen gefaehrlichen Settings-Bereich oder in Backup/Restore mit klarer Bestätigung.
 
 ## Abgrenzung
 
@@ -334,5 +334,5 @@ Nicht Teil von `Über die App`:
 - Wiedergabelistenverwaltung
 - EPG-Verwaltung
 - Backup oder Restore
-- Daten zuruecksetzen
+- Daten zurücksetzen
 - automatische Update-Installation

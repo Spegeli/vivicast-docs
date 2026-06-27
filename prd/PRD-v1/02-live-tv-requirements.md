@@ -9,9 +9,9 @@ Status: bereinigt v5
 
 Der Live-TV-Bereich ist die zentrale Funktion von Vivicast.
 
-Benutzer muessen auch sehr grosse Senderlisten schnell durchsuchen, Sender starten und aktuelle Programminformationen erkennen koennen.
+Benutzer müssen auch sehr grosse Senderlisten schnell durchsuchen, Sender starten und aktuelle Programminformationen erkennen können.
 
-Die Bedienung muss vollstaendig fuer Android-TV-Fernbedienungen optimiert sein.
+Die Bedienung muss vollstaendig für Android-TV-Fernbedienungen optimiert sein.
 
 ---
 
@@ -32,23 +32,23 @@ Verbindliche Quellen:
 
 ## Provider
 
-- Mehrere Provider muessen gleichzeitig unterstuetzt werden.
+- Mehrere Provider müssen gleichzeitig unterstuetzt werden.
 - Provider bleiben getrennt.
-- Provider duerfen nicht automatisch zusammengefuehrt werden.
-- Der Nutzer muss zwischen Providern wechseln koennen.
-- Der erste Provider ist beim frischen Oeffnen sichtbar geoeffnet.
+- Provider dürfen nicht automatisch zusammengefuehrt werden.
+- Der Nutzer muss zwischen Providern wechseln können.
+- Der erste Provider ist beim frischen Öffnen sichtbar geoeffnet.
 
 ## Kategorien
 
-- Provider-Kategorien werden unveraendert uebernommen.
+- Provider-Kategorien werden unverändert übernommen.
 - Kategorien werden nicht automatisch normalisiert oder zusammengefuehrt.
 - Fokus auf eine Kategorie aktualisiert die Senderliste sofort.
 - Sender ohne Kategorie werden intern `__UNCATEGORIZED__` zugeordnet.
-- Anzeige fuer diese interne Kategorie: `Nicht kategorisiert`.
+- Anzeige für diese interne Kategorie: `Nicht kategorisiert`.
 
 ## Live-TV Favoriten
 
-Live-TV Favoriten sind anbieteruebergreifend.
+Live-TV Favoriten sind anbieterübergreifend.
 
 Sie erscheinen als eigene globale Kategorie oberhalb des ersten Providers.
 
@@ -66,13 +66,13 @@ Jeder Sender muss fachlich folgende Informationen unterstuetzen:
 - Favoritenstatus
 - Catch-Up-Status, falls verfuegbar
 
-Kanalnummern werden vom Provider uebernommen.
+Kanalnummern werden vom Provider übernommen.
 
 Es erfolgt keine automatische Neuvergabe von Kanalnummern.
 
 ## EPG
 
-Der Live-TV-Bereich muss aktuelle und folgende Programminformationen anzeigen koennen.
+Der Live-TV-Bereich muss aktuelle und folgende Programminformationen anzeigen können.
 
 Mindestens unterstuetzt:
 
@@ -80,7 +80,7 @@ Mindestens unterstuetzt:
 - Startzeit
 - Endzeit
 - Beschreibung, falls vorhanden
-- naechste Sendung
+- nächste Sendung
 
 Wenn kein EPG vorhanden ist, bleibt der Sender sichtbar.
 
@@ -99,11 +99,14 @@ Der Startablauf ist fest und nicht konfigurierbar.
 Erstes OK in der Senderspalte:
 
 - aktiviert den Sender-Modus
-- zeigt die EPG-Spalte zum gewaehlten Sender
+- zeigt die EPG-Spalte zum gewählten Sender
 - startet gleichzeitig rechts die Live-Vorschau
-- uebergibt den Fokus an die aktuelle Sendung in der EPG-Spalte, sofern vorhanden
+- übergibt den Fokus an die aktuelle Sendung in der EPG-Spalte, sofern vorhanden
+- übergibt den Fokus an den No-EPG-Placeholder in der EPG-Spalte, wenn keine aktuelle EPG-Sendung vorhanden ist
 
-Zweites OK auf der fokussierten aktuellen Sendung startet die Vollbildwiedergabe des ausgewaehlten Senders.
+Zweites OK auf der fokussierten aktuellen Sendung startet die Vollbildwiedergabe des ausgewählten Senders.
+
+Wenn keine aktuelle EPG-Sendung vorhanden ist, erhält der No-EPG-Zustand in der EPG-Spalte den Fokus. OK auf diesen Zustand startet die Vollbildwiedergabe des ausgewählten Senders. Catch-Up ist in diesem Zustand nicht verfügbar.
 
 Es gibt keine Preview-Einstellung und keinen direkten Vollbildstart beim ersten OK in der Senderspalte.
 
@@ -115,7 +118,7 @@ Neue Wiedergabe beendet die vorherige Wiedergabe.
 
 Im Live-TV Browser bewegen CH+ und CH- den Fokus in der Senderliste.
 
-Im Player starten CH+ und CH- direkt den naechsten oder vorherigen Sender.
+Im Player starten CH+ und CH- direkt den nächsten oder vorherigen Sender.
 
 Bei schnellem Kanalwechsel gilt:
 
@@ -133,27 +136,33 @@ Voraussetzungen:
 - der EPG-Programmpunkt besitzt verwertbare Start- und Endzeit
 - der Programmpunkt liegt im erlaubten Rueckblickfenster des Providers und der lokalen EPG-Aufbewahrung
 
-Ohne EPG ist Catch-Up fuer den betroffenen Sender nicht verfuegbar.
+Ohne EPG ist Catch-Up für den betroffenen Sender nicht verfuegbar.
 
-Aktuelle Live-Sendungen werden ueber Live-TV beziehungsweise Timeshift behandelt und nicht als Catch-Up gestartet.
+Aktuelle Live-Sendungen werden über Live-TV beziehungsweise Timeshift behandelt und nicht als Catch-Up gestartet.
 
-Catch-Up laeuft in v1 im internen Vivicast-Player. Eine Uebergabe an externe Player ist fuer Live-TV- oder Catch-Up-Kontexte nicht Teil von v1.
+Catch-Up laeuft in v1 im internen Vivicast-Player. Eine Übergabe an externe Player ist für Live-TV- oder Catch-Up-Kontexte nicht Teil von v1.
 
-Catch-Up erzeugt keinen `PlaybackProgressEntity`-Datensatz und kein VOD-Resume-Ziel. Der Start bleibt an den ausgewaehlten EPG-Kontext gebunden.
+Catch-Up erzeugt keinen `PlaybackProgressEntity`-Datensatz und kein VOD-Resume-Ziel. Der Start bleibt an den ausgewählten EPG-Kontext gebunden.
 
 ## Fehlerbehandlung
 
 Bei Senderstartfehlern:
 
-- bis zu 5 Versuche
+- maximal 5 Versuche insgesamt inklusive Erstversuch
+- ein Versuch gilt als fehlgeschlagen, wenn ExoPlayer einen Fehler meldet oder innerhalb von 10 Sekunden kein abspielbarer Zustand erreicht wird
+- Retry-Abstaende: 0,5 s, 1 s, 2 s, 4 s
 - danach Fehlerzustand anzeigen
 
 Bei Streamabbruch:
 
-- bis zu 5 Reconnect-Versuche
+- Reconnect nur fuer den zuletzt aktiven Sender
+- maximal 5 Versuche insgesamt inklusive Erstversuch
+- waehrend Reconnect nicht blockierenden Reconnect-Hinweis anzeigen
 - danach Fehlerzustand anzeigen
 
-Refreshes duerfen aktive Streams nicht unterbrechen.
+Manuelles `Erneut versuchen` setzt den Zaehler zurueck. Senderwechsel bricht laufende Start- oder Retry-Vorgaenge ab.
+
+Refreshes dürfen aktive Streams nicht unterbrechen.
 
 ---
 

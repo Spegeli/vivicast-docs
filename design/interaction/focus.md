@@ -31,7 +31,7 @@ Player exceptions:
 - Leaving Live TV player returns to focused channel.
 - Leaving movie player returns to movie detail.
 - Leaving series player returns to episode or series detail.
-- An Auto-Next panel initially focuses `Naechste Folge abspielen` or `Naechste Folge in X`.
+- An Auto-Next panel initially focuses `Nächste Folge abspielen` or `Nächste Folge in X`.
 - OK on that primary action starts the next episode immediately.
-- A visible `Zurueck` button is shown beside the primary Auto-Next action at the same time in both states; the panel has no `Abbrechen` action.
-- OK on `Zurueck` or remote Back cancels any pending countdown and returns to the series detail with the previous season/episode context restored instead of merely hiding the panel.
+- A visible `Zurück` button is shown beside the primary Auto-Next action at the same time in both states; the panel has no `Abbrechen` action.
+- OK on `Zurück` or remote Back cancels any pending countdown and returns to the series detail with the previous season/episode context restored instead of merely hiding the panel.

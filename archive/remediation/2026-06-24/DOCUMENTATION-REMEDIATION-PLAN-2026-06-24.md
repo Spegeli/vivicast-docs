@@ -331,7 +331,7 @@ Aktuelle erlaubte Treffer:
 - `prd/PRD-v1/06-data-model.md:1231`: Medien-Cache nicht in Room, DataStore oder Standard-Backup; Cache-Abgrenzung.
 - `prd/PRD-v1/08-android-tv-security.md:256`: Security-Flags duerfen in DataStore oder gleichwertigem privatem Speicher liegen; kein Restore-Ziel und kein Settings-Vertragsfeld.
 - `prd/PRD-v1/09-implementation-and-dod.md:404`: Diagnosedaten nur appinterne Dateien; DoD-Abgrenzung, keine Settings-Alternative.
-- `design/review/07-data-model-qa.md:132`: QA-Spiegelung der Diagnosedaten-Abgrenzung; Review-Hilfe, keine Normquelle.
+- `archive/review/2026-06-24/07-data-model-qa.md:132`: QA-Spiegelung der Diagnosedaten-Abgrenzung; Review-Hilfe, keine Normquelle.
 
 Historische Treffer:
 

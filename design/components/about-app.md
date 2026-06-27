@@ -4,11 +4,11 @@ Status: verbindlich v6
 
 ## Zweck
 
-Diese Datei beschreibt wiederverwendbare Komponenten fuer den Settings-Bereich `Über die App`.
+Diese Datei beschreibt wiederverwendbare Komponenten für den Settings-Bereich `Über die App`.
 
 ## App Info Row
 
-Verwendung fuer technische App-Informationen.
+Verwendung für technische App-Informationen.
 
 Zeigt:
 
@@ -23,54 +23,54 @@ Beispiele:
 - Paketname
 - Datenbank-Version
 - Android-Version
-- Geraetemodell
+- Gerätemodell
 - Player-Engine
 
 Regeln:
 
-- Werte muessen aus TV-Entfernung lesbar sein.
-- Lange Werte duerfen gekuerzt werden, muessen aber in Detailansicht voll sichtbar sein.
-- Kopierbare Werte duerfen eine sichtbare Kopieraktion anbieten.
+- Werte müssen aus TV-Entfernung lesbar sein.
+- Lange Werte dürfen gekuerzt werden, müssen aber in Detailansicht voll sichtbar sein.
+- Kopierbare Werte dürfen eine sichtbare Kopieraktion anbieten.
 
 ## About Action Row
 
-Verwendung fuer Aktionen im Über-die-App-Tab.
+Verwendung für Aktionen im Über-die-App-Tab.
 
 Beispiele:
 
 - Versionsinformationen kopieren
-- Diagnose und Support oeffnen
-- Lizenzhinweise oeffnen
-- Datenschutzinformationen oeffnen
-- Drittanbieter-Lizenzen oeffnen
+- Diagnose und Support öffnen
+- Lizenzhinweise öffnen
+- Datenschutzinformationen öffnen
+- Drittanbieter-Lizenzen öffnen
 
 Regeln:
 
 - OK fuehrt Aktion aus oder oeffnet Detaildialog.
 - Kopieraktionen zeigen nach Erfolg einen kurzen Status.
-- Aktionen duerfen nicht zu Backup, Restore oder Daten-zuruecksetzen fuehren.
+- Aktionen dürfen nicht zu Backup, Restore oder Daten-zurücksetzen fuehren.
 
 ## Legal Text Panel
 
-Verwendung fuer Datenschutz, Lizenzhinweise und Drittanbieter-Lizenzen.
+Verwendung für Datenschutz, Lizenzhinweise und Drittanbieter-Lizenzen.
 
 Regeln:
 
 - Textbereich ist per D-Pad scrollbar.
-- Zurueck schliesst zuerst den Panel.
-- Lange Listen duerfen lazy gerendert werden.
-- Links sind optional und muessen per Fernbedienung erreichbar sein.
+- Zurück schliesst zuerst den Panel.
+- Lange Listen dürfen lazy gerendert werden.
+- Links sind optional und müssen per Fernbedienung erreichbar sein.
 
 ## Diagnose und Support Panel
 
-Verwendung fuer allgemeine technische Support-Informationen und den Einstieg in den Diagnoseprotokoll-Export.
+Verwendung für allgemeine technische Support-Informationen und den Einstieg in den Diagnoseprotokoll-Export.
 
 Der Panel darf anzeigen:
 
 - App- und Build-Version
 - Paketname
 - Android-Version
-- Geraetemodell
+- Gerätemodell
 - Datenbank-Version
 - aktive Sprache
 - technische Zaehler ohne private Details
@@ -78,7 +78,7 @@ Der Panel darf anzeigen:
 
 Regeln:
 
-- Allgemeine Supportdaten duerfen kopiert werden.
+- Allgemeine Supportdaten dürfen kopiert werden.
 - Kopierte Supportdaten entsprechen den sichtbar angezeigten allgemeinen Informationen.
 - Der Panel zeigt keine Quelleninhalte und keine Zugangswerte.
 - Der Panel zeigt niemals Logzeilen oder den Inhalt einer Diagnoseprotokolldatei.
@@ -112,7 +112,7 @@ Regeln:
 - Standard ist 1 Tag.
 - Bei ausgeschalteter Diagnoseprotokollierung bleibt die Zeile sichtbar, ist aber deaktiviert.
 - Eine Verkuerzung der Dauer stoesst unmittelbar die Altersbereinigung an.
-- Groessenlimit und Rotation werden nicht als weitere UI-Komponente dargestellt.
+- Größenlimit und Rotation werden nicht als weitere UI-Komponente dargestellt.
 
 ## Diagnoseprotokoll Export Action
 
@@ -132,7 +132,7 @@ MIME-Type: application/zip
 Dateiname: vivicast-diagnostics-YYYYMMDD-HHmmss.zip
 ```
 
-Das Archiv enthaelt verpflichtend diese UTF-8-Eintraege:
+Das Archiv enthält verpflichtend diese UTF-8-Eintraege:
 
 ```text
 vivicast-diagnostics.log
@@ -149,13 +149,13 @@ Regeln:
 - Der Inhalt der Logdatei darf vor oder nach dem Export nicht in der App dargestellt werden.
 - Es gibt keine Vorschau, keinen Log-Textbereich und keine Aktion zum Kopieren des Logdatei-Inhalts.
 - Bei einem Exportfehler wird nicht stillschweigend auf ein anderes Dateiformat gewechselt.
-- `vivicast-diagnostics.log` enthaelt nur bereinigte technische Ereignisse zu App, Playlist/EPG, Player, Netzwerk, Backup/Restore, Cache und Datenbank sowie bereinigte Stacktraces.
-- `diagnostics-metadata.json` enthaelt App-/Build-, Geraete-, Datenbank-, Sprach-, Zeitzonen-, Exportzeit-, tatsaechlichen Zeitraum-, Sitzungs-, Grenzwert- und Trunkierungsdaten.
+- `vivicast-diagnostics.log` enthält nur bereinigte technische Ereignisse zu App, Playlist/EPG, Player, Netzwerk, Backup/Restore, Cache und Datenbank sowie bereinigte Stacktraces.
+- `diagnostics-metadata.json` enthält App-/Build-, Geräte-, Datenbank-, Sprach-, Zeitzonen-, Exportzeit-, tatsaechlichen Zeitraum-, Sitzungs-, Grenzwert- und Trunkierungsdaten.
 - Der Export fuegt nur die noch vorhandenen Segmente chronologisch zusammen.
-- Intern gelten 20 MiB Gesamtlimit, 2 MiB pro Segment und hoechstens drei Segmente beziehungsweise 6 MiB Logdaten pro Sitzung.
+- Intern gelten 20 MiB Gesamtlimit, 2 MiB pro Segment und höchstens drei Segmente beziehungsweise 6 MiB Logdaten pro Sitzung.
 - Eine gekuerzte Historie wird mit `contentTruncated` und den zugehoerigen Zaehlern ausgewiesen.
 - Zugangswerte, Tokens, Cookies, HTTP-Header, URLs, Rohdaten, Provider-/Inhaltsnamen, Suchverlauf, Datenbank-Dumps, Screenshots und ungefiltertes System-Logcat sind ausgeschlossen.
-- Neutrale interne IDs duerfen bei Bedarf als technische Referenz verwendet werden.
+- Neutrale interne IDs dürfen bei Bedarf als technische Referenz verwendet werden.
 
 ## Export Status
 
@@ -164,13 +164,13 @@ Verwendung nach dem Diagnoseprotokoll-Export.
 Regeln:
 
 - Status zeigt Erfolg oder konkrete Fehlerursache.
-- Optional darf das gewaehlte Exportziel oder der ZIP-Dateiname benannt werden.
+- Optional darf das gewählte Exportziel oder der ZIP-Dateiname benannt werden.
 - Status darf keine Logzeilen oder Ausschnitte aus der Exportdatei enthalten.
 - Eine unvollstaendige Datei darf nicht als erfolgreicher Export gemeldet werden.
 
 ## Copied Status
 
-Verwendung nach Kopieraktionen fuer allgemeine Support- oder Versionsinformationen.
+Verwendung nach Kopieraktionen für allgemeine Support- oder Versionsinformationen.
 
 Regeln:
 

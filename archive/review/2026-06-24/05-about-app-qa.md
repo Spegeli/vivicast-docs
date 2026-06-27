@@ -6,7 +6,7 @@ Status: verbindliche Review-Referenz v6
 
 Diese Datei definiert QA-Punkte fuer den Settings-Tab `Über die App`.
 
-Sie ergaenzt `design/review/04-visual-acceptance-checklist.md`.
+Sie ergaenzt `archive/review/2026-06-24/04-visual-acceptance-checklist.md`.
 
 ## Pruefen
 

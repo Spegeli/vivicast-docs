@@ -1,52 +1,22 @@
 # 05 – Settings and Search Mockup Specification
 
-Status: Spezifikation v7
+Status: aktive High-Fidelity-Zielbeschreibung v7
 
-## Ziel
+Diese Datei beschreibt die visuelle Absicht für Suche und Einstellungen. Exakte Farben, Spacing, Radien, Typografie und Fokuswerte liegen zentral unter `design/design-system/compose-template/`.
 
-Diese Spezifikation beschreibt die visuellen Mockups für Suche und Einstellungen.
+## Suche
 
-Beide Screens sind informationslastig und müssen trotz vieler Optionen ruhig und TV-tauglich bleiben.
-
-## Referenz
+Struktur:
 
 ```text
-Wireframes:
-- design/wireframes/04-search.md
-- design/wireframes/05-settings.md
-Design-System:
-- design/design-system/
-```
-
----
-
-# Suche Mockup
-
-## Komposition
-
-```text
-Top Bar
+Top Navigation
 Suchfeld + Mikrofon
-Suchverlauf oder Ergebnisbereiche
+Suchverlauf
+Ergebnisgruppen
+Detailbereich für fokussiertes Ergebnis
 ```
 
-## Suchfeld
-
-```text
-groß
-oben positioniert
-klar fokussierbar
-Placeholder: Suche...
-```
-
-Mikrofon:
-
-```text
-rechts neben Suchfeld
-nur durch Fokus + OK aktivierbar
-```
-
-## Ergebnisgruppen
+Ergebnisgruppen:
 
 ```text
 Kanäle
@@ -55,74 +25,26 @@ Serien
 EPG
 ```
 
-Jede Gruppe als horizontale Reihe.
+Regeln:
 
-## Ergebnis-Card Stil
+- Suchverlauf bleibt dauerhaft sichtbar
+- keine eigene Episoden-Gruppe
+- keine verpflichtende `Alle anzeigen`-Aktion
+- Ergebnisgruppen sind horizontale Rows
+- fokussierte Ergebniscard besitzt klaren cyanfarbenen Fokus
 
-Kanäle:
+## Einstellungen
 
-```text
-Logo/Icon
-Sendername
-Provider oder aktuelle Sendung
-```
-
-Filme/Serien:
+Struktur:
 
 ```text
-Poster klein
-Titel
-Jahr/Bewertung/Fortsetzen optional
+Top Navigation
+Einstellungsgruppen links
+Optionsliste rechts
+Detail-/Dialogbereich
 ```
 
-EPG:
-
-```text
-Sendungstitel
-Sender
-Zeit
-```
-
-## Keine Treffer
-
-Mockup soll zeigen:
-
-```text
-Keine Ergebnisse gefunden
-Andere Schreibweise
-Kürzeren Suchbegriff
-Teil des Titels
-```
-
-## Fokus
-
-Primärfokus für Ergebnis-Mockup:
-
-```text
-erster Treffer in Kanäle
-```
-
-Primärfokus für leeren Suchscreen:
-
-```text
-Suchfeld
-```
-
----
-
-# Einstellungen Mockup
-
-## Komposition
-
-```text
-Top Bar
-linke Bereichsliste
-rechte Optionsliste
-```
-
-## Linke Bereichsliste
-
-Bereiche:
+Settings-Gruppen:
 
 ```text
 Allgemein
@@ -131,161 +53,69 @@ EPG
 Optik
 Wiedergabe
 Kindersicherung
+Speicher & Verlauf
 Backup
 Über die App
 ```
 
-Aktiver Bereich:
+Settings Row zeigt:
 
 ```text
-Akzentlinie links
-aufgehellte Fläche
-```
-
-Fokussierter Bereich:
-
-```text
-Fokusrahmen oder deutlichere Fläche
-```
-
-## Rechte Optionsliste
-
-Options Row:
-
-```text
+Icon
 Titel
-Beschreibung optional
-aktueller Wert rechts
+kurzer Hilfetext
+rechtsbuendiger Wert oder Status
+Chevron / Toggle / Aktion
 ```
 
-Beispiele:
+## Speicher & Verlauf
+
+Eigener Settings-Bereich für:
 
 ```text
-Startbereich                    [Home]
-Hintergrundaktualisierung       [Ein]
-EPG-Aktualisierungsintervall    [24 Stunden]
-Schriftgröße                    [Mittel]
-Timeshift                       [Ein]
-Maximale Timeshift-Dauer        [30 Minuten]
-Timeshift-Speicher              [Automatisch]
-Automatisch nächste Folge       [Aus]
-Countdown nächste Folge         [10 Sekunden] {Deaktiviert}
+Medien-Cache
+Cache leeren
+Verlauf löschen
 ```
 
-Startbereich-Darstellung:
+Nicht Teil der Backup-Gruppe.
+
+## Backup
+
+Backup enthält:
 
 ```text
-Auswahlwerte: Home, Live-TV, Filme, Serien.
-Home ist bei Erstinitialisierung ausgewaehlt.
-Die Zeile weist darauf hin, dass Aenderungen ab dem naechsten regulaeren App-Start gelten.
+Backup exportieren
+Backup importieren
+Backup-Ziel
+Letzte Sicherung
+Vorhandene Backups verwalten
 ```
 
-EPG-Darstellung:
+Kein Cache und kein Verlauf.
+
+## Visuelle Quellen
+
+Aktuelle Zielbilder:
 
 ```text
-Das globale Intervall zeigt bei Erstinitialisierung 24 Stunden.
-App-Start, Playlist-Aenderung und manuelle Aktualisierung bleiben getrennte Ausloeser.
-App-Start und Playlist-Aenderung starten jeweils mit Ein und sind gespeicherte DataStore-Optionen.
-Die EPG-Aktualisierungshistorie ist nur Anzeige aus Refresh-Metadaten.
+design/mockups/high-fidelity/rendered/05_search.png
+design/mockups/high-fidelity/rendered/07_settings_general.png
+design/mockups/high-fidelity/rendered/08_settings_playlists.png
+design/mockups/high-fidelity/rendered/09_settings_epg.png
+design/mockups/high-fidelity/rendered/10_settings_appearance.png
+design/mockups/high-fidelity/rendered/11_settings_playback.png
+design/mockups/high-fidelity/rendered/12_settings_parental_controls_pin_dialog.png
+design/mockups/high-fidelity/rendered/13_settings_backup_export_dialog.png
 ```
 
-Timeshift-Darstellung:
+Konkrete Tokenquelle:
 
 ```text
-Timeshift ist standardmaessig aktiviert.
-Dauerwerte: 15, 30, 60 und 120 Minuten.
-Speicherwerte: Automatisch, RAM und Festplatte.
-Bei Timeshift Aus bleiben Dauer und Speicher sichtbar, aber deaktiviert.
+design/design-system/compose-template/
 ```
 
-Auto-Next-Darstellung:
 
-```text
-Automatisch nächste Folge ist standardmaessig Aus.
-Countdown-Werte: 5, 10, 15 und 30 Sekunden; Standard 10 Sekunden.
-Bei Aus bleibt die Countdown-Zeile sichtbar, aber deaktiviert.
-Bei Ein wird sie fokussierbar und aenderbar.
-Eine Abschluss-Schwelle wird nicht als Option dargestellt; v1 verwendet fest 95 Prozent.
-```
+## Label-Konsistenz
 
-Wiedergabe-Wirkung:
-
-```text
-Audio- und Untertitel-Sprache werden beim Streamstart angewendet.
-Manuelle Track-Auswahl im Player gilt nur fuer die aktuelle Wiedergabe.
-Externer Player gilt nur fuer Filme und einzelne Episoden.
-Live-TV und Catch-Up bleiben interne Vivicast-Player-Kontexte.
-```
-
-## Providerverwaltung Mockup
-
-Soll enthalten:
-
-```text
-Provider A {Aktiv}
-Provider B {Verbindungsfehler}
-Provider C {Deaktiviert}
-Provider hinzufügen Button
-```
-
-## Destruktiver Dialog Mockup
-
-Provider löschen:
-
-```text
-Provider wirklich löschen?
-Diese Aktion kann nicht rückgängig gemacht werden.
-[Abbrechen] [Löschen]
-```
-
-Standardfokus:
-
-```text
-Abbrechen
-```
-
----
-
-# Visuelle Regeln
-
-## Suche
-
-```text
-luftig
-wenige Ergebnisreihen gleichzeitig
-Suchfeld dominant
-keine überladene Startseite
-```
-
-## Einstellungen
-
-```text
-Master-Detail klar sichtbar
-Optionswerte rechts bündig
-Beschreibungen kurz
-keine Tabellenoptik
-```
-
-## Fokus
-
-```text
-bei Suche: Ergebnisfokus deutlich als Karte
-bei Settings: Zeilenfokus deutlich als breite Fläche
-```
-
----
-
-# Akzeptanz für visuelle Mockups
-
-```text
-Suchfeld ist sofort als primärer Einstieg sichtbar
-Mikrofon wirkt wie Aktion, nicht automatische Funktion
-Ergebnisgruppen sind klar getrennt
-Keine-Treffer-Zustand ist hilfreich
-Settings-Bereiche links sind eindeutig
-Optionswerte rechts sind schnell erfassbar
-Timeshift zeigt Ein/Aus, maximale Dauer und Speicher getrennt
-Abhaengige Timeshift-Optionen besitzen einen klaren deaktivierten Zustand
-Providerstatus ist sichtbar
-Destruktive Dialoge fokussieren Abbrechen
-```
+Sichtbare Favoriten-Aktionen verwenden `Zu Favoriten` oder `Zu Favoriten hinzufügen`. Merkliste-/Meine-Liste-Terminologie ist in v1 nicht zulässig.

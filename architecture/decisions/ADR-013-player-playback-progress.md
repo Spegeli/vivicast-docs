@@ -155,6 +155,18 @@ Wenn Speicher oder Stream-Eigenschaften Timeshift verhindern, laeuft Live-TV ohn
 
 `Cache leeren` darf aktive Stream- oder Timeshift-Puffer nicht entfernen.
 
+### Hintergrund und App-Stopp
+
+Beim Wechsel in den Hintergrund stoppt Vivicast interne Wiedergabe, weil Hintergrundwiedergabe kein v1-Ziel ist.
+
+VOD-Fortschritt wird vorher gespeichert, soweit technisch möglich.
+
+Live-TV schreibt keinen `PlaybackProgressEntity`, behaelt aber den Rueckkehrkontext.
+
+Timeshift-Puffer wird bei App-Stopp, Prozessende oder Senderwechsel verworfen.
+
+Bei Rueckkehr zeigt Vivicast den letzten Player-Kontext kontrolliert ohne automatische Hintergrundwiedergabe.
+
 ## Konsequenzen
 
 - Player-Startlogik muss ueber einen expliziten PlaybackRequest laufen.

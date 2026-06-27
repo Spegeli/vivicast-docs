@@ -440,8 +440,8 @@ Betroffen insbesondere:
 - `DOCS-GOVERNANCE.md`
 - `codex/README.md`
 - `codex/coding-rules.md`
-- `design/review/01-wireframe-design-system-check.md`
-- `design/review/02-high-fidelity-mockup-review.md`
+- `archive/review/2026-06-24/01-wireframe-design-system-check.md`
+- `archive/review/2026-06-24/02-high-fidelity-mockup-review.md`
 - `design/mockups/high-fidelity/02-ui-direction-decisions.md`
 
 Abschluss: Jeder Entwickler erkennt sofort, welche Datei bei welcher Frage gewinnt.
@@ -987,7 +987,7 @@ Abschluss: Ein neuer Entwickler kann einen technischen Plan erstellen, ohne Prod
 
 ## Umsetzung
 
-- `design/review/10-final-cross-qa-and-dry-run.md` als finales Abschlussgate angelegt.
+- `archive/review/2026-06-24/10-final-cross-qa-and-dry-run.md` als finales Abschlussgate angelegt.
 - Technische Pruefungen fuer Markdown-Dateiverweise, Codefences, offene V-/T-Marker, alte Kapitelkollisionen, alte Diagnose-Kapitelreferenz, redundante `.gitkeep`-Dateien und ueberholte Begriffe dokumentiert.
 - Traceability-Matrix fuer Home, Live-TV, VOD, Suche, Settings, Datenmodell, Quellen/Parser, EPG, Player/Progress, Backup/Restore, Schutzkonzept, Android-TV-Systemintegration und Tests erstellt.
 - Readiness je Hauptbereich als bereit fuer App-Repo-Planung bewertet.

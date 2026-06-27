@@ -69,6 +69,7 @@ Short priority rule:
 7. Diagrams are non-normative onboarding aids.
 8. Current rendered PNGs under `design/mockups/high-fidelity/rendered/` are visual target references, but not normative sources for navigation, labels, or UI text.
 9. `design/design-system/compose-template/` is a technical designsystem template reference, not app code and not final app module structure.
+10. External TV sample projects are technical references only. JetStreamCompose, TvMaterialCatalog, and android/tv-samples must not override Vivicast visual target, tokens, screen structure, labels, product logic, PRD, or ADRs.
 10. Archived files are historical work evidence and not active implementation sources.
 
 This masterplan must not override PRD, ADR, Design, Test Strategy, Codex Rules, or Governance.
@@ -576,6 +577,8 @@ Fully implement Live-TV browsing.
 - large channel lists remain usable
 - focus paths are TV-suitable
 - Live-TV EPG is displayed correctly
+- No-EPG-Fallback is focusable and starts fullscreen via OK without Catch-Up context
+- CH+ / CH- follow different browser/player behavior according to specification
 - provider isolation remains intact
 
 ## Package 9: VOD Movies and Series
@@ -628,7 +631,7 @@ Implement local search and system search.
 - search screen
 - search history
 - live search
-- search groups: Filme, Serien, Kanäle, Programme
+- search groups: Kanäle, Filme, Serien, EPG
 - FTS indices
 - normalization
 - ranking and limits
@@ -650,6 +653,8 @@ Implement local search and system search.
 - visible search group name is `Kanäle`
 - technical Channel terms remain allowed internally
 - search is local and performant
+- EPG results open Live-TV sender mode with the matching programme focused
+- Android TV system search does not publish EPG results
 - search history can be deleted
 
 ## Package 11: Player, Playback, Catch-Up, Timeshift, and Progress
@@ -690,6 +695,9 @@ Fully implement player functionality.
 - PlaybackRequest follows v1 network policy
 - no provider-specific header, cookie, or User-Agent concept exists
 - global User-Agent is applied centrally
+- Player overlay contains no EPG chip
+- Retry/Reconnect follows the documented policy
+- background changes stop playback in a controlled way and save VOD progress where possible
 - progress rules match PRD/ADR
 
 ## Package 12: Backup, Restore, PIN, and Protection
@@ -702,7 +710,7 @@ Implement backup/restore and parental protection safely.
 
 - backup export
 - backup import/restore
-- full backup and partial restore according to PRD
+- backup export/import and restore-replace according to PRD; no merge mode, no conflict dialog, no import-as-copy
 - secret/PIN handling
 - restore rules for PIN
 - set/change/disable PIN
@@ -777,6 +785,8 @@ Bring the app to v1 release readiness.
 - player/progress tests
 - Android TV focus QA
 - performance budgets
+- paging/windowed loading for large lists
+- no full provider library in UI state
 - memory/index checks
 - regression tests for main flows
 - final app-repo evidence

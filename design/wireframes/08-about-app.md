@@ -15,12 +15,12 @@ Der Tab zeigt App-Informationen, rechtliche Hinweise sowie Diagnose und Support.
 | Vivicast        Home | Live-TV | Filme | Serien | Suche | Einstellungen   |
 +----------------------+---------------------------------------------------------+
 | GRUPPEN              | UEBER DIE APP                                           |
-| [Allgemein]          | (*) App-Informationen                  [Oeffnen]       |
+| [Allgemein]          | (*) App-Informationen                  [Öffnen]       |
 | [Wiedergabelisten]   |     Versionsinformationen kopieren     [Kopieren]      |
-| [EPG]                |     Diagnose und Support               [Oeffnen]       |
-| [Optik]              |     Lizenzhinweise                     [Oeffnen]       |
-| [Wiedergabe]         |     Datenschutzinformationen           [Oeffnen]       |
-| [Kindersicherung]    |     Drittanbieter-Lizenzen             [Oeffnen]       |
+| [EPG]                |     Diagnose und Support               [Öffnen]       |
+| [Optik]              |     Lizenzhinweise                     [Öffnen]       |
+| [Wiedergabe]         |     Datenschutzinformationen           [Öffnen]       |
+| [Kindersicherung]    |     Drittanbieter-Lizenzen             [Öffnen]       |
 | [Backup]             |                                                         |
 | (*)[Über die App]   |                                                         |
 +----------------------+---------------------------------------------------------+
@@ -38,11 +38,11 @@ Der Tab zeigt App-Informationen, rechtliche Hinweise sowie Diagnose und Support.
 | Paketname             com.vivicast.tv                                          |
 | Datenbank-Version     <DB-Version>                                             |
 | Android-Version       <Android-Version>                                        |
-| Geraetemodell         <Modell>                                                 |
+| Gerätemodell         <Modell>                                                 |
 | Player-Engine         Media3 / ExoPlayer                                       |
 | UI                    Jetpack Compose for TV                                   |
 |                                                                                |
-| [Schliessen]                                                                  |
+| [Schließen]                                                                  |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -66,7 +66,7 @@ Der Tab zeigt App-Informationen, rechtliche Hinweise sowie Diagnose und Support.
 | Build-Nummer                 <Build>                                           |
 | Paketname                    com.vivicast.tv                                   |
 | Android-Version              <Android-Version>                                 |
-| Geraetemodell                <Modell>                                          |
+| Gerätemodell                <Modell>                                          |
 | Datenbank-Version            <DB-Version>                                      |
 | Sprache                      <Sprache>                                         |
 | Provider                     <n>                                               |
@@ -78,7 +78,7 @@ Der Tab zeigt App-Informationen, rechtliche Hinweise sowie Diagnose und Support.
 |     Aufbewahrungsdauer                             [1 Tag] (deaktiviert)       |
 |                                                                                |
 | [Diagnoseprotokoll exportieren] [Support-Informationen kopieren]               |
-| [Schliessen]                                                                   |
+| [Schließen]                                                                   |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -87,10 +87,10 @@ Regeln:
 ```text
 Diagnoseprotokollierung ist standardmaessig Aus.
 Aufbewahrungsdauer bietet 1 bis 7 Tage und steht standardmaessig auf 1 Tag.
-Bei ausgeschalteter Diagnoseprotokollierung bleibt die Aufbewahrungsdauer sichtbar, ist aber nicht aenderbar.
+Bei ausgeschalteter Diagnoseprotokollierung bleibt die Aufbewahrungsdauer sichtbar, ist aber nicht änderbar.
 Vorhandene Sitzungen bleiben bis zu ihrem regulaeren Ablauf exportierbar.
-Groessenlimit und Rotation erzeugen keine sichtbare Einstellung.
-Allgemeine Support-Informationen duerfen angezeigt und kopiert werden.
+Größenlimit und Rotation erzeugen keine sichtbare Einstellung.
+Allgemeine Support-Informationen dürfen angezeigt und kopiert werden.
 Quelleninhalte und Zugangswerte werden nicht angezeigt oder kopiert.
 Der Inhalt des Diagnoseprotokolls wird niemals in der App angezeigt.
 Es gibt keine Logvorschau und keinen kopierbaren Logtext.
@@ -98,10 +98,10 @@ Exportformat ist ein ZIP-Archiv mit MIME-Type application/zip.
 Dateiname: vivicast-diagnostics-YYYYMMDD-HHmmss.zip
 Verpflichtende Eintraege: vivicast-diagnostics.log, diagnostics-metadata.json
 Loginhalt: nur bereinigte technische Ereignisse
-Metadaten: App/Build, Geraet, Datenbank, Sprache, Zeitzone, Exportzeit, tatsaechlicher Zeitraum, Sitzungen, Grenzwerte, Kuerzungen
+Metadaten: App/Build, Gerät, Datenbank, Sprache, Zeitzone, Exportzeit, tatsaechlicher Zeitraum, Sitzungen, Grenzwerte, Kuerzungen
 Interne Grenzen: 20 MiB gesamt, 2 MiB pro Segment, maximal 3 Segmente beziehungsweise 6 MiB pro Sitzung
 Keine Zugangswerte, URLs, Rohdaten, Inhaltsnamen, Suchverlaeufe, Dumps, Screenshots oder ungefiltertes System-Logcat
-Technische Zuordnungen nur ueber neutrale interne IDs
+Technische Zuordnungen nur über neutrale interne IDs
 ```
 
 ## Export erfolgreich
@@ -124,7 +124,7 @@ Der Erfolgs- oder Fehlerstatus darf keinen Inhalt der exportierten Logdatei anze
 | Diagnoseprotokoll konnte nicht exportiert werden.        |
 | <konkrete Fehlerursache ohne Loginhalt>                   |
 |                                                          |
-| [Erneut versuchen] [Schliessen]                           |
+| [Erneut versuchen] [Schließen]                           |
 +----------------------------------------------------------+
 ```
 
@@ -138,7 +138,7 @@ Es erfolgt kein stiller Wechsel auf ein anderes Dateiformat.
 +--------------------------------------------------------------------------------+
 | <lokaler Lizenztext oder Linkliste>                                             |
 |                                                                                |
-| [Schliessen]                                                                  |
+| [Schließen]                                                                  |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -150,7 +150,7 @@ Es erfolgt kein stiller Wechsel auf ein anderes Dateiformat.
 +--------------------------------------------------------------------------------+
 | <lokaler Datenschutztext oder Informationsseite>                                |
 |                                                                                |
-| [Schliessen]                                                                  |
+| [Schließen]                                                                  |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -164,7 +164,7 @@ Es erfolgt kein stiller Wechsel auf ein anderes Dateiformat.
 |     Media3 ...                                                                 |
 |     weitere Bibliothek ...                                                     |
 |                                                                                |
-| [Schliessen]                                                                  |
+| [Schließen]                                                                  |
 +--------------------------------------------------------------------------------+
 ```
 
@@ -173,7 +173,7 @@ Es erfolgt kein stiller Wechsel auf ein anderes Dateiformat.
 ```text
 Anzeige oder Vorschau von Logdatei-Inhalten
 Kopieren von Logdatei-Inhalten
-Daten zuruecksetzen
+Daten zurücksetzen
 Backup oder Restore
 Wiedergabelistenverwaltung
 EPG-Verwaltung

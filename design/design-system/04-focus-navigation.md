@@ -163,8 +163,9 @@ kein zusätzlicher OK-Druck nötig
 Hoch/Runter -> Sender wechseln
 OK          -> Sender-Modus + EPG-Spalte + Live-Vorschau
                Fokus auf aktuelle EPG-Sendung, sofern vorhanden
+               sonst Fokus auf No-EPG-Placeholder
 Links       -> aktive Kategorie
-Rechts      -> EPG/Vorschau-Aktionen, falls vorhanden
+Rechts      -> Sender-EPG, falls Sender-Modus aktiv ist
 ```
 
 Beim Fokus auf Sender:
@@ -174,24 +175,39 @@ EPG-Panel aktualisieren
 keine Videovorschau starten
 ```
 
-Nach dem ersten OK springt der Fokus auf die aktuelle EPG-Sendung, sofern vorhanden.
+Nach dem ersten OK springt der Fokus auf die aktuelle EPG-Sendung, sofern vorhanden. Wenn keine aktuelle EPG-Sendung vorhanden ist, erhaelt der No-EPG-Placeholder in der EPG-Spalte den Fokus.
 
 Der Ablauf ist fest. Es gibt keine Preview-Einstellung und keinen direkten Vollbildstart beim ersten OK in der Senderspalte.
 
-### EPG/Vorschau
+### EPG/Preview
 
 ```text
-OK auf aktueller Sendung -> Vollbild des ausgewaehlten Senders
-OK auf Ansehen           -> Vollbild
-OK auf EPG               -> EPG Detail / Catch-Up Liste
-OK auf Catch-Up          -> Catch-Up im internen Player oeffnen
-OK auf Favorit           -> Favorit umschalten
-Zurück                   -> zurück zur Senderliste
+OK auf aktueller Sendung          -> Vollbild des ausgewaehlten Senders
+OK auf No-EPG-Placeholder         -> Vollbild des ausgewaehlten Senders
+OK auf vergangener Catch-Up-Zeile -> Catch-Up im internen Player oeffnen, falls erlaubt
+OK auf Favorit                    -> Favorit umschalten
+Rechts                            -> Preview/Details
+Zurück                            -> zurück zur Senderliste
 ```
+
+Nicht erlaubt:
+
+```text
+separater EPG-Button
+OK auf EPG -> allgemeine Catch-Up-Liste
+```
+
+Catch-Up erscheint nur an passenden vergangenen EPG-Eintraegen. Ohne EPG ist Catch-Up nicht verfuegbar.
 
 ### CH+ / CH-
 
-Nur im Player relevant:
+Im Live-TV Browser:
+
+```text
+CH+ / CH- -> Fokus in der Senderliste bewegen
+```
+
+Im Player:
 
 ```text
 CH+ -> nächster Sender
@@ -209,16 +225,16 @@ Keine Bestätigung.
 Layout:
 
 ```text
-Hero Info
-Kategorie-Chips
-Poster-Raster
+Provider-/Kategorien-Spalte | Hero Info + Poster-Raster
 ```
 
 ### Initialfokus
 
 ```text
-Erstes Poster der aktiven Kategorie
+erste Kategorie des ersten Providers
 ```
+
+Globale App-Kategorien wie Favoriten und Fortsetzen sind sichtbar, aber nicht der initiale Inhaltsfokus.
 
 Falls Fortsetzen vorhanden:
 
@@ -229,11 +245,12 @@ Erstes Fortsetzen-Element
 ### Navigation
 
 ```text
-Hoch      -> Kategorien / Hero-nahe Aktionen, falls vorhanden
-Runter    -> nächste Posterreihe
-Links/Rechts -> Poster wechseln
-OK        -> Detailseite öffnen
-Zurück    -> Hauptnavigation / vorheriger Screen
+Links aus Grid -> Kategorien
+Rechts im Grid -> nächstes Poster
+Hoch/Runter im Grid -> Posterreihe wechseln
+OK auf Poster -> Detailseite öffnen
+Zurück aus Grid -> Kategorien
+Zurück aus Kategorien -> Top Navigation
 ```
 
 ### Fokus auf Poster
@@ -427,14 +444,14 @@ Links/Rechts -> Seek, wenn Overlay offen und Timeline fokussiert
 ## Auto-Next Panel bei Serien
 
 ```text
-Initialfokus       -> Naechste Folge abspielen / Naechste Folge in X
-Links/Rechts       -> Hauptbutton <-> Zurueck
+Initialfokus       -> Nächste Folge abspielen / Nächste Folge in X
+Links/Rechts       -> Hauptbutton <-> Zurück
 OK auf Hauptbutton -> naechste Episode sofort starten
-OK auf Zurueck     -> Countdown verwerfen und zum Staffel-/Episodenkontext zurueckkehren
-Zurueck-Taste      -> wie OK auf dem sichtbaren Button Zurueck
+OK auf Zurück     -> Countdown verwerfen und zum Staffel-/Episodenkontext zurueckkehren
+Zurück-Taste      -> wie OK auf dem sichtbaren Button Zurück
 ```
 
-Hauptbutton und `Zurueck` werden in beiden Zustaenden zeitgleich nebeneinander angezeigt. Einen Button `Abbrechen` gibt es nicht.
+Hauptbutton und `Zurück` werden in beiden Zustaenden zeitgleich nebeneinander angezeigt. Einen Button `Abbrechen` gibt es nicht.
 
 Bei aktiviertem Auto-Next startet die naechste Episode beim Ablauf des Countdowns automatisch. Bei deaktiviertem Auto-Next gibt es ohne OK keinen Start.
 

@@ -41,7 +41,7 @@ Provider- und Update-Status werden nur in den Einstellungen angezeigt.
 
 Fortsetzen zeigt Filme und Serien gemischt in einer gemeinsamen Row.
 
-Direkte Resume-Ziele sind nur nicht abgeschlossene Filme und Episoden. Wenn die zuletzt relevante Episode abgeschlossen und eine naechste Episode vorhanden ist, darf der Serien-Eintrag auf diese naechste Episode bei Position 0 weitergehen.
+Direkte Resume-Ziele sind nur nicht abgeschlossene Filme und Episoden. Wenn die zuletzt relevante Episode abgeschlossen und eine nächste Episode vorhanden ist, darf der Serien-Eintrag auf diese nächste Episode bei Position 0 weitergehen.
 
 Abgeschlossene Filme und Episoden selbst erscheinen nicht in der Row.
 
@@ -67,7 +67,7 @@ Der Initialfokus liegt auf dem ersten relevanten Inhalt in Fortsetzen.
 
 Wenn Fortsetzen leer ist, liegt der Fokus auf dem ersten Eintrag in zuletzt gesehenen Live-TV-Sendern.
 
-Wenn auch dort keine Inhalte existieren, liegt der Fokus auf der Aktion `Wiedergabeliste hinzufuegen` im Empty State.
+Wenn auch dort keine Inhalte existieren, liegt der Fokus auf der Aktion `Wiedergabeliste hinzufügen` im Empty State.
 
 ## Fokus bei Rueckkehr
 
@@ -80,16 +80,16 @@ Ein vorheriger Home-Fokus wird nicht wiederhergestellt.
 - Links/Rechts wechselt Elemente innerhalb einer Row.
 - Hoch/Runter wechselt zwischen Rows.
 - OK oeffnet Inhalt oder Zielbereich.
-- Zurueck springt zuerst in die Top Navigation.
-- Erst aus der Top Navigation greift die doppelte Zurueck-Bestaetigung zum Beenden.
+- Zurück springt zuerst in die Top Navigation.
+- Erst aus der Top Navigation greift die doppelte Zurück-Bestätigung zum Beenden.
 
 ## Zustaende
 
 Loading: Skeleton Rows mit Platzhaltern.
 
-Empty: Hinweis plus Aktion `Wiedergabeliste hinzufuegen`.
+Empty: Hinweis plus Aktion `Wiedergabeliste hinzufügen`.
 
-Error: Fehler wird nur angezeigt, wenn Home-Inhalte nicht geladen werden koennen.
+Error: Fehler wird nur angezeigt, wenn Home-Inhalte nicht geladen werden können.
 
 Provider- oder Update-Status erscheint nicht im Home-Bereich.
 

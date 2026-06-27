@@ -46,6 +46,16 @@ design/design-system/
     VivicastTypography.kt
 ```
 
+## Token-Prioritaet
+
+Exakte Tokenwerte fuer die aktuelle Zieloptik liegen in:
+
+```text
+design/design-system/compose-template/
+```
+
+`02-design-tokens.md` beschreibt die Designsystem-Tokens im Markdown-Kontext und muss mit dem Compose-Template konsistent bleiben. Bei technischen Umsetzungsdetails fuer Compose gilt das Compose-Template als Startreferenz.
+
 ## Compose Template
 
 `compose-template/` enthaelt eine technische Designsystem-Umsetzungsvorlage fuer spaetere Jetpack-Compose-for-TV-Implementierung.
@@ -72,7 +82,7 @@ Codex darf diese Dateien spaeter als Startreferenz fuer ein App-Repository-Desig
 
 1. Inhalte schneller erreichbar machen als Einstellungen.
 2. Aktiver Fokus muss jederzeit eindeutig sichtbar sein.
-3. Jede Aktion muss mit D-Pad, OK und Zurueck erreichbar sein.
+3. Jede Aktion muss mit D-Pad, OK und Zurück erreichbar sein.
 4. Keine Touch-only-Interaktionen.
 5. Grosse Sender-, Film-, Serien- und EPG-Mengen duerfen die UI nicht ueberladen.
 6. Provider-Isolation muss auch visuell verstaendlich bleiben.

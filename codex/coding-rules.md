@@ -94,10 +94,16 @@ Architekturvorgaben in dieser Datei, die nicht direkt aus PRD oder ADR ableitbar
 - Suche mit 300 ms Debounce.
 - Room-Indizes für Such- und EPG-Abfragen anlegen.
 - Keine vollständigen IPTV-Bibliotheken in UI-State laden.
+- Medien-Cache- und Verlaufsaktionen unter `Einstellungen > Speicher & Verlauf` fuehren; nicht unter Backup.
 - Medien-Cache-Grenze und Cache-Rotation als interne Werte behandeln; keine freie Settings-Konfiguration anbieten.
 - Medien-Cache-Informationen aus dem Dateisystem berechnen, mindestens die aktuelle Groesse.
 - `Cache leeren` darf nur Medien-Cache-Dateien fuer Senderlogos, Film-Poster, Serien-Poster, Staffelbilder und Episodenbilder entfernen.
 - `Cache leeren` darf keine Providerdaten, Favoriten, Verlaeufe, Wiedergabefortschritt, Suchverlauf, EPG-Zuordnungen, Zugangsdaten, EPG-Programmdaten oder aktive Stream-/Timeshift-Puffer entfernen.
+
+- Room-Listen fuer Sender, Filme und Serien paging- oder fensterfaehig abfragen.
+- UI-State darf keine vollstaendige Provider-Bibliothek halten.
+- EPG-Tagesansichten nur sender-, quellen-, mapping- und zeitfensterbezogen laden.
+- Poster und Logos nur fuer sichtbare oder kurz bevorstehende Elemente laden.
 
 ## Test- und DoD-Regeln
 
@@ -119,6 +125,8 @@ Architekturvorgaben in dieser Datei, die nicht direkt aus PRD oder ADR ableitbar
 - Interne Suche vollstaendig lokal ueber Room FTS4 implementieren.
 - Keine Suchanfragen an Provider senden.
 - Genau vier Ergebnisgruppen verwenden: `Kanäle`, `Filme`, `Serien`, `EPG`.
+
+- Sichtbare Favoriten-Aktion einheitlich als `Zu Favoriten` oder `Zu Favoriten hinzufügen` beschriften; keine Merkliste-/Meine-Liste-Terminologie verwenden.
 - Episoden nicht als eigene Suchgruppe und nicht als eigenes Suchergebnis indexieren.
 - Suchverlauf fest auf maximal 20 Eintraege begrenzen.
 - Query und Indextexte gleich normalisieren: trimmen, Kleinschreibung, Whitespace zusammenfassen, Satzzeichen als Trenner, Umlaute/Diakritika tolerant, `ae`/`oe`/`ue`/`ss` als Varianten.
@@ -126,6 +134,9 @@ Architekturvorgaben in dieser Datei, die nicht direkt aus PRD oder ADR ableitbar
 - Leere Suche ohne Ergebnisabfrage lassen.
 - Bei einem normalisierten Zeichen nur Titel-/Name-Prefixe fuer Kanäle, Filme und Serien abfragen.
 - EPG-Suche erst ab drei normalisierten Zeichen starten.
+- EPG-Ergebnisse oeffnen Live-TV im Sender-Modus mit aktivem Sender, zur Zielsendung gescrollter EPG-Spalte und Fokus auf dem Zielprogrammpunkt.
+- Aktuelle EPG-Treffer duerfen Vollbild Live-TV starten; vergangene Treffer starten nur mit erlaubtem Catch-Up; vergangene Treffer ohne Catch-Up und zukuenftige Treffer zeigen Details/Info ohne Wiedergabe.
+- Globale Android-TV-Systemsuche enthaelt keine EPG-Treffer.
 - Pro Ergebnisgruppe maximal 20 Treffer liefern.
 - Ranking je Gruppe deterministisch halten: exakter Titel/Name, Prefix, Token-Treffer, Metadaten.
 - EPG-Ranking laufende Sendungen vor naher Zukunft und alte Treffer niedriger sortieren.
@@ -145,7 +156,7 @@ Architekturvorgaben in dieser Datei, die nicht direkt aus PRD oder ADR ableitbar
 - Deep Links duerfen keine Stream-URLs, Tokens, Zugangswerte, HTTP-Header oder Cookies enthalten.
 - Deep-Link-Ziele mit `providerStableKey + mediaType + mediaStableKey` beziehungsweise Sender-/Serien-/Episoden-Stable-Keys aufloesen.
 - Fehlende, pending, geloeschte, deaktivierte oder zugangsdatenlose Systemziele kontrolliert als nicht verfuegbar anzeigen; keinen stillen Home-Fallback verwenden.
-- Geschuetzte Systemziele beim Oeffnen gegen die aktuelle Kindersicherung pruefen.
+- Geschuetzte Systemziele beim Öffnen gegen die aktuelle Kindersicherung pruefen.
 - Geschuetzte Inhalte nicht in Android-TV-Systemsuche oder Watch Next veroeffentlichen, solange der jeweilige Schutz aktiv ist.
 - Android-TV-Systemsuche nur aus produktiven Room-Daten befuellen; keine Staging-Daten verwenden.
 - Android-TV-Systemsuche auf Live-TV, Filme und Serien begrenzen; keine EPG-Treffer, keine Episoden als eigene Treffer und kein Catch-Up veroeffentlichen.
@@ -155,8 +166,8 @@ Architekturvorgaben in dieser Datei, die nicht direkt aus PRD oder ADR ableitbar
 - Auto-Next in DataStore als `autoNextEpisodeEnabled = false` und `autoNextEpisodeCountdownSeconds = 10` vorbelegen; fuer den Countdown nur 5, 10, 15 oder 30 zulassen.
 - Die Countdown-Einstellung bei deaktiviertem Auto-Next sichtbar, aber nicht bedienbar darstellen; den gespeicherten Wert nicht zuruecksetzen.
 - Im Live-TV Browser beim blossen Senderfokus keinen Stream starten.
-- Erstes OK in der Senderspalte muss fest Sender-Modus und Live-Vorschau starten und den Fokus auf die aktuelle EPG-Sendung setzen, sofern vorhanden.
-- OK auf der fokussierten aktuellen EPG-Sendung startet Vollbild. Keine Preview-Einstellung und keinen direkten Vollbildstart beim ersten OK anbieten.
+- Erstes OK in der Senderspalte muss fest Sender-Modus, EPG-Spalte und Live-Vorschau starten und den Fokus auf die aktuelle EPG-Sendung setzen, sofern vorhanden; sonst auf den No-EPG-Placeholder.
+- OK auf der fokussierten aktuellen EPG-Sendung oder auf dem No-EPG-Placeholder startet Vollbild. Keine Preview-Einstellung und keinen direkten Vollbildstart beim ersten OK anbieten.
 - Alle Screens müssen per D-Pad bedienbar sein.
 - Fokuszustände müssen klar sichtbar sein.
 - OK öffnet Aktionen oder Player-Overlay.
@@ -193,6 +204,20 @@ Architekturvorgaben in dieser Datei, die nicht direkt aus PRD oder ADR ableitbar
 - Kompatible alte Backup-Schema-Versionen duerfen migriert werden; das ist kein Zusammenfuehren lokaler und importierter Daten.
 - Vor dem Ersetzen Backup-Datei, Passphrase, Schema und Inhalt validieren und danach ein internes Sicherheitsbackup versuchen.
 - Wenn das interne Sicherheitsbackup fehlschlaegt, Nutzer zwischen Abbruch und bewusstem Fortsetzen waehlen lassen.
+
+## Live-TV- und Player-Regeln
+
+- Erstes OK auf einen Sender oeffnet Sender-Modus, EPG-Spalte und Preview; es startet nicht direkt Vollbild.
+- Wenn keine aktuelle EPG-Sendung vorhanden ist, muss der No-EPG-Placeholder fokussiert werden.
+- OK auf den No-EPG-Placeholder startet die Vollbildwiedergabe des gewählten Senders ohne Catch-Up-Kontext.
+- CH+ und CH- bewegen im Live-TV-Browser den Fokus in der Senderliste; im Player wechseln sie direkt den Sender.
+- Player-Overlay-Aktionen sind nur Audio, Untertitel, Bildformat und Mehr. Kein EPG-Chip, keine separaten Pause-/Vor-/Zurückspulbuttons.
+- Senderstart umfasst maximal 5 Versuche inklusive Erstversuch; Time-to-playable pro Versuch maximal 10 Sekunden.
+- Retry-Abstaende sind 0,5 s, 1 s, 2 s und 4 s.
+- Manuelles `Erneut versuchen` setzt den Zaehler zurueck.
+- Senderwechsel bricht laufende Start- oder Retry-Vorgaenge ab.
+- Reconnect gilt nur fuer den zuletzt aktiven Sender und zeigt einen nicht blockierenden Hinweis.
+- Hintergrundwechsel stoppt interne Wiedergabe kontrolliert; VOD-Fortschritt vorher speichern, Live-TV ohne PlaybackProgress, Timeshift-Puffer verwerfen.
 
 ## Parser- und Quellenregeln
 
@@ -255,16 +280,18 @@ Architekturvorgaben in dieser Datei, die nicht direkt aus PRD oder ADR ableitbar
 - Externe Player nur fuer Filme und einzelne Episoden anbieten; Live-TV und Catch-Up bleiben interne Vivicast-Player-Kontexte.
 - Catch-Up nur starten, wenn Sender/Provider es unterstuetzen, EPG-Start und -Ende verwertbar sind und der Programmpunkt im erlaubten Rueckblickfenster liegt.
 - Aktuelle Live-Sendungen ueber Live-TV oder Timeshift behandeln, nicht als Catch-Up.
-- Senderstart: 5 Retries.
-- Streamabbruch: 5 Reconnect-Versuche.
+- Senderstart umfasst maximal 5 Versuche inklusive Erstversuch; ein Versuch gilt nach ExoPlayer-Fehler oder 10 Sekunden ohne abspielbaren Zustand als fehlgeschlagen.
+- Retry-Abstaende sind 0,5 s, 1 s, 2 s und 4 s; manuelles `Erneut versuchen` setzt den Zaehler zurueck.
+- Streamabbruch startet Reconnect nur fuer den zuletzt aktiven Sender und endet nach 5 Gesamtversuchen im Fehlerdialog.
+- Senderwechsel bricht laufende Start-, Retry- und Reconnect-Vorgaenge ab.
 - Timeshift wird bei Senderwechsel verworfen.
 - Timeshift nur fuer Live-TV verwenden; bei Speicher- oder Ressourcenfehlern Live-TV ohne Timeshift weiterlaufen lassen, Seek sperren und einen Hinweis zeigen.
 - Refreshes dürfen aktive Streams nicht unterbrechen.
 - Globale Audio-/Untertitel-Defaults beim Streamstart anwenden; manuelle Track-Auswahl im Player nur fuer die aktuelle Wiedergabe verwenden.
-- Bei deaktiviertem Auto-Next die Aktion `Naechste Folge abspielen` erst nach dem tatsaechlichen Episodenende anzeigen und niemals ohne OK starten.
-- Bei aktiviertem Auto-Next `Naechste Folge in X` um den konfigurierten Zeitraum vor dem Episodenende anzeigen; X sekundenweise aktualisieren, OK sofort starten und ohne Eingabe erst am tatsaechlichen Ende wechseln.
-- In beiden Auto-Next-Zustaenden den sichtbaren Button `Zurueck` zeitgleich neben dem Hauptbutton anzeigen; keinen Button `Abbrechen` anbieten.
-- Den Hauptbutton initial fokussieren. OK auf `Zurueck` oder die Zurueck-Taste verwirft einen laufenden Countdown und fuehrt zur Serien-Detailseite mit wiederhergestelltem Staffel-/Episodenkontext.
+- Bei deaktiviertem Auto-Next die Aktion `Nächste Folge abspielen` erst nach dem tatsaechlichen Episodenende anzeigen und niemals ohne OK starten.
+- Bei aktiviertem Auto-Next `Nächste Folge in X` um den konfigurierten Zeitraum vor dem Episodenende anzeigen; X sekundenweise aktualisieren, OK sofort starten und ohne Eingabe erst am tatsaechlichen Ende wechseln.
+- In beiden Auto-Next-Zustaenden den sichtbaren Button `Zurück` zeitgleich neben dem Hauptbutton anzeigen; keinen Button `Abbrechen` anbieten.
+- Den Hauptbutton initial fokussieren. OK auf `Zurück` oder die Zurück-Taste verwirft einen laufenden Countdown und fuehrt zur Serien-Detailseite mit wiederhergestelltem Staffel-/Episodenkontext.
 - Staffeluebergaenge zur ersten verfuegbaren Episode der naechsten Staffel aufloesen; nach Serienende kein Auto-Next-Panel anzeigen.
 - Das Erreichen der 95-Prozent-Abschluss-Schwelle darf die Wiedergabe nicht beenden, kein Auto-Next-Panel einblenden und keinen Episodenwechsel ausloesen; dafuer das tatsaechliche Medienende verwenden.
 - Auto-Next ausschliesslich im internen Vivicast-Player ausfuehren; bei externen Playern kein Auto-Next-Panel und keinen automatischen Episodenwechsel erzeugen.

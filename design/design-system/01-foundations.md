@@ -118,8 +118,8 @@ Wichtige UI-Elemente dürfen nicht direkt an Bildschirmkanten kleben.
 Standard-Safe-Area:
 
 ```text
-Horizontal: 64 dp
-Vertikal:   48 dp
+Horizontal: 48 dp
+Vertikal:   32 dp
 ```
 
 Minimal-Safe-Area für Player-Overlays:
@@ -172,14 +172,13 @@ Ziel:
 Primärlayout:
 
 ```text
-Hero-Informationsbereich
-Kategorien / Filter
-Poster-Raster
+Provider-/Kategorien-Spalte | Hero-Informationsbereich + Poster-Raster
 ```
 
 Ziel:
 
-- Informationsbereich aktualisiert sich beim Fokus
+- Provider- und Kategorienstruktur bleibt sichtbar getrennt
+- Informationsbereich aktualisiert sich beim Fokus auf Poster
 - Poster-Raster bleibt performant
 - Detailseite nur bei Bedarf
 
